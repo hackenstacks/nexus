@@ -83,6 +83,10 @@
       
     </div>
     
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
     
       
 
@@ -1430,6 +1434,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#github-pages-live-deployment-homepage-redesign-2026-03-09" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub Pages live deployment + homepage redesign (2026-03-09)
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1468,6 +1483,21 @@
 - Git initialised on nexus-docs repo</p>
 <p>To serve: cd ~/Documents/nexus-docs &amp;&amp; mkdocs serve</p>
 <p>Files: mkdocs.yml, docs/ (14 pages + 4 images)</p>
+<hr />
+<h2 id="github-pages-live-deployment-homepage-redesign-2026-03-09">GitHub Pages live deployment + homepage redesign (2026-03-09)<a class="headerlink" href="#github-pages-live-deployment-homepage-redesign-2026-03-09" title="Permanent link">&para;</a></h2>
+<p><strong>What:</strong> Deployed NeXuS docs to GitHub Pages at https://hackenstacks.github.io/nexus/</p>
+<p><strong>Why:</strong> User requested public docs hosting on GitHub with a redesigned homepage — 30k ft view, quick start, downloads, emoji/color/italic styling.</p>
+<p><strong>How:</strong>
+- Created GitHub repo <code>hackenstacks/nexus</code> (public)
+- Updated <code>mkdocs.yml</code>: added <code>site_url</code>, <code>repo_url</code>, emoji extension (<code>pymdownx.emoji</code>), <code>attr_list</code>, <code>md_in_html</code>, <code>pymdownx.details</code>, <code>pymdownx.tasklist</code>, <code>navigation.tabs.sticky</code>, <code>navigation.instant</code>
+- Rewrote <code>docs/index.md</code>: full homepage with emojis, tabbed quick start, 4-card downloads grid, split what's-working/building checklist, 8-card docs grid, philosophy block, join section
+- Ran <code>mkdocs gh-deploy --force</code> — pushes built site to <code>gh-pages</code> branch
+- GitHub Pages auto-enabled on <code>gh-pages</code> branch</p>
+<p><strong>Files:</strong> <code>mkdocs.yml</code>, <code>docs/index.md</code></p>
+<p><strong>Live URL:</strong> https://hackenstacks.github.io/nexus/ <em>(active in ~1-2 min)</em></p>
+<p><strong>To redeploy after changes:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">cd</span><span class="w"> </span>~/Documents/nexus-docs<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>mkdocs<span class="w"> </span>gh-deploy
+</code></pre></div></p>
 <hr />
 
 
@@ -1537,7 +1567,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.instant", "search.highlight", "search.share", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.instant", "search.highlight", "search.share", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
