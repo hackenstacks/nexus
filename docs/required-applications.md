@@ -1,0 +1,1 @@
+/home/user/Documents/nexus-design/NEXUS_REQUIRED_APPLICATIONS.md

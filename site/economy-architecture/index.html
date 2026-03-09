@@ -1,0 +1,3607 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Sane • Simple • Secure • Stealthy • Beautiful — Together Everyone Achieves More">
+      
+      
+        <meta name="author" content="The NeXuS Collective">
+      
+      
+      
+        <link rel="prev" href="../cli-libs-tui-frameworks/">
+      
+      
+        <link rel="next" href="../required-applications/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+    
+    
+      
+        <title>Economy & Blockchain - NeXuS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#nexus-economy-architecture" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="NeXuS" class="md-header__button md-logo" aria-label="NeXuS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NeXuS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Economy & Blockchain
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../what-is-nexus/" class="md-tabs__link">
+          
+  
+  
+  What Is NeXuS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../medusa-stealth-routing/" class="md-tabs__link">
+          
+  
+  
+  Network
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../3key-security/" class="md-tabs__link">
+          
+  
+  
+  Security
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../ai-merged-identity/" class="md-tabs__link">
+          
+  
+  
+  AI
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../cli-libs-tui-frameworks/" class="md-tabs__link">
+          
+  
+  
+  Development
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../node/getting-started/" class="md-tabs__link">
+          
+  
+  
+  Node
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../dev/action-report/" class="md-tabs__link">
+          
+  
+  
+  Dev
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="NeXuS" class="md-nav__button md-logo" aria-label="NeXuS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    NeXuS
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Is NeXuS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    What Is NeXuS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../what-is-nexus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oaae-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OAAE Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Network
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../medusa-stealth-routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Medusa Stealth Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zombie-apoc-doc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zombie Apocalypse Mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3key-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Three-Key Security Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-merged-identity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Merged AI Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autonomouse-ai-intelligence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autonomous AI Intelligence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Development
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli-libs-tui-frameworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Libs & TUI Frameworks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Economy & Blockchain
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Economy & Blockchain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The Vision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-the-foundational-economic-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 The Foundational Economic Principle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 The Foundational Economic Principle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reversed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REVERSED.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-blockchain-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Blockchain Stack
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Blockchain Stack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-nexus-chain-base-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 NeXuS Chain (Base Layer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-delayed-proof-of-work-dpow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Delayed Proof of Work (dPoW)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-security-progression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Security Progression
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-diva-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. DIVA Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. DIVA Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#30-what-diva-actually-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.0 What DIVA Actually Is
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#31-two-chains-two-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Two Chains, Two Jobs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-diva-smart-contract-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 DIVA Smart Contract Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-storage-deal-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Storage Deal Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-diva-exchange-liquidity-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 DIVA Exchange (Liquidity Layer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-full-architecture-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Full Architecture Stack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-node-economy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Node Economy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Node Economy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-what-a-node-earns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 What a Node Earns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-master-key-programmable-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Master Key → Programmable Keys
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-credit-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Credit Distribution
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-nexus-townhall-marketplace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. NeXuS Townhall (Marketplace)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. NeXuS Townhall (Marketplace)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-listing-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Listing Tiers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-digital-goods-fee-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Digital Goods Fee Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-supply-caps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Supply Caps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-scarcity-creates-long-term-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Scarcity Creates Long-Term Value
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-wallet-the-nexus-command-center" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Wallet — The NeXuS Command Center
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Wallet — The NeXuS Command Center">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-the-full-interface-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 The Full Interface Map
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Assets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-swap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 Swap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75-nft-forge-mint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5 NFT Forge (Mint)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#76-finance-stake-and-loan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.6 Finance — Stake and Loan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#77-command-center-node-resource-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.7 Command Center — Node Resource Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#78-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.8 Keys
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#79-proving-without-revealing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.9 Proving Without Revealing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#710-sybil-resistance-without-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.10 Sybil Resistance Without Identity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-real-world-asset-tokenization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Real-World Asset Tokenization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Real-World Asset Tokenization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-digital-goods-clean-no-legal-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Digital Goods (Clean, No Legal Issues)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-physical-assets-legal-hoops-foundation-solid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Physical Assets (Legal Hoops, Foundation Solid)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-real-world-asset-transfer-with-privacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 Real-World Asset Transfer with Privacy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-the-no-intermediary-advantage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. The No-Intermediary Advantage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-node-distribution-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Node Distribution Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Node Distribution Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-core-principle-burden-is-the-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Core Principle — Burden IS the Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-percentage-based-contribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Percentage-Based Contribution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-distributed-chain-history-no-archive-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 Distributed Chain History — No Archive Class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104-free-rider-prevention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 Free Rider Prevention
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-bootstrap-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Bootstrap System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Bootstrap System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-design-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 Design Principle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-four-bootstrap-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Four Bootstrap Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-why-each-method-is-censorship-resistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 Why Each Method Is Censorship Resistant
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114-rotating-peer-list-stays-fresh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4 Rotating Peer List — Stays Fresh
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#115-to-block-nexus-bootstrap-you-must-simultaneously" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5 To Block NeXuS Bootstrap You Must Simultaneously
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#116-bootstrap-mesh-transition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.6 Bootstrap → Mesh Transition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-pending-design-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Pending Design Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-meeting-prep-konrad-diva-march-15th" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Meeting Prep — Konrad / DIVA (March 15th)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Meeting Prep — Konrad / DIVA (March 15th)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#questions-to-bring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Questions to bring:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#todo-before-the-15th" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TODO before the 15th:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../required-applications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Required Applications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Node
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Node
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../node/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dev
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dev
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev/action-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Action Reports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-the-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The Vision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-the-foundational-economic-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.1 The Foundational Economic Principle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.1 The Foundational Economic Principle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reversed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        REVERSED.
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-blockchain-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Blockchain Stack
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Blockchain Stack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-nexus-chain-base-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 NeXuS Chain (Base Layer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-delayed-proof-of-work-dpow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Delayed Proof of Work (dPoW)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-security-progression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Security Progression
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-diva-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. DIVA Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. DIVA Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#30-what-diva-actually-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.0 What DIVA Actually Is
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#31-two-chains-two-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Two Chains, Two Jobs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-diva-smart-contract-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 DIVA Smart Contract Model
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-storage-deal-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Storage Deal Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-diva-exchange-liquidity-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 DIVA Exchange (Liquidity Layer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-full-architecture-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Full Architecture Stack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-node-economy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Node Economy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Node Economy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-what-a-node-earns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 What a Node Earns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-master-key-programmable-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.2 Master Key → Programmable Keys
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-credit-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.3 Credit Distribution
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-nexus-townhall-marketplace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. NeXuS Townhall (Marketplace)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. NeXuS Townhall (Marketplace)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-listing-tiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Listing Tiers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-digital-goods-fee-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Digital Goods Fee Structure
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-supply-caps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Supply Caps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-scarcity-creates-long-term-value" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Scarcity Creates Long-Term Value
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-wallet-the-nexus-command-center" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Wallet — The NeXuS Command Center
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Wallet — The NeXuS Command Center">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-the-full-interface-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 The Full Interface Map
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-assets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Assets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#74-swap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.4 Swap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#75-nft-forge-mint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.5 NFT Forge (Mint)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#76-finance-stake-and-loan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.6 Finance — Stake and Loan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#77-command-center-node-resource-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.7 Command Center — Node Resource Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#78-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.8 Keys
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#79-proving-without-revealing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.9 Proving Without Revealing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#710-sybil-resistance-without-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.10 Sybil Resistance Without Identity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-real-world-asset-tokenization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Real-World Asset Tokenization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Real-World Asset Tokenization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-digital-goods-clean-no-legal-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Digital Goods (Clean, No Legal Issues)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-physical-assets-legal-hoops-foundation-solid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Physical Assets (Legal Hoops, Foundation Solid)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-real-world-asset-transfer-with-privacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 Real-World Asset Transfer with Privacy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-the-no-intermediary-advantage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. The No-Intermediary Advantage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-node-distribution-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Node Distribution Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="10. Node Distribution Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#101-core-principle-burden-is-the-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.1 Core Principle — Burden IS the Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#102-percentage-based-contribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.2 Percentage-Based Contribution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#103-distributed-chain-history-no-archive-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.3 Distributed Chain History — No Archive Class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#104-free-rider-prevention" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10.4 Free Rider Prevention
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-bootstrap-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Bootstrap System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="11. Bootstrap System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#111-design-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.1 Design Principle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#112-four-bootstrap-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2 Four Bootstrap Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#113-why-each-method-is-censorship-resistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3 Why Each Method Is Censorship Resistant
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#114-rotating-peer-list-stays-fresh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4 Rotating Peer List — Stays Fresh
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#115-to-block-nexus-bootstrap-you-must-simultaneously" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5 To Block NeXuS Bootstrap You Must Simultaneously
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#116-bootstrap-mesh-transition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.6 Bootstrap → Mesh Transition
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-pending-design-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Pending Design Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-meeting-prep-konrad-diva-march-15th" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Meeting Prep — Konrad / DIVA (March 15th)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13. Meeting Prep — Konrad / DIVA (March 15th)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#questions-to-bring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Questions to bring:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#todo-before-the-15th" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TODO before the 15th:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="nexus-economy-architecture">NeXuS Economy Architecture<a class="headerlink" href="#nexus-economy-architecture" title="Permanent link">&para;</a></h1>
+<p><strong>Status:</strong> Design Draft
+<strong>Date:</strong> 2026-03-08
+<strong>Authors:</strong> Anon + Claude (Sonnet 4.6)</p>
+<hr />
+<h2 id="1-the-vision">1. The Vision<a class="headerlink" href="#1-the-vision" title="Permanent link">&para;</a></h2>
+<p>NeXuS is an alternative economic infrastructure for individuals. As AI displaces workers, NeXuS routes value back to individuals — their hardware, their content, their data, their participation generates income that flows directly to them. No intermediary capturing the margin.</p>
+<p><strong>Core principle:</strong> Every node that joins makes the network more valuable for every other node.</p>
+<p><strong>NeXuS value is the network. Users make up the network. Therefore users ARE the value.</strong></p>
+<hr />
+<h2 id="11-the-foundational-economic-principle">1.1 The Foundational Economic Principle<a class="headerlink" href="#11-the-foundational-economic-principle" title="Permanent link">&para;</a></h2>
+<h3 id="reversed">REVERSED.<a class="headerlink" href="#reversed" title="Permanent link">&para;</a></h3>
+<p><strong>Users create the system.</strong>
+<strong>The system creates the economy.</strong>
+<strong>The system is in debt to the user and shall mathematically pay out.</strong></p>
+<div class="highlight"><pre><span></span><code>Traditional:              NeXuS:
+User → owes → platform    Platform → owes → user
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>Users create the system
+          ↓
+System creates the economy
+          ↓
+Economy rewards the users
+          ↓
+Users grow the system
+          ↓
+No platform. No company. No intermediary in that chain.
+</code></pre></div>
+<p>Not a reward. Not a gift. Not discretionary. A debt being settled.</p>
+<p><strong>What this means:</strong>
+- Contribution is measured by protocol
+- Debt calculated by algorithm
+- Payment executed by smart contract
+- No human in the loop, no discretion, no withholding
+- The math is the law</p>
+<p><strong>Anti-plutocracy is non-negotiable:</strong>
+<div class="highlight"><pre><span></span><code>Cannot buy voting weight     — weight = contribution %, not wealth
+Cannot buy credits directly  — only earned through contribution
+Cannot hoard for control     — elastic supply dilutes accumulation
+Cannot buy your way in       — % based, same rule for everyone
+Rich node earns more total   — earns same RATE as any other node
+     ↓
+Wealth buys no advantage
+Only contribution matters
+Death of NeXuS = the rich gaining control
+This must be made mathematically impossible
+</code></pre></div></p>
+<p><strong>The revered credit system:</strong>
+<div class="highlight"><pre><span></span><code>Trust through mathematics — not faith in a company
+Credits earned = network debt to user
+Payout guaranteed by protocol
+Open, auditable, immutable
+     ↓
+The system owes YOU
+</code></pre></div></p>
+<p><strong>Fee philosophy (aligned with DIVA):</strong>
+<div class="highlight"><pre><span></span><code>Small fee for one reason only — network survival
+Not for profit
+Not for extraction
+Not for personal payment
+The creator does not expect payment
+Infrastructure lives — mission continues
+</code></pre></div></p>
+<hr />
+<hr />
+<h2 id="2-blockchain-stack">2. Blockchain Stack<a class="headerlink" href="#2-blockchain-stack" title="Permanent link">&para;</a></h2>
+<h3 id="21-nexus-chain-base-layer">2.1 NeXuS Chain (Base Layer)<a class="headerlink" href="#21-nexus-chain-base-layer" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Decision</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Base</td>
+<td>Fork <strong>Monero</strong> (MIT license)</td>
+<td>Clean legal path — MIT permits production use, no permission needed</td>
+</tr>
+<tr>
+<td>Algorithm</td>
+<td><strong>AstroBWT</strong></td>
+<td>Keeps mining inside NeXuS ecosystem — external Monero pools cannot dominate or 51% attack</td>
+</tr>
+<tr>
+<td>Privacy</td>
+<td>RingCT + stealth addresses + ring signatures</td>
+<td>Transaction amounts and participants hidden by default</td>
+</tr>
+<tr>
+<td>Smart contracts</td>
+<td>WASM-based VM (implemented from scratch)</td>
+<td>Portable, sandboxed, language agnostic</td>
+</tr>
+<tr>
+<td>Block structure</td>
+<td>DAG (implemented from scratch, DERO-inspired)</td>
+<td>No mempool congestion, faster finality than linear chain</td>
+</tr>
+<tr>
+<td>Security</td>
+<td>dPoW (delayed Proof of Work)</td>
+<td>Bitcoin checkpoints secure chain even at low hashrate</td>
+</tr>
+</tbody>
+</table>
+<p><strong>License decision:</strong>
+- DERO Research License — production use blocked, no commercial license exists at a known URL
+- DENERO is a fork of DERO — same Research License, same block
+- Both projects are valid architecture inspiration (Research License Section III.B Residual Rights permits using knowledge and concepts)
+- Monero is MIT licensed — fork freely, no permission, no California jurisdiction, no termination risk
+- Architecture concepts (DAG, HE, smart contract model) implemented independently, inspired by DERO research</p>
+<h3 id="22-delayed-proof-of-work-dpow">2.2 Delayed Proof of Work (dPoW)<a class="headerlink" href="#22-delayed-proof-of-work-dpow" title="Permanent link">&para;</a></h3>
+<p>Borrowed from Komodo. Notary nodes periodically write NeXuS chain state into a Bitcoin transaction. Attack window reduced to minutes between notarizations regardless of NeXuS hashrate.</p>
+<div class="highlight"><pre><span></span><code>NeXuS chain  →  Notary nodes snapshot block hash
+                     ↓
+             Bitcoin transaction (small fee)
+                     ↓
+             Checkpoint immovable — secured by Bitcoin hashrate
+</code></pre></div>
+<ul>
+<li>Notary nodes elected by governance (council of nodes)</li>
+<li>Cost: one Bitcoin transaction every ~10 minutes (pennies)</li>
+<li>Never turn off — cheap insurance even at high hashrate</li>
+</ul>
+<h3 id="23-security-progression">2.3 Security Progression<a class="headerlink" href="#23-security-progression" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Low hashrate period    →  dPoW doing heavy lifting
+Medium hashrate        →  both sharing security job
+High hashrate          →  own miners secure chain, dPoW is backup
+</code></pre></div>
+<hr />
+<h2 id="3-diva-integration">3. DIVA Integration<a class="headerlink" href="#3-diva-integration" title="Permanent link">&para;</a></h2>
+<h3 id="30-what-diva-actually-is">3.0 What DIVA Actually Is<a class="headerlink" href="#30-what-diva-actually-is" title="Permanent link">&para;</a></h3>
+<p><strong>Mission:</strong> "Free banking technology for everyone. Your identity kept separate from your transaction data. Secure without central infrastructure."</p>
+<p>DIVA.EXCHANGE is not a coin, not a token, not a platform. It is <strong>free banking infrastructure</strong> — permissionless, privacy-by-design, fully anonymous, built for everyone including those with no access to traditional banking.</p>
+<div class="highlight"><pre><span></span><code>DIVA philosophy:    &quot;Only you determine your values&quot;
+NeXuS philosophy:   &quot;Together Everyone Achieves More for individual freedom&quot;
+     ↓
+Same first principles — complementary solutions
+DIVA solved the exchange and banking layer
+NeXuS is building the economy that runs on top of it
+</code></pre></div>
+<p><strong>Technical architecture:</strong>
+- Consensus: Weighted PBFT + PoS (communication-bound, not computation-bound)
+- Chain built through peer communication, not mining
+- Fast finality, lightweight, low energy
+- Permissionless and leaderless — no central authority
+- I2P native — peers build tunnels via Challenge/Auth (Sodium crypto library)
+- Round-based state machine — each round produces one block on demand
+- Per round: each peer proposes ONE transaction, votes on stack of proposals
+- 2/3 of total stake must agree → block created (PBFT Byzantine fault tolerance)
+- No native coin or token issued
+- Financed through university partnerships + donations
+- API: HTTP REST on port 17468 + WebSocket for live updates</p>
+<p><strong>No coin = important design question for the 15th:</strong>
+- How is stake acquired and weighted?
+- Can stake be earned through contribution or only purchased?
+- Are there any fees on chain transactions?
+- How are nodes incentivized to stay honest without a coin reward?
+- If stake must be bought in → contradicts both projects' philosophy
+- If stake is earned through contribution → maps perfectly onto NeXuS design</p>
+<h3 id="31-two-chains-two-jobs">3.1 Two Chains, Two Jobs<a class="headerlink" href="#31-two-chains-two-jobs" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>NeXuS Chain</th>
+<th>DIVA Chain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Purpose</td>
+<td>Private value transfer + enforcement</td>
+<td>Coordination, proofs, social layer</td>
+</tr>
+<tr>
+<td>Consensus</td>
+<td>PoW (AstroBWT)</td>
+<td>Weighted PBFT + PoS</td>
+</tr>
+<tr>
+<td>Speed</td>
+<td>~18 sec (DAG)</td>
+<td>On demand, fast finality</td>
+</tr>
+<tr>
+<td>Privacy</td>
+<td>RingCT built-in</td>
+<td>Privacy by design, I2P native</td>
+</tr>
+<tr>
+<td>Coin</td>
+<td>NeXuS token (mined)</td>
+<td>No coin issued</td>
+</tr>
+<tr>
+<td>Smart contracts</td>
+<td>WASM VM — value enforcement</td>
+<td>Namespace state machines — coordination</td>
+</tr>
+<tr>
+<td>Use for</td>
+<td>Token transfers, royalties, supply caps, stake/loan</td>
+<td>Storage proofs, badges, reputation votes, exchange matching, governance proposals</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Division of labor principle:</strong>
+<div class="highlight"><pre><span></span><code>Moves money → NeXuS chain (mining-secured, immutable)
+Coordinates / proves / records → DIVA chain (fast finality, quorum-validated)
+</code></pre></div></p>
+<h3 id="32-diva-smart-contract-model">3.2 DIVA Smart Contract Model<a class="headerlink" href="#32-diva-smart-contract-model" title="Permanent link">&para;</a></h3>
+<p>DIVA's transaction system is a form of smart contract — not Turing-complete (not EVM), but sufficient for coordination. Each namespace is a scoped state machine. Rules enforced by 2/3 quorum of peers.</p>
+<div class="highlight"><pre><span></span><code>DIVA &quot;contract&quot; structure:
+PUT /tx  →  [{&quot;command&quot;:&quot;data&quot;, &quot;ns&quot;:&quot;nexus:badges:forge-master&quot;, &quot;d&quot;:&quot;&lt;node-pubkey&gt;&quot;}]
+                    ↓
+             2/3 quorum validates
+                    ↓
+             State committed — immutable, auditable
+</code></pre></div>
+<p><strong>What NeXuS uses DIVA contracts for:</strong></p>
+<div class="highlight"><pre><span></span><code>nexus:badges          → badge issuance, soul-bound records
+nexus:reputation      → peer vote tallies per seller pseudonym
+nexus:storage         → storage deal commitments + proof records
+nexus:exchange        → order book entries, trade matching
+nexus:governance      → proposal posting, vote recording
+</code></pre></div>
+<p>Each namespace has defined rules. Network enforces them. No single authority.</p>
+<h3 id="32-storage-deal-flow">3.2 Storage Deal Flow<a class="headerlink" href="#32-storage-deal-flow" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>1. Node advertises storage availability
+   → DIVA chain  (PUT /tx, fast quorum)
+
+2. Client finds offer, locks payment
+   → NeXuS chain smart contract (HTLC)
+
+3. Node stores data on IPFS, pins it
+
+4. Periodic storage proofs posted
+   → DIVA chain  (challenge-response, quorum confirms)
+
+5. Notary nodes attest proof to NeXuS chain
+   → same notary nodes as dPoW, dual purpose
+
+6. Smart contract releases payment
+   → NeXuS tokens flow to storage provider
+</code></pre></div>
+<h3 id="33-diva-exchange-liquidity-layer">3.3 DIVA Exchange (Liquidity Layer)<a class="headerlink" href="#33-diva-exchange-liquidity-layer" title="Permanent link">&para;</a></h3>
+<p>DIVA is first and foremost a decentralized exchange — I2P-native, peer-to-peer, no custody, atomic swap settlement.</p>
+<div class="highlight"><pre><span></span><code>NeXuS node earns tokens
+     ↓
+Posts offer on DIVA exchange (over I2P, anonymous)
+     ↓
+Another node takes trade (NeXuS ↔ XMR, NeXuS ↔ DERO, etc.)
+     ↓
+HTLC locked on NeXuS chain (seller&#39;s tokens)
+HTLC locked on other chain  (buyer&#39;s tokens)
+     ↓
+Alice reveals secret → claims XMR on Monero chain
+Bob uses same secret → claims NeXuS on NeXuS chain
+     ↓
+Atomic — both settle or neither does
+DIVA exchange never holds custody
+</code></pre></div>
+<p><strong>For the March 2026 DIVA meeting:</strong> NeXuS brings real economic activity to DIVA exchange. Every NeXuS node is a potential DIVA exchange user. Mutual benefit — not just "we want to use your thing."</p>
+<hr />
+<h2 id="4-full-architecture-stack">4. Full Architecture Stack<a class="headerlink" href="#4-full-architecture-stack" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>┌──────────────────────────────────────────────────────┐
+│  NeXuS Wallet       — command center / browser       │  interface
+├──────────────────────────────────────────────────────┤
+│  NeXuS Townhall     — marketplace + badges + rep     │  social
+├──────────────────────────────────────────────────────┤
+│  DIVA Exchange      — anonymous P2P trading          │  liquidity
+├──────────────────────────────────────────────────────┤
+│  NeXuS Chain        — private value + enforcement    │  value
+├──────────────────────────────────────────────────────┤
+│  DIVA Chain         — coordination, proofs, social   │  coordination
+├──────────────────────────────────────────────────────┤
+│  IPFS               — actual data storage            │  storage
+├──────────────────────────────────────────────────────┤
+│  I2P / Tor / Reticulum — anonymous transport         │  network
+├──────────────────────────────────────────────────────┤
+│  Alpine Linux hardened — the node itself             │  hardware
+└──────────────────────────────────────────────────────┘
+</code></pre></div>
+<hr />
+<h2 id="5-node-economy">5. Node Economy<a class="headerlink" href="#5-node-economy" title="Permanent link">&para;</a></h2>
+<h3 id="51-what-a-node-earns">5.1 What a Node Earns<a class="headerlink" href="#51-what-a-node-earns" title="Permanent link">&para;</a></h3>
+<p><strong>Passive (just by running):</strong>
+- CPU cycles → mining NeXuS tokens (RandomX)
+- Storage space → pinning IPFS content, earning per GB
+- Bandwidth → routing traffic, earning per MB
+- Relay services → I2P/Tor relay, earning tokens</p>
+<p><strong>Active (user participates):</strong>
+- Digital goods sales → sell files, music, art, software
+- Review/validation → earn for verifying content quality
+- Data verification → confirm accuracy of information
+- Compute tasks → run jobs for other nodes</p>
+<h3 id="52-master-key-programmable-keys">5.2 Master Key → Programmable Keys<a class="headerlink" href="#52-master-key-programmable-keys" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Master Key (cold, never online)
+     ↓
+HD derivation (BIP32-style)
+     ↓
+├── Creator key      (persistent pseudonym — royalties forever)
+├── Reputation key   (Townhall track record)
+├── Governance key   (voting rights, contribution-weighted)
+├── Session keys     (rotate monthly)
+└── Burn keys        (one transaction, then dead)
+</code></pre></div>
+<p>Child key types:
+- <strong>Access key</strong> — unlocks a specific file/content
+- <strong>License key</strong> — non-transferable, tied to buyer's master key
+- <strong>Gift key</strong> — transferable once, then locks
+- <strong>Rental key</strong> — expires after time period
+- <strong>Resale key</strong> — fully transferable, creator gets royalty on each transfer</p>
+<h3 id="53-credit-distribution">5.3 Credit Distribution<a class="headerlink" href="#53-credit-distribution" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>10% of all transaction fees → Main Chain Bank
+     (programmable wallet controlled by Council of Nodes)
+          ↓
+     Distributed:
+     ├── % → network development and maintenance
+     ├── % → active contributors and committers
+     └── % → community participation rewards
+</code></pre></div>
+<p>Percentages determined by governance vote.</p>
+<hr />
+<h2 id="6-nexus-townhall-marketplace">6. NeXuS Townhall (Marketplace)<a class="headerlink" href="#6-nexus-townhall-marketplace" title="Permanent link">&para;</a></h2>
+<p>Built-in discovery marketplace — Craigslist meets Bandcamp meets eBay, all running inside NeXuS.</p>
+<h3 id="61-listing-tiers">6.1 Listing Tiers<a class="headerlink" href="#61-listing-tiers" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Standard listing:   free, standard placement, NeXuS takes 3% per sale
+Boosted listing:    offer 5% to NeXuS → moves up the list
+                    NeXuS owns 5% of every future sale of that item
+</code></pre></div>
+<h3 id="62-digital-goods-fee-structure">6.2 Digital Goods Fee Structure<a class="headerlink" href="#62-digital-goods-fee-structure" title="Permanent link">&para;</a></h3>
+<p><strong>Primary market (creator selling directly):</strong></p>
+<div class="highlight"><pre><span></span><code>Standard:  97% → Creator,  3% → NeXuS
+Boosted:   95% → Creator,  5% → NeXuS
+</code></pre></div>
+<p><strong>Secondary market (resale between users):</strong></p>
+<div class="highlight"><pre><span></span><code>90% → Seller (current owner)
+ 5% → Creator (perpetual royalty, enforced by smart contract)
+ 5% → NeXuS network
+</code></pre></div>
+<h3 id="63-supply-caps">6.3 Supply Caps<a class="headerlink" href="#63-supply-caps" title="Permanent link">&para;</a></h3>
+<p>Creator sets at mint time — <strong>immutable, enforced by smart contract:</strong></p>
+<div class="highlight"><pre><span></span><code>Example: musician mints 100,000 copies of a song
+├── Each copy = programmable access key on NeXuS chain
+├── Smart contract enforces cap — cannot be changed or exceeded
+├── Once 100k sold, no new primary copies exist
+└── Only secondary market remains (scarcity drives value)
+</code></pre></div>
+<p>Creator controls rights layers independently:
+<div class="highlight"><pre><span></span><code>Song
+├── Listening rights    → the 100k copies
+├── Sync rights         → use in film/video (separate listing, separate cap)
+├── Remix rights        → license to remix (separate listing)
+└── Master ownership    → never for sale, or separate deal
+</code></pre></div></p>
+<h3 id="64-scarcity-creates-long-term-value">6.4 Scarcity Creates Long-Term Value<a class="headerlink" href="#64-scarcity-creates-long-term-value" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>100k copies sold out
+     ↓
+Song gets popular
+     ↓
+Secondary market price rises
+     ↓
+Creator earns 5% of every resale forever
+NeXuS earns 5% of every resale forever
+     ↓
+Both benefit from the song&#39;s success long term
+</code></pre></div>
+<hr />
+<h2 id="7-wallet-the-nexus-command-center">7. Wallet — The NeXuS Command Center<a class="headerlink" href="#7-wallet-the-nexus-command-center" title="Permanent link">&para;</a></h2>
+<p>The wallet is not a key management tool. It is the <strong>browser into NeXuS</strong> — the user's complete interface to the network, their identity, their assets, their node, and every protocol NeXuS runs.</p>
+<p><strong>Design principle:</strong> Extremely simple surface. Right amount of information. Nothing hidden that matters, nothing shown that doesn't.</p>
+<p><strong>Privacy principle:</strong> Privacy is handled at the protocol layer automatically (RingCT, stealth addresses, ring signatures make transactions unlinkable on-chain). The wallet does not retain local transaction history. After a transaction confirms, no log is kept. The chain is private by design — nothing to reconstruct from outside, nothing stored inside.</p>
+<hr />
+<h3 id="71-the-full-interface-map">7.1 The Full Interface Map<a class="headerlink" href="#71-the-full-interface-map" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────────────────────┐
+│  NeXuS Wallet                                               │
+├──────────────┬──────────────────────────────────────────────┤
+│              │  DASHBOARD                                   │
+│  Navigation  │  NeXuS: [balance]   XMR: [balance]          │
+│              │  BTC: [balance]     Earnings today: [amt]   │
+│  Dashboard   │  Node: [online]     Staked: [amt]           │
+│  Assets      │                                              │
+│  Swap        ├──────────────────────────────────────────────┤
+│  Mint/Forge  │  ASSETS                                      │
+│  Finance     │  Tokens | NFTs | Badges                     │
+│  Command     │                                              │
+│  Center      ├──────────────────────────────────────────────┤
+│  Keys        │  [content area]                              │
+└──────────────┴──────────────────────────────────────────────┘
+</code></pre></div>
+<hr />
+<h3 id="72-dashboard">7.2 Dashboard<a class="headerlink" href="#72-dashboard" title="Permanent link">&para;</a></h3>
+<p>What the user sees the moment they open the wallet:</p>
+<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────────────┐
+│  NeXuS     [balance]    BTC    [balance]            │
+│  XMR       [balance]    Earning [rate/day]          │
+├─────────────────────────────────────────────────────┤
+│  Node: ONLINE    CPU: 12%    Storage: 47GB active   │
+│  Uptime: 99.2%   Staked: [amt]   Loaned: [amt]      │
+└─────────────────────────────────────────────────────┘
+</code></pre></div>
+<p>No transaction history visible by default. What you have. What you earn. What your node is doing. That is all.</p>
+<hr />
+<h3 id="73-assets">7.3 Assets<a class="headerlink" href="#73-assets" title="Permanent link">&para;</a></h3>
+<p>Three tabs:</p>
+<p><strong>Tokens</strong> — NeXuS, XMR, BTC balances with send/receive per asset.</p>
+<p><strong>NFT Wallet</strong> — every digital good owned: music, art, software, access keys, licenses. Shows item name, creator pseudonym, what rights are held (listen / sync / remix / resale), current floor price on secondary market if listed.</p>
+<p><strong>Badges</strong> — soul-bound reputation tokens. Cannot be transferred, bought, or sold. Two sources: <strong>protocol-issued</strong> (automatic, earned by action) and <strong>peer-voted</strong> (thumbs up/down from the community). Displayed publicly on your reputation pseudonym. Street cred visible to the whole network, real identity hidden.</p>
+<div class="highlight"><pre><span></span><code>Protocol-issued badges (automatic — earned by on-chain action):
+┌──────────────────┬──────────────────────────────┐
+│  Pioneer         │  Early node — first 10,000   │
+│  Relay Master    │  1TB+ bandwidth contributed  │
+│  Vault Keeper    │  100GB+ storage proven       │
+│  Forge Master    │  50+ original items minted   │
+│  Marketplace     │  100+ sales completed        │
+│  Governance      │  Voted in 10+ proposals      │
+│  Deep Roots      │  Node online 1+ year         │
+│  Lender          │  Credits loaned + repaid     │
+└──────────────────┴──────────────────────────────┘
+
+Peer-voted badges (community endorsement — thumbs up/down):
+┌──────────────────┬──────────────────────────────┐
+│  Trusted Seller  │  Peer-voted thumbs up        │
+│  Top Creator     │  Community endorsed work     │
+│  Helpful Node    │  Peer recognition            │
+│  Flagged         │  Net negative votes — warning│
+└──────────────────┴──────────────────────────────┘
+</code></pre></div>
+<p><strong>Peer Reputation Voting — Anti-Sybil Design:</strong></p>
+<div class="highlight"><pre><span></span><code>User browses Townhall, buys a song, seller delivered perfectly
+     ↓
+Buyer casts thumbs up vote
+     ↓
+Vote recorded on DIVA chain (nexus:reputation namespace, fast quorum)
+     ↓
+Vote weight = voter&#39;s contribution score
+     ↓
+Pioneer node with 99% uptime vote &gt; fresh node with nothing contributed
+     ↓
+Cannot Sybil attack — spinning up 1000 new nodes gives 1000 × zero weight
+</code></pre></div>
+<p><strong>Vote costs:</strong>
+<div class="highlight"><pre><span></span><code>Thumbs up:   small PoW cost (spam prevention, not prohibitive)
+Thumbs down: higher cost (higher bar for negative — prevents brigading)
+</code></pre></div></p>
+<p><strong>Reputation score visible on badge wall:</strong>
+<div class="highlight"><pre><span></span><code>[Trusted Seller ★]  [Forge Master]  [Deep Roots]
+Reputation: 847 positive  /  3 negative
+</code></pre></div></p>
+<p>Nobody knows who the seller is. Everybody can see they are trusted.</p>
+<p>Badges attach to reputation pseudonym. Anyone browsing the Townhall sees your badge wall. Nobody knows who you are. Trust is earned and provable — identity is not required.</p>
+<hr />
+<h3 id="74-swap">7.4 Swap<a class="headerlink" href="#74-swap" title="Permanent link">&para;</a></h3>
+<p>Direct multi-chain atomic swaps via DIVA exchange. I2P native. No custody.</p>
+<div class="highlight"><pre><span></span><code>┌──────────────────────────────────┐
+│  FROM   [NeXuS ▼]  [amount]      │
+│  TO     [XMR   ▼]  [amount]      │
+│                                  │
+│  Rate:  1 NeXuS = 0.00X XMR     │
+│  Fee:   0.3% (network survival)  │
+│                                  │
+│         [ SWAP ]                 │
+└──────────────────────────────────┘
+</code></pre></div>
+<p>Supported pairs: NeXuS ↔ XMR, NeXuS ↔ BTC, XMR ↔ BTC (via DIVA atomic swap protocol).</p>
+<hr />
+<h3 id="75-nft-forge-mint">7.5 NFT Forge (Mint)<a class="headerlink" href="#75-nft-forge-mint" title="Permanent link">&para;</a></h3>
+<p>Where creators bring digital goods into existence on NeXuS chain.</p>
+<div class="highlight"><pre><span></span><code>┌──────────────────────────────────────────────────┐
+│  NFT FORGE                                       │
+│                                                  │
+│  Item name:    [___________________________]     │
+│  Type:         [Music / Art / Software / File]   │
+│  Upload:       [choose file]                     │
+│  Supply cap:   [_____] copies  (immutable)       │
+│                                                  │
+│  Rights tiers to offer:                          │
+│  ☑ Listen/Access    price: [____] NeXuS          │
+│  ☐ Sync rights      price: [____] NeXuS          │
+│  ☐ Remix rights     price: [____] NeXuS          │
+│                                                  │
+│  Secondary royalty:  [5]% (flows to you forever) │
+│  Listing type:  ● Standard (3%)  ○ Boosted (5%)  │
+│                                                  │
+│  Estimated mint cost: [X] NeXuS                  │
+│           [ FORGE ]                              │
+└──────────────────────────────────────────────────┘
+</code></pre></div>
+<p>Once forged — supply cap is immutable. Contract enforces it. Nobody can mint more, including the creator.</p>
+<hr />
+<h3 id="76-finance-stake-and-loan">7.6 Finance — Stake and Loan<a class="headerlink" href="#76-finance-stake-and-loan" title="Permanent link">&para;</a></h3>
+<p>Users who accumulate credits can put them to work. Users who need liquidity can borrow against collateral. Smart contract enforced. No bank. No KYC.</p>
+<div class="highlight"><pre><span></span><code>┌──────────────────────────────────────────────────┐
+│  FINANCE                                         │
+│                                                  │
+│  ┌─────────────┐    ┌─────────────┐              │
+│  │   STAKE     │    │    BORROW   │              │
+│  │             │    │             │              │
+│  │  Lock your  │    │  Post col-  │              │
+│  │  credits    │    │  lateral,   │              │
+│  │  Earn APR   │    │  receive    │              │
+│  │  from pool  │    │  credits    │              │
+│  └─────────────┘    └─────────────┘              │
+│                                                  │
+│  Pool stats:                                     │
+│  Total staked: [X] NeXuS                        │
+│  Current APR:  [X]%  (set by supply/demand)     │
+│  Utilization:  [X]%                             │
+└──────────────────────────────────────────────────┘
+</code></pre></div>
+<p><strong>Stake/Loan mechanics:</strong>
+<div class="highlight"><pre><span></span><code>Lender
+├── Deposits NeXuS credits into lending pool smart contract
+├── Receives pool share token (redeemable for principal + interest)
+├── APR determined by utilization rate (more borrowers = higher rate)
+└── Earns passively — credits work while node works
+
+Borrower
+├── Posts collateral (NeXuS tokens, over-collateralized)
+├── Receives credits up to [collateral × ratio]
+├── Pays interest to pool
+├── ZKP proves sufficient collateral — identity never revealed
+└── Liquidation if collateral falls below threshold
+</code></pre></div></p>
+<p>This creates productive use for accumulated credits, prevents hoarding, and gives nodes liquidity for larger purchases or investments in the Townhall.</p>
+<hr />
+<h3 id="77-command-center-node-resource-management">7.7 Command Center — Node Resource Management<a class="headerlink" href="#77-command-center-node-resource-management" title="Permanent link">&para;</a></h3>
+<p>User controls exactly how much of their device they contribute to NeXuS. Sliders. Real-time feedback on earnings rate change.</p>
+<div class="highlight"><pre><span></span><code>┌──────────────────────────────────────────────────┐
+│  COMMAND CENTER                                  │
+│                                                  │
+│  CPU contribution                                │
+│  [████████░░░░░░░░░░░░] 12%  → earning X/day    │
+│                                                  │
+│  Storage contribution                            │
+│  [███████████░░░░░░░░░] 47GB → earning X/day    │
+│                                                  │
+│  Bandwidth contribution                          │
+│  [██████░░░░░░░░░░░░░░] 8%   → earning X/day    │
+│                                                  │
+│  ─────────────────────────────────────          │
+│  Total earning rate:   [X] NeXuS/day            │
+│  Governance weight:    [X]% of network          │
+│  Node uptime:          [X]%                     │
+│  Minimum required:     5% each (by protocol)    │
+└──────────────────────────────────────────────────┘
+</code></pre></div>
+<p>Governance weight shown here too — contribution % IS voting weight. No surprises. User sees exactly how much say they have.</p>
+<hr />
+<h3 id="78-keys">7.8 Keys<a class="headerlink" href="#78-keys" title="Permanent link">&para;</a></h3>
+<p>Background infrastructure made visible when needed. Not the focus — but accessible.</p>
+<div class="highlight"><pre><span></span><code>Master key (cold — never shown, never touches network)
+     ↓  HD derivation
+├── Creator key      → permanent pseudonym, royalties forever
+├── Reputation key   → Townhall identity, badge holder
+├── Governance key   → voting rights
+├── Session keys     → rotate automatically (user never manages this)
+└── Stealth addresses → generated per transaction by protocol
+                        user never sees these — privacy is automatic
+</code></pre></div>
+<p><strong>Session key rotation is invisible.</strong> Protocol handles it. User has one wallet, one identity per role, privacy managed underneath.</p>
+<hr />
+<h3 id="79-proving-without-revealing">7.9 Proving Without Revealing<a class="headerlink" href="#79-proving-without-revealing" title="Permanent link">&para;</a></h3>
+<p><strong>Zero-Knowledge Proofs (ZKP)</strong> — prove a statement without revealing the data:
+<div class="highlight"><pre><span></span><code>&quot;I am a unique node&quot;              → Sybil resistance, no identity revealed
+&quot;I contributed 500GB of storage&quot;  → earns tokens without linking to node
+&quot;I am the creator of this item&quot;   → ownership without real name
+&quot;I can afford this purchase&quot;      → balance check without showing balance
+</code></pre></div></p>
+<p><strong>Homomorphic Encryption (HE)</strong> — compute on encrypted data without decrypting it:
+<div class="highlight"><pre><span></span><code>Buyer encrypts balance
+Seller encrypts price
+     ↓
+Smart contract: &quot;does buyer have enough?&quot;
+     ↓
+Returns YES or NO
+Neither party saw the other&#39;s numbers
+Contract never saw the numbers
+</code></pre></div></p>
+<p>HE use cases in NeXuS:
+<div class="highlight"><pre><span></span><code>Storage proof:    prove file possession without revealing contents
+Age gate:         prove over 18 without revealing age
+Credit check:     prove affordability without revealing balance
+Royalty split:    compute payout without exposing individual amounts
+Governance vote:  prove contribution weight without revealing node
+</code></pre></div></p>
+<p>HE is a Phase 2 feature (Monero base does not include it — must be built, using DERO's implementation as design reference under Research License Residual Rights).</p>
+<hr />
+<h3 id="710-sybil-resistance-without-identity">7.10 Sybil Resistance Without Identity<a class="headerlink" href="#710-sybil-resistance-without-identity" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Cannot fake CPU cycles contributed
+Cannot fake storage proven by challenge-response
+Cannot buy governance weight
+     ↓
+Voting weight = real contribution
+More contribution = more weight
+No identity required — protocol enforces it
+</code></pre></div>
+<hr />
+<h2 id="8-real-world-asset-tokenization">8. Real-World Asset Tokenization<a class="headerlink" href="#8-real-world-asset-tokenization" title="Permanent link">&para;</a></h2>
+<h3 id="81-digital-goods-clean-no-legal-issues">8.1 Digital Goods (Clean, No Legal Issues)<a class="headerlink" href="#81-digital-goods-clean-no-legal-issues" title="Permanent link">&para;</a></h3>
+<p>Software, art, music, game items, documents — hash recorded on NeXuS chain, owner's key signs, full provenance history immutable.</p>
+<h3 id="82-physical-assets-legal-hoops-foundation-solid">8.2 Physical Assets (Legal Hoops, Foundation Solid)<a class="headerlink" href="#82-physical-assets-legal-hoops-foundation-solid" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Car:
+├── VIN hashed on NeXuS chain
+├── Current owner&#39;s master key signature
+├── Transfer history immutable
+└── Cryptographic proof supports legal claims
+
+House:
+├── Property details + deed hash on chain
+├── Owner signature
+├── Transfer history
+└── Notarization layer (courts increasingly accept cryptographic evidence)
+</code></pre></div>
+<p>NeXuS doesn't replace legal systems — provides cryptographic proof that supports legal claims. Legal recognition gap is closing (Wyoming and others already recognizing blockchain records).</p>
+<h3 id="83-real-world-asset-transfer-with-privacy">8.3 Real-World Asset Transfer with Privacy<a class="headerlink" href="#83-real-world-asset-transfer-with-privacy" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Selling a car:
+Generate one-time transfer wallet
+     ↓
+Buyer sends payment to burn address
+     ↓
+Title transfers on NeXuS chain (signed by seller&#39;s persistent key)
+     ↓
+Payment wallet burns
+     ↓
+Legal record: YES (title transfer on chain)
+Financial trail: GONE (burn wallet dead)
+</code></pre></div>
+<hr />
+<h2 id="9-the-no-intermediary-advantage">9. The No-Intermediary Advantage<a class="headerlink" href="#9-the-no-intermediary-advantage" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>Traditional:                    NeXuS:
+─────────────────────────       ──────────────────────
+Spotify takes 70%               Creator keeps 95-97%
+eBay takes 10-15%               Seller keeps 90-97%
+PayPal can freeze funds         Smart contract cannot be frozen
+Bank can deny service           No bank needed
+Platform can ban you            No platform to ban from
+Geographic restrictions         I2P — no geography
+KYC required                    Master key IS your identity
+AI captures displaced value     Value returns to individuals
+</code></pre></div>
+<hr />
+<h2 id="10-node-distribution-model">10. Node Distribution Model<a class="headerlink" href="#10-node-distribution-model" title="Permanent link">&para;</a></h2>
+<h3 id="101-core-principle-burden-is-the-service">10.1 Core Principle — Burden IS the Service<a class="headerlink" href="#101-core-principle-burden-is-the-service" title="Permanent link">&para;</a></h3>
+<p>No node gets a free ride. No node carries an unfair load. Every burden a node carries for the network is simultaneously the service the network provides back to it.</p>
+<div class="highlight"><pre><span></span><code>Every node contributes:          Every node earns:
+├── Some CPU                     └── Proportional to contribution
+├── Some storage                     No more, no less
+├── Some bandwidth                   Same rate per unit regardless
+└── Some validation                  of node size
+</code></pre></div>
+<h3 id="102-percentage-based-contribution">10.2 Percentage-Based Contribution<a class="headerlink" href="#102-percentage-based-contribution" title="Permanent link">&para;</a></h3>
+<p>Contribution is a <strong>percentage of available resources</strong>, not a fixed amount. Entry wall scales with the device.</p>
+<div class="highlight"><pre><span></span><code>Phone:   5% of 64GB  storage = 3.2GB contributed
+Laptop:  5% of 512GB storage = 25GB contributed
+Server:  5% of 10TB  storage = 500GB contributed
+     ↓
+Same rule. Same percentage. Same rate per GB earned.
+Phone earns less total but earns fairly for what it has.
+Zero exclusion based on hardware capability.
+</code></pre></div>
+<p>Minimum contribution percentage set by governance. Node configures its percentage at setup.</p>
+<h3 id="103-distributed-chain-history-no-archive-class">10.3 Distributed Chain History — No Archive Class<a class="headerlink" href="#103-distributed-chain-history-no-archive-class" title="Permanent link">&para;</a></h3>
+<p>Blockchain history is NOT held by special archive nodes. It is a collective property of the whole network via erasure coding and sharding.</p>
+<div class="highlight"><pre><span></span><code>Block of chain history
+     ↓
+Split into 10 chunks + erasure coded (any 6 of 10 reconstruct)
+     ↓
+Chunks randomly distributed across ALL nodes
+     ↓
+Each node holds their assigned chunks (fraction of total)
+     ↓
+Challenge-response proves possession → earns tokens
+     ↓
+Node goes offline → chunks auto-reassigned to willing nodes
+     ↓
+Network self-heals, history never lost
+</code></pre></div>
+<p><strong>Result:</strong> No premium for being large. No archive node class. No centralization pressure. Data centers have no economic advantage over individuals.</p>
+<p>Each chunk stored by minimum N nodes (default: 5, adjustable by governance) for redundancy.</p>
+<h3 id="104-free-rider-prevention">10.4 Free Rider Prevention<a class="headerlink" href="#104-free-rider-prevention" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Node contributes nothing
+     ↓
+Earns no tokens
+     ↓
+Cannot purchase services
+     ↓
+No benefit to being on network without contributing
+     ↓
+Protocol enforces this — not trust
+</code></pre></div>
+<hr />
+<h2 id="11-bootstrap-system">11. Bootstrap System<a class="headerlink" href="#11-bootstrap-system" title="Permanent link">&para;</a></h2>
+<h3 id="111-design-principle">11.1 Design Principle<a class="headerlink" href="#111-design-principle" title="Permanent link">&para;</a></h3>
+<p>No clearnet exposure. No single bootstrap point. Four independent methods — any one that works gets the node into the mesh. Once inside, bootstrap is no longer needed.</p>
+<h3 id="112-four-bootstrap-methods">11.2 Four Bootstrap Methods<a class="headerlink" href="#112-four-bootstrap-methods" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>┌──────────────────┐ ┌──────────────────┐ ┌──────────────────┐ ┌──────────────────┐
+│   Tor Bridge     │ │   IPFS / IPNS    │ │   BitTorrent     │ │   Reticulum      │
+│                  │ │                  │ │                  │ │                  │
+│ obfs4            │ │ Stable IPNS key  │ │ Mutable torrent  │ │ LoRa/radio/mesh  │
+│ Snowflake(WebRTC)│ │ points to        │ │ BEP46 ed25519    │ │ zero internet    │
+│ WebTunnel(HTTPS) │ │ rotating CID     │ │ stable magnet    │ │ off-grid entry   │
+│ No clearnet      │ │ fresh peer list  │ │ rotating list    │ │ truly dark       │
+└──────────────────┘ └──────────────────┘ └──────────────────┘ └──────────────────┘
+</code></pre></div>
+<p>All four attempted simultaneously on first connection. First success wins.</p>
+<h3 id="113-why-each-method-is-censorship-resistant">11.3 Why Each Method Is Censorship Resistant<a class="headerlink" href="#113-why-each-method-is-censorship-resistant" title="Permanent link">&para;</a></h3>
+<p><strong>Tor Bridge:</strong>
+<div class="highlight"><pre><span></span><code>ISP blocks Tor?       → obfs4 looks like random traffic
+obfs4 blocked?        → Snowflake looks like WebRTC
+Snowflake blocked?    → WebTunnel looks like HTTPS
+</code></pre></div></p>
+<p><strong>IPFS/IPNS:</strong>
+<div class="highlight"><pre><span></span><code>CID gets blocked?     → IPNS name rotates to new CID automatically
+Gateway blocked?      → fetch directly from IPFS peers
+Stable IPNS key       → same address forever, content rotates underneath
+</code></pre></div></p>
+<p><strong>BitTorrent (BEP46 Mutable Torrents):</strong>
+<div class="highlight"><pre><span></span><code>Same ed25519 pubkey   → stable magnet link forever
+Content signed + updated → fresh peer list, same entry point
+Distributed across all torrent peers → impossible to kill
+</code></pre></div></p>
+<p><strong>Reticulum:</strong>
+<div class="highlight"><pre><span></span><code>No internet needed    → LoRa radio bootstrap
+Everything blocked?   → mesh network entry
+True off-grid         → phone + LoRa hat joins with zero internet
+</code></pre></div></p>
+<h3 id="114-rotating-peer-list-stays-fresh">11.4 Rotating Peer List — Stays Fresh<a class="headerlink" href="#114-rotating-peer-list-stays-fresh" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Stable nodes maintain peer list
+     ↓
+Updated every X hours
+     ↓
+IPNS:   same key → new CID automatically
+BEP46:  same pubkey → new signed content pushed
+Tor:    bridge addresses stable (bridges are long-lived)
+Reticulum: announcements propagate continuously
+     ↓
+Bootstrap always returns current active peers
+Never stale, never a single point of failure
+</code></pre></div>
+<h3 id="115-to-block-nexus-bootstrap-you-must-simultaneously">11.5 To Block NeXuS Bootstrap You Must Simultaneously<a class="headerlink" href="#115-to-block-nexus-bootstrap-you-must-simultaneously" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Block all Tor bridges worldwide    (impossible)
+Block IPFS and all gateways        (very hard, IPFS is massive)
+Kill a distributed torrent         (impossible)
+Jam all radio frequencies          (illegal, detectable, temporary)
+</code></pre></div>
+<h3 id="116-bootstrap-mesh-transition">11.6 Bootstrap → Mesh Transition<a class="headerlink" href="#116-bootstrap-mesh-transition" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>New node connects via any bootstrap method
+     ↓
+Gets current peer list
+     ↓
+Establishes I2P identity
+     ↓
+Joins I2P netDB (announces itself)
+     ↓
+DHT query finds more peers
+     ↓
+Gossip protocol maintains peer list going forward
+     ↓
+Bootstrap methods no longer needed — fully in the mesh
+Node is anonymous and discoverable simultaneously
+</code></pre></div>
+<hr />
+<h2 id="12-pending-design-questions">12. Pending Design Questions<a class="headerlink" href="#12-pending-design-questions" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] Fractional rights (10% of sync rights = mini stock market — securities law risk?)</li>
+<li>[ ] ZK proof system selection (zk-SNARKs vs zk-STARKs vs Bulletproofs)</li>
+<li>[ ] Townhall reputation system mechanics</li>
+<li>[ ] Governance council election process</li>
+<li>[ ] Challenge-response storage proof implementation</li>
+<li>[ ] dPoW notary node count and election</li>
+<li>[x] ~~RandomX vs AstroBWT~~ → <strong>AstroBWT confirmed</strong> (keeps mining inside NeXuS, prevents external Monero pool domination)</li>
+<li>[ ] NeXuS token name</li>
+<li>[ ] Minimum contribution percentage (governance sets this)</li>
+<li>[ ] Erasure coding parameters (chunk count, redundancy factor)</li>
+<li>[ ] Bootstrap peer list update frequency</li>
+</ul>
+<hr />
+<h2 id="13-meeting-prep-konrad-diva-march-15th">13. Meeting Prep — Konrad / DIVA (March 15th)<a class="headerlink" href="#13-meeting-prep-konrad-diva-march-15th" title="Permanent link">&para;</a></h2>
+<h3 id="questions-to-bring">Questions to bring:<a class="headerlink" href="#questions-to-bring" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] How is stake acquired — earned through contribution or purchased?</li>
+<li>[ ] What is the round duration in practice?</li>
+<li>[ ] How does WPBFT handle scale beyond ~200 nodes? (O(n²) message complexity)</li>
+<li>[ ] Are any fees planned or currently active on chain transactions?</li>
+<li>[ ] How does NeXuS add trading pairs — permissionless or governance vote?</li>
+<li>[ ] Does DIVA currently support adaptor signature swaps (BTC/XMR)?</li>
+<li>[ ] How does NeXuS deploy its own exchange instance on DIVA chain?</li>
+<li>[ ] What does DIVA need from builders like NeXuS?</li>
+</ul>
+<h3 id="todo-before-the-15th">TODO before the 15th:<a class="headerlink" href="#todo-before-the-15th" title="Permanent link">&para;</a></h3>
+<ul>
+<li>[ ] Read new DIVA docs fully — especially tokenomics/stake model</li>
+<li>[ ] Reconcile architecture doc against actual DIVA capabilities</li>
+<li>[ ] Prepare integration proposal: NeXuS chain + DIVA chain touchpoints</li>
+</ul>
+<hr />
+<h2 id="14-references">14. References<a class="headerlink" href="#14-references" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Monero</strong>: MIT license — confirmed clean base chain for fork</li>
+<li><strong>DERO project</strong>: dero.io — Research License only, no production use. Architecture inspiration for DAG + HE + smart contracts (Section III.B Residual Rights)</li>
+<li><strong>DENERO</strong>: Fork of DERO — carries same Research License, same block</li>
+<li><strong>AstroBWT</strong>: DERO's mining algorithm — implementing in NeXuS to contain mining within ecosystem</li>
+<li><strong>Komodo dPoW</strong>: komodoplatform.com — delayed Proof of Work security model</li>
+<li><strong>DIVA chain</strong>: local repo ~/Projects/nexus-node/divachain/ — coordination + proof layer</li>
+<li><strong>DIVA exchange</strong>: Protocol infrastructure, anyone runs own instance, atomic swaps, I2P native</li>
+<li>blockchain-nexus.pdf: ~/Documents/007/documents/nexus/blockchain-nexus.pdf</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2308 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Sane • Simple • Secure • Stealthy • Beautiful — Together Everyone Achieves More">
+      
+      
+        <meta name="author" content="The NeXuS Collective">
+      
+      
+      
+        <link rel="prev" href="../required-applications/">
+      
+      
+        <link rel="next" href="../node/getting-started/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+    
+    
+      
+        <title>Install Architecture - NeXuS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#nexus-install-architecture" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="NeXuS" class="md-header__button md-logo" aria-label="NeXuS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NeXuS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Install Architecture
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../what-is-nexus/" class="md-tabs__link">
+          
+  
+  
+  What Is NeXuS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../medusa-stealth-routing/" class="md-tabs__link">
+          
+  
+  
+  Network
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../3key-security/" class="md-tabs__link">
+          
+  
+  
+  Security
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../ai-merged-identity/" class="md-tabs__link">
+          
+  
+  
+  AI
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../cli-libs-tui-frameworks/" class="md-tabs__link">
+          
+  
+  
+  Development
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../economy-architecture/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../node/getting-started/" class="md-tabs__link">
+          
+  
+  
+  Node
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../dev/action-report/" class="md-tabs__link">
+          
+  
+  
+  Dev
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="NeXuS" class="md-nav__button md-logo" aria-label="NeXuS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    NeXuS
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Is NeXuS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    What Is NeXuS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../what-is-nexus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oaae-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OAAE Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Network
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../medusa-stealth-routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Medusa Stealth Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zombie-apoc-doc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zombie Apocalypse Mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3key-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Three-Key Security Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-merged-identity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Merged AI Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autonomouse-ai-intelligence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autonomous AI Intelligence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Development
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli-libs-tui-frameworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Libs & TUI Frameworks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../economy-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Economy & Blockchain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../required-applications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Required Applications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install Architecture
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Rule
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#containerized-services-podman-rootless" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Containerized Services (podman — rootless)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#native-installs-host-os-alpine-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Native Installs (host OS — Alpine Linux)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Native Installs (host OS — Alpine Linux)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boot-layer-must-exist-before-anything-else-starts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boot Layer (must exist before anything else starts)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-layer-hardware-or-kernel-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Layer (hardware or kernel integration)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai-layer-performance-requires-direct-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Layer (performance requires direct hardware)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desktop-layer-wayland-direct-displaygpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desktop Layer (Wayland — direct display/GPU)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audio-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audio Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-services-phase-1-not-yet-built" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node Services (Phase 1 — not yet built)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-questions-decisions-still-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions (decisions still needed)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-flow-target-one-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install Flow (target — one script)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-does-not-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Does NOT Install
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#current-state-vs-target" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current State vs Target
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Node
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Node
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../node/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dev
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dev
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev/action-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Action Reports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-rule" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Rule
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#containerized-services-podman-rootless" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Containerized Services (podman — rootless)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#native-installs-host-os-alpine-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Native Installs (host OS — Alpine Linux)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Native Installs (host OS — Alpine Linux)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boot-layer-must-exist-before-anything-else-starts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boot Layer (must exist before anything else starts)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-layer-hardware-or-kernel-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Layer (hardware or kernel integration)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ai-layer-performance-requires-direct-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Layer (performance requires direct hardware)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desktop-layer-wayland-direct-displaygpu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Desktop Layer (Wayland — direct display/GPU)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audio-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audio Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-services-phase-1-not-yet-built" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node Services (Phase 1 — not yet built)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-questions-decisions-still-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Open Questions (decisions still needed)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-flow-target-one-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install Flow (target — one script)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-does-not-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Does NOT Install
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#current-state-vs-target" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current State vs Target
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="nexus-install-architecture">NeXuS Install Architecture<a class="headerlink" href="#nexus-install-architecture" title="Permanent link">&para;</a></h1>
+<p><strong>Status:</strong> Design Draft — living document
+<strong>Date:</strong> 2026-03-09
+<strong>Authors:</strong> Anon + Claude (Sonnet 4.6)</p>
+<hr />
+<h2 id="the-rule">The Rule<a class="headerlink" href="#the-rule" title="Permanent link">&para;</a></h2>
+<p>Two categories. No exceptions without a documented reason.</p>
+<div class="highlight"><pre><span></span><code>CONTAINER  =  anything facing the outside world, exploitable, or complex deps
+              if compromised → stays sandboxed, does not touch the host
+
+NATIVE     =  anything needing direct hardware, running before containers start,
+              or serving as the user&#39;s primary interface
+</code></pre></div>
+<hr />
+<h2 id="containerized-services-podman-rootless">Containerized Services (podman — rootless)<a class="headerlink" href="#containerized-services-podman-rootless" title="Permanent link">&para;</a></h2>
+<p>All containers run rootless via podman. No root daemon. Each container runs as the user. One <code>podman-compose</code> file deploys the entire stack.</p>
+<table>
+<thead>
+<tr>
+<th>Container</th>
+<th>Image</th>
+<th>Ports</th>
+<th>Why Container</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nexus-tor</code></td>
+<td>medusa-proxy (local build)</td>
+<td>1080 (SOCKS), 8888 (HTTP), 2090 (stats)</td>
+<td>External network — if exploited stays sandboxed</td>
+</tr>
+<tr>
+<td><code>nexus-i2p</code></td>
+<td>purplei2p/i2pd</td>
+<td>4444 (HTTP proxy), 4447 (SOCKS), 7070 (console)</td>
+<td>External P2P network, own port namespace</td>
+</tr>
+<tr>
+<td><code>nexus-privoxy</code></td>
+<td>local build</td>
+<td>8118</td>
+<td>Proxy service, external-facing</td>
+</tr>
+<tr>
+<td><code>nexus-haproxy</code></td>
+<td>local build</td>
+<td>1080, 8888</td>
+<td>Load balancer, rotating Tor exits</td>
+</tr>
+<tr>
+<td><code>nexus-dnscrypt</code></td>
+<td>local build</td>
+<td>5354</td>
+<td>DNS over network — isolated resolver</td>
+</tr>
+<tr>
+<td><code>nexus-unbound</code></td>
+<td>mvance/unbound</td>
+<td>5353</td>
+<td>Local DNS — isolated</td>
+</tr>
+<tr>
+<td><code>nexus-diva</code></td>
+<td><em>(Phase 1 — not built)</em></td>
+<td>17468</td>
+<td>DIVA chain API bridge, external comms</td>
+</tr>
+<tr>
+<td><code>nexus-ipfs</code></td>
+<td><em>(Phase 1 — not built)</em></td>
+<td>4001, 5001, 8080</td>
+<td>External P2P, large attack surface</td>
+</tr>
+<tr>
+<td><code>nexus-chaind</code></td>
+<td><em>(Phase 1 — not built)</em></td>
+<td>TBD</td>
+<td>Blockchain P2P node, external network</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Podman compose file:</strong> <code>~/Projects/nexus-network-stack/src/nexus-compose.yaml</code></p>
+<hr />
+<h2 id="native-installs-host-os-alpine-linux">Native Installs (host OS — Alpine Linux)<a class="headerlink" href="#native-installs-host-os-alpine-linux" title="Permanent link">&para;</a></h2>
+<h3 id="boot-layer-must-exist-before-anything-else-starts">Boot Layer (must exist before anything else starts)<a class="headerlink" href="#boot-layer-must-exist-before-anything-else-starts" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Install Method</th>
+<th>Why Native</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nftables</code></td>
+<td>apk</td>
+<td>Kernel firewall — must run before network, before containers</td>
+</tr>
+<tr>
+<td><code>chrony</code></td>
+<td>apk</td>
+<td>Time sync — <strong>critical for crypto operations</strong>, must be accurate</td>
+</tr>
+<tr>
+<td><code>podman</code></td>
+<td>apk</td>
+<td>Container runtime itself — the foundation</td>
+</tr>
+<tr>
+<td><code>podman-compose</code></td>
+<td>apk / pip</td>
+<td>Compose orchestration</td>
+</tr>
+</tbody>
+</table>
+<h3 id="network-layer-hardware-or-kernel-integration">Network Layer (hardware or kernel integration)<a class="headerlink" href="#network-layer-hardware-or-kernel-integration" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Install Method</th>
+<th>Why Native</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>yggdrasil</code></td>
+<td>apk</td>
+<td>Creates a kernel network interface — cannot be fully containerized</td>
+</tr>
+<tr>
+<td><code>reticulum</code> (rnsd)</td>
+<td>pipx (rns)</td>
+<td>Needs serial/USB/radio hardware access for LoRa — must reach hardware</td>
+</tr>
+<tr>
+<td><code>obfs4proxy</code></td>
+<td>apk</td>
+<td>Pluggable transport helper for Tor — host-level bridge</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Note:</strong> Yggdrasil and Reticulum are currently in <code>nexus-compose.yaml</code> as containers.
+These should migrate to native installs. Reticulum especially needs hardware access for LoRa radio bootstrap.</p>
+</blockquote>
+<h3 id="ai-layer-performance-requires-direct-hardware">AI Layer (performance requires direct hardware)<a class="headerlink" href="#ai-layer-performance-requires-direct-hardware" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Install Method</th>
+<th>Why Native</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ollama</code></td>
+<td>apk / install script</td>
+<td>GPU/CPU inference — container overhead hurts performance</td>
+</tr>
+<tr>
+<td><code>aichat</code></td>
+<td>cargo / pipx</td>
+<td>CLI tool, user-facing, needs direct terminal</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ollama models</strong> — pull on first run (not pre-bundled). Recommended baseline:
+<div class="highlight"><pre><span></span><code>ollama pull phi3-mini     # ~2GB — fast, runs on any node
+ollama pull qwen2:1.5b    # ~1GB — ultra-light fallback
+</code></pre></div></p>
+<h3 id="desktop-layer-wayland-direct-displaygpu">Desktop Layer (Wayland — direct display/GPU)<a class="headerlink" href="#desktop-layer-wayland-direct-displaygpu" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Install Method</th>
+<th>Why Native</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>labwc</code></td>
+<td>apk</td>
+<td>Wayland compositor — direct GPU/display hardware</td>
+</tr>
+<tr>
+<td><code>sway</code></td>
+<td>nix / apk</td>
+<td>Wayland tiling WM alternative (i3-compatible)</td>
+</tr>
+<tr>
+<td><code>foot</code></td>
+<td>apk</td>
+<td>Terminal emulator — display hardware</td>
+</tr>
+<tr>
+<td><code>fuzzel</code></td>
+<td>apk</td>
+<td>App launcher</td>
+</tr>
+<tr>
+<td><code>falkon</code></td>
+<td>flatpak</td>
+<td>Privacy browser — Tor-routed</td>
+</tr>
+<tr>
+<td><code>greetd</code> + <code>tuigreet</code></td>
+<td>apk</td>
+<td>Login manager</td>
+</tr>
+</tbody>
+</table>
+<h3 id="audio-layer">Audio Layer<a class="headerlink" href="#audio-layer" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Install Method</th>
+<th>Why Native</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pipewire</code></td>
+<td>apk</td>
+<td>Audio server — direct ALSA hardware</td>
+</tr>
+<tr>
+<td><code>wireplumber</code></td>
+<td>apk</td>
+<td>PipeWire session manager</td>
+</tr>
+<tr>
+<td><code>pipewire-pulse</code></td>
+<td>apk</td>
+<td>PulseAudio compatibility layer</td>
+</tr>
+<tr>
+<td><code>mpv</code></td>
+<td>apk</td>
+<td>Media player — direct audio/video hardware</td>
+</tr>
+<tr>
+<td><code>musikcube</code></td>
+<td>apk</td>
+<td>Terminal music player — direct audio</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cli-tools">CLI Tools<a class="headerlink" href="#cli-tools" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Install Method</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tmux</code></td>
+<td>apk</td>
+<td>Terminal multiplexer</td>
+</tr>
+<tr>
+<td><code>fzf</code></td>
+<td>apk</td>
+<td>Fuzzy finder — used in all NeXuS scripts</td>
+</tr>
+<tr>
+<td><code>bat</code></td>
+<td>apk</td>
+<td>Syntax-highlighted cat replacement</td>
+</tr>
+<tr>
+<td><code>ripgrep</code></td>
+<td>apk</td>
+<td>Fast search (rg)</td>
+</tr>
+<tr>
+<td><code>fd</code></td>
+<td>apk</td>
+<td>Fast find replacement</td>
+</tr>
+<tr>
+<td><code>htop</code></td>
+<td>apk</td>
+<td>System monitor</td>
+</tr>
+<tr>
+<td><code>neovim</code></td>
+<td>apk</td>
+<td>Text editor</td>
+</tr>
+<tr>
+<td><code>git</code></td>
+<td>apk</td>
+<td>Version control</td>
+</tr>
+<tr>
+<td><code>pv</code></td>
+<td>apk</td>
+<td>Pipe viewer — progress on transfers and backups</td>
+</tr>
+<tr>
+<td><code>lynx</code></td>
+<td>apk</td>
+<td>Text browser — Townhall, no-JS clearnet access</td>
+</tr>
+<tr>
+<td><code>nix-shell</code></td>
+<td>nix installer</td>
+<td>Reproducible dev environments</td>
+</tr>
+</tbody>
+</table>
+<h3 id="node-services-phase-1-not-yet-built">Node Services (Phase 1 — not yet built)<a class="headerlink" href="#node-services-phase-1-not-yet-built" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Install Method</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>nexus-wallet</code></td>
+<td>NeXuS installer</td>
+<td>Command Center UI — primary interface</td>
+</tr>
+<tr>
+<td><code>nexus-node-monitor</code></td>
+<td>NeXuS installer</td>
+<td>Reads CPU/storage/bandwidth — needs direct hardware metrics</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="open-questions-decisions-still-needed">Open Questions (decisions still needed)<a class="headerlink" href="#open-questions-decisions-still-needed" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Options</th>
+<th>Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Yggdrasil native vs container</td>
+<td>Native (network interface) vs container (current)</td>
+<td>Security vs convenience</td>
+</tr>
+<tr>
+<td>Reticulum native vs container</td>
+<td>Native (needs LoRa hardware) vs container (current)</td>
+<td>Hardware access</td>
+</tr>
+<tr>
+<td>batman-adv (mesh kernel module)</td>
+<td>Native kernel module only</td>
+<td>Confirm needed?</td>
+</tr>
+<tr>
+<td>Ollama model pre-bundle</td>
+<td>Bundle phi3-mini in image vs pull on first run</td>
+<td>Image size vs UX</td>
+</tr>
+<tr>
+<td><code>3wm</code> — clarify</td>
+<td>i3wm (X11) or sway (Wayland)</td>
+<td>sway recommended for Wayland-first</td>
+</tr>
+<tr>
+<td>podman-compose vs quadlet</td>
+<td>podman-compose (Docker-compatible) vs systemd quadlet (modern)</td>
+<td>Complexity vs integration</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="install-flow-target-one-script">Install Flow (target — one script)<a class="headerlink" href="#install-flow-target-one-script" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>nexus-install.sh
+│
+├── 1. Detect OS (Alpine / Debian / Arch / Fedora)
+│
+├── 2. Install boot layer
+│   ├── nftables (firewall up first — nothing gets in yet)
+│   └── chrony (time sync — required for crypto)
+│
+├── 3. Install podman + podman-compose
+│
+├── 4. Install native network layer
+│   ├── yggdrasil
+│   └── reticulum (rnsd via pipx)
+│
+├── 5. Pull and start containers
+│   └── podman-compose up -d  (tor, i2p, privoxy, haproxy, dns)
+│
+├── 6. Install AI layer
+│   ├── ollama
+│   ├── aichat
+│   └── ollama pull phi3-mini
+│
+├── 7. Install desktop (optional — user chooses CLI-only or GUI)
+│   ├── labwc + foot + fuzzel + greetd
+│   └── pipewire + wireplumber + mpv + musikcube
+│
+├── 8. Install CLI toolkit
+│   └── tmux fzf bat ripgrep fd htop neovim git pv lynx
+│
+└── 9. Configure and verify
+    ├── nftables rules (all traffic → containers)
+    ├── boot services (openrc / systemd)
+    └── nexus-doctor.sh (health check)
+</code></pre></div>
+<hr />
+<h2 id="what-does-not-install">What Does NOT Install<a class="headerlink" href="#what-does-not-install" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>No telemetry of any kind
+No auto-update without explicit user consent
+No clearnet DNS (dnscrypt from boot)
+No open ports except explicitly listed above
+No root-running daemons (podman rootless)
+No KYC, accounts, or registration
+No cloud dependencies
+No pre-installed wallet keys (user generates on first run)
+</code></pre></div>
+<hr />
+<h2 id="current-state-vs-target">Current State vs Target<a class="headerlink" href="#current-state-vs-target" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Current State</th>
+<th>Target</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tor + I2P + Privoxy + HAProxy</td>
+<td>In compose, working</td>
+<td>Move to podman-compose, rootless</td>
+</tr>
+<tr>
+<td>Yggdrasil</td>
+<td>In compose</td>
+<td>Move to native</td>
+</tr>
+<tr>
+<td>Reticulum</td>
+<td>In compose</td>
+<td>Move to native (hardware access)</td>
+</tr>
+<tr>
+<td>DNS (dnscrypt + unbound)</td>
+<td>In compose</td>
+<td>Stay containerized</td>
+</tr>
+<tr>
+<td>nftables firewall</td>
+<td>Scripts exist</td>
+<td>Integrate into install flow</td>
+</tr>
+<tr>
+<td>Ollama</td>
+<td>Native, installed</td>
+<td>Add to install script</td>
+</tr>
+<tr>
+<td>aichat</td>
+<td>Native (cargo)</td>
+<td>Add to install script</td>
+</tr>
+<tr>
+<td>Desktop (labwc)</td>
+<td>Working</td>
+<td>Add to install script as optional</td>
+</tr>
+<tr>
+<td>PipeWire audio</td>
+<td>Working</td>
+<td>Add to install script</td>
+</tr>
+<tr>
+<td>CLI toolkit</td>
+<td>Mostly installed</td>
+<td>Standardize in install script</td>
+</tr>
+<tr>
+<td>nexus-chaind</td>
+<td>Not built</td>
+<td>Phase 1</td>
+</tr>
+<tr>
+<td>nexus-wallet</td>
+<td>Not built</td>
+<td>Phase 1</td>
+</tr>
+<tr>
+<td>IPFS</td>
+<td>Not integrated</td>
+<td>Phase 1</td>
+</tr>
+<tr>
+<td>DIVA connector</td>
+<td>Not built</td>
+<td>Phase 1</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Required Applications: <code>NEXUS_REQUIRED_APPLICATIONS.md</code></li>
+<li>Economy and blockchain: <code>NEXUS_ECONOMY_ARCHITECTURE.md</code></li>
+<li>Current compose file: <code>~/Projects/nexus-network-stack/src/nexus-compose.yaml</code></li>
+<li>Current install script: <code>~/Projects/nexus-network-stack/src/nexus-install.sh</code></li>
+<li>Docs site: <code>~/Documents/nexus-docs/</code></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
