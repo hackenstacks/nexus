@@ -4,7 +4,7 @@ hide:
   - toc
 ---
 
-# :dragon: NeXuS
+# :dragon: NeXuS <small>beta-v1</small>
 
 <div class="hero-tagline" markdown>
 

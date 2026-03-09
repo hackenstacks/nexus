@@ -29,6 +29,9 @@ theme:
     - content.code.annotate
 
 extra:
+  version:
+    provider: mike
+  nexus_version: beta-v1
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/hackenstacks/nexus
