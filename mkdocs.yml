@@ -1,6 +1,9 @@
 site_name: NeXuS
 site_description: Sane • Simple • Secure • Stealthy • Beautiful — Together Everyone Achieves More
 site_author: The NeXuS Collective
+site_url: https://hackenstacks.github.io/nexus/
+repo_url: https://github.com/hackenstacks/nexus
+repo_name: hackenstacks/nexus
 docs_dir: docs
 
 theme:
@@ -9,12 +12,27 @@ theme:
     scheme: slate
     primary: teal
     accent: cyan
+  font:
+    text: Roboto
+    code: Roboto Mono
+  icon:
+    repo: fontawesome/brands/github
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
     - navigation.top
+    - navigation.instant
     - search.highlight
+    - search.share
     - content.code.copy
+    - content.code.annotate
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/hackenstacks/nexus
+      name: NeXuS on GitHub
 
 nav:
   - Home: index.md
@@ -46,8 +64,17 @@ nav:
 
 markdown_extensions:
   - admonition
-  - pymdownx.highlight
+  - attr_list
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
   - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - tables
   - toc:
       permalink: true
