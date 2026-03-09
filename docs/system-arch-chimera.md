@@ -1,4 +1,4 @@
-System Architecture Blueprint: Project Chimera
+# System Architecture Blueprint — Project Chimera
 1. Strategic Paradigm: The Sane, Simple, Secure, Beautiful Philosophy
 Project Chimera is the strategic response to the impending "Hydra" of unmanaged AI complexity. As decentralized AI systems scale, the risk of fragmented protocols and misaligned character state increases exponentially. Project Chimera provides a unified framework where the merger of character creation and execution is governed by a single north star: the NEXUS_PARTY_MANIFESTO.md. This philosophy ensures that the system remains a "hell of a party" for developers and users alike, rather than a descent into technical debt.
 The architectural resilience of Project Chimera is built upon four non-negotiable pillars:

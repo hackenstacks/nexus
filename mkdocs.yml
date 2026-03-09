@@ -30,6 +30,9 @@ nav:
   - AI:
     - Merged AI Identity: ai-merged-identity.md
     - Autonomous AI Intelligence: autonomouse-ai-intelligence.md
+    - DPFOE Framework: dpfoe-ai-intelligence.md
+    - The Event Horizon: event-horizon.md
+    - Project Chimera Architecture: system-arch-chimera.md
   - Development:
     - CLI Libs & TUI Frameworks: cli-libs-tui-frameworks.md
   - Architecture:
