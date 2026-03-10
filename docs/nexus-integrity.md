@@ -114,7 +114,7 @@ Every technical system eventually hits a human limit. Power goes out. Hardware f
 
 The NeXuS answer is not more technology — it is **less dependency.**
 
-- A password system that runs on wetware (see: [Human KDF](human-kdf.md))
+- A password system that runs on wetware (see: [Cerberus Password Protocol](cerberus-protocol.md))
 - A blockchain that settles on paper if needed (XMR cold wallet)
 - A network that degrades gracefully to radio if the internet dies
 - Documentation that a person can read by candlelight and follow
