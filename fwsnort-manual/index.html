@@ -2987,7 +2987,7 @@ This is invalid syntax on <code>iptables v1.8.11 (nf_tables)</code> — the nfta
 <p>Only <strong>8 rules</strong> out of 29,672 have this syntax. They come from Snort rules with complex port negations that fwsnort cannot correctly translate.</p>
 <h3 id="fix">Fix<a class="headerlink" href="#fix" title="Permanent link">&para;</a></h3>
 <p>Strip the 8 bad lines before loading. The affected signatures are removed (they can't be correctly translated anyway) and the remaining 29,664 rules load cleanly.</p>
-<p><strong><a href="../nexus-fix-fwsnort-nftables.sh">nexus-fix-fwsnort-nftables.sh</a></strong> — strips bad lines, applies rules, signals PSAD.</p>
+<p><strong><a href="https://github.com/hackenstacks/nexus/blob/main/scripts/nexus-fix-fwsnort-nftables.sh">nexus-fix-fwsnort-nftables.sh</a></strong> — strips bad lines, applies rules, signals PSAD.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>doas<span class="w"> </span>sh<span class="w"> </span>~/scripts/nexus-fix-fwsnort-nftables.sh
 </code></pre></div>
 <hr />
@@ -3042,12 +3042,12 @@ This: updates Snort rules from upstream → regenerates iptables rules → fixes
 <hr />
 <h2 id="scripts">Scripts<a class="headerlink" href="#scripts" title="Permanent link">&para;</a></h2>
 <h3 id="nexus-fix-fwsnort-nftablessh">nexus-fix-fwsnort-nftables.sh<a class="headerlink" href="#nexus-fix-fwsnort-nftablessh" title="Permanent link">&para;</a></h3>
-<p><strong><a href="../nexus-fix-fwsnort-nftables.sh">nexus-fix-fwsnort-nftables.sh</a></strong></p>
+<p><strong><a href="https://github.com/hackenstacks/nexus/blob/main/scripts/nexus-fix-fwsnort-nftables.sh">nexus-fix-fwsnort-nftables.sh</a></strong></p>
 <p>Strips the 8 iptables-nft incompatible lines from <code>fwsnort_iptcmds.sh</code> and applies all remaining rules. Run after every reboot or fwsnort regeneration.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>doas<span class="w"> </span>sh<span class="w"> </span>~/scripts/nexus-fix-fwsnort-nftables.sh
 </code></pre></div>
 <h3 id="nexus-update-fwsnortsh">nexus-update-fwsnort.sh<a class="headerlink" href="#nexus-update-fwsnortsh" title="Permanent link">&para;</a></h3>
-<p><strong><a href="../nexus-update-fwsnort.sh">nexus-update-fwsnort.sh</a></strong></p>
+<p><strong><a href="https://github.com/hackenstacks/nexus/blob/main/scripts/nexus-update-fwsnort.sh">nexus-update-fwsnort.sh</a></strong></p>
 <p>Full update: upstream rules → regenerate → fix → apply → reload PSAD. Replace <code>/usr/bin/update-fwsnort</code> with this.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>doas<span class="w"> </span>sh<span class="w"> </span>~/scripts/nexus-update-fwsnort.sh
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="c1"># Or install permanently:</span>
