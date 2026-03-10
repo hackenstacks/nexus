@@ -52,7 +52,7 @@ nav:
     - PSAD Manual: psad-manual.md
     - fwsnort Manual: fwsnort-manual.md
     - NeXuS Integrity — Prepared Is Not Paranoid: nexus-integrity.md
-    - Human KDF — Password Without a Manager: human-kdf.md
+    - Cerberus Password Protocol: cerberus-protocol.md
   - AI:
     - Merged AI Identity: ai-merged-identity.md
     - Autonomous AI Intelligence: autonomouse-ai-intelligence.md

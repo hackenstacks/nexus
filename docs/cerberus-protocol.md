@@ -1,4 +1,4 @@
-# The NeXuS Riddler Equation
+# Cerberus Password Protocol
 
 **A Human-Computable Key Derivation Function**
 **Status:** Core security protocol
@@ -7,14 +7,30 @@
 
 ---
 
-> *"What has no lock, needs no key, yet keeps every door unique?"*
-> **The Riddler Equation.**
+> *"Three heads guard the gate. Defeat all three and the door opens. Miss one — locked forever."*
+
+---
+
+## The Three Heads
+
+Cerberus guards the gate of the underworld with three heads. To pass, you must defeat all three simultaneously. Miss one — the gate stays shut.
+
+```
+HEAD 1 — y + x     Site identity (public, but first line of defense)
+HEAD 2 — z         Your base string (the knowledge head)
+HEAD 3 — m         Your multiplier (the salt head)
+
+Defeat all three → gate opens → password revealed
+Miss any one     → locked forever
+```
+
+An attacker must defeat all three heads at once. Knowing the formula structure is head 1. Knowing your phrase is head 2. Knowing your multiplier is head 3. All three simultaneously — or nothing.
 
 ---
 
 ## What Is It?
 
-The NeXuS Riddler Equation is a **password derivation algorithm you run in your head.**
+Cerberus Password Protocol is a **password derivation algorithm you run in your head.**
 
 No software. No manager. No cloud. No battery. No trust required.
 
@@ -36,7 +52,7 @@ Password managers solve this but introduce new problems:
 - Requires a working device and power to access credentials
 - Cloud sync that can be intercepted
 
-**The Riddler Equation has none of these dependencies.**
+**The Cerberus Password Protocol has none of these dependencies.**
 
 It lives in your head. It works by candlelight. It works when the grid is down, your phone is dead, and you are sitting at a library computer in a foreign country.
 
@@ -279,7 +295,7 @@ They can see a pattern. They might deduce the letter count component. They might
 Without both, they cannot reproduce any other password. Two secrets guard the entire system.
 
 ### Against targeted attacks — the salt
-The multiplier `m` is what makes YOUR formula yours. Even if an attacker knows someone uses the Riddler Equation, your specific `m` makes your implementation unique. The salt is derived — you never memorize site-specific values — but it is always different per letter count.
+The multiplier `m` is what makes YOUR formula yours. Even if an attacker knows someone uses the Cerberus Password Protocol, your specific `m` makes your implementation unique. The salt is derived — you never memorize site-specific values — but it is always different per letter count.
 
 ---
 
@@ -379,7 +395,7 @@ Print this. Keep it in your wallet. It contains nothing secret. It is useless to
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│             NeXuS Riddler Equation — Field Card             │
+│             NeXuS Cerberus Password Protocol — Field Card             │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
 │  1. Count letters in site name          →  x               │
@@ -418,6 +434,6 @@ The security properties:
 - **Secret function** — algorithm secrecy provides the final layer
 - **Zero dependency** — no hardware, software, network, or company required
 
-**That is the Riddler Equation. The answer to the riddle is always in your head.**
+**That is the Cerberus Password Protocol. The answer to the riddle is always in your head.**
 
 > *"Prepared is not paranoid. Sovereign is not paranoid. A key that lives in your mind cannot be confiscated, cannot be subpoenaed, cannot be breached, and cannot be shut down."*
