@@ -53,6 +53,8 @@ nav:
     - fwsnort Manual: fwsnort-manual.md
     - NeXuS Integrity — Prepared Is Not Paranoid: nexus-integrity.md
     - Cerberus Password Protocol: cerberus-protocol.md
+  - RIN:
+    - Real Intelligence Network: rin.md
   - AI:
     - Merged AI Identity: ai-merged-identity.md
     - Autonomous AI Intelligence: autonomouse-ai-intelligence.md
