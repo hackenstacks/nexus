@@ -12,7 +12,7 @@
         <meta name="author" content="The NeXuS Collective">
       
       
-        <link rel="canonical" href="https://hackenstacks.github.io/nexus/human-kdf/">
+        <link rel="canonical" href="https://hackenstacks.github.io/nexus/cerberus-protocol/">
       
       
         <link rel="prev" href="../nexus-integrity/">
@@ -29,7 +29,7 @@
     
     
       
-        <title>Human KDF — Password Without a Manager - NeXuS</title>
+        <title>Cerberus Password Protocol - NeXuS</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#the-nexus-riddler-equation" class="md-skip">
+        <a href="#cerberus-password-protocol" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Human KDF — Password Without a Manager
+              Cerberus Password Protocol
             
           </span>
         </div>
@@ -1003,7 +1003,7 @@
   <span class="md-ellipsis">
     
   
-    Human KDF — Password Without a Manager
+    Cerberus Password Protocol
   
 
     
@@ -1021,7 +1021,7 @@
   <span class="md-ellipsis">
     
   
-    Human KDF — Password Without a Manager
+    Cerberus Password Protocol
   
 
     
@@ -1045,6 +1045,17 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-three-heads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Three Heads
+      
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#what-is-it" class="md-nav__link">
@@ -2635,6 +2646,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#the-three-heads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Three Heads
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#what-is-it" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3020,19 +3042,29 @@
   
 
 
-<h1 id="the-nexus-riddler-equation">The NeXuS Riddler Equation<a class="headerlink" href="#the-nexus-riddler-equation" title="Permanent link">&para;</a></h1>
+<h1 id="cerberus-password-protocol">Cerberus Password Protocol<a class="headerlink" href="#cerberus-password-protocol" title="Permanent link">&para;</a></h1>
 <p><strong>A Human-Computable Key Derivation Function</strong>
 <strong>Status:</strong> Core security protocol
 <strong>Date:</strong> 2026-03-10
 <strong>Authors:</strong> Anon + Claude (Sonnet 4.6)</p>
 <hr />
 <blockquote>
-<p><em>"What has no lock, needs no key, yet keeps every door unique?"</em>
-<strong>The Riddler Equation.</strong></p>
+<p><em>"Three heads guard the gate. Defeat all three and the door opens. Miss one — locked forever."</em></p>
 </blockquote>
 <hr />
+<h2 id="the-three-heads">The Three Heads<a class="headerlink" href="#the-three-heads" title="Permanent link">&para;</a></h2>
+<p>Cerberus guards the gate of the underworld with three heads. To pass, you must defeat all three simultaneously. Miss one — the gate stays shut.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>HEAD 1 — y + x     Site identity (public, but first line of defense)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>HEAD 2 — z         Your base string (the knowledge head)
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>HEAD 3 — m         Your multiplier (the salt head)
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Defeat all three → gate opens → password revealed
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Miss any one     → locked forever
+</code></pre></div>
+<p>An attacker must defeat all three heads at once. Knowing the formula structure is head 1. Knowing your phrase is head 2. Knowing your multiplier is head 3. All three simultaneously — or nothing.</p>
+<hr />
 <h2 id="what-is-it">What Is It?<a class="headerlink" href="#what-is-it" title="Permanent link">&para;</a></h2>
-<p>The NeXuS Riddler Equation is a <strong>password derivation algorithm you run in your head.</strong></p>
+<p>Cerberus Password Protocol is a <strong>password derivation algorithm you run in your head.</strong></p>
 <p>No software. No manager. No cloud. No battery. No trust required.</p>
 <p>It takes a website name — public information — and transforms it through a formula only you know into a strong, unique password. Same site, same formula, same password. Every time. Forever.</p>
 <p>It is the human-computable equivalent of PBKDF2 or Argon2 — the same mathematical concept that protects cryptographic keys — implemented with nothing but your mind and optionally a pencil.</p>
@@ -3047,7 +3079,7 @@
 <li>Requires a working device and power to access credentials</li>
 <li>Cloud sync that can be intercepted</li>
 </ul>
-<p><strong>The Riddler Equation has none of these dependencies.</strong></p>
+<p><strong>The Cerberus Password Protocol has none of these dependencies.</strong></p>
 <p>It lives in your head. It works by candlelight. It works when the grid is down, your phone is dead, and you are sitting at a library computer in a foreign country.</p>
 <hr />
 <h2 id="the-components">The Components<a class="headerlink" href="#the-components" title="Permanent link">&para;</a></h2>
@@ -3104,60 +3136,60 @@
 </table>
 <hr />
 <h2 id="the-formula">The Formula<a class="headerlink" href="#the-formula" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Derived salt (s) = x × m
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Password = y + x + z + &quot;-&quot; + s + &quot;X&quot;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Derived salt (s) = x × m
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Password = y + x + z + &quot;-&quot; + s + &quot;X&quot;
 </code></pre></div>
 <p>That is the entire equation. Four inputs, one output. Deterministic. Reproducible. Unique per site.</p>
 <hr />
 <h2 id="step-by-step-walkthrough">Step-By-Step Walkthrough<a class="headerlink" href="#step-by-step-walkthrough" title="Permanent link">&para;</a></h2>
 <p>Let us use these secrets for all examples:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>z = mydog!ishairy
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>m = 23.5
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>z = mydog!ishairy
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>m = 23.5
 </code></pre></div>
 <p><strong>These are example secrets. Choose your own. Never share them.</strong></p>
 <hr />
 <h3 id="example-1-github">Example 1 — github<a class="headerlink" href="#example-1-github" title="Permanent link">&para;</a></h3>
 <p><strong>Step 1: Count the letters</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>g - i - t - h - u - b
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>1   2   3   4   5   6
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>x = 6
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>g - i - t - h - u - b
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>1   2   3   4   5   6
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>x = 6
 </code></pre></div></p>
 <p><strong>Step 2: Take the first letter, capitalize it</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>github → G
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>y = G
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>github → G
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>y = G
 </code></pre></div></p>
 <p><strong>Step 3: Derive the salt</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>s = x × m
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>s = 6 × 23.5
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>s = 141
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>s = x × m
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>s = 6 × 23.5
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>s = 141
 </code></pre></div></p>
 <p><strong>Step 4: Assemble the password</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>y  +  x  +  z              +  &quot;-&quot;  +  s    +  &quot;X&quot;
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>G  +  6  +  mydog!ishairy  +  &quot;-&quot;  +  141  +  &quot;X&quot;
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>Password: G6mydog!ishairy-141X
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>y  +  x  +  z              +  &quot;-&quot;  +  s    +  &quot;X&quot;
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>G  +  6  +  mydog!ishairy  +  &quot;-&quot;  +  141  +  &quot;X&quot;
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>Password: G6mydog!ishairy-141X
 </code></pre></div></p>
 <hr />
 <h3 id="example-2-amazon">Example 2 — amazon<a class="headerlink" href="#example-2-amazon" title="Permanent link">&para;</a></h3>
 <p><strong>Step 1: Count the letters</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>a - m - a - z - o - n
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>1   2   3   4   5   6
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>x = 6
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>a - m - a - z - o - n
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>1   2   3   4   5   6
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>x = 6
 </code></pre></div></p>
 <p><strong>Step 2: First letter capitalized</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>amazon → A
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>y = A
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>amazon → A
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>y = A
 </code></pre></div></p>
 <p><strong>Step 3: Derive the salt</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>s = 6 × 23.5 = 141
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>s = 6 × 23.5 = 141
 </code></pre></div></p>
 <p><strong>Step 4: Assemble</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>A6mydog!ishairy-141X
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>A6mydog!ishairy-141X
 </code></pre></div></p>
 <div class="admonition note">
 <p class="admonition-title">Same letter count, different password</p>
@@ -3166,59 +3198,59 @@
 <hr />
 <h3 id="example-3-netflix">Example 3 — netflix<a class="headerlink" href="#example-3-netflix" title="Permanent link">&para;</a></h3>
 <p><strong>Step 1: Count the letters</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>n - e - t - f - l - i - x
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>1   2   3   4   5   6   7
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>x = 7
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>n - e - t - f - l - i - x
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>1   2   3   4   5   6   7
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>x = 7
 </code></pre></div></p>
 <p><strong>Step 2: First letter capitalized</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>netflix → N
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>y = N
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>netflix → N
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>y = N
 </code></pre></div></p>
 <p><strong>Step 3: Derive the salt</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>s = 7 × 23.5 = 164.5
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>s = 7 × 23.5 = 164.5
 </code></pre></div></p>
 <p><strong>Step 4: Assemble</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>N7mydog!ishairy-164.5X
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>N7mydog!ishairy-164.5X
 </code></pre></div></p>
 <hr />
 <h3 id="example-4-facebook">Example 4 — facebook<a class="headerlink" href="#example-4-facebook" title="Permanent link">&para;</a></h3>
 <p><strong>Step 1: Count the letters</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>f - a - c - e - b - o - o - k
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>1   2   3   4   5   6   7   8
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>x = 8
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>f - a - c - e - b - o - o - k
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>1   2   3   4   5   6   7   8
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>x = 8
 </code></pre></div></p>
 <p><strong>Step 2: First letter capitalized</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>facebook → F
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>y = F
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>facebook → F
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>y = F
 </code></pre></div></p>
 <p><strong>Step 3: Derive the salt</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>s = 8 × 23.5 = 188
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>s = 8 × 23.5 = 188
 </code></pre></div></p>
 <p><strong>Step 4: Assemble</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>F8mydog!ishairy-188X
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>F8mydog!ishairy-188X
 </code></pre></div></p>
 <hr />
 <h3 id="example-5-protonmail">Example 5 — protonmail<a class="headerlink" href="#example-5-protonmail" title="Permanent link">&para;</a></h3>
 <p><strong>Step 1: Count the letters</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>p - r - o - t - o - n - m - a - i - l
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>1   2   3   4   5   6   7   8   9  10
-<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
-<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>x = 10
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>p - r - o - t - o - n - m - a - i - l
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>1   2   3   4   5   6   7   8   9  10
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>x = 10
 </code></pre></div></p>
 <p><strong>Step 2: First letter capitalized</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>protonmail → P
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>y = P
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>protonmail → P
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>y = P
 </code></pre></div></p>
 <p><strong>Step 3: Derive the salt</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>s = 10 × 23.5 = 235
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>s = 10 × 23.5 = 235
 </code></pre></div></p>
 <p><strong>Step 4: Assemble</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>P10mydog!ishairy-235X
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>P10mydog!ishairy-235X
 </code></pre></div></p>
 <hr />
 <h2 id="all-examples-side-by-side">All Examples Side By Side<a class="headerlink" href="#all-examples-side-by-side" title="Permanent link">&para;</a></h2>
@@ -3312,8 +3344,8 @@
 <p>Credential stuffing is when attackers take a breached username/password list and try it everywhere. Unique passwords per site defeats this completely. If your Netflix password leaks, your Amazon password is unaffected.</p>
 <h3 id="against-reverse-engineering">Against reverse engineering<a class="headerlink" href="#against-reverse-engineering" title="Permanent link">&para;</a></h3>
 <p>Say an attacker gets two of your passwords:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>G6mydog!ishairy-141X   (github)
-<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>A6mydog!ishairy-141X   (amazon)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>G6mydog!ishairy-141X   (github)
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>A6mydog!ishairy-141X   (amazon)
 </code></pre></div></p>
 <p>They can see a pattern. They might deduce the letter count component. They might guess the formula structure. But they still need:</p>
 <ul>
@@ -3322,7 +3354,7 @@
 </ul>
 <p>Without both, they cannot reproduce any other password. Two secrets guard the entire system.</p>
 <h3 id="against-targeted-attacks-the-salt">Against targeted attacks — the salt<a class="headerlink" href="#against-targeted-attacks-the-salt" title="Permanent link">&para;</a></h3>
-<p>The multiplier <code>m</code> is what makes YOUR formula yours. Even if an attacker knows someone uses the Riddler Equation, your specific <code>m</code> makes your implementation unique. The salt is derived — you never memorize site-specific values — but it is always different per letter count.</p>
+<p>The multiplier <code>m</code> is what makes YOUR formula yours. Even if an attacker knows someone uses the Cerberus Password Protocol, your specific <code>m</code> makes your implementation unique. The salt is derived — you never memorize site-specific values — but it is always different per letter count.</p>
 <hr />
 <h2 id="choosing-your-secrets">Choosing Your Secrets<a class="headerlink" href="#choosing-your-secrets" title="Permanent link">&para;</a></h2>
 <h3 id="choosing-z-your-base-string">Choosing <code>z</code> — your base string<a class="headerlink" href="#choosing-z-your-base-string" title="Permanent link">&para;</a></h3>
@@ -3355,11 +3387,11 @@
 <p><strong>The honest answer:</strong> NIST (the US cryptographic standards body) reversed its mandatory rotation recommendation. Frequent rotation of strong unique passwords does not improve security — it usually degrades it as people choose weaker passwords to cope.</p>
 <p><strong>NeXuS recommendation: do not rotate unless a breach is confirmed.</strong></p>
 <h3 id="if-you-must-rotate-change-only-z">If you must rotate — change only <code>z</code><a class="headerlink" href="#if-you-must-rotate-change-only-z" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>Version 1:  z = mydog!ishairy
-<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>github →    G6mydog!ishairy-141X
-<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>
-<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>Version 2:  z = mycatissleepy!
-<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>github →    G6mycatissleepy!-141X
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>Version 1:  z = mydog!ishairy
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>github →    G6mydog!ishairy-141X
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>Version 2:  z = mycatissleepy!
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>github →    G6mycatissleepy!-141X
 </code></pre></div>
 <p>One thing changes. One thing to remember. The multiplier, the structure, the letter-count logic — all stay the same. Only the phrase rotates.</p>
 <h3 id="the-rotation-problem-and-the-fix">The rotation problem — and the fix<a class="headerlink" href="#the-rotation-problem-and-the-fix" title="Permanent link">&para;</a></h3>
@@ -3369,14 +3401,14 @@
 <h2 id="edge-cases">Edge Cases<a class="headerlink" href="#edge-cases" title="Permanent link">&para;</a></h2>
 <h3 id="site-uses-a-subdomain-or-full-domain">Site uses a subdomain or full domain<a class="headerlink" href="#site-uses-a-subdomain-or-full-domain" title="Permanent link">&para;</a></h3>
 <p>Only use the core name. Strip everything else:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>mail.google.com   →   google   →   x = 6
-<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>app.netflix.com   →   netflix  →   x = 7
-<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>github.io         →   github   →   x = 6
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>mail.google.com   →   google   →   x = 6
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>app.netflix.com   →   netflix  →   x = 7
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>github.io         →   github   →   x = 6
 </code></pre></div>
 <h3 id="site-rebrands-twitter-x">Site rebrands (twitter → x)<a class="headerlink" href="#site-rebrands-twitter-x" title="Permanent link">&para;</a></h3>
 <p>The letter count changes. Keep a short exception list — just the site and which name you used. Not the password, just the name variant. The list is useless to anyone who finds it without your secrets.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>Exception list (safe to write down):
-<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>  x.com → use &quot;twitter&quot; (7)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>Exception list (safe to write down):
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>  x.com → use &quot;twitter&quot; (7)
 </code></pre></div>
 <h3 id="site-has-unusual-length-requirements">Site has unusual length requirements<a class="headerlink" href="#site-has-unusual-length-requirements" title="Permanent link">&para;</a></h3>
 <p>Some sites cap passwords at 16 characters or require exactly 8. Trim or pad as needed and note the exception. The formula itself is still your source of truth — you are just truncating or extending the output.</p>
@@ -3385,29 +3417,29 @@
 <hr />
 <h2 id="the-quick-reference-card">The Quick Reference Card<a class="headerlink" href="#the-quick-reference-card" title="Permanent link">&para;</a></h2>
 <p>Print this. Keep it in your wallet. It contains nothing secret. It is useless to anyone who finds it.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>┌─────────────────────────────────────────────────────────────┐
-<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>│             NeXuS Riddler Equation — Field Card             │
-<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>├─────────────────────────────────────────────────────────────┤
-<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>│                                                             │
-<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>│  1. Count letters in site name          →  x               │
-<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>│  2. Capitalize first letter of site     →  y               │
-<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>│  3. Multiply: x × [your m]              →  s               │
-<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>│                                                             │
-<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>│  Password = y + x + [your z] + &quot;-&quot; + s + &quot;X&quot;               │
-<a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a>│                                                             │
-<a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a>├─────────────────────────────────────────────────────────────┤
-<a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a>│  Example structure (6-letter site):                         │
-<a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a>│                                                             │
-<a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a>│  G  6  [z]  -  141  X                                      │
-<a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a>│  ↑  ↑   ↑   ↑   ↑   ↑                                      │
-<a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a>│  y  x  base  sep salt end                                   │
-<a id="__codelineno-26-17" name="__codelineno-26-17" href="#__codelineno-26-17"></a>│                                                             │
-<a id="__codelineno-26-18" name="__codelineno-26-18" href="#__codelineno-26-18"></a>├─────────────────────────────────────────────────────────────┤
-<a id="__codelineno-26-19" name="__codelineno-26-19" href="#__codelineno-26-19"></a>│  Exceptions:                                                │
-<a id="__codelineno-26-20" name="__codelineno-26-20" href="#__codelineno-26-20"></a>│  ________________________________                           │
-<a id="__codelineno-26-21" name="__codelineno-26-21" href="#__codelineno-26-21"></a>│  ________________________________                           │
-<a id="__codelineno-26-22" name="__codelineno-26-22" href="#__codelineno-26-22"></a>│  ________________________________                           │
-<a id="__codelineno-26-23" name="__codelineno-26-23" href="#__codelineno-26-23"></a>└─────────────────────────────────────────────────────────────┘
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>┌─────────────────────────────────────────────────────────────┐
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>│             NeXuS Cerberus Password Protocol — Field Card             │
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>├─────────────────────────────────────────────────────────────┤
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>│                                                             │
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>│  1. Count letters in site name          →  x               │
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>│  2. Capitalize first letter of site     →  y               │
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>│  3. Multiply: x × [your m]              →  s               │
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a>│                                                             │
+<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a>│  Password = y + x + [your z] + &quot;-&quot; + s + &quot;X&quot;               │
+<a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a>│                                                             │
+<a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a>├─────────────────────────────────────────────────────────────┤
+<a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a>│  Example structure (6-letter site):                         │
+<a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a>│                                                             │
+<a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a>│  G  6  [z]  -  141  X                                      │
+<a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a>│  ↑  ↑   ↑   ↑   ↑   ↑                                      │
+<a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a>│  y  x  base  sep salt end                                   │
+<a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a>│                                                             │
+<a id="__codelineno-27-18" name="__codelineno-27-18" href="#__codelineno-27-18"></a>├─────────────────────────────────────────────────────────────┤
+<a id="__codelineno-27-19" name="__codelineno-27-19" href="#__codelineno-27-19"></a>│  Exceptions:                                                │
+<a id="__codelineno-27-20" name="__codelineno-27-20" href="#__codelineno-27-20"></a>│  ________________________________                           │
+<a id="__codelineno-27-21" name="__codelineno-27-21" href="#__codelineno-27-21"></a>│  ________________________________                           │
+<a id="__codelineno-27-22" name="__codelineno-27-22" href="#__codelineno-27-22"></a>│  ________________________________                           │
+<a id="__codelineno-27-23" name="__codelineno-27-23" href="#__codelineno-27-23"></a>└─────────────────────────────────────────────────────────────┘
 </code></pre></div>
 <p>The card reveals the formula structure. It does not reveal <code>z</code> or <code>m</code>. Without both secrets the card is worthless to an attacker.</p>
 <hr />
@@ -3419,7 +3451,7 @@
 - <strong>Salted</strong> — derived salt prevents rainbow table attacks
 - <strong>Secret function</strong> — algorithm secrecy provides the final layer
 - <strong>Zero dependency</strong> — no hardware, software, network, or company required</p>
-<p><strong>That is the Riddler Equation. The answer to the riddle is always in your head.</strong></p>
+<p><strong>That is the Cerberus Password Protocol. The answer to the riddle is always in your head.</strong></p>
 <blockquote>
 <p><em>"Prepared is not paranoid. Sovereign is not paranoid. A key that lives in your mind cannot be confiscated, cannot be subpoenaed, cannot be breached, and cannot be shut down."</em></p>
 </blockquote>
