@@ -48,6 +48,9 @@ nav:
     - Zombie Apocalypse Mode: zombie-apoc-doc.md
   - Security:
     - Three-Key Security Model: 3key-security.md
+    - Security Stack (PSAD, fwsnort, fail2ban): security-stack.md
+    - PSAD Manual: psad-manual.md
+    - fwsnort Manual: fwsnort-manual.md
   - AI:
     - Merged AI Identity: ai-merged-identity.md
     - Autonomous AI Intelligence: autonomouse-ai-intelligence.md
@@ -62,8 +65,23 @@ nav:
     - Install Architecture: install-architecture.md
   - Node:
     - Getting Started: node/getting-started.md
+  - Reports:
+    - Action Reports: reports/action_report.md
+  - Session Logs:
+    - Index: session-logs/index.md
   - Dev:
     - Action Reports: dev/action-report.md
+  - NeXuS History:
+    - Claude:
+      - Session History 2026-03-10: history/claude/session-history-2026-03-10.md
+    - Archive 1:
+      - Claude Sessions: history/archive-1/claude-sessions/index.md
+      - Nexus Planning: history/archive-1/nexus-planning/index.md
+      - Action Reports: history/archive-1/action-reports/index.md
+      - AI Consciousness: history/archive-1/ai-consciousness/index.md
+      - Projects: history/archive-1/projects/index.md
+      - Security: history/archive-1/security/index.md
+      - Scripts & Docs: history/archive-1/scripts-docs/index.md
 
 markdown_extensions:
   - admonition
