@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nexus-human-kdf-the-human-key-derivation-function" class="md-skip">
+        <a href="#the-nexus-riddler-equation" class="md-skip">
           Skip to content
         </a>
       
@@ -1047,10 +1047,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-problem-with-password-managers" class="md-nav__link">
+  <a href="#what-is-it" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Problem With Password Managers
+        What Is It?
       
     </span>
   </a>
@@ -1058,10 +1058,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-human-kdf" class="md-nav__link">
+  <a href="#why-it-exists" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Human KDF
+        Why It Exists
       
     </span>
   </a>
@@ -1069,99 +1069,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-algorithm" class="md-nav__link">
+  <a href="#the-components" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Algorithm
+        The Components
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#worked-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Worked Example
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#different-sites-different-passwords" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Different Sites, Different Passwords
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-this-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why This Works
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-secrets-what-to-protect" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Secrets — What To Protect
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-salt-derived-not-memorized" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Salt — Derived, Not Memorized
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#password-rotation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Password Rotation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#strengths-and-limitations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Strengths and Limitations
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Strengths and Limitations">
+    <nav class="md-nav" aria-label="The Components">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#strengths" class="md-nav__link">
+  <a href="#public-components-derived-from-site-name" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Strengths
+        Public Components (derived from site name)
       
     </span>
   </a>
@@ -1169,10 +1092,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#limitations" class="md-nav__link">
+  <a href="#secret-components-known-only-to-you" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Limitations
+        Secret Components (known only to you)
       
     </span>
   </a>
@@ -1185,10 +1108,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-bigger-picture" class="md-nav__link">
+  <a href="#the-formula" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Bigger Picture
+        The Formula
       
     </span>
   </a>
@@ -1196,10 +1119,293 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-reference-card" class="md-nav__link">
+  <a href="#step-by-step-walkthrough" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Quick Reference Card
+        Step-By-Step Walkthrough
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-By-Step Walkthrough">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1 — github
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-amazon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2 — amazon
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-netflix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3 — netflix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-4-facebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 4 — facebook
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-5-protonmail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 5 — protonmail
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#all-examples-side-by-side" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        All Examples Side By Side
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-is-secure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Is Secure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why This Is Secure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#against-credential-stuffing-defeats-99-of-real-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Against credential stuffing (defeats 99% of real attacks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#against-reverse-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Against reverse engineering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#against-targeted-attacks-the-salt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Against targeted attacks — the salt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-your-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing Your Secrets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Choosing Your Secrets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#choosing-z-your-base-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing z — your base string
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-m-your-multiplier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing m — your multiplier
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#password-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Password Rotation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Password Rotation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-you-must-rotate-change-only-z" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If you must rotate — change only z
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-rotation-problem-and-the-fix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The rotation problem — and the fix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edge Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Edge Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#site-uses-a-subdomain-or-full-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Site uses a subdomain or full domain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#site-rebrands-twitter-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Site rebrands (twitter → x)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#site-has-unusual-length-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Site has unusual length requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numbers-only-or-letters-only-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numbers-only or letters-only requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-quick-reference-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Quick Reference Card
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-bigger-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Bigger Picture
       
     </span>
   </a>
@@ -2429,10 +2635,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-problem-with-password-managers" class="md-nav__link">
+  <a href="#what-is-it" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Problem With Password Managers
+        What Is It?
       
     </span>
   </a>
@@ -2440,10 +2646,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-human-kdf" class="md-nav__link">
+  <a href="#why-it-exists" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Human KDF
+        Why It Exists
       
     </span>
   </a>
@@ -2451,99 +2657,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-algorithm" class="md-nav__link">
+  <a href="#the-components" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Algorithm
+        The Components
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#worked-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Worked Example
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#different-sites-different-passwords" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Different Sites, Different Passwords
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-this-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why This Works
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-secrets-what-to-protect" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Secrets — What To Protect
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-salt-derived-not-memorized" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Salt — Derived, Not Memorized
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#password-rotation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Password Rotation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#strengths-and-limitations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Strengths and Limitations
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Strengths and Limitations">
+    <nav class="md-nav" aria-label="The Components">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#strengths" class="md-nav__link">
+  <a href="#public-components-derived-from-site-name" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Strengths
+        Public Components (derived from site name)
       
     </span>
   </a>
@@ -2551,10 +2680,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#limitations" class="md-nav__link">
+  <a href="#secret-components-known-only-to-you" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Limitations
+        Secret Components (known only to you)
       
     </span>
   </a>
@@ -2567,10 +2696,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-bigger-picture" class="md-nav__link">
+  <a href="#the-formula" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Bigger Picture
+        The Formula
       
     </span>
   </a>
@@ -2578,10 +2707,293 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-reference-card" class="md-nav__link">
+  <a href="#step-by-step-walkthrough" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Quick Reference Card
+        Step-By-Step Walkthrough
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-By-Step Walkthrough">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1 — github
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-amazon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2 — amazon
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-netflix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 3 — netflix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-4-facebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 4 — facebook
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-5-protonmail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 5 — protonmail
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#all-examples-side-by-side" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        All Examples Side By Side
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-is-secure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Is Secure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why This Is Secure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#against-credential-stuffing-defeats-99-of-real-attacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Against credential stuffing (defeats 99% of real attacks)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#against-reverse-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Against reverse engineering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#against-targeted-attacks-the-salt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Against targeted attacks — the salt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-your-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing Your Secrets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Choosing Your Secrets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#choosing-z-your-base-string" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing z — your base string
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#choosing-m-your-multiplier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing m — your multiplier
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#password-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Password Rotation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Password Rotation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-you-must-rotate-change-only-z" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        If you must rotate — change only z
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-rotation-problem-and-the-fix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The rotation problem — and the fix
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edge-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Edge Cases
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Edge Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#site-uses-a-subdomain-or-full-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Site uses a subdomain or full domain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#site-rebrands-twitter-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Site rebrands (twitter → x)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#site-has-unusual-length-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Site has unusual length requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numbers-only-or-letters-only-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Numbers-only or letters-only requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-quick-reference-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Quick Reference Card
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-bigger-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Bigger Picture
       
     </span>
   </a>
@@ -2608,162 +3020,409 @@
   
 
 
-<h1 id="nexus-human-kdf-the-human-key-derivation-function">NeXuS Human KDF — The Human Key Derivation Function<a class="headerlink" href="#nexus-human-kdf-the-human-key-derivation-function" title="Permanent link">&para;</a></h1>
-<p><strong>Status:</strong> Core security protocol
+<h1 id="the-nexus-riddler-equation">The NeXuS Riddler Equation<a class="headerlink" href="#the-nexus-riddler-equation" title="Permanent link">&para;</a></h1>
+<p><strong>A Human-Computable Key Derivation Function</strong>
+<strong>Status:</strong> Core security protocol
 <strong>Date:</strong> 2026-03-10
 <strong>Authors:</strong> Anon + Claude (Sonnet 4.6)</p>
 <hr />
-<h2 id="the-problem-with-password-managers">The Problem With Password Managers<a class="headerlink" href="#the-problem-with-password-managers" title="Permanent link">&para;</a></h2>
-<p>Password managers require:</p>
+<blockquote>
+<p><em>"What has no lock, needs no key, yet keeps every door unique?"</em>
+<strong>The Riddler Equation.</strong></p>
+</blockquote>
+<hr />
+<h2 id="what-is-it">What Is It?<a class="headerlink" href="#what-is-it" title="Permanent link">&para;</a></h2>
+<p>The NeXuS Riddler Equation is a <strong>password derivation algorithm you run in your head.</strong></p>
+<p>No software. No manager. No cloud. No battery. No trust required.</p>
+<p>It takes a website name — public information — and transforms it through a formula only you know into a strong, unique password. Same site, same formula, same password. Every time. Forever.</p>
+<p>It is the human-computable equivalent of PBKDF2 or Argon2 — the same mathematical concept that protects cryptographic keys — implemented with nothing but your mind and optionally a pencil.</p>
+<hr />
+<h2 id="why-it-exists">Why It Exists<a class="headerlink" href="#why-it-exists" title="Permanent link">&para;</a></h2>
+<p>Most people use one or two passwords for everything. A single breach at any site hands attackers the keys to their entire digital life.</p>
+<p>Password managers solve this but introduce new problems:</p>
 <ul>
 <li>Software you must trust</li>
-<li>A company that can be breached, subpoenaed, or shut down</li>
+<li>A company that can be breached, subpoenaed, or disappear</li>
+<li>A master password that unlocks everything in one blow</li>
+<li>Requires a working device and power to access credentials</li>
 <li>Cloud sync that can be intercepted</li>
-<li>A master password that unlocks everything at once</li>
-<li>Power and a working device to access your credentials</li>
 </ul>
-<p><strong>A system that fails when you need it most is not a security system.</strong></p>
+<p><strong>The Riddler Equation has none of these dependencies.</strong></p>
+<p>It lives in your head. It works by candlelight. It works when the grid is down, your phone is dead, and you are sitting at a library computer in a foreign country.</p>
 <hr />
-<h2 id="the-human-kdf">The Human KDF<a class="headerlink" href="#the-human-kdf" title="Permanent link">&para;</a></h2>
-<p>A deterministic password algorithm that runs entirely in your head. No software. No cloud. No trust required. Works by candlelight with a pencil.</p>
-<p><strong>Key derivation function</strong> — a mathematical process that takes inputs and always produces the same output. This is the human-computable version.</p>
-<hr />
-<h2 id="the-algorithm">The Algorithm<a class="headerlink" href="#the-algorithm" title="Permanent link">&para;</a></h2>
-<p>Given any website or service, your password is always derived the same way:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>INPUTS (all derived from the site name — public information):
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  x  =  number of letters in the site name
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  y  =  first letter of the site name, capitalized
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>SECRETS (known only to you — never written down):
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  z     =  your memorable base string
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  salt  =  your secret constant (a number, date, or word only you know)
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>FORMULA:
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  password = y + x + z + &quot;-&quot; + (x × multiplier) + &quot;X&quot;
-</code></pre></div>
-<hr />
-<h2 id="worked-example">Worked Example<a class="headerlink" href="#worked-example" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Site: github
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>x = 6          (g-i-t-h-u-b = 6 letters)
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>y = G          (first letter, capitalized)
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>z = mydog!ishairy   (your memorable string — YOU choose this)
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>salt multiplier = 23.5   (your secret constant — YOU choose this)
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>Derived salt = 6 × 23.5 = 141
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>password = G6mydog!ishairy-141X
-</code></pre></div>
-<p>Same site, same formula, same password. Every time. Forever. No storage needed.</p>
-<hr />
-<h2 id="different-sites-different-passwords">Different Sites, Different Passwords<a class="headerlink" href="#different-sites-different-passwords" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>github    → G6mydog!ishairy-141X
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>amazon    → A6mydog!ishairy-141X
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>netflix   → N7mydog!ishairy-164.5X
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>google    → G6mydog!ishairy-141X  ← same letter count as github, different first letter
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>facebook  → F8mydog!ishairy-188X
-</code></pre></div>
-<p>Every password is unique. A breach on one site reveals nothing about your other passwords.</p>
-<hr />
-<h2 id="why-this-works">Why This Works<a class="headerlink" href="#why-this-works" title="Permanent link">&para;</a></h2>
-<p><strong>Against credential stuffing (99% of real attacks):</strong>
-Each site has a unique password. A database breach at Netflix gives the attacker nothing useful for your Amazon account. This defeats the most common attack vector entirely.</p>
-<p><strong>Against reverse engineering:</strong>
-Even if an attacker gets two of your passwords and figures out the formula structure, they still need:
-- Your <code>z</code> string (memorable phrase — your secret)
-- Your salt multiplier (your secret constant)</p>
-<p>Both must be known. Neither is derivable from the password itself.</p>
-<p><strong>Against targeted attacks:</strong>
-The salt multiplier is the key that locks the algorithm to you specifically. Someone who knows your formula still cannot reproduce your passwords without it.</p>
-<hr />
-<h2 id="the-secrets-what-to-protect">The Secrets — What To Protect<a class="headerlink" href="#the-secrets-what-to-protect" title="Permanent link">&para;</a></h2>
-<p>There are only two things you must never share:</p>
+<h2 id="the-components">The Components<a class="headerlink" href="#the-components" title="Permanent link">&para;</a></h2>
+<p>The equation has four components. Two are derived from the site name (public). Two are your secrets (private).</p>
+<h3 id="public-components-derived-from-site-name">Public Components (derived from site name)<a class="headerlink" href="#public-components-derived-from-site-name" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>Secret</th>
+<th>Component</th>
+<th>Symbol</th>
+<th>What It Is</th>
+<th>Example (github)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Letter count</td>
+<td><code>x</code></td>
+<td>Number of letters in the site name</td>
+<td><code>6</code></td>
+</tr>
+<tr>
+<td>First letter</td>
+<td><code>y</code></td>
+<td>First letter of the site name, capitalized</td>
+<td><code>G</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="secret-components-known-only-to-you">Secret Components (known only to you)<a class="headerlink" href="#secret-components-known-only-to-you" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Symbol</th>
 <th>What It Is</th>
 <th>How To Choose</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>Base string</td>
 <td><code>z</code></td>
-<td>Your memorable base string</td>
-<td>A phrase, a lyric, a memory. Something vivid. Something yours.</td>
+<td>A memorable phrase, lyric, or word sequence</td>
+<td>Something vivid. Something yours. A memory no one else has.</td>
 </tr>
 <tr>
 <td>Multiplier</td>
-<td>Your secret constant</td>
-<td>A number meaningful only to you. Not a birthday. Not an address. Something obscure.</td>
+<td><code>m</code></td>
+<td>A secret number — your salt generator</td>
+<td>Not a birthday. Not an address. Something obscure only you know.</td>
 </tr>
 </tbody>
 </table>
-<p><strong>These two secrets are your entire security posture.</strong> Guard them. Never write them together. Never share them.</p>
 <hr />
-<h2 id="the-salt-derived-not-memorized">The Salt — Derived, Not Memorized<a class="headerlink" href="#the-salt-derived-not-memorized" title="Permanent link">&para;</a></h2>
-<p>The elegant part: <strong>you do not memorize site-specific salts.</strong> The salt for each site is always derived from the letter count using your multiplier. Same input, same output, every time.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>6 letters × 23.5 = 141   (always, for any 6-letter site)
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>7 letters × 23.5 = 164.5 (always, for any 7-letter site)
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>8 letters × 23.5 = 188   (always, for any 8-letter site)
+<h2 id="the-formula">The Formula<a class="headerlink" href="#the-formula" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Derived salt (s) = x × m
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Password = y + x + z + &quot;-&quot; + s + &quot;X&quot;
 </code></pre></div>
-<p>You carry the multiplier in your head. The rest is arithmetic.</p>
+<p>That is the entire equation. Four inputs, one output. Deterministic. Reproducible. Unique per site.</p>
+<hr />
+<h2 id="step-by-step-walkthrough">Step-By-Step Walkthrough<a class="headerlink" href="#step-by-step-walkthrough" title="Permanent link">&para;</a></h2>
+<p>Let us use these secrets for all examples:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>z = mydog!ishairy
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>m = 23.5
+</code></pre></div>
+<p><strong>These are example secrets. Choose your own. Never share them.</strong></p>
+<hr />
+<h3 id="example-1-github">Example 1 — github<a class="headerlink" href="#example-1-github" title="Permanent link">&para;</a></h3>
+<p><strong>Step 1: Count the letters</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>g - i - t - h - u - b
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>1   2   3   4   5   6
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>x = 6
+</code></pre></div></p>
+<p><strong>Step 2: Take the first letter, capitalize it</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>github → G
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>y = G
+</code></pre></div></p>
+<p><strong>Step 3: Derive the salt</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>s = x × m
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>s = 6 × 23.5
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>s = 141
+</code></pre></div></p>
+<p><strong>Step 4: Assemble the password</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>y  +  x  +  z              +  &quot;-&quot;  +  s    +  &quot;X&quot;
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>G  +  6  +  mydog!ishairy  +  &quot;-&quot;  +  141  +  &quot;X&quot;
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>Password: G6mydog!ishairy-141X
+</code></pre></div></p>
+<hr />
+<h3 id="example-2-amazon">Example 2 — amazon<a class="headerlink" href="#example-2-amazon" title="Permanent link">&para;</a></h3>
+<p><strong>Step 1: Count the letters</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>a - m - a - z - o - n
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>1   2   3   4   5   6
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>x = 6
+</code></pre></div></p>
+<p><strong>Step 2: First letter capitalized</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>amazon → A
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>y = A
+</code></pre></div></p>
+<p><strong>Step 3: Derive the salt</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>s = 6 × 23.5 = 141
+</code></pre></div></p>
+<p><strong>Step 4: Assemble</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>A6mydog!ishairy-141X
+</code></pre></div></p>
+<div class="admonition note">
+<p class="admonition-title">Same letter count, different password</p>
+<p>github and amazon both have 6 letters, so <code>x</code> and <code>s</code> are the same. But <code>y</code> differs — <code>G</code> vs <code>A</code> — making the passwords unique.</p>
+</div>
+<hr />
+<h3 id="example-3-netflix">Example 3 — netflix<a class="headerlink" href="#example-3-netflix" title="Permanent link">&para;</a></h3>
+<p><strong>Step 1: Count the letters</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>n - e - t - f - l - i - x
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>1   2   3   4   5   6   7
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>x = 7
+</code></pre></div></p>
+<p><strong>Step 2: First letter capitalized</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>netflix → N
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>y = N
+</code></pre></div></p>
+<p><strong>Step 3: Derive the salt</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>s = 7 × 23.5 = 164.5
+</code></pre></div></p>
+<p><strong>Step 4: Assemble</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>N7mydog!ishairy-164.5X
+</code></pre></div></p>
+<hr />
+<h3 id="example-4-facebook">Example 4 — facebook<a class="headerlink" href="#example-4-facebook" title="Permanent link">&para;</a></h3>
+<p><strong>Step 1: Count the letters</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>f - a - c - e - b - o - o - k
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>1   2   3   4   5   6   7   8
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>x = 8
+</code></pre></div></p>
+<p><strong>Step 2: First letter capitalized</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>facebook → F
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>y = F
+</code></pre></div></p>
+<p><strong>Step 3: Derive the salt</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>s = 8 × 23.5 = 188
+</code></pre></div></p>
+<p><strong>Step 4: Assemble</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>F8mydog!ishairy-188X
+</code></pre></div></p>
+<hr />
+<h3 id="example-5-protonmail">Example 5 — protonmail<a class="headerlink" href="#example-5-protonmail" title="Permanent link">&para;</a></h3>
+<p><strong>Step 1: Count the letters</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>p - r - o - t - o - n - m - a - i - l
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>1   2   3   4   5   6   7   8   9  10
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>x = 10
+</code></pre></div></p>
+<p><strong>Step 2: First letter capitalized</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>protonmail → P
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>y = P
+</code></pre></div></p>
+<p><strong>Step 3: Derive the salt</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>s = 10 × 23.5 = 235
+</code></pre></div></p>
+<p><strong>Step 4: Assemble</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>P10mydog!ishairy-235X
+</code></pre></div></p>
+<hr />
+<h2 id="all-examples-side-by-side">All Examples Side By Side<a class="headerlink" href="#all-examples-side-by-side" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Site</th>
+<th>x</th>
+<th>y</th>
+<th>s (x × 23.5)</th>
+<th>Password</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>github</td>
+<td>6</td>
+<td>G</td>
+<td>141</td>
+<td><code>G6mydog!ishairy-141X</code></td>
+</tr>
+<tr>
+<td>amazon</td>
+<td>6</td>
+<td>A</td>
+<td>141</td>
+<td><code>A6mydog!ishairy-141X</code></td>
+</tr>
+<tr>
+<td>netflix</td>
+<td>7</td>
+<td>N</td>
+<td>164.5</td>
+<td><code>N7mydog!ishairy-164.5X</code></td>
+</tr>
+<tr>
+<td>facebook</td>
+<td>8</td>
+<td>F</td>
+<td>188</td>
+<td><code>F8mydog!ishairy-188X</code></td>
+</tr>
+<tr>
+<td>twitter</td>
+<td>7</td>
+<td>T</td>
+<td>164.5</td>
+<td><code>T7mydog!ishairy-164.5X</code></td>
+</tr>
+<tr>
+<td>google</td>
+<td>6</td>
+<td>G</td>
+<td>141</td>
+<td><code>G6mydog!ishairy-141X</code></td>
+</tr>
+<tr>
+<td>reddit</td>
+<td>6</td>
+<td>R</td>
+<td>141</td>
+<td><code>R6mydog!ishairy-141X</code></td>
+</tr>
+<tr>
+<td>discord</td>
+<td>7</td>
+<td>D</td>
+<td>164.5</td>
+<td><code>D7mydog!ishairy-164.5X</code></td>
+</tr>
+<tr>
+<td>protonmail</td>
+<td>10</td>
+<td>P</td>
+<td>235</td>
+<td><code>P10mydog!ishairy-235X</code></td>
+</tr>
+<tr>
+<td>linkedin</td>
+<td>8</td>
+<td>L</td>
+<td>188</td>
+<td><code>L8mydog!ishairy-188X</code></td>
+</tr>
+</tbody>
+</table>
+<p>Every password is unique. No two are the same. A breach at any one site reveals nothing about any other.</p>
+<hr />
+<h2 id="why-this-is-secure">Why This Is Secure<a class="headerlink" href="#why-this-is-secure" title="Permanent link">&para;</a></h2>
+<h3 id="against-credential-stuffing-defeats-99-of-real-attacks">Against credential stuffing (defeats 99% of real attacks)<a class="headerlink" href="#against-credential-stuffing-defeats-99-of-real-attacks" title="Permanent link">&para;</a></h3>
+<p>Credential stuffing is when attackers take a breached username/password list and try it everywhere. Unique passwords per site defeats this completely. If your Netflix password leaks, your Amazon password is unaffected.</p>
+<h3 id="against-reverse-engineering">Against reverse engineering<a class="headerlink" href="#against-reverse-engineering" title="Permanent link">&para;</a></h3>
+<p>Say an attacker gets two of your passwords:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>G6mydog!ishairy-141X   (github)
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>A6mydog!ishairy-141X   (amazon)
+</code></pre></div></p>
+<p>They can see a pattern. They might deduce the letter count component. They might guess the formula structure. But they still need:</p>
+<ul>
+<li>Your <code>z</code> string — your secret phrase</li>
+<li>Your multiplier <code>m</code> — your secret constant</li>
+</ul>
+<p>Without both, they cannot reproduce any other password. Two secrets guard the entire system.</p>
+<h3 id="against-targeted-attacks-the-salt">Against targeted attacks — the salt<a class="headerlink" href="#against-targeted-attacks-the-salt" title="Permanent link">&para;</a></h3>
+<p>The multiplier <code>m</code> is what makes YOUR formula yours. Even if an attacker knows someone uses the Riddler Equation, your specific <code>m</code> makes your implementation unique. The salt is derived — you never memorize site-specific values — but it is always different per letter count.</p>
+<hr />
+<h2 id="choosing-your-secrets">Choosing Your Secrets<a class="headerlink" href="#choosing-your-secrets" title="Permanent link">&para;</a></h2>
+<h3 id="choosing-z-your-base-string">Choosing <code>z</code> — your base string<a class="headerlink" href="#choosing-z-your-base-string" title="Permanent link">&para;</a></h3>
+<p>Good choices:
+- A lyric from a song nobody associates with you
+- A line from an obscure book
+- A childhood memory described in a phrase
+- An inside joke with no context
+- A sentence in a language you speak but few know you speak</p>
+<p>Bad choices:
+- Your pet's name
+- Your favourite band (too guessable)
+- Common phrases ("iloveyou", "letmein")
+- Anything you have used as a password before</p>
+<p><strong>Make it vivid. Make it yours. Make it something that will stick without effort.</strong></p>
+<h3 id="choosing-m-your-multiplier">Choosing <code>m</code> — your multiplier<a class="headerlink" href="#choosing-m-your-multiplier" title="Permanent link">&para;</a></h3>
+<p>Good choices:
+- A number from an old locker combination
+- A measurement you remember from a project
+- A price you remember paying for something years ago
+- A number that is meaningful in a way only you understand</p>
+<p>Bad choices:
+- Your birth year
+- Your house number
+- 42 (too obvious for nerds)
+- Any number publicly associated with you</p>
+<p><strong>The multiplier does not need to be a whole number. Decimals add complexity — 23.5 is harder to guess than 23.</strong></p>
 <hr />
 <h2 id="password-rotation">Password Rotation<a class="headerlink" href="#password-rotation" title="Permanent link">&para;</a></h2>
-<p><strong>The honest answer on rotation:</strong></p>
-<p>NIST (the US standards body) reversed its mandatory rotation recommendation. Frequent rotation of strong unique passwords does not improve security — it degrades it as people choose weaker, more memorable passwords to cope with the burden.</p>
-<p><strong>NeXuS recommendation:</strong> Do not rotate unless a breach is confirmed or suspected.</p>
-<p><strong>If you must rotate</strong>, change only the <code>z</code> string:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>v1: G6mydog!ishairy-141X      (z = mydog!ishairy)
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>v2: G6mycatissleepy!-141X     (z = mycatissleepy!)
+<p><strong>The honest answer:</strong> NIST (the US cryptographic standards body) reversed its mandatory rotation recommendation. Frequent rotation of strong unique passwords does not improve security — it usually degrades it as people choose weaker passwords to cope.</p>
+<p><strong>NeXuS recommendation: do not rotate unless a breach is confirmed.</strong></p>
+<h3 id="if-you-must-rotate-change-only-z">If you must rotate — change only <code>z</code><a class="headerlink" href="#if-you-must-rotate-change-only-z" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>Version 1:  z = mydog!ishairy
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>github →    G6mydog!ishairy-141X
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>Version 2:  z = mycatissleepy!
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>github →    G6mycatissleepy!-141X
 </code></pre></div>
-<p>One thing changes. One thing to remember. All other parts of the algorithm stay the same.</p>
-<p><strong>The rotation problem</strong> — if you rotate some sites but not others, you lose track of which version you're on. The fix: when you rotate, rotate everything at once. Change <code>z</code> on the same day for all sites. Clean slate.</p>
+<p>One thing changes. One thing to remember. The multiplier, the structure, the letter-count logic — all stay the same. Only the phrase rotates.</p>
+<h3 id="the-rotation-problem-and-the-fix">The rotation problem — and the fix<a class="headerlink" href="#the-rotation-problem-and-the-fix" title="Permanent link">&para;</a></h3>
+<p>If you rotate some sites but not others you lose track of which version you are on. The fix is simple:</p>
+<p><strong>When you rotate, rotate everything on the same day.</strong> Change <code>z</code> to a new phrase. Update all sites in one session. Clean slate. You always know which phrase is current.</p>
 <hr />
-<h2 id="strengths-and-limitations">Strengths and Limitations<a class="headerlink" href="#strengths-and-limitations" title="Permanent link">&para;</a></h2>
-<h3 id="strengths">Strengths<a class="headerlink" href="#strengths" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Zero trust required</strong> — no manager, no cloud, no company</li>
-<li><strong>Works anywhere</strong> — pencil and paper, power outage, foreign country, lost device</li>
-<li><strong>Unique per site</strong> — credential stuffing defeated completely</li>
-<li><strong>Deterministic</strong> — always reproducible from memory</li>
-<li><strong>Naturally complex</strong> — meets most site requirements without thinking about it</li>
-<li><strong>Human sovereign</strong> — exists entirely in your mind</li>
-</ul>
-<h3 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h3>
-<ul>
-<li><strong>Algorithm exposure</strong> — if someone obtains 2+ passwords AND figures out the formula structure, all passwords are at risk. Mitigation: keep the formula secret. Share only the concept, never your specific implementation.</li>
-<li><strong>Site name changes</strong> — if a site rebrands (twitter → x), the letter count changes, breaking the pattern. Keep a note of exceptions (just the exception, not the password).</li>
-<li><strong>Length requirements</strong> — some sites have unusual max/min length rules. Trim or extend as needed; note the exception.</li>
-</ul>
+<h2 id="edge-cases">Edge Cases<a class="headerlink" href="#edge-cases" title="Permanent link">&para;</a></h2>
+<h3 id="site-uses-a-subdomain-or-full-domain">Site uses a subdomain or full domain<a class="headerlink" href="#site-uses-a-subdomain-or-full-domain" title="Permanent link">&para;</a></h3>
+<p>Only use the core name. Strip everything else:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>mail.google.com   →   google   →   x = 6
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>app.netflix.com   →   netflix  →   x = 7
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>github.io         →   github   →   x = 6
+</code></pre></div>
+<h3 id="site-rebrands-twitter-x">Site rebrands (twitter → x)<a class="headerlink" href="#site-rebrands-twitter-x" title="Permanent link">&para;</a></h3>
+<p>The letter count changes. Keep a short exception list — just the site and which name you used. Not the password, just the name variant. The list is useless to anyone who finds it without your secrets.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>Exception list (safe to write down):
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>  x.com → use &quot;twitter&quot; (7)
+</code></pre></div>
+<h3 id="site-has-unusual-length-requirements">Site has unusual length requirements<a class="headerlink" href="#site-has-unusual-length-requirements" title="Permanent link">&para;</a></h3>
+<p>Some sites cap passwords at 16 characters or require exactly 8. Trim or pad as needed and note the exception. The formula itself is still your source of truth — you are just truncating or extending the output.</p>
+<h3 id="numbers-only-or-letters-only-requirements">Numbers-only or letters-only requirements<a class="headerlink" href="#numbers-only-or-letters-only-requirements" title="Permanent link">&para;</a></h3>
+<p>Rare, but some legacy systems refuse special characters. In that case drop the <code>!</code> from your <code>z</code> string and substitute a number. Note the exception.</p>
+<hr />
+<h2 id="the-quick-reference-card">The Quick Reference Card<a class="headerlink" href="#the-quick-reference-card" title="Permanent link">&para;</a></h2>
+<p>Print this. Keep it in your wallet. It contains nothing secret. It is useless to anyone who finds it.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>┌─────────────────────────────────────────────────────────────┐
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>│             NeXuS Riddler Equation — Field Card             │
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>├─────────────────────────────────────────────────────────────┤
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>│                                                             │
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>│  1. Count letters in site name          →  x               │
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>│  2. Capitalize first letter of site     →  y               │
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>│  3. Multiply: x × [your m]              →  s               │
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>│                                                             │
+<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>│  Password = y + x + [your z] + &quot;-&quot; + s + &quot;X&quot;               │
+<a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a>│                                                             │
+<a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a>├─────────────────────────────────────────────────────────────┤
+<a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a>│  Example structure (6-letter site):                         │
+<a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a>│                                                             │
+<a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a>│  G  6  [z]  -  141  X                                      │
+<a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a>│  ↑  ↑   ↑   ↑   ↑   ↑                                      │
+<a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a>│  y  x  base  sep salt end                                   │
+<a id="__codelineno-26-17" name="__codelineno-26-17" href="#__codelineno-26-17"></a>│                                                             │
+<a id="__codelineno-26-18" name="__codelineno-26-18" href="#__codelineno-26-18"></a>├─────────────────────────────────────────────────────────────┤
+<a id="__codelineno-26-19" name="__codelineno-26-19" href="#__codelineno-26-19"></a>│  Exceptions:                                                │
+<a id="__codelineno-26-20" name="__codelineno-26-20" href="#__codelineno-26-20"></a>│  ________________________________                           │
+<a id="__codelineno-26-21" name="__codelineno-26-21" href="#__codelineno-26-21"></a>│  ________________________________                           │
+<a id="__codelineno-26-22" name="__codelineno-26-22" href="#__codelineno-26-22"></a>│  ________________________________                           │
+<a id="__codelineno-26-23" name="__codelineno-26-23" href="#__codelineno-26-23"></a>└─────────────────────────────────────────────────────────────┘
+</code></pre></div>
+<p>The card reveals the formula structure. It does not reveal <code>z</code> or <code>m</code>. Without both secrets the card is worthless to an attacker.</p>
 <hr />
 <h2 id="the-bigger-picture">The Bigger Picture<a class="headerlink" href="#the-bigger-picture" title="Permanent link">&para;</a></h2>
-<p>This algorithm is the human-computable equivalent of PBKDF2 or Argon2 — the same mathematical concept that protects cryptographic keys, implemented without software.</p>
-<p>The input (site name) is public. The output (password) is secure. The security comes entirely from the secret function — your <code>z</code> string and your multiplier.</p>
-<p><strong>No hardware. No software. No battery. No network. No trust.</strong></p>
-<p>That is the NeXuS standard: a solution that works when everything else fails.</p>
+<p>You have just implemented a cryptographically sound key derivation function using mental arithmetic.</p>
+<p>The security properties:
+- <strong>Deterministic</strong> — same inputs always produce same output
+- <strong>Unique per site</strong> — no two passwords are identical
+- <strong>Salted</strong> — derived salt prevents rainbow table attacks
+- <strong>Secret function</strong> — algorithm secrecy provides the final layer
+- <strong>Zero dependency</strong> — no hardware, software, network, or company required</p>
+<p><strong>That is the Riddler Equation. The answer to the riddle is always in your head.</strong></p>
 <blockquote>
-<p><em>"The most unbreakable system is the one that lives entirely in a human mind."</em></p>
+<p><em>"Prepared is not paranoid. Sovereign is not paranoid. A key that lives in your mind cannot be confiscated, cannot be subpoenaed, cannot be breached, and cannot be shut down."</em></p>
 </blockquote>
-<hr />
-<h2 id="quick-reference-card">Quick Reference Card<a class="headerlink" href="#quick-reference-card" title="Permanent link">&para;</a></h2>
-<p>Print this. Keep it in your wallet. It contains nothing secret — just the formula structure.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>┌─────────────────────────────────────────────────────┐
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>│          NeXuS Human KDF — Quick Reference          │
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>├─────────────────────────────────────────────────────┤
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>│  x = letter count of site name                      │
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>│  y = first letter of site name (CAPITALIZED)        │
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>│  z = [YOUR SECRET PHRASE]                           │
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>│  m = [YOUR SECRET MULTIPLIER]                       │
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>│  s = x × m  (derived salt)                         │
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>│                                                     │
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>│  password = y + x + z + &quot;-&quot; + s + &quot;X&quot;              │
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>├─────────────────────────────────────────────────────┤
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>│  Example (github, 6 letters):                       │
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>│  G + 6 + [z] + &quot;-&quot; + (6×[m]) + &quot;X&quot;                │
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>└─────────────────────────────────────────────────────┘
-</code></pre></div>
-<p>The card is useless to anyone who finds it. Only you know <code>z</code> and <code>m</code>.</p>
 
 
 
