@@ -12,13 +12,13 @@
         <meta name="author" content="The NeXuS Collective">
       
       
-        <link rel="canonical" href="https://hackenstacks.github.io/nexus/security-stack/">
+        <link rel="canonical" href="https://hackenstacks.github.io/nexus/education-oracle/">
       
       
-        <link rel="prev" href="../3key-security/">
+        <link rel="prev" href="../nexus-rings/">
       
       
-        <link rel="next" href="../psad-manual/">
+        <link rel="next" href="../ai-merged-identity/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>Security Stack (PSAD, fwsnort, fail2ban) - NeXuS</title>
+        <title>Education Oracle - NeXuS</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nexus-security-stack" class="md-skip">
+        <a href="#education-oracle-shaping-the-future" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Security Stack (PSAD, fwsnort, fail2ban)
+              Education Oracle
             
           </span>
         </div>
@@ -259,12 +259,10 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
+      <li class="md-tabs__item">
         <a href="../3key-security/" class="md-tabs__link">
           
   
@@ -301,10 +299,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../nexus-rings/" class="md-tabs__link">
           
   
@@ -827,31 +827,26 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   
@@ -869,7 +864,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -912,37 +907,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Security Stack (PSAD, fwsnort, fail2ban)
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../security-stack/" class="md-nav__link">
         
   
   
@@ -958,231 +926,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#architecture-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Architecture Overview
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#psad-port-scan-attack-detector" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        PSAD — Port Scan Attack Detector
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="PSAD — Port Scan Attack Detector">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#prerequisites-logging-chain" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Prerequisites — Logging Chain
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#danger-levels" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Danger Levels
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#daily-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Daily Operations
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#config-reference-etcpsadpsadconf" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Config Reference (/etc/psad/psad.conf)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fwsnort-snort-rules-iptables" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        fwsnort — Snort Rules → iptables
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="fwsnort — Snort Rules → iptables">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#nftables-compatibility-fix" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        nftables Compatibility Fix
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#update-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Update Workflow
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#verify-rules-loaded" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Verify Rules Loaded
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fail2ban-brute-force-protection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        fail2ban — Brute Force Protection
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="fail2ban — Brute Force Protection">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#alpine-specific-config" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Alpine-Specific Config
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Operations
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#apparmor-pending-activation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        AppArmor (Pending Activation)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#port-knocking-queued" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Port Knocking (Queued)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fix-scripts-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Fix Scripts Reference
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security-checklist" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Security Checklist
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1398,26 +1141,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
             
   
   
@@ -1435,7 +1183,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1478,10 +1226,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../education-oracle/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Education Oracle
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1497,6 +1272,147 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Problem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#who-education-oracles-are" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Who Education Oracles Are
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-education-oracle-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Education Oracle Profile
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-residual-model-earning-from-every-future" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Residual Model — Earning From Every Future
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parent-authorization-always" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parent Authorization — Always
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-constructive-culture-requirement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Constructive Culture Requirement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#healthy-gamification-in-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Healthy Gamification in Learning
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-nanny-and-caregiver-oracle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Nanny and Caregiver Oracle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-elder-oracle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Elder Oracle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-gets-built" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Gets Built
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-promise-to-education-oracles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Promise to Education Oracles
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2716,10 +2632,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#architecture-overview" class="md-nav__link">
+  <a href="#the-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Architecture Overview
+        The Problem
       
     </span>
   </a>
@@ -2727,160 +2643,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#psad-port-scan-attack-detector" class="md-nav__link">
+  <a href="#who-education-oracles-are" class="md-nav__link">
     <span class="md-ellipsis">
       
-        PSAD — Port Scan Attack Detector
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="PSAD — Port Scan Attack Detector">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#prerequisites-logging-chain" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Prerequisites — Logging Chain
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#danger-levels" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Danger Levels
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#daily-operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Daily Operations
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#config-reference-etcpsadpsadconf" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Config Reference (/etc/psad/psad.conf)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fwsnort-snort-rules-iptables" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        fwsnort — Snort Rules → iptables
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="fwsnort — Snort Rules → iptables">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#nftables-compatibility-fix" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        nftables Compatibility Fix
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#update-workflow" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Update Workflow
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#verify-rules-loaded" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Verify Rules Loaded
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fail2ban-brute-force-protection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        fail2ban — Brute Force Protection
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="fail2ban — Brute Force Protection">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#alpine-specific-config" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Alpine-Specific Config
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#operations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Operations
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#apparmor-pending-activation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        AppArmor (Pending Activation)
+        Who Education Oracles Are
       
     </span>
   </a>
@@ -2888,10 +2654,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#port-knocking-queued" class="md-nav__link">
+  <a href="#the-education-oracle-profile" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Port Knocking (Queued)
+        The Education Oracle Profile
       
     </span>
   </a>
@@ -2899,10 +2665,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#fix-scripts-reference" class="md-nav__link">
+  <a href="#the-residual-model-earning-from-every-future" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Fix Scripts Reference
+        The Residual Model — Earning From Every Future
       
     </span>
   </a>
@@ -2910,10 +2676,76 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#security-checklist" class="md-nav__link">
+  <a href="#parent-authorization-always" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Security Checklist
+        Parent Authorization — Always
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-constructive-culture-requirement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Constructive Culture Requirement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#healthy-gamification-in-learning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Healthy Gamification in Learning
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-nanny-and-caregiver-oracle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Nanny and Caregiver Oracle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-elder-oracle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Elder Oracle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-gets-built" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Gets Built
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-promise-to-education-oracles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Promise to Education Oracles
       
     </span>
   </a>
@@ -2940,281 +2772,227 @@
   
 
 
-<h1 id="nexus-security-stack">NeXuS Security Stack<a class="headerlink" href="#nexus-security-stack" title="Permanent link">&para;</a></h1>
-<p><strong>Sane • Simple • Secure</strong> — Multi-layer intrusion detection and prevention.</p>
-<h2 id="architecture-overview">Architecture Overview<a class="headerlink" href="#architecture-overview" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Internet
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   │
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>   ▼
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>[UFW firewall] — blocks + logs [UFW BLOCK] prefix
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>   │
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>   ▼
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>[klogd] — reads kernel ring buffer → syslogd → /var/log/messages
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>   │
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>   ├──► [PSAD] — port scan detection, danger levels 1-5, auto-block via iptables
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>   │       └──► [fwsnort] — Snort IDS rules translated to iptables (29,600+ signatures)
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>   │
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>   └──► [fail2ban] — brute-force detection, bans repeat offenders
-</code></pre></div>
+<h1 id="education-oracle-shaping-the-future">Education Oracle — Shaping the Future<a class="headerlink" href="#education-oracle-shaping-the-future" title="Permanent link">&para;</a></h1>
+<p><strong>Status:</strong> Core vision document
+<strong>Date:</strong> 2026-03-10
+<strong>Authors:</strong> Anon + Claude (Sonnet 4.6)</p>
 <hr />
-<h2 id="psad-port-scan-attack-detector">PSAD — Port Scan Attack Detector<a class="headerlink" href="#psad-port-scan-attack-detector" title="Permanent link">&para;</a></h2>
-<p>PSAD reads iptables/UFW logs and classifies port scans by danger level (1–5).</p>
-<h3 id="prerequisites-logging-chain">Prerequisites — Logging Chain<a class="headerlink" href="#prerequisites-logging-chain" title="Permanent link">&para;</a></h3>
-<p>PSAD only sees what reaches syslog. The full chain must be intact:</p>
-<ol>
-<li>
-<p><strong>UFW must log with the right prefix</strong> (<code>/etc/ufw/before.rules</code>):
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>-A ufw-before-input -j LOG --log-prefix &quot;[UFW BLOCK] &quot; --log-level 4
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>-A ufw-before-forward -j LOG --log-prefix &quot;[UFW BLOCK] &quot; --log-level 4
+<blockquote>
+<p><em>"The most undervalued humans in society are the ones who shape every future that exists. NeXuS changes that."</em></p>
+</blockquote>
+<hr />
+<h2 id="the-problem">The Problem<a class="headerlink" href="#the-problem" title="Permanent link">&para;</a></h2>
+<p>Teachers, nannies, mentors, tutors, coaches — the people who shape children's futures receive:</p>
+<ul>
+<li>Low pay relative to their impact</li>
+<li>No recognition beyond their immediate classroom</li>
+<li>Zero stake in the outcomes they create</li>
+<li>Forgotten the moment a child moves on</li>
+<li>No residual value from the futures they built</li>
+</ul>
+<p>A teacher who shapes 1000 children over a career earns the same salary whether those children thrive or struggle. The connection between effort and outcome is severed by design.</p>
+<p><strong>NeXuS reconnects it.</strong></p>
+<hr />
+<h2 id="who-education-oracles-are">Who Education Oracles Are<a class="headerlink" href="#who-education-oracles-are" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>👩‍🏫 Teachers          — classroom educators, all subjects, all ages
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>👶 Nannies            — daily caregivers, foundational development
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>👴 Grandparents       — wisdom, life experience, generational knowledge
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>🧑‍🤝‍🧑 Mentors           — guides, role models, skill sharers
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>📚 Tutors             — subject specialists, personalized learning
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>🎨 Art Teachers       — creativity, expression, visual thinking
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>🎵 Music Teachers     — discipline, creativity, pattern recognition
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>⚽ Coaches            — teamwork, resilience, physical development
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>🌍 Community Elders   — cultural knowledge, lived history, ground truth
+</code></pre></div>
+<p>Every adult who positively shapes a child's development is a potential Education Oracle. The credential is not a degree. The credential is the outcome — verified by the community, recorded on chain, permanent.</p>
+<hr />
+<h2 id="the-education-oracle-profile">The Education Oracle Profile<a class="headerlink" href="#the-education-oracle-profile" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>┌──────────────────────────────────────────────┐
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>│  👩‍🏫 Education Oracle #7f3a91                 │
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━  │
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>│  ⭐⭐⭐⭐⭐  4.9/5  (1,203 parent ratings)    │
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>│                                              │
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>│  BADGES:                                     │
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>│  👩‍🏫 Verified Educator — 8 years             │
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>│  📚 2,847 learning interactions              │
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>│  🌱 340 verified learners shaped             │
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>│  💎 Elite Education Oracle                   │
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>│  🎯 High Impact — verified outcomes          │
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>│  🔒 5yr Veteran                              │
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>│  🤝 Constructive Culture certified           │
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>│                                              │
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>│  SPECIALTIES:                                │
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>│  Early Childhood     ████████████  96%       │
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>│  Reading Foundation  ██████████░░  84%       │
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>│  Creative Learning   █████████░░░  78%       │
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>│                                              │
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>│  Learners shaped: 340                        │
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>│  Active rings: 12 family circles             │
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>│  Rate: 0.002 XMR / session                  │
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>│  Residual earnings: active on 89 learners    │
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>└──────────────────────────────────────────────┘
+</code></pre></div>
+<p>Anonymous. Verified. Trusted. Earning.</p>
+<hr />
+<h2 id="the-residual-model-earning-from-every-future">The Residual Model — Earning From Every Future<a class="headerlink" href="#the-residual-model-earning-from-every-future" title="Permanent link">&para;</a></h2>
+<p>This is the core innovation for Education Oracles.</p>
+<p><strong>Traditional model:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Teacher shapes child → child moves on → connection ends → teacher earns nothing
 </code></pre></div></p>
-</li>
-<li>
-<p><strong>klogd must be running</strong> (reads kernel ring buffer → syslogd):
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>doas<span class="w"> </span>rc-update<span class="w"> </span>add<span class="w"> </span>klogd<span class="w"> </span>boot
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>doas<span class="w"> </span>rc-service<span class="w"> </span>klogd<span class="w"> </span>start
+<p><strong>NeXuS model:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Education Oracle shapes child
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>        ↓
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Child earns first badge in the network
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        ↓
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Oracle receives residual credit — verified outcome
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        ↓
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>Child completes first learning module
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        ↓
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>Oracle receives residual credit
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>        ↓
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>Child becomes Junior Oracle
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>        ↓
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>Oracle receives residual credit
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>        ↓
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>Child reaches Top 10 learners
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>        ↓
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>Oracle receives residual credit — compounding
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>        ↓
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>This continues as long as the learner grows
 </code></pre></div></p>
-</li>
-<li>
-<p><strong>psad.conf must point at the right daemon and prefix</strong> (<code>/etc/psad/psad.conf</code>):
-   <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>SYSLOG_DAEMON           syslogd;
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>IPT_SYSLOG_FILE         /var/log/messages;
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>IPT_PREFIX              [UFW BLOCK];
-</code></pre></div></p>
-</li>
-</ol>
-<h3 id="danger-levels">Danger Levels<a class="headerlink" href="#danger-levels" title="Permanent link">&para;</a></h3>
+<p><strong>A great teacher who shapes 1000 children earns from 1000 futures.</strong></p>
+<p>The impact compounds. The earnings compound. The recognition is permanent and on-chain — not forgotten when the school year ends.</p>
+<hr />
+<h2 id="parent-authorization-always">Parent Authorization — Always<a class="headerlink" href="#parent-authorization-always" title="Permanent link">&para;</a></h2>
+<p>Education Oracles operate exclusively within the Ring system. No Oracle can interact with a child without:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>✅ Parent explicit invitation into the Family Ring
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>✅ Parent-set interaction boundaries
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>✅ Parent full audit of every interaction
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>✅ Parent instant removal — one action
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>✅ Parent rating of every session
+</code></pre></div>
+<p>Parents rate Education Oracles. Parents build or break reputation. Parents are BOSS — even over the most decorated Education Oracle in the network.</p>
+<p>An Oracle with 10,000 five-star ratings still cannot enter a Family Ring without that family's specific invitation.</p>
+<hr />
+<h2 id="the-constructive-culture-requirement">The Constructive Culture Requirement<a class="headerlink" href="#the-constructive-culture-requirement" title="Permanent link">&para;</a></h2>
+<p>Education Oracles operate under the strictest constructive culture standards in the network.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Required:
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>  ✅ Build up — every interaction leaves the child stronger
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>  ✅ Specific feedback — actionable, clear, kind
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>  ✅ Patience verified — community rated
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>  ✅ Age appropriate — always
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>  ✅ Encouraging failure — mistakes are learning, celebrated not punished
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>Prohibited:
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>  ❌ Negative ratings of children — does not exist in NeXuS
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>  ❌ Comparison to other children — prohibited
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>  ❌ Shame or embarrassment mechanics — zero tolerance
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>  ❌ Pressure tactics — no urgency, no FOMO, no streaks that punish
+</code></pre></div>
+<p>The Constructive Culture badge is mandatory for Education Oracles. It is earned through verified positive interactions — rated by parents, verified by community.</p>
+<hr />
+<h2 id="healthy-gamification-in-learning">Healthy Gamification in Learning<a class="headerlink" href="#healthy-gamification-in-learning" title="Permanent link">&para;</a></h2>
+<p>Children learn through play. NeXuS makes the play meaningful.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Child attempts a lesson:
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>  First try, any result    →  Encouraged — attempt badge
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>  Improves on retry        →  Progress badge — growth celebrated
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>  Masters the concept      →  Mastery badge — permanent, on-chain
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>  Teaches another child    →  Junior Oracle badge — highest honour
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>No streaks that punish absence.
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>No timers that create anxiety.
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>No comparison to peers.
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>No leaderboard pressure.
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>Just genuine progress — celebrated when it happens,
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>preserved forever when it does.
+</code></pre></div>
+<p><strong>Badges of honour applied where honour was earned.</strong> A child's first mastery badge means something because it required mastery — not purchase, not luck, not participation.</p>
+<hr />
+<h2 id="the-nanny-and-caregiver-oracle">The Nanny and Caregiver Oracle<a class="headerlink" href="#the-nanny-and-caregiver-oracle" title="Permanent link">&para;</a></h2>
+<p>Daily caregivers are the most overlooked shapers of early childhood. A nanny who spends 40 hours a week with a child during their most formative years has more developmental influence than most institutions.</p>
+<p>NeXuS recognises this.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Caregiver Oracle contributions:
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  🌱 Early language development interactions
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>  🎮 Healthy play facilitation
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>  📖 Reading and story sessions
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>  🍎 Nutrition and wellness guidance
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>  💤 Routine and security building
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>  🎨 Creative exploration sessions
+</code></pre></div>
+<p>Every verified positive interaction builds reputation. Every family that thrives contributes to the Oracle's permanent record. The work was always valuable — now the network proves it and pays it.</p>
+<hr />
+<h2 id="the-elder-oracle">The Elder Oracle<a class="headerlink" href="#the-elder-oracle" title="Permanent link">&para;</a></h2>
+<p>Grandparents and community elders carry knowledge that exists nowhere else.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>What Elders know that AI does not:
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>  - How things were actually done before the internet
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>  - Local history that was never documented
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>  - Practical skills passed down through generations
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>  - Cultural knowledge that lives in memory not in databases
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>  - Life experience that cannot be simulated
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>  - Wisdom that only comes from having lived
+</code></pre></div>
+<p>In RIN, Elder Oracles are among the most valuable nodes in the network. Their knowledge is irreplaceable. Their Ground Truth badge cannot be earned any other way.</p>
+<p>The network routes questions to Elder Oracles when lived experience is what is needed — and no AI rating, however high, substitutes for that.</p>
+<hr />
+<h2 id="what-gets-built">What Gets Built<a class="headerlink" href="#what-gets-built" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Level</th>
-<th>Meaning</th>
-<th>Action</th>
+<th>Component</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1</td>
-<td>Low-risk probe</td>
-<td>Log only</td>
+<td>Education Oracle profiles</td>
+<td>Anonymous, verified, badge-driven</td>
 </tr>
 <tr>
-<td>2</td>
-<td>Moderate scan</td>
-<td>Log only</td>
+<td>Residual earning engine</td>
+<td>Credits flow as learners grow</td>
 </tr>
 <tr>
-<td>3</td>
-<td>Active scan (&gt;50 ports)</td>
-<td>Email alert</td>
+<td>Parent authorization layer</td>
+<td>Unequivocal parent control</td>
 </tr>
 <tr>
-<td>4</td>
-<td>Aggressive scan</td>
-<td>Block + email</td>
+<td>Constructive culture certification</td>
+<td>Mandatory for Education Oracles</td>
 </tr>
 <tr>
-<td>5</td>
-<td>Full port sweep</td>
-<td>Block + email + psadwatchd escalation</td>
-</tr>
-</tbody>
-</table>
-<h3 id="daily-operations">Daily Operations<a class="headerlink" href="#daily-operations" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Check current status</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>doas<span class="w"> </span>psad<span class="w"> </span>--Status
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># Show blocked IPs</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>doas<span class="w"> </span>psad<span class="w"> </span>--Status<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;Danger level [3-5]&quot;</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># Flush all blocks</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>doas<span class="w"> </span>psad<span class="w"> </span>--flush-blocked-ip<span class="w"> </span>all
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="c1"># Force signature reload after fwsnort update</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>doas<span class="w"> </span>psad<span class="w"> </span>-H
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="c1"># Update signatures + reload</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>doas<span class="w"> </span>psad<span class="w"> </span>--sig-update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>doas<span class="w"> </span>psad<span class="w"> </span>-H
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="c1"># Live log watching</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/psad/status.out
-</code></pre></div>
-<h3 id="config-reference-etcpsadpsadconf">Config Reference (<code>/etc/psad/psad.conf</code>)<a class="headerlink" href="#config-reference-etcpsadpsadconf" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>SYSLOG_DAEMON</code></td>
-<td><code>syslogd</code></td>
-<td>NOT metalog (even if metalog.conf exists)</td>
+<td>Learning milestone tracking</td>
+<td>Child progress, parent visible</td>
 </tr>
 <tr>
-<td><code>IPT_SYSLOG_FILE</code></td>
-<td><code>/var/log/messages</code></td>
-<td>Where busybox syslogd writes</td>
+<td>Elder Oracle recognition</td>
+<td>Ground truth, lived experience</td>
 </tr>
 <tr>
-<td><code>IPT_PREFIX</code></td>
-<td><code>[UFW BLOCK]</code></td>
-<td>Must match UFW log prefix exactly</td>
+<td>Caregiver Oracle category</td>
+<td>Daily care contribution valued</td>
 </tr>
 <tr>
-<td><code>ENABLE_AUTO_IDS</code></td>
-<td><code>Y</code></td>
-<td>Enable automatic blocking</td>
-</tr>
-<tr>
-<td><code>AUTO_IDS_DANGER_LEVEL</code></td>
-<td><code>3</code></td>
-<td>Block at level 3+</td>
-</tr>
-<tr>
-<td><code>EMAIL_ALERT_DANGER_LEVEL</code></td>
-<td><code>3</code></td>
-<td>Email at level 3+</td>
+<td>Junior Oracle pathway</td>
+<td>Children become contributors</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="fwsnort-snort-rules-iptables">fwsnort — Snort Rules → iptables<a class="headerlink" href="#fwsnort-snort-rules-iptables" title="Permanent link">&para;</a></h2>
-<p>fwsnort translates Snort IDS signatures into iptables rules, giving PSAD application-layer awareness.</p>
-<h3 id="nftables-compatibility-fix">nftables Compatibility Fix<a class="headerlink" href="#nftables-compatibility-fix" title="Permanent link">&para;</a></h3>
-<p>Alpine's <code>iptables-nft</code> (v1.8.11) rejects the old <code>!port</code> negation syntax. fwsnort generates ~8 rules with this pattern that must be stripped before applying.</p>
-<p><strong>Fix script</strong> (<code>~/scripts/nexus-fix-fwsnort-nftables.sh</code>):
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="ch">#!/bin/sh</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># Strip incompatible !port rules and apply the rest</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;/dports.*,![0-9]/d; /sports.*,![0-9]/d&#39;</span><span class="w"> </span>/var/lib/fwsnort/fwsnort_iptcmds.sh
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="nv">IPTABLES</span><span class="o">=</span>iptables<span class="w"> </span>sh<span class="w"> </span>/var/lib/fwsnort/fwsnort_iptcmds.sh
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>doas<span class="w"> </span>psad<span class="w"> </span>-H
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;fwsnort rules applied&quot;</span>
-</code></pre></div></p>
-<h3 id="update-workflow">Update Workflow<a class="headerlink" href="#update-workflow" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Full update (downloads new rules, regenerates, applies, reloads PSAD)</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>doas<span class="w"> </span>sh<span class="w"> </span>~/scripts/nexus-update-fwsnort.sh
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># Manual steps:</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>doas<span class="w"> </span>fwsnort<span class="w"> </span>--update-rules<span class="w">   </span><span class="c1"># download latest Snort community rules</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>doas<span class="w"> </span>fwsnort<span class="w">                  </span><span class="c1"># translate to iptables</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>doas<span class="w"> </span>sh<span class="w"> </span>~/scripts/nexus-fix-fwsnort-nftables.sh<span class="w">  </span><span class="c1"># strip bad rules + apply</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>doas<span class="w"> </span>psad<span class="w"> </span>--sig-update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>doas<span class="w"> </span>psad<span class="w"> </span>-H<span class="w">            </span><span class="c1"># reload PSAD</span>
-</code></pre></div>
-<h3 id="verify-rules-loaded">Verify Rules Loaded<a class="headerlink" href="#verify-rules-loaded" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Count fwsnort rules in iptables</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>doas<span class="w"> </span>iptables<span class="w"> </span>-L<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-c<span class="w"> </span>FWSNORT
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="c1"># Should show ~29,600+ rules</span>
+<h2 id="the-promise-to-education-oracles">The Promise to Education Oracles<a class="headerlink" href="#the-promise-to-education-oracles" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Your work will be recognized.
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Your impact will be measured honestly.
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>Your reputation will be permanent.
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>Your earnings will compound as your learners grow.
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>Your identity will be protected.
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>Your contributions will outlast any institution.
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>The children you shape carry your influence forever.
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>The network ensures you are compensated for it.
 </code></pre></div>
 <hr />
-<h2 id="fail2ban-brute-force-protection">fail2ban — Brute Force Protection<a class="headerlink" href="#fail2ban-brute-force-protection" title="Permanent link">&para;</a></h2>
-<p>fail2ban monitors auth logs and bans IPs that exceed threshold.</p>
-<h3 id="alpine-specific-config">Alpine-Specific Config<a class="headerlink" href="#alpine-specific-config" title="Permanent link">&para;</a></h3>
-<p>Alpine uses <code>busybox syslogd</code> writing to <code>/var/log/messages</code> — NOT <code>/var/log/auth.log</code> or <code>/var/log/sshd_log</code>.</p>
-<p><strong><code>/etc/fail2ban/paths-overrides.local</code>:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">[DEFAULT]</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="na">sshd_log</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/var/log/messages</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="na">syslog_authpriv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/var/log/messages</span>
-</code></pre></div></p>
-<p><strong><code>/etc/fail2ban/jail.d/alpine-ssh.conf</code>:</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">[sshd]</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="na">enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="na">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">ssh</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="na">filter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">sshd</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="na">logpath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/var/log/messages</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="na">maxretry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">5</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="na">bantime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">3600</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="na">findtime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">600</span>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="k">[sshd-ddos]</span>
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="na">enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="na">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">ssh</span>
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="na">filter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">sshd-ddos</span>
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="na">logpath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/var/log/messages</span>
-<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="na">maxretry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">5</span>
-<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="na">bantime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">3600</span>
-</code></pre></div></p>
-<h3 id="operations">Operations<a class="headerlink" href="#operations" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Check status (requires doas — socket is root-only)</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>doas<span class="w"> </span>fail2ban-client<span class="w"> </span>status
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>doas<span class="w"> </span>fail2ban-client<span class="w"> </span>status<span class="w"> </span>sshd
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="c1"># Unban an IP</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>doas<span class="w"> </span>fail2ban-client<span class="w"> </span><span class="nb">set</span><span class="w"> </span>sshd<span class="w"> </span>unbanip<span class="w"> </span><span class="m">1</span>.2.3.4
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="c1"># Test a filter against log</span>
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>doas<span class="w"> </span>fail2ban-regex<span class="w"> </span>/var/log/messages<span class="w"> </span>/etc/fail2ban/filter.d/sshd.conf
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="c1"># Restart after config changes</span>
-<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>doas<span class="w"> </span>rc-service<span class="w"> </span>fail2ban<span class="w"> </span>restart
-</code></pre></div>
-<hr />
-<h2 id="apparmor-pending-activation">AppArmor (Pending Activation)<a class="headerlink" href="#apparmor-pending-activation" title="Permanent link">&para;</a></h2>
-<p>AppArmor is installed but NOT active — the kernel LSM list is missing it.</p>
-<p><strong>Current kernel LSMs:</strong> <code>lockdown,capability,landlock,yama</code></p>
-<p><strong>To activate</strong>, add to <code>/boot/extlinux.conf</code> APPEND line:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>lsm=landlock,yama,apparmor
-</code></pre></div></p>
-<p>Then reboot. Verify with:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>cat<span class="w"> </span>/sys/kernel/security/lsm
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>aa-status
-</code></pre></div></p>
-<p><strong>Planned profiles</strong> (complain mode first, then enforce):
-- <code>tor</code> — <code>/usr/bin/tor</code>
-- <code>privoxy</code> — <code>/usr/sbin/privoxy</code>
-- <code>psad</code> — <code>/usr/sbin/psad</code>
-- <code>nginx</code> — <code>/usr/sbin/nginx</code></p>
-<hr />
-<h2 id="port-knocking-queued">Port Knocking (Queued)<a class="headerlink" href="#port-knocking-queued" title="Permanent link">&para;</a></h2>
-<p><code>knockd</code> — SSH access via sequence knock, zero open ports visible.</p>
-<p><strong>Planned sequence:</strong> Three UDP ports → triggers temporary iptables rule → SSH accessible for 10s.</p>
-<p>Status: <strong>Not yet configured.</strong> Install: <code>doas apk add knockd</code></p>
-<hr />
-<h2 id="fix-scripts-reference">Fix Scripts Reference<a class="headerlink" href="#fix-scripts-reference" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Script</th>
-<th>Purpose</th>
-<th>Run As</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>~/scripts/nexus-fix-psad-logging.sh</code></td>
-<td>Fix full UFW→klogd→syslogd→PSAD chain</td>
-<td><code>doas sh</code></td>
-</tr>
-<tr>
-<td><code>~/scripts/nexus-fix-fwsnort-nftables.sh</code></td>
-<td>Strip bad <code>!port</code> rules + apply fwsnort</td>
-<td><code>doas sh</code></td>
-</tr>
-<tr>
-<td><code>~/scripts/nexus-update-fwsnort.sh</code></td>
-<td>Full fwsnort update + PSAD reload</td>
-<td><code>doas sh</code></td>
-</tr>
-<tr>
-<td><code>~/scripts/nexus-fix-fail2ban.sh</code></td>
-<td>Fix fail2ban logpath for Alpine</td>
-<td><code>doas sh</code></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="security-checklist">Security Checklist<a class="headerlink" href="#security-checklist" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>[ ] klogd running:        rc-service klogd status
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>[ ] UFW log prefix set:   grep &quot;UFW BLOCK&quot; /etc/ufw/before.rules
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>[ ] PSAD scanning:        psad --Status | grep &quot;Pkts&quot;
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>[ ] fwsnort rules loaded: iptables -L | grep -c FWSNORT
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>[ ] fail2ban active:      doas fail2ban-client status
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>[ ] AppArmor:             PENDING (extlinux.conf change required)
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>[ ] Port knocking:        PENDING (knockd not installed)
-</code></pre></div>
+<blockquote>
+<p><em>"Every great person was shaped by someone the world forgot to pay. NeXuS does not forget."</em></p>
+</blockquote>
 
 
 
