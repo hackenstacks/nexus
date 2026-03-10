@@ -51,6 +51,8 @@ nav:
     - Security Stack (PSAD, fwsnort, fail2ban): security-stack.md
     - PSAD Manual: psad-manual.md
     - fwsnort Manual: fwsnort-manual.md
+    - NeXuS Integrity — Prepared Is Not Paranoid: nexus-integrity.md
+    - Human KDF — Password Without a Manager: human-kdf.md
   - AI:
     - Merged AI Identity: ai-merged-identity.md
     - Autonomous AI Intelligence: autonomouse-ai-intelligence.md
