@@ -42,6 +42,7 @@ nav:
   - What Is NeXuS:
     - Overview: what-is-nexus.md
     - Full Overview: nexus-overview.md
+    - System Blueprint: nexus-blueprint.md
     - OAAE Framework: oaae-framework.md
   - Network:
     - Medusa Stealth Routing: medusa-stealth-routing.md
@@ -69,6 +70,7 @@ nav:
   - Architecture:
     - Two-Layer Architecture — Public and Dark: nexus-architecture-layers.md
     - Economy & Blockchain: economy-architecture.md
+    - NeXuS Mint Protocol: nexus-mint-protocol.md
     - Required Applications: required-applications.md
     - Install Architecture: install-architecture.md
   - Node:

@@ -17,10 +17,10 @@ Safety Protocol: Before modifying any configuration files, perform a timestamped
 2. Deploying the Medusa Proxy Service
 The core of the stealth routing system relies on the medusa-proxy container, which orchestrates multiple anonymity circuits.
 
-    Image Selection: Use the datawookie/medusa-proxy:latest Docker image
+    Image Selection: Use the NeXuS Medusa container (local build via `podman-compose`)
 
 .
-Environment Configuration: Define the following variables in your deployment script or docker-compose.yml:
+Environment Configuration: Define the following variables in your deployment script or `podman-compose.yml`:
 
     TORS=5: Deploys 5 independent Tor instances to enable load balancing
 

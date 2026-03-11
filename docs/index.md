@@ -121,7 +121,7 @@ Built on **Alpine Linux Edge.** Runs on *anything* — from a 2011 laptop to a m
 
     - 🔒 Privacy stack pre-configured
     - 🤖 Local AI included (Ollama)
-    - 🖥️ Optional Wayland desktop (labwc)
+    - 🖥️ CLI-first by default — Hyprland / labwc optional at setup
 
     **Status:** 🔨 In development — Phase 1
 

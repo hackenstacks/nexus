@@ -1,54 +1,53 @@
 # nexus-docs - Action Report
 
 **Project:** /home/user/Documents/nexus-docs
-**Created:** 2026-03-09
+**Created:** 2026-03-10
 
 ---
 
 
-## MkDocs site built + all docs wired in + infographics embedded (2026-03-09 19:08)
+## Added PSAD + fwsnort manuals, fixed dead links, added scripts to repo (2026-03-10 12:46)
 
-What: Built the NeXuS MkDocs documentation site with Material theme and wired in all docs and infographics.
-
-Why: Need a browsable docs site for NeXuS that renders all design documents with proper navigation and images.
-
-How:
-- MkDocs + mkdocs-material installed via pipx inject
-- Site at ~/Documents/nexus-docs/, served on localhost:8000
-- 14 pages across 8 sections: What Is NeXuS, Network, Security, AI, Development, Architecture, Node, Dev
-- 4 infographics embedded: nexus-30kft-view-blueprint, hybrid-sovereignty, project-chimera, survival-com-system
-- All docs given proper H1 headers
-- Duplicate systems-overview-nexus.md removed
-- Design docs linked via symlinks so edits auto-reflect
-- Git initialised on nexus-docs repo
-
-To serve: cd ~/Documents/nexus-docs && mkdocs serve
-
-Files: mkdocs.yml, docs/ (14 pages + 4 images)
+**What:** Added security manuals to docs site, fixed dead hyperlinks, committed scripts to repo.
+**Why:** Site had thin security section and broken links to scripts that weren't in the repo.
+**How:** Copied PSAD_MANUAL.md + FWSNORT_MANUAL.md from ~/scripts/docs/ into nexus-docs/docs/. Added scripts/ dir with the 3 referenced scripts. Fixed dead relative links (../script.sh) to GitHub blob URLs. Updated mkdocs.yml nav. Committed to main + deployed gh-pages.
+**Files:** docs/psad-manual.md, docs/fwsnort-manual.md, docs/security-stack.md, scripts/nexus-fix-psad-logging.sh, scripts/nexus-fix-fwsnort-nftables.sh, scripts/nexus-update-fwsnort.sh, mkdocs.yml
+**Live at:** https://hackenstacks.github.io/nexus/
 
 ---
 
-## GitHub Pages live deployment + homepage redesign (2026-03-09)
 
-**What:** Deployed NeXuS docs to GitHub Pages at https://hackenstacks.github.io/nexus/
+## Added NeXuS Integrity doc and Human KDF (NeXuS Riddler Equation) (2026-03-10 13:54)
 
-**Why:** User requested public docs hosting on GitHub with a redesigned homepage — 30k ft view, quick start, downloads, emoji/color/italic styling.
+**What:** Two new core philosophy/security docs added to the site.
+**Why:** Conversation produced two important ideas that belong in the book: (1) NeXuS must deliver on its promises in grid-down scenarios, not just when everything works. (2) A human-computable password algorithm that requires no software, no cloud, no trust.
+**How:** nexus-integrity.md covers prepared-not-paranoid philosophy, honest promise vs reality audit, physical security without black boxes (no TPM). human-kdf.md covers the full NeXuS Riddler Equation — human KDF with salted derivation, quick reference card, rotation strategy.
+**Files:** docs/nexus-integrity.md, docs/human-kdf.md, mkdocs.yml
+**Note:** Algorithm to be renamed NeXuS Riddler Equation in next edit.
 
-**How:**
-- Created GitHub repo `hackenstacks/nexus` (public)
-- Updated `mkdocs.yml`: added `site_url`, `repo_url`, emoji extension (`pymdownx.emoji`), `attr_list`, `md_in_html`, `pymdownx.details`, `pymdownx.tasklist`, `navigation.tabs.sticky`, `navigation.instant`
-- Rewrote `docs/index.md`: full homepage with emojis, tabbed quick start, 4-card downloads grid, split what's-working/building checklist, 8-card docs grid, philosophy block, join section
-- Ran `mkdocs gh-deploy --force` — pushes built site to `gh-pages` branch
-- GitHub Pages auto-enabled on `gh-pages` branch
+---
 
-**Files:** `mkdocs.yml`, `docs/index.md`
 
-**Live URL:** https://hackenstacks.github.io/nexus/ *(active in ~1-2 min)*
+## Major vision docs session — RIN, Rings, Education Oracle, Architecture Layers, Cerberus Protocol (2026-03-10 21:47)
 
-**To redeploy after changes:**
-```bash
-cd ~/Documents/nexus-docs && mkdocs gh-deploy
-```
+**What:** Six major vision documents written and deployed to hackenstacks.github.io/nexus in one session.
+**Why:** Vision conversation produced core NeXuS concepts that needed to be captured immediately.
+**Docs Created:**
+1. cerberus-protocol.md — Human-computable password KDF, three heads mythology, salted derivation, field card
+2. nexus-integrity.md — Prepared not paranoid, honest promise vs reality audit, physical security without black boxes
+3. rin.md — Real Intelligence Network, dual leaderboards, Oracle + AI profiles, XMR economy
+4. nexus-rings.md — Family Sovereignty Protocol, parent domain rights, ring structure, privacy by architecture
+5. education-oracle.md — Teachers/nannies/mentors as Oracles, residual earning model, constructive culture
+6. nexus-architecture-layers.md — Two-layer public/dark architecture, nexusnet.network vs nexusnet.nexus, nexus.locker vault
+**Domain Portfolio:** 15 domains secured on Porkbun including nexusnet.nexus, nexusforge.nexus, nexusnet.dev, nexusnet.studio, nexusnet.email and more
+**Files:** All docs in ~/Documents/nexus-docs/docs/, mkdocs.yml nav updated, deployed to gh-pages
+
+---
+
+
+## NeXuS Mint Protocol + Blueprint docs (2026-03-11 05:57)
+
+What: Created two new docs in MkDocs — nexus-mint-protocol.md and nexus-blueprint.md. Why: Needed to document the NeXuS Mint Protocol (content monetization architecture designed this session) and create a source-of-truth blueprint to replace the error-filled PNG infographic. How: nexus-mint-protocol.md covers the full protocol — key hierarchy, burn mechanism, IPFS storage, smart contract spec, economic model (primary/secondary market, royalties, NeXuS fees). nexus-blueprint.md covers all 6 system panels with correct Alpine/OpenRC references, Medusa vs Hydra distinction, and a corrections table listing errors from the old PNG (systemd→OpenRC, Falltom→fail2ban, Netlicum→Reticulum, OpenSwitch→OpenSnitch). Files: docs/nexus-mint-protocol.md, docs/nexus-blueprint.md, mkdocs.yml updated with new nav entries.
 
 ---
 

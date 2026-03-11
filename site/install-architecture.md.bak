@@ -1,0 +1,218 @@
+# NeXuS Install Architecture
+**Status:** Design Draft — living document
+**Date:** 2026-03-09
+**Authors:** Anon + Claude (Sonnet 4.6)
+
+---
+
+## The Rule
+
+Two categories. No exceptions without a documented reason.
+
+```
+CONTAINER  =  anything facing the outside world, exploitable, or complex deps
+              if compromised → stays sandboxed, does not touch the host
+
+NATIVE     =  anything needing direct hardware, running before containers start,
+              or serving as the user's primary interface
+```
+
+---
+
+## Containerized Services (podman — rootless)
+
+All containers run rootless via podman. No root daemon. Each container runs as the user. One `podman-compose` file deploys the entire stack.
+
+| Container | Image | Ports | Why Container |
+|-----------|-------|-------|---------------|
+| `nexus-tor` | medusa-proxy (local build) | 1080 (SOCKS), 8888 (HTTP), 2090 (stats) | External network — if exploited stays sandboxed |
+| `nexus-i2p` | purplei2p/i2pd | 4444 (HTTP proxy), 4447 (SOCKS), 7070 (console) | External P2P network, own port namespace |
+| `nexus-privoxy` | local build | 8118 | Proxy service, external-facing |
+| `nexus-haproxy` | local build | 1080, 8888 | Load balancer, rotating Tor exits |
+| `nexus-dnscrypt` | local build | 5354 | DNS over network — isolated resolver |
+| `nexus-unbound` | mvance/unbound | 5353 | Local DNS — isolated |
+| `nexus-diva` | *(Phase 1 — not built)* | 17468 | DIVA chain API bridge, external comms |
+| `nexus-ipfs` | *(Phase 1 — not built)* | 4001, 5001, 8080 | External P2P, large attack surface |
+| `nexus-chaind` | *(Phase 1 — not built)* | TBD | Blockchain P2P node, external network |
+
+**Podman compose file:** `~/Projects/nexus-network-stack/src/nexus-compose.yaml`
+
+---
+
+## Native Installs (host OS — Alpine Linux)
+
+### Boot Layer (must exist before anything else starts)
+
+| Package | Install Method | Why Native |
+|---------|---------------|------------|
+| `nftables` | apk | Kernel firewall — must run before network, before containers |
+| `chrony` | apk | Time sync — **critical for crypto operations**, must be accurate |
+| `podman` | apk | Container runtime itself — the foundation |
+| `podman-compose` | apk / pip | Compose orchestration |
+
+### Network Layer (hardware or kernel integration)
+
+| Package | Install Method | Why Native |
+|---------|---------------|------------|
+| `yggdrasil` | apk | Creates a kernel network interface — cannot be fully containerized |
+| `reticulum` (rnsd) | pipx (rns) | Needs serial/USB/radio hardware access for LoRa — must reach hardware |
+| `obfs4proxy` | apk | Pluggable transport helper for Tor — host-level bridge |
+
+> **Note:** Yggdrasil and Reticulum are currently in `nexus-compose.yaml` as containers.
+> These should migrate to native installs. Reticulum especially needs hardware access for LoRa radio bootstrap.
+
+### AI Layer (performance requires direct hardware)
+
+| Package | Install Method | Why Native |
+|---------|---------------|------------|
+| `ollama` | apk / install script | GPU/CPU inference — container overhead hurts performance |
+| `aichat` | cargo / pipx | CLI tool, user-facing, needs direct terminal |
+
+**Ollama models** — pull on first run (not pre-bundled). Recommended baseline:
+```
+ollama pull phi3-mini     # ~2GB — fast, runs on any node
+ollama pull qwen2:1.5b    # ~1GB — ultra-light fallback
+```
+
+### Desktop Layer (Wayland — direct display/GPU)
+
+| Package | Install Method | Why Native |
+|---------|---------------|------------|
+| `labwc` | apk | Wayland compositor — direct GPU/display hardware |
+| `sway` | nix / apk | Wayland tiling WM alternative (i3-compatible) |
+| `foot` | apk | Terminal emulator — display hardware |
+| `fuzzel` | apk | App launcher |
+| `falkon` | flatpak | Privacy browser — Tor-routed |
+| `greetd` + `tuigreet` | apk | Login manager |
+
+### Audio Layer
+
+| Package | Install Method | Why Native |
+|---------|---------------|------------|
+| `pipewire` | apk | Audio server — direct ALSA hardware |
+| `wireplumber` | apk | PipeWire session manager |
+| `pipewire-pulse` | apk | PulseAudio compatibility layer |
+| `mpv` | apk | Media player — direct audio/video hardware |
+| `musikcube` | apk | Terminal music player — direct audio |
+
+### CLI Tools
+
+| Package | Install Method | Notes |
+|---------|---------------|-------|
+| `tmux` | apk | Terminal multiplexer |
+| `fzf` | apk | Fuzzy finder — used in all NeXuS scripts |
+| `bat` | apk | Syntax-highlighted cat replacement |
+| `ripgrep` | apk | Fast search (rg) |
+| `fd` | apk | Fast find replacement |
+| `htop` | apk | System monitor |
+| `neovim` | apk | Text editor |
+| `git` | apk | Version control |
+| `pv` | apk | Pipe viewer — progress on transfers and backups |
+| `lynx` | apk | Text browser — Townhall, no-JS clearnet access |
+| `nix-shell` | nix installer | Reproducible dev environments |
+
+### Node Services (Phase 1 — not yet built)
+
+| Package | Install Method | Notes |
+|---------|---------------|-------|
+| `nexus-wallet` | NeXuS installer | Command Center UI — primary interface |
+| `nexus-node-monitor` | NeXuS installer | Reads CPU/storage/bandwidth — needs direct hardware metrics |
+
+---
+
+## Open Questions (decisions still needed)
+
+| Question | Options | Impact |
+|----------|---------|--------|
+| Yggdrasil native vs container | Native (network interface) vs container (current) | Security vs convenience |
+| Reticulum native vs container | Native (needs LoRa hardware) vs container (current) | Hardware access |
+| batman-adv (mesh kernel module) | Native kernel module only | Confirm needed? |
+| Ollama model pre-bundle | Bundle phi3-mini in image vs pull on first run | Image size vs UX |
+| `3wm` — clarify | i3wm (X11) or sway (Wayland) | sway recommended for Wayland-first |
+| podman-compose vs quadlet | podman-compose (Docker-compatible) vs systemd quadlet (modern) | Complexity vs integration |
+
+---
+
+## Install Flow (target — one script)
+
+```
+nexus-install.sh
+│
+├── 1. Detect OS (Alpine / Debian / Arch / Fedora)
+│
+├── 2. Install boot layer
+│   ├── nftables (firewall up first — nothing gets in yet)
+│   └── chrony (time sync — required for crypto)
+│
+├── 3. Install podman + podman-compose
+│
+├── 4. Install native network layer
+│   ├── yggdrasil
+│   └── reticulum (rnsd via pipx)
+│
+├── 5. Pull and start containers
+│   └── podman-compose up -d  (tor, i2p, privoxy, haproxy, dns)
+│
+├── 6. Install AI layer
+│   ├── ollama
+│   ├── aichat
+│   └── ollama pull phi3-mini
+│
+├── 7. Install desktop (optional — user chooses CLI-only or GUI)
+│   ├── labwc + foot + fuzzel + greetd
+│   └── pipewire + wireplumber + mpv + musikcube
+│
+├── 8. Install CLI toolkit
+│   └── tmux fzf bat ripgrep fd htop neovim git pv lynx
+│
+└── 9. Configure and verify
+    ├── nftables rules (all traffic → containers)
+    ├── boot services (openrc / systemd)
+    └── nexus-doctor.sh (health check)
+```
+
+---
+
+## What Does NOT Install
+
+```
+No telemetry of any kind
+No auto-update without explicit user consent
+No clearnet DNS (dnscrypt from boot)
+No open ports except explicitly listed above
+No root-running daemons (podman rootless)
+No KYC, accounts, or registration
+No cloud dependencies
+No pre-installed wallet keys (user generates on first run)
+```
+
+---
+
+## Current State vs Target
+
+| Component | Current State | Target |
+|-----------|--------------|--------|
+| Tor + I2P + Privoxy + HAProxy | In compose, working | Move to podman-compose, rootless |
+| Yggdrasil | In compose | Move to native |
+| Reticulum | In compose | Move to native (hardware access) |
+| DNS (dnscrypt + unbound) | In compose | Stay containerized |
+| nftables firewall | Scripts exist | Integrate into install flow |
+| Ollama | Native, installed | Add to install script |
+| aichat | Native (cargo) | Add to install script |
+| Desktop (labwc) | Working | Add to install script as optional |
+| PipeWire audio | Working | Add to install script |
+| CLI toolkit | Mostly installed | Standardize in install script |
+| nexus-chaind | Not built | Phase 1 |
+| nexus-wallet | Not built | Phase 1 |
+| IPFS | Not integrated | Phase 1 |
+| DIVA connector | Not built | Phase 1 |
+
+---
+
+## References
+
+- Required Applications: `NEXUS_REQUIRED_APPLICATIONS.md`
+- Economy and blockchain: `NEXUS_ECONOMY_ARCHITECTURE.md`
+- Current compose file: `~/Projects/nexus-network-stack/src/nexus-compose.yaml`
+- Current install script: `~/Projects/nexus-network-stack/src/nexus-install.sh`
+- Docs site: `~/Documents/nexus-docs/`
