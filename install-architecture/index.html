@@ -700,6 +700,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../nexus-blueprint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Blueprint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../oaae-framework/" class="md-nav__link">
         
   
@@ -1658,6 +1686,34 @@
     
   
     Economy & Blockchain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-mint-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeXuS Mint Protocol
   
 
     
@@ -3182,44 +3238,70 @@ These should migrate to native installs. Reticulum especially needs hardware acc
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>ollama pull qwen2:1.5b    # ~1GB — ultra-light fallback
 </code></pre></div></p>
 <h3 id="desktop-layer-wayland-direct-displaygpu">Desktop Layer (Wayland — direct display/GPU)<a class="headerlink" href="#desktop-layer-wayland-direct-displaygpu" title="Permanent link">&para;</a></h3>
+<p>Default session: <code>cage → foot → tmux</code> — no DE, no panel, no overhead. GUI options chosen at setup.</p>
 <table>
 <thead>
 <tr>
 <th>Package</th>
 <th>Install Method</th>
-<th>Why Native</th>
+<th>Notes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>labwc</code></td>
+<td><code>cage</code></td>
 <td>apk</td>
-<td>Wayland compositor — direct GPU/display hardware</td>
-</tr>
-<tr>
-<td><code>sway</code></td>
-<td>nix / apk</td>
-<td>Wayland tiling WM alternative (i3-compatible)</td>
+<td><strong>Default</strong> — minimal Wayland cage, wraps foot+tmux fullscreen</td>
 </tr>
 <tr>
 <td><code>foot</code></td>
 <td>apk</td>
-<td>Terminal emulator — display hardware</td>
+<td><strong>Default</strong> terminal — fast, Wayland-native</td>
 </tr>
 <tr>
-<td><code>fuzzel</code></td>
+<td><code>alacritty</code></td>
 <td>apk</td>
-<td>App launcher</td>
+<td>Alternative terminal — GPU-accelerated</td>
 </tr>
 <tr>
-<td><code>falkon</code></td>
-<td>flatpak</td>
-<td>Privacy browser — Tor-routed</td>
+<td><code>tmux</code></td>
+<td>apk</td>
+<td><strong>The desktop</strong> in default CLI session</td>
+</tr>
+<tr>
+<td><code>kmscon</code></td>
+<td>apk</td>
+<td>Framebuffer fallback — no Wayland, legacy hardware</td>
+</tr>
+<tr>
+<td><code>hyprland</code></td>
+<td>apk / nix</td>
+<td><strong>Recommended GUI</strong> — confirmed working, GPU-accelerated, beautiful</td>
+</tr>
+<tr>
+<td><code>labwc</code></td>
+<td>apk</td>
+<td>Lightweight Wayland DE option — <em>pending: login not yet loading</em></td>
+</tr>
+<tr>
+<td><code>sway</code></td>
+<td>apk / nix</td>
+<td>Wayland tiling WM (i3-compatible) — alternative GUI option</td>
 </tr>
 <tr>
 <td><code>greetd</code> + <code>tuigreet</code></td>
 <td>apk</td>
 <td>Login manager</td>
+</tr>
+<tr>
+<td><code>fuzzel</code></td>
+<td>apk</td>
+<td>App launcher — fzf-based, works in all sessions</td>
+</tr>
+<tr>
+<td><code>falkon</code></td>
+<td>flatpak</td>
+<td>Privacy browser — Tor-routed</td>
 </tr>
 </tbody>
 </table>
@@ -3381,14 +3463,14 @@ These should migrate to native installs. Reticulum especially needs hardware acc
 <td>Image size vs UX</td>
 </tr>
 <tr>
-<td><code>3wm</code> — clarify</td>
-<td>i3wm (X11) or sway (Wayland)</td>
-<td>sway recommended for Wayland-first</td>
+<td>Window manager choice</td>
+<td>cage+foot+tmux (default), Hyprland (GPU), labwc (pending), sway (tiling option)</td>
+<td><strong>Resolved</strong> — cage+foot+tmux is default</td>
 </tr>
 <tr>
 <td>podman-compose vs quadlet</td>
-<td>podman-compose (Docker-compatible) vs systemd quadlet (modern)</td>
-<td>Complexity vs integration</td>
+<td>podman-compose (Docker-compatible) vs systemd quadlet</td>
+<td><strong>Note:</strong> quadlet requires systemd — Alpine uses OpenRC. podman-compose is the answer.</td>
 </tr>
 </tbody>
 </table>
@@ -3416,17 +3498,20 @@ These should migrate to native installs. Reticulum especially needs hardware acc
 <a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>│   ├── aichat
 <a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>│   └── ollama pull phi3-mini
 <a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>│
-<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>├── 7. Install desktop (optional — user chooses CLI-only or GUI)
-<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>│   ├── labwc + foot + fuzzel + greetd
-<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>│   └── pipewire + wireplumber + mpv + musikcube
-<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>│
-<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>├── 8. Install CLI toolkit
-<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>│   └── tmux fzf bat ripgrep fd htop neovim git pv lynx
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>├── 7. Install desktop (setup asks — default is CLI)
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>│   ├── DEFAULT: cage + foot + tmux (always installed)
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>│   ├── OPTION: kmscon (no-Wayland fallback)
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>│   ├── OPTION: hyprland (GPU-capable machines)
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>│   ├── OPTION: labwc (lightweight DE — pending testing)
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>│   └── pipewire + wireplumber + mpv + musikcube (audio, optional)
 <a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>│
-<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>└── 9. Configure and verify
-<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>    ├── nftables rules (all traffic → containers)
-<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>    ├── boot services (openrc / systemd)
-<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>    └── nexus-doctor.sh (health check)
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>├── 8. Install CLI toolkit
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a>│   └── tmux fzf bat ripgrep fd htop neovim git pv lynx
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>│
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>└── 9. Configure and verify
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>    ├── nftables rules (all traffic → containers)
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>    ├── boot services (OpenRC — Alpine uses OpenRC, no systemd)
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>    └── nexus-doctor.sh (health check)
 </code></pre></div>
 <hr />
 <h2 id="what-does-not-install">What Does NOT Install<a class="headerlink" href="#what-does-not-install" title="Permanent link">&para;</a></h2>
@@ -3486,9 +3571,19 @@ These should migrate to native installs. Reticulum especially needs hardware acc
 <td>Add to install script</td>
 </tr>
 <tr>
+<td>Desktop (cage+foot+tmux)</td>
+<td>Working — default CLI session</td>
+<td>Add to install script as default</td>
+</tr>
+<tr>
+<td>Desktop (Hyprland)</td>
+<td>Working — beta tested on GPU hardware</td>
+<td>Add to install script as GPU option</td>
+</tr>
+<tr>
 <td>Desktop (labwc)</td>
-<td>Working</td>
-<td>Add to install script as optional</td>
+<td>Login not loading — under investigation</td>
+<td>Pending</td>
 </tr>
 <tr>
 <td>PipeWire audio</td>

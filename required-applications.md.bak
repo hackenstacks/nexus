@@ -1,0 +1,207 @@
+# NeXuS Required Applications
+**Status:** Living document — updated as stack evolves
+**Date:** 2026-03-09
+**Authors:** Anon + Claude (Sonnet 4.6)
+
+---
+
+## Overview
+
+Every NeXuS node runs the same stack. One script deploys everything. All nodes look identical from the outside — no fingerprinting, no differentiation. The stack is layered: transport → privacy → node services → user interface. Each layer is independent and replaceable.
+
+**Design rule:** If it is not in this list, it does not ship with NeXuS.
+
+---
+
+## Layer 1 — Transport (Anonymous Networking)
+
+| Application | Purpose | Status |
+|-------------|---------|--------|
+| `tor` + `obfs4proxy` | Darknet transport. Bridges: obfs4 (random traffic), Snowflake (WebRTC), WebTunnel (HTTPS). Censorship-resistant entry to mesh | EXISTS |
+| `i2pd` | I2P router. Native transport for DIVA chain communication and node-to-node mesh. Hidden services, no exit nodes needed | EXISTS |
+| `reticulum` (rns) | LoRa / radio / mesh transport. Off-grid bootstrap. Zero internet required. Phone + LoRa hat joins the network | EXISTS |
+| `yggdrasil` | Encrypted IPv6 mesh overlay. Peer routing without central infrastructure | EXISTS |
+
+---
+
+## Layer 2 — Privacy Stack
+
+| Application | Purpose | Status |
+|-------------|---------|--------|
+| `privoxy` | Content filtering. Ad and tracker blocking. HTTP request sanitisation | EXISTS |
+| `haproxy` | Load balancer. Medusa 3-head rotating Tor exits — requests spread across multiple circuits | EXISTS |
+| `nftables` | Firewall. All traffic forced through darknet. No clearnet leaks by default | EXISTS (scripts) |
+| `dnscrypt-proxy` | DNS over Tor. No clearnet DNS queries — ISP cannot see domains visited | EXISTS (config) |
+| `unbound` | Local DNS resolver. No dependency on ISP DNS infrastructure | EXISTS (config) |
+
+---
+
+## Layer 3 — Node Services (Economy Layer)
+
+| Application | Purpose | Status |
+|-------------|---------|--------|
+| `nexus-chaind` | NeXuS blockchain daemon. Mining (AstroBWT), wallet management, chain sync, smart contract execution | **NOT BUILT** |
+| `ipfs` (kubo) | Distributed storage daemon. Pins content for the network. Node earns per GB pinned and proven | NOT INTEGRATED |
+| `diva-connector` | DIVA chain API bridge. Posts to nexus:badges, nexus:reputation, nexus:storage, nexus:exchange, nexus:governance namespaces | **NOT BUILT** |
+| `nexus-node-monitor` | Tracks CPU / storage / bandwidth contribution percentages. Calculates earnings rate. Feeds Command Center UI | **NOT BUILT** |
+
+---
+
+## Layer 4 — User Interface
+
+| Application | Purpose | Status |
+|-------------|---------|--------|
+| `nexus-wallet` | The NeXuS Command Center. Browser into the network. Dashboard, Assets, Swap, NFT Forge, Finance, Node controls, Keys | **NOT BUILT** |
+| `foot` | Terminal emulator. Fast, Wayland-native, minimal | EXISTS |
+| `labwc` | Wayland compositor. Optional — NeXuS is CLI-first, GUI available for users who want it | EXISTS |
+| `fuzzel` | App launcher. Keyboard-driven, integrates with labwc right-click menu | EXISTS |
+| `falkon` | Privacy browser. Tor-routed. For Townhall browsing and web access inside NeXuS | EXISTS |
+
+---
+
+## Layer 5 — AI Layer (Local Intelligence)
+
+NeXuS nodes run local AI. No cloud dependency. No data leaving the node. AI assists the user, assists the wallet, assists content creation in the Townhall — all local, all private.
+
+| Application | Purpose | Status |
+|-------------|---------|--------|
+| `ollama` | Local AI model runner. Serves LLMs on localhost. Powers wallet assistant, Townhall helpers, node diagnostics | EXISTS (pipx) |
+| `aichat` | CLI AI interface. Connects to ollama + remote APIs. The AI command line for the node | EXISTS (pipx) |
+| `podman` | Rootless container runtime. Runs the darknet stack (Tor, I2P, Privoxy) in isolated containers. No root required | EXISTS |
+| `podman-compose` | Docker-compatible compose for podman. Deploys the full NeXuS network stack with one command | NEEDS INTEGRATION |
+
+**Why podman over docker:**
+```
+Docker requires root daemon running as root — security risk
+Podman is rootless by design — containers run as your user
+No daemon — each container is a direct child process
+Compatible with existing docker-compose files (with podman-compose)
+Aligns with NeXuS security model — least privilege everywhere
+```
+
+**Why local AI:**
+```
+AI assists without phoning home
+Wallet suggestions, content tagging, node diagnostics
+Townhall listing descriptions, search
+No API keys required for basic use
+Ollama + small model (phi3, qwen2) runs on any node
+```
+
+---
+
+## Layer 6 — CLI Tools (Sane Simple Toolkit)
+
+| Application | Purpose | Status |
+|-------------|---------|--------|
+| `tmux` | Terminal multiplexer. Multiple sessions, persistent after disconnect | EXISTS |
+| `fzf` | Fuzzy finder. Used throughout NeXuS scripts for interactive selection | EXISTS |
+| `bat` | Syntax-highlighted file viewer. Replaces cat | EXISTS |
+| `ripgrep` (rg) | Fast content search. Replaces grep | EXISTS |
+| `htop` | System monitor. Process management | EXISTS |
+| `neovim` | Text editor. Minimal, fast, scriptable | EXISTS |
+| `git` | Version control. Node config management, update distribution | EXISTS |
+| `nix-shell` | Nix package manager shell. Reproducible dev environments, install packages without polluting base OS | EXISTS |
+| `pv` (pipe-viewer) | Monitor data flowing through pipes. Progress bars for backups, transfers, large operations | ADD |
+| `lynx` | Text-based web browser. Browse Townhall and clearnet from terminal, no JavaScript fingerprinting | ADD |
+
+---
+
+## Layer 7 — Media (Townhall Content Playback)
+
+NeXuS nodes buy and sell digital goods. Playback happens locally — no cloud streaming, no DRM phone-home.
+
+| Application | Purpose | Status |
+|-------------|---------|--------|
+| `mpv` | Video and audio player. Plays purchased content from IPFS. Minimal, scriptable, no telemetry | ADD |
+| `musikcube` (musikbox) | Terminal music player. Streams and manages audio library. Browse purchased music from Townhall in the terminal | ADD |
+
+---
+
+## Layer 8 — Window Management
+
+| Application | Purpose | Status |
+|-------------|---------|--------|
+| `labwc` | Wayland compositor. Primary desktop (already in Layer 4) | EXISTS |
+| `i3wm` / `sway` | Tiling window manager option. Sway is Wayland-native i3 — for users who prefer keyboard-driven tiling layout | ADD |
+
+!!! note
+    Confirm: did you mean `i3wm` (X11, needs Xwayland) or `sway` (Wayland-native i3 clone)? Sway is the right call for NeXuS since we are Wayland-first. Adding both as options — sway recommended.
+
+---
+
+## Layer 9 — Bootstrap System
+
+No clearnet exposure. Four independent methods run simultaneously. First success gets the node into the mesh. Once inside, bootstrap is no longer needed.
+
+| Method | Application | Status |
+|--------|-------------|--------|
+| Tor bridge | `tor` + obfs4/Snowflake/WebTunnel (already in Layer 1) | EXISTS |
+| IPFS/IPNS peer list | `ipfs` rotating CID via stable IPNS key | NOT INTEGRATED |
+| BitTorrent BEP46 | Mutable torrent client — ed25519 signed, stable magnet link | **NOT BUILT** |
+| Reticulum | Radio/mesh bootstrap — zero internet entry (already in Layer 1) | EXISTS |
+
+---
+
+## Status Summary
+
+```
+READY NOW (publishable as v0.1 network layer):
+├── Tor + obfs4 + Snowflake + WebTunnel
+├── I2P (i2pd)
+├── Reticulum
+├── Yggdrasil
+├── Privoxy + HAProxy (Medusa routing)
+├── DNS privacy (dnscrypt-proxy + unbound)
+├── Firewall (nftables scripts)
+├── Podman (rootless containers)
+├── Ollama + aichat (local AI)
+├── Nix-shell (reproducible environments)
+├── Desktop (labwc + foot + fuzzel)
+└── CLI toolkit (tmux, fzf, bat, rg, htop, neovim, git)
+
+NEEDS ADDING TO INSTALL SCRIPT:
+├── pv (pipe-viewer)
+├── lynx (text browser)
+├── mpv (media player)
+├── musikcube (terminal music player)
+├── sway (Wayland tiling WM — alternative to labwc)
+└── podman-compose (compose integration)
+
+PHASE 1 BUILDS (turns it into a full NeXuS node):
+├── nexus-chaind       — the blockchain (Monero fork, AstroBWT, DAG)
+├── nexus-wallet       — the command center UI
+├── ipfs integration   — storage contribution + bootstrap peer list
+├── diva-connector     — DIVA chain bridge
+└── nexus-node-monitor — contribution tracking + earnings
+
+PHASE 2 BUILDS:
+├── BEP46 bootstrap    — BitTorrent mutable torrent bootstrap method
+├── NFT Forge          — creator mint interface
+├── Townhall           — marketplace UI
+├── Stake/Loan contract — credit lending protocol
+└── HE layer           — homomorphic encryption (DERO-inspired)
+```
+
+---
+
+## What Does NOT Ship With NeXuS
+
+```
+No telemetry
+No auto-update without user consent
+No clearnet-default anything
+No KYC
+No accounts or registration
+No third-party package managers phoning home
+No bloat — if it is not in this list, it does not install
+```
+
+---
+
+## References
+
+- Economy and blockchain architecture: `NEXUS_ECONOMY_ARCHITECTURE.md`
+- Network stack source: `~/Projects/nexus-network-stack/src/`
+- Foundation document: `~/Projects/nexus-network-stack/docs/NEXUS_FOUNDATION.md`
+- Security architecture: `~/Projects/nexus-network-stack/docs/NEXUS_PARANOID_SECURITY_ARCHITECTURE.md`

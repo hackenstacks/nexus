@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://hackenstacks.github.io/nexus/required-applications/">
       
       
-        <link rel="prev" href="../economy-architecture/">
+        <link rel="prev" href="../nexus-mint-protocol/">
       
       
         <link rel="next" href="../install-architecture/">
@@ -680,6 +680,34 @@
     
   
     Full Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-blueprint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Blueprint
   
 
     
@@ -1658,6 +1686,34 @@
     
   
     Economy & Blockchain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-mint-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeXuS Mint Protocol
   
 
     
@@ -3080,18 +3136,28 @@
 <td><strong>NOT BUILT</strong></td>
 </tr>
 <tr>
+<td><code>cage</code></td>
+<td>Minimal Wayland compositor. Wraps a single app fullscreen — default NeXuS session is <code>cage → foot → tmux</code></td>
+<td>EXISTS</td>
+</tr>
+<tr>
 <td><code>foot</code></td>
-<td>Terminal emulator. Fast, Wayland-native, minimal</td>
+<td>Terminal emulator. Fast, Wayland-native, minimal. Default terminal in all NeXuS sessions</td>
 <td>EXISTS</td>
 </tr>
 <tr>
-<td><code>labwc</code></td>
-<td>Wayland compositor. Optional — NeXuS is CLI-first, GUI available for users who want it</td>
+<td><code>alacritty</code></td>
+<td>Alternative terminal emulator. GPU-accelerated option for Hyprland sessions</td>
 <td>EXISTS</td>
 </tr>
 <tr>
-<td><code>fuzzel</code></td>
-<td>App launcher. Keyboard-driven, integrates with labwc right-click menu</td>
+<td><code>tmux</code></td>
+<td>Terminal multiplexer. Multiple sessions, windows, panes inside cage+foot. The desktop IS tmux</td>
+<td>EXISTS</td>
+</tr>
+<tr>
+<td><code>fzf</code></td>
+<td>Application launcher. <code>fzf</code> over <code>~/.local/share/applications</code> — no DE required</td>
 <td>EXISTS</td>
 </tr>
 <tr>
@@ -3238,30 +3304,53 @@
 </table>
 <hr />
 <h2 id="layer-8-window-management">Layer 8 — Window Management<a class="headerlink" href="#layer-8-window-management" title="Permanent link">&para;</a></h2>
+<p>NeXuS is <strong>CLI-first</strong>. The default session needs no traditional desktop. GUI options are available for users who want them — chosen during setup, never forced.</p>
 <table>
 <thead>
 <tr>
-<th>Application</th>
-<th>Purpose</th>
+<th>Option</th>
+<th>Components</th>
+<th>Who It's For</th>
 <th>Status</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>labwc</code></td>
-<td>Wayland compositor. Primary desktop (already in Layer 4)</td>
+<td><strong>Default — CLI</strong></td>
+<td><code>cage</code> + <code>foot</code> + <code>tmux</code></td>
+<td>Any hardware, Wayland capable. The NeXuS standard.</td>
 <td>EXISTS</td>
 </tr>
 <tr>
-<td><code>i3wm</code> / <code>sway</code></td>
-<td>Tiling window manager option. Sway is Wayland-native i3 — for users who prefer keyboard-driven tiling layout</td>
+<td><strong>Minimal — No Wayland</strong></td>
+<td><code>kmscon</code> + <code>foot</code> or <code>alacritty</code></td>
+<td>Legacy/weak hardware. Pure framebuffer, no Wayland needed.</td>
+<td>EXISTS</td>
+</tr>
+<tr>
+<td><strong>Power — GPU</strong></td>
+<td><code>Hyprland</code></td>
+<td>Confirmed working on capable GPU. Smooth, fast, beautiful. Beta tested.</td>
+<td>EXISTS</td>
+</tr>
+<tr>
+<td><strong>Lightweight DE</strong></td>
+<td><code>labwc</code></td>
+<td>Wayland compositor with openbox-style layout. <em>Pending testing — labwc login currently not loading.</em></td>
+<td>PENDING</td>
+</tr>
+<tr>
+<td><strong>Tiling WM</strong></td>
+<td><code>sway</code></td>
+<td>Wayland-native i3 clone. Keyboard-driven tiling. Alternative for users who prefer it.</td>
 <td>ADD</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Confirm: did you mean <code>i3wm</code> (X11, needs Xwayland) or <code>sway</code> (Wayland-native i3 clone)? Sway is the right call for NeXuS since we are Wayland-first. Adding both as options — sway recommended.</p>
+<p class="admonition-title">Default is always CLI-first</p>
+<p>A fresh NeXuS install boots to <code>cage → foot → tmux</code>. No DE. No panel. No taskbar.
+GUI apps launch on demand via <code>fzf</code> launcher. Compositor choice is made during setup — or never, if the user stays CLI.</p>
 </div>
 <hr />
 <h2 id="layer-9-bootstrap-system">Layer 9 — Bootstrap System<a class="headerlink" href="#layer-9-bootstrap-system" title="Permanent link">&para;</a></h2>
@@ -3310,7 +3399,7 @@
 <a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>├── Podman (rootless containers)
 <a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>├── Ollama + aichat (local AI)
 <a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>├── Nix-shell (reproducible environments)
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>├── Desktop (labwc + foot + fuzzel)
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>├── Desktop (cage + foot + tmux — default CLI session)
 <a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>└── CLI toolkit (tmux, fzf, bat, rg, htop, neovim, git)
 <a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
 <a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>NEEDS ADDING TO INSTALL SCRIPT:
