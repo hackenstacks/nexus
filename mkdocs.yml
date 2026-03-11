@@ -67,6 +67,7 @@ nav:
   - Development:
     - CLI Libs & TUI Frameworks: cli-libs-tui-frameworks.md
   - Architecture:
+    - Two-Layer Architecture — Public and Dark: nexus-architecture-layers.md
     - Economy & Blockchain: economy-architecture.md
     - Required Applications: required-applications.md
     - Install Architecture: install-architecture.md
