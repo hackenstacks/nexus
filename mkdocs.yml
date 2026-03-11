@@ -79,6 +79,8 @@ nav:
     - Index: session-logs/index.md
   - Dev:
     - Action Reports: dev/action-report.md
+  - Fireside Chats:
+    - Chat 001 — The Forge Awakens: fireside-chat-001.md
   - NeXuS History:
     - Claude:
       - Session History 2026-03-10: history/claude/session-history-2026-03-10.md
