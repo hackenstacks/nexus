@@ -73,6 +73,47 @@ nav:
     - NeXuS Mint Protocol: nexus-mint-protocol.md
     - Required Applications: required-applications.md
     - Install Architecture: install-architecture.md
+  - Network Stack:
+    - Foundation:
+      - Start Here: network-stack/foundation/start-here.md
+      - Quick Start: network-stack/foundation/quickstart.md
+      - Startup Guide: network-stack/foundation/startup-guide.md
+      - Startup Checklist: network-stack/foundation/startup-checklist.md
+      - NeXuS Foundation: network-stack/foundation/nexus-foundation.md
+      - Security Manifesto: network-stack/foundation/security-manifesto.md
+      - Complete System Manual: network-stack/foundation/complete-system-manual.md
+    - Vision:
+      - The True Vision: network-stack/vision/true-vision.md
+      - Future Roadmap: network-stack/vision/future-roadmap.md
+      - Phase 2 Plan: network-stack/vision/phase2-plan.md
+      - NeXuS Final: network-stack/vision/nexus-final.md
+      - Cloud Vision: network-stack/vision/cloud-vision.md
+    - Architecture:
+      - Mesh Architecture: network-stack/architecture/mesh-architecture.md
+      - Paranoid Security Architecture: network-stack/architecture/paranoid-security.md
+      - Transparent Routing Architecture: network-stack/architecture/transparent-routing.md
+      - P2P Protocol Specification: network-stack/architecture/p2p-protocol-spec.md
+      - Implementation Summary: network-stack/architecture/implementation-summary.md
+      - Integration Summary: network-stack/architecture/integration-summary.md
+    - Implementation:
+      - I2P Implementation: network-stack/implementation/i2p.md
+      - Yggdrasil Implementation: network-stack/implementation/yggdrasil.md
+      - Yggdrasil Quick Start: network-stack/implementation/yggdrasil-quickstart.md
+      - Reticulum Implementation: network-stack/implementation/reticulum.md
+      - Reticulum Quick Start: network-stack/implementation/reticulum-quickstart.md
+      - BATMAN-adv Mesh: network-stack/implementation/batman-adv.md
+      - Gateway Manual: network-stack/implementation/gateway-manual.md
+    - Deployment:
+      - Darknet Manual: network-stack/deployment/darknet-manual.md
+      - Privoxy Standalone: network-stack/deployment/privoxy.md
+    - User Guides:
+      - Beast Control: network-stack/user-guides/beast-control.md
+      - Beast Slayer Guide: network-stack/user-guides/beast-slayer.md
+      - Test Your Router: network-stack/user-guides/test-router.md
+      - Remote Browser Setup: network-stack/user-guides/remote-browser.md
+    - Development:
+      - Contributing: network-stack/development/contributing.md
+      - Authors: network-stack/development/authors.md
   - Node:
     - Getting Started: node/getting-started.md
   - Reports:
