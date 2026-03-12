@@ -1,0 +1,6173 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Sane • Simple • Secure • Stealthy • Beautiful — Together Everyone Achieves More">
+      
+      
+        <meta name="author" content="The NeXuS Collective">
+      
+      
+        <link rel="canonical" href="https://hackenstacks.github.io/nexus/network-stack/implementation/gateway-manual/">
+      
+      
+        <link rel="prev" href="../batman-adv/">
+      
+      
+        <link rel="next" href="../../deployment/darknet-manual/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+    
+    
+      
+        <title>Gateway Manual - NeXuS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#nexus-gateway-multi-network-implementation-manual" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="NeXuS" class="md-header__button md-logo" aria-label="NeXuS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NeXuS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Gateway Manual
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/hackenstacks/nexus" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hackenstacks/nexus
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../what-is-nexus/" class="md-tabs__link">
+          
+  
+  
+  What Is NeXuS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../medusa-stealth-routing/" class="md-tabs__link">
+          
+  
+  
+  Network
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../3key-security/" class="md-tabs__link">
+          
+  
+  
+  Security
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../rin/" class="md-tabs__link">
+          
+  
+  
+  RIN
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../nexus-rings/" class="md-tabs__link">
+          
+  
+  
+  NeXuS Family
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ai-merged-identity/" class="md-tabs__link">
+          
+  
+  
+  AI
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../cli-libs-tui-frameworks/" class="md-tabs__link">
+          
+  
+  
+  Development
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../nexus-architecture-layers/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../foundation/start-here/" class="md-tabs__link">
+          
+  
+  
+  Network Stack
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../node/getting-started/" class="md-tabs__link">
+          
+  
+  
+  Node
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../reports/action_report/" class="md-tabs__link">
+          
+  
+  
+  Reports
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../session-logs/" class="md-tabs__link">
+          
+  
+  
+  Session Logs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../dev/action-report/" class="md-tabs__link">
+          
+  
+  
+  Dev
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../fireside-chat-001/" class="md-tabs__link">
+          
+  
+  
+  Fireside Chats
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../history/claude/session-history-2026-03-10/" class="md-tabs__link">
+          
+  
+  
+  NeXuS History
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="NeXuS" class="md-nav__button md-logo" aria-label="NeXuS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    NeXuS
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/hackenstacks/nexus" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hackenstacks/nexus
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Is NeXuS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    What Is NeXuS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../what-is-nexus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nexus-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nexus-blueprint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Blueprint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../oaae-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OAAE Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Network
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../medusa-stealth-routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Medusa Stealth Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../zombie-apoc-doc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zombie Apocalypse Mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3key-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Three-Key Security Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../security-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Stack (PSAD, fwsnort, fail2ban)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../psad-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PSAD Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fwsnort-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    fwsnort Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nexus-integrity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeXuS Integrity — Prepared Is Not Paranoid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cerberus-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cerberus Password Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RIN
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    RIN
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Real Intelligence Network
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeXuS Family
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NeXuS Family
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nexus-rings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rings — Family Sovereignty Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../education-oracle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Education Oracle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai-merged-identity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Merged AI Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../autonomouse-ai-intelligence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autonomous AI Intelligence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dpfoe-ai-intelligence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DPFOE Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../event-horizon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Event Horizon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../system-arch-chimera/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Chimera Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Development
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cli-libs-tui-frameworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Libs & TUI Frameworks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nexus-architecture-layers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Two-Layer Architecture — Public and Dark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../economy-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Economy & Blockchain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../nexus-mint-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeXuS Mint Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../required-applications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Required Applications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../install-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Stack
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Network Stack
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_1" id="__nav_10_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Foundation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundation/start-here/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start Here
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundation/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundation/startup-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Startup Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundation/startup-checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Startup Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundation/nexus-foundation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeXuS Foundation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundation/security-manifesto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Manifesto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../foundation/complete-system-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complete System Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vision
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vision
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vision/true-vision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The True Vision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vision/future-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Future Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vision/phase2-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 2 Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vision/nexus-final/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeXuS Final
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vision/cloud-vision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Vision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/mesh-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mesh Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/paranoid-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paranoid Security Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/transparent-routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transparent Routing Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/p2p-protocol-spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P2P Protocol Specification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/implementation-summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementation Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/integration-summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10_4" id="__nav_10_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Implementation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../i2p/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    I2P Implementation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../yggdrasil/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Yggdrasil Implementation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../yggdrasil-quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Yggdrasil Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reticulum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reticulum Implementation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reticulum-quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reticulum Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../batman-adv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BATMAN-adv Mesh
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gateway Manual
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gateway Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 TABLE OF CONTENTS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gateway-architecture-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Gateway Architecture Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Gateway Architecture Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nexus-gateway-mission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌀 NeXuS Gateway Mission
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏗️ Architecture Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Key Benefits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📁 Directory Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📁 Directory Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#complete-file-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗂️ Complete File Organization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-management-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 Core Management Scripts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Core Management Scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-nexus-networksh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 create-nexus-network.sh
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-whonix-gatewaysh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 deploy-whonix-gateway.sh
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-transparent-proxysh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 configure-transparent-proxy.sh
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-nexus-connectivitysh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 test-nexus-connectivity.sh
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Network Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌐 Network Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#network-architecture-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 Network Architecture Specifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bridge-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌉 Bridge Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traffic-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔀 Traffic Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firewall-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛡️ Firewall Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Step-by-Step Deployment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 Step-by-Step Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-network-infrastructure-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Phase 1: Network Infrastructure Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-vm-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Phase 2: VM Deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-vm-startup-initial-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Phase 3: VM Startup &amp; Initial Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-transparent-proxy-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Phase 4: Transparent Proxy Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-5-alpine-client-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Phase 5: Alpine Client Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-6-comprehensive-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Phase 6: Comprehensive Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#container-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🐋 Container Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🐋 Container Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#future-container-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Future Container Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-runtime-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📦 Container Runtime Preparation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-network-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Container Network Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Testing &amp; Validation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Testing &amp; Validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connectivity-test-suite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧪 Connectivity Test Suite
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-execution-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Test Execution Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚨 Common Issues &amp; Solutions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagnostic-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 Diagnostic Commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔒 Security Considerations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔒 Security Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛡️ Security Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operational-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔐 Operational Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-warnings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚨 Security Warnings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-multi-network-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Future Multi-Network Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Future Multi-Network Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#i2p-integration-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 I2P Integration Plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yggdrassil-integration-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕸️ Yggdrassil Integration Plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-orchestration-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔀 Network Orchestration Engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Performance Specifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Performance Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resource-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 Resource Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📈 Performance Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📞 Support &amp; Maintenance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📞 Support &amp; Maintenance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regular-maintenance-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 Regular Maintenance Tasks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#health-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Health Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_5" id="__nav_10_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deployment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment/darknet-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Darknet Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment/privoxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Privoxy Standalone
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_6" id="__nav_10_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guides/beast-control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beast Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guides/beast-slayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beast Slayer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guides/test-router/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test Your Router
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-guides/remote-browser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remote Browser Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_7" id="__nav_10_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Development
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/authors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Node
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Node
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../node/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reports
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reports
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reports/action_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Action Reports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session Logs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Session Logs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../session-logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dev
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dev
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dev/action-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Action Reports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fireside Chats
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fireside Chats
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../fireside-chat-001/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chat 001 — The Forge Awakens
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeXuS History
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NeXuS History
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_16_1" id="__nav_16_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_16_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Claude
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../history/claude/session-history-2026-03-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session History 2026-03-10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_16_2" id="__nav_16_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archive 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_16_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archive 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../history/archive-1/claude-sessions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude Sessions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../history/archive-1/nexus-planning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Planning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../history/archive-1/action-reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Action Reports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../history/archive-1/ai-consciousness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Consciousness
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../history/archive-1/projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../history/archive-1/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../history/archive-1/scripts-docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scripts & Docs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 TABLE OF CONTENTS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gateway-architecture-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Gateway Architecture Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Gateway Architecture Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nexus-gateway-mission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌀 NeXuS Gateway Mission
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏗️ Architecture Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-benefits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Key Benefits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📁 Directory Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📁 Directory Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#complete-file-organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗂️ Complete File Organization
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-management-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 Core Management Scripts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 Core Management Scripts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-nexus-networksh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 create-nexus-network.sh
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploy-whonix-gatewaysh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 deploy-whonix-gateway.sh
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configure-transparent-proxysh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔗 configure-transparent-proxy.sh
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-nexus-connectivitysh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 test-nexus-connectivity.sh
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Network Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌐 Network Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#network-architecture-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 Network Architecture Specifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bridge-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌉 Bridge Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traffic-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔀 Traffic Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#firewall-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛡️ Firewall Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Step-by-Step Deployment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 Step-by-Step Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-network-infrastructure-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Phase 1: Network Infrastructure Setup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-vm-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Phase 2: VM Deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-vm-startup-initial-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Phase 3: VM Startup &amp; Initial Access
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-transparent-proxy-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Phase 4: Transparent Proxy Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-5-alpine-client-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Phase 5: Alpine Client Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-6-comprehensive-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Phase 6: Comprehensive Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#container-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🐋 Container Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🐋 Container Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#future-container-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Future Container Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-runtime-preparation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📦 Container Runtime Preparation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#container-network-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Container Network Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔍 Testing &amp; Validation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔍 Testing &amp; Validation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connectivity-test-suite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧪 Connectivity Test Suite
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-execution-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Test Execution Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common-issues-solutions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚨 Common Issues &amp; Solutions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#diagnostic-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 Diagnostic Commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔒 Security Considerations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔒 Security Considerations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛡️ Security Best Practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operational-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔐 Operational Security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-warnings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚨 Security Warnings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-multi-network-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Future Multi-Network Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚀 Future Multi-Network Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#i2p-integration-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 I2P Integration Plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yggdrassil-integration-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🕸️ Yggdrassil Integration Plan
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-orchestration-engine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔀 Network Orchestration Engine
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Performance Specifications
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📊 Performance Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resource-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 Resource Requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📈 Performance Metrics
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#support-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📞 Support &amp; Maintenance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📞 Support &amp; Maintenance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regular-maintenance-tasks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 Regular Maintenance Tasks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#health-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Health Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="nexus-gateway-multi-network-implementation-manual">🌐 NeXuS Gateway Multi-Network Implementation Manual 🌐<a class="headerlink" href="#nexus-gateway-multi-network-implementation-manual" title="Permanent link">&para;</a></h1>
+<p><em>Complete Guide to Whonix Gateway VM Architecture for Multi-Network Anonymity</em></p>
+<p><strong>Created:</strong> 2025-09-28<br />
+<strong>Co-Created-By:</strong> HackenStacks<br />
+<strong>Co-Authored-By:</strong> Claude <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#110;&#111;&#114;&#101;&#112;&#108;&#121;&#64;&#97;&#110;&#116;&#104;&#114;&#111;&#112;&#105;&#99;&#46;&#99;&#111;&#109;">&#110;&#111;&#114;&#101;&#112;&#108;&#121;&#64;&#97;&#110;&#116;&#104;&#114;&#111;&#112;&#105;&#99;&#46;&#99;&#111;&#109;</a><br />
+<strong>System:</strong> Alpine Linux NeXuS + Whonix Gateway VM  </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>🔥                                                               🔥  
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>🔥     ███╗   ██╗███████╗██╗  ██╗██╗   ██╗███████╗               🔥
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>🔥     ████╗  ██║██╔════╝╚██╗██╔╝██║   ██║██╔════╝               🔥  
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>🔥     ██╔██╗ ██║█████╗   ╚███╔╝ ██║   ██║███████╗               🔥
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>🔥     ██║╚██╗██║██╔══╝   ██╔██╗ ██║   ██║╚════██║               🔥
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>🔥     ██║ ╚████║███████╗██╔╝ ██╗╚██████╔╝███████║               🔥
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>🔥     ╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝               🔥
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>🔥                                                               🔥
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>🔥     🌐 GATEWAY ORCHESTRATOR • MULTI-NETWORK ANONYMITY 🛡️     🔥
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>🔥                                                               🔥
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+</code></pre></div>
+<hr />
+<h2 id="table-of-contents">📋 <strong>TABLE OF CONTENTS</strong><a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<ol>
+<li><a href="#-gateway-architecture-overview">🎯 Gateway Architecture Overview</a></li>
+<li><a href="#-directory-structure">📁 Directory Structure</a></li>
+<li><a href="#-core-management-scripts">🔧 Core Management Scripts</a></li>
+<li><a href="#-network-configuration">🌐 Network Configuration</a></li>
+<li><a href="#-step-by-step-deployment">📋 Step-by-Step Deployment</a></li>
+<li><a href="#-container-integration">🐋 Container Integration</a></li>
+<li><a href="#-testing--validation">🔍 Testing &amp; Validation</a></li>
+<li><a href="#-troubleshooting">🛠️ Troubleshooting</a></li>
+<li><a href="#-security-considerations">🔒 Security Considerations</a></li>
+<li><a href="#-future-multi-network-integration">🚀 Future Multi-Network Integration</a></li>
+</ol>
+<hr />
+<h2 id="gateway-architecture-overview">🎯 <strong>Gateway Architecture Overview</strong><a class="headerlink" href="#gateway-architecture-overview" title="Permanent link">&para;</a></h2>
+<h3 id="nexus-gateway-mission"><strong>🌀 NeXuS Gateway Mission</strong><a class="headerlink" href="#nexus-gateway-mission" title="Permanent link">&para;</a></h3>
+<p>The NeXuS Gateway provides <strong>censorship-resistant, multi-network anonymity</strong> through a unified VM-based orchestration system that routes traffic through Tor, I2P, and Yggdrassil networks.</p>
+<h3 id="architecture-design"><strong>🏗️ Architecture Design</strong><a class="headerlink" href="#architecture-design" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>🌐 INTERNET
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    ↓
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>🛡️ WHONIX GATEWAY VM (10.152.152.10)
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>├── 🐙 Medusa-Tor Multi-Circuit Proxy
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>├── 🌐 I2P Router (Future)
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>├── 🕸️ Yggdrassil Mesh Node (Future)  
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>└── 🔀 Network Orchestration Engine
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    ↓ (nexus-br0 bridge: 10.152.152.0/18)
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>💻 ALPINE NEXUS HOST (10.152.152.11)
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>├── 📦 NeXuS Security Containers (local)
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>├── 🌀 NeXuS Applications &amp; Services  
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>└── 🔗 ALL traffic routed through Gateway VM
+</code></pre></div>
+<h3 id="key-benefits"><strong>🎯 Key Benefits</strong><a class="headerlink" href="#key-benefits" title="Permanent link">&para;</a></h3>
+<ul>
+<li>✅ <strong>Complete Traffic Isolation</strong> - VM boundary prevents correlation attacks</li>
+<li>✅ <strong>Multi-Network Failover</strong> - Automatic switching between Tor/I2P/Yggdrassil</li>
+<li>✅ <strong>Transparent Operation</strong> - No application-level configuration required</li>
+<li>✅ <strong>Censorship Resistance</strong> - Multiple network protocols prevent blocking</li>
+<li>✅ <strong>Democratic Security</strong> - Easy setup with enterprise-grade protection</li>
+</ul>
+<hr />
+<h2 id="directory-structure">📁 <strong>Directory Structure</strong><a class="headerlink" href="#directory-structure" title="Permanent link">&para;</a></h2>
+<h3 id="complete-file-organization"><strong>🗂️ Complete File Organization</strong><a class="headerlink" href="#complete-file-organization" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>/home/user/gateway-vm/
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>├── images/                    # VM Disk Images &amp; Storage
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>│   ├── whonix-gateway.qcow2  # Main VM disk image (2.3GB)
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>│   └── downloads/             # Original download files
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>├── config/                    # VM Configuration Files
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>│   ├── whonix-gateway.xml     # Libvirt VM configuration
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>│   ├── network-config.xml     # Network bridge configuration
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>│   └── firewall-rules.conf    # Custom firewall settings
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>├── scripts/                   # Management &amp; Automation Scripts
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>│   ├── create-nexus-network.sh      # Network bridge setup
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>│   ├── deploy-whonix-gateway.sh     # VM deployment automation
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>│   ├── configure-transparent-proxy.sh # Proxy configuration
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>│   ├── test-nexus-connectivity.sh   # Testing framework
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>│   ├── start-gateway.sh             # VM startup script
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>│   ├── stop-gateway.sh              # VM shutdown script
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>│   └── status-gateway.sh            # VM status monitoring
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>├── docs/                      # Documentation &amp; Guides
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>│   ├── WHONIX_GATEWAY_SETUP_GUIDE.md  # Complete setup guide
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>│   ├── DEPLOYMENT_CHECKLIST.md        # Deployment validation
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>│   ├── TROUBLESHOOTING_GUIDE.md       # Problem resolution
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>│   └── NETWORK_ARCHITECTURE.md        # Technical specifications
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>├── backups/                   # VM Snapshots &amp; Configuration Backups
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>│   ├── vm-snapshots/          # VM state preservation
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>│   ├── config-backups/        # Configuration file backups
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>│   └── deployment-logs/       # Installation history
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>└── logs/                      # Operation &amp; Monitoring Logs
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>    ├── deployment.log         # Setup and configuration logs
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>    ├── network.log           # Network operation logs
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>    └── connectivity.log      # Testing and validation logs
+</code></pre></div>
+<hr />
+<h2 id="core-management-scripts">🔧 <strong>Core Management Scripts</strong><a class="headerlink" href="#core-management-scripts" title="Permanent link">&para;</a></h2>
+<h3 id="create-nexus-networksh"><strong>🌐 create-nexus-network.sh</strong><a class="headerlink" href="#create-nexus-networksh" title="Permanent link">&para;</a></h3>
+<p><strong>Location:</strong> <code>/home/user/gateway-vm/scripts/create-nexus-network.sh</code><br />
+<strong>Purpose:</strong> Creates isolated network bridge for gateway-client communication<br />
+<strong>Network:</strong> 10.152.152.0/18 (16,382 host capacity)</p>
+<p><strong>Key Functions:</strong>
+- Creates <code>nexus-br0</code> bridge interface
+- Configures IP forwarding and NAT rules
+- Sets up libvirt internal network
+- Implements 5-second cancel timer for safety</p>
+<p><strong>Usage:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>/home/user/gateway-vm/scripts/create-nexus-network.sh
+</code></pre></div></p>
+<p><strong>Safety Features:</strong>
+- ✅ Backup existing network configuration
+- ✅ 5-second visual cancel timer
+- ✅ Complete rollback capability
+- ✅ Non-destructive bridge creation</p>
+<hr />
+<h3 id="deploy-whonix-gatewaysh"><strong>🚀 deploy-whonix-gateway.sh</strong><a class="headerlink" href="#deploy-whonix-gatewaysh" title="Permanent link">&para;</a></h3>
+<p><strong>Location:</strong> <code>/home/user/gateway-vm/scripts/deploy-whonix-gateway.sh</code><br />
+<strong>Purpose:</strong> Complete VM deployment automation with multiple deployment options  </p>
+<p><strong>Deployment Options:</strong>
+1. <strong>Scratch Deployment</strong> - Download and configure fresh Whonix image
+2. <strong>Import Existing</strong> - Import pre-downloaded Whonix image
+3. <strong>Clone Template</strong> - Clone from existing VM template</p>
+<p><strong>Key Functions:</strong>
+- Downloads Whonix Gateway CLI image (2.3GB)
+- Converts image format and optimizes for libvirt
+- Configures dual network interfaces
+- Generates VM management scripts
+- Creates VM configuration backups</p>
+<p><strong>Usage:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>/home/user/gateway-vm/scripts/deploy-whonix-gateway.sh
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1"># Follow interactive prompts for deployment option</span>
+</code></pre></div></p>
+<p><strong>Automated Components:</strong>
+- ✅ Image download and verification
+- ✅ Automatic format conversion (xz → qcow2)
+- ✅ VM resource allocation (2GB RAM, 2 CPU cores)
+- ✅ Network interface configuration
+- ✅ Management script generation</p>
+<hr />
+<h3 id="configure-transparent-proxysh"><strong>🔗 configure-transparent-proxy.sh</strong><a class="headerlink" href="#configure-transparent-proxysh" title="Permanent link">&para;</a></h3>
+<p><strong>Location:</strong> <code>/home/user/gateway-vm/scripts/configure-transparent-proxy.sh</code><br />
+<strong>Purpose:</strong> Configures Tor transparent proxy for custom (non-Whonix) clients<br />
+<strong>Execution:</strong> Inside Whonix Gateway VM after deployment</p>
+<p><strong>Key Functions:</strong>
+- Modifies Tor configuration for transparent proxy
+- Sets up iptables rules for traffic routing
+- Configures DNS resolution through Tor
+- Enables gateway self-routing through Tor (critical security)</p>
+<p><strong>Configuration Details:</strong>
+- <strong>TransPort:</strong> 9040 (transparent proxy)
+- <strong>DNSPort:</strong> 5300 (DNS resolution)
+- <strong>ControlPort:</strong> 9051 (Tor control interface)
+- <strong>VirtualAddrNetwork:</strong> 10.192.0.0/10</p>
+<p><strong>Usage (Inside VM):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>/home/user/gateway-vm/scripts/configure-transparent-proxy.sh
+</code></pre></div></p>
+<p><strong>Security Enhancements:</strong>
+- ✅ Gateway self-traffic routing through Tor
+- ✅ Complete DNS leak prevention
+- ✅ Transparent proxy rule validation
+- ✅ Service persistence configuration</p>
+<hr />
+<h3 id="test-nexus-connectivitysh"><strong>🔍 test-nexus-connectivity.sh</strong><a class="headerlink" href="#test-nexus-connectivitysh" title="Permanent link">&para;</a></h3>
+<p><strong>Location:</strong> <code>/home/user/gateway-vm/scripts/test-nexus-connectivity.sh</code><br />
+<strong>Purpose:</strong> Comprehensive connectivity, anonymity, and performance testing  </p>
+<p><strong>Testing Framework:</strong>
+- <strong>Anonymity Verification</strong> - Multiple IP check services
+- <strong>DNS Leak Protection</strong> - Comprehensive DNS resolution testing<br />
+- <strong>Performance Analysis</strong> - Latency and throughput measurement
+- <strong>Security Validation</strong> - Traffic analysis and isolation confirmation</p>
+<p><strong>Test Categories:</strong>
+1. <strong>Basic Connectivity</strong> - Internet access through gateway
+2. <strong>IP Address Verification</strong> - Confirms Tor exit node usage
+3. <strong>DNS Resolution</strong> - Tests DNS leak prevention
+4. <strong>Performance Metrics</strong> - Speed and latency analysis
+5. <strong>Security Validation</strong> - Traffic isolation confirmation</p>
+<p><strong>Usage:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>/home/user/gateway-vm/scripts/test-nexus-connectivity.sh
+</code></pre></div></p>
+<p><strong>Validation Services:</strong>
+- ✅ httpbin.org/ip
+- ✅ icanhazip.com
+- ✅ whatismyipaddress.com
+- ✅ DNS leak test servers
+- ✅ Tor check services</p>
+<hr />
+<h2 id="network-configuration">🌐 <strong>Network Configuration</strong><a class="headerlink" href="#network-configuration" title="Permanent link">&para;</a></h2>
+<h3 id="network-architecture-specifications"><strong>🔧 Network Architecture Specifications</strong><a class="headerlink" href="#network-architecture-specifications" title="Permanent link">&para;</a></h3>
+<p><strong>Network Range:</strong> <code>10.152.152.0/18</code>
+- <strong>Total Hosts:</strong> 16,382 available addresses
+- <strong>Subnet Mask:</strong> 255.255.192.0
+- <strong>Gateway IP:</strong> 10.152.152.10 (Whonix Gateway VM)
+- <strong>Client IP:</strong> 10.152.152.11 (Alpine NeXuS Host)
+- <strong>Bridge Interface:</strong> nexus-br0</p>
+<h3 id="bridge-configuration"><strong>🌉 Bridge Configuration</strong><a class="headerlink" href="#bridge-configuration" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Bridge Interface Details</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>Interface:<span class="w"> </span>nexus-br0
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>IP<span class="w"> </span>Range:<span class="w"> </span><span class="m">10</span>.152.152.0/18
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>Gateway:<span class="w"> </span><span class="m">10</span>.152.152.10
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>DHCP:<span class="w"> </span>Disabled<span class="w"> </span><span class="o">(</span>static<span class="w"> </span>IP<span class="w"> </span>assignment<span class="o">)</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>NAT:<span class="w"> </span>Enabled<span class="w"> </span><span class="k">for</span><span class="w"> </span>internet<span class="w"> </span>access
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>Isolation:<span class="w"> </span>Complete<span class="w"> </span>internal<span class="w"> </span>network<span class="w"> </span>isolation
+</code></pre></div>
+<h3 id="traffic-flow"><strong>🔀 Traffic Flow</strong><a class="headerlink" href="#traffic-flow" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Alpine NeXuS (10.152.152.11)
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    ↓ eth0 interface
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>nexus-br0 bridge (10.152.152.0/18)
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    ↓ bridge forwarding
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>Whonix Gateway VM (10.152.152.10)
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    ↓ transparent proxy (port 9040)
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>Tor Network
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    ↓ exit nodes
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>Internet
+</code></pre></div>
+<h3 id="firewall-rules"><strong>🛡️ Firewall Rules</strong><a class="headerlink" href="#firewall-rules" title="Permanent link">&para;</a></h3>
+<p><strong>Host Firewall (Alpine NeXuS):</strong>
+- Allow traffic to 10.152.152.10 (gateway)
+- Block direct internet access
+- Forward all traffic through bridge</p>
+<p><strong>Gateway Firewall (Whonix VM):</strong>
+- Accept traffic from 10.152.152.0/18 range
+- Route all traffic through Tor TransPort 9040
+- DNS queries through Tor DNSPort 5300
+- Block non-Tor traffic</p>
+<hr />
+<h2 id="step-by-step-deployment">📋 <strong>Step-by-Step Deployment</strong><a class="headerlink" href="#step-by-step-deployment" title="Permanent link">&para;</a></h2>
+<h3 id="phase-1-network-infrastructure-setup"><strong>🎯 Phase 1: Network Infrastructure Setup</strong><a class="headerlink" href="#phase-1-network-infrastructure-setup" title="Permanent link">&para;</a></h3>
+<p><strong>1.1 Network Bridge Creation</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Create network bridge with safety timer</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>sudo<span class="w"> </span>/home/user/gateway-vm/scripts/create-nexus-network.sh
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1"># Verify bridge creation</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>ip<span class="w"> </span>addr<span class="w"> </span>show<span class="w"> </span>nexus-br0
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>brctl<span class="w"> </span>show<span class="w"> </span>nexus-br0
+</code></pre></div></p>
+<p><strong>Expected Output:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>✅ nexus-br0 bridge created
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>✅ IP range 10.152.152.0/18 configured
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>✅ NAT rules established
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>✅ libvirt network configured
+</code></pre></div></p>
+<p><strong>1.2 Bridge Validation</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># Check bridge status</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>sudo<span class="w"> </span>brctl<span class="w"> </span>show
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>sudo<span class="w"> </span>ip<span class="w"> </span>route<span class="w"> </span>show<span class="w"> </span>table<span class="w"> </span>all<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>nexus-br0
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="c1"># Verify libvirt network</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>virsh<span class="w"> </span>net-list<span class="w"> </span>--all
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>virsh<span class="w"> </span>net-info<span class="w"> </span>nexus-internal
+</code></pre></div></p>
+<hr />
+<h3 id="phase-2-vm-deployment"><strong>🎯 Phase 2: VM Deployment</strong><a class="headerlink" href="#phase-2-vm-deployment" title="Permanent link">&para;</a></h3>
+<p><strong>2.1 VM Deployment Execution</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># Launch deployment script</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>/home/user/gateway-vm/scripts/deploy-whonix-gateway.sh
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1"># Select deployment option:</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="c1"># [1] Download fresh Whonix image (recommended)</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="c1"># [2] Import existing image</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="c1"># [3] Clone from template</span>
+</code></pre></div></p>
+<p><strong>2.2 Deployment Process Monitoring</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Monitor download progress (if option 1 selected)</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>tail<span class="w"> </span>-f<span class="w"> </span>/home/user/gateway-vm/logs/deployment.log
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="c1"># Verify image conversion</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>ls<span class="w"> </span>-la<span class="w"> </span>/home/user/gateway-vm/images/
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>file<span class="w"> </span>/home/user/gateway-vm/images/whonix-gateway.qcow2
+</code></pre></div></p>
+<p><strong>2.3 VM Configuration Validation</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># Check VM definition</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>virsh<span class="w"> </span>dumpxml<span class="w"> </span>whonix-gateway<span class="w"> </span>&gt;<span class="w"> </span>/tmp/vm-config.xml
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>grep<span class="w"> </span>-A5<span class="w"> </span>-B5<span class="w"> </span><span class="s2">&quot;nexus-br0&quot;</span><span class="w"> </span>/tmp/vm-config.xml
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="c1"># Verify VM resource allocation</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>virsh<span class="w"> </span>dominfo<span class="w"> </span>whonix-gateway
+</code></pre></div></p>
+<hr />
+<h3 id="phase-3-vm-startup-initial-access"><strong>🎯 Phase 3: VM Startup &amp; Initial Access</strong><a class="headerlink" href="#phase-3-vm-startup-initial-access" title="Permanent link">&para;</a></h3>
+<p><strong>3.1 VM Startup</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># Start the gateway VM</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>/home/user/gateway-vm/scripts/start-gateway.sh
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="c1"># Monitor startup process</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>tail<span class="w"> </span>-f<span class="w"> </span>/home/user/gateway-vm/logs/network.log
+</code></pre></div></p>
+<p><strong>3.2 VM Access Configuration</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># VNC access available on localhost:5901</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="c1"># Use VNC client to connect to VM console</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="c1"># Alternative: SSH access (after initial setup)</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="c1"># ssh user@10.152.152.10</span>
+</code></pre></div></p>
+<p><strong>3.3 Initial VM Configuration</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># Inside VM: Update package sources</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="c1"># Inside VM: Verify Tor service</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>tor@default
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>sudo<span class="w"> </span>journalctl<span class="w"> </span>-u<span class="w"> </span>tor@default<span class="w"> </span>-f
+</code></pre></div></p>
+<hr />
+<h3 id="phase-4-transparent-proxy-configuration"><strong>🎯 Phase 4: Transparent Proxy Configuration</strong><a class="headerlink" href="#phase-4-transparent-proxy-configuration" title="Permanent link">&para;</a></h3>
+<p><strong>4.1 Proxy Setup (Inside VM)</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># Copy configuration script to VM</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="c1"># Then execute inside VM:</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>sudo<span class="w"> </span>/home/user/gateway-vm/scripts/configure-transparent-proxy.sh
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="c1"># Monitor configuration process</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>sudo<span class="w"> </span>journalctl<span class="w"> </span>-f
+</code></pre></div></p>
+<p><strong>4.2 Tor Configuration Validation</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># Inside VM: Verify Tor configuration</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>sudo<span class="w"> </span>cat<span class="w"> </span>/etc/tor/torrc<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;(TransPort|DNSPort|VirtualAddr)&quot;</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="c1"># Check Tor service status</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>tor@default
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>sudo<span class="w"> </span>ss<span class="w"> </span>-tuln<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;(9040|5300|9051)&quot;</span>
+</code></pre></div></p>
+<p><strong>4.3 Firewall Rules Verification</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># Inside VM: Check iptables rules</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>sudo<span class="w"> </span>iptables<span class="w"> </span>-t<span class="w"> </span>nat<span class="w"> </span>-L<span class="w"> </span>-n
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>sudo<span class="w"> </span>iptables<span class="w"> </span>-L<span class="w"> </span>-n<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;(REDIRECT|10\.152\.152)&quot;</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="c1"># Verify transparent proxy functionality</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>sudo<span class="w"> </span>netstat<span class="w"> </span>-tuln<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;(9040|5300)&quot;</span>
+</code></pre></div></p>
+<hr />
+<h3 id="phase-5-alpine-client-configuration"><strong>🎯 Phase 5: Alpine Client Configuration</strong><a class="headerlink" href="#phase-5-alpine-client-configuration" title="Permanent link">&para;</a></h3>
+<p><strong>5.1 Network Interface Configuration</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># On Alpine NeXuS host: Configure client network</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>sudo<span class="w"> </span>ip<span class="w"> </span>addr<span class="w"> </span>add<span class="w"> </span><span class="m">10</span>.152.152.11/18<span class="w"> </span>dev<span class="w"> </span>eth0
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>sudo<span class="w"> </span>ip<span class="w"> </span>route<span class="w"> </span>add<span class="w"> </span>default<span class="w"> </span>via<span class="w"> </span><span class="m">10</span>.152.152.10
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="c1"># Verify network configuration</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>ip<span class="w"> </span>addr<span class="w"> </span>show<span class="w"> </span>eth0
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>ip<span class="w"> </span>route<span class="w"> </span>show
+</code></pre></div></p>
+<p><strong>5.2 DNS Configuration</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1"># Configure DNS to use gateway</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;nameserver 10.152.152.10&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/resolv.conf
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="c1"># Verify DNS configuration</span>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>nslookup<span class="w"> </span>google.com
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>dig<span class="w"> </span>@10.152.152.10<span class="w"> </span>google.com
+</code></pre></div></p>
+<p><strong>5.3 Client Connectivity Testing</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c1"># Test basic connectivity through gateway</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>ping<span class="w"> </span>-c<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">10</span>.152.152.10
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>curl<span class="w"> </span>-s<span class="w"> </span>http://httpbin.org/ip
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="c1"># Verify Tor usage</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>curl<span class="w"> </span>-s<span class="w"> </span>https://check.torproject.org/api/ip
+</code></pre></div></p>
+<hr />
+<h3 id="phase-6-comprehensive-testing"><strong>🎯 Phase 6: Comprehensive Testing</strong><a class="headerlink" href="#phase-6-comprehensive-testing" title="Permanent link">&para;</a></h3>
+<p><strong>6.1 Connectivity Validation</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1"># Run comprehensive test suite</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>/home/user/gateway-vm/scripts/test-nexus-connectivity.sh
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="c1"># Monitor test results</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>tail<span class="w"> </span>-f<span class="w"> </span>/home/user/gateway-vm/logs/connectivity.log
+</code></pre></div></p>
+<p><strong>6.2 Anonymity Verification</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c1"># Multiple IP check services</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>curl<span class="w"> </span>-s<span class="w"> </span>http://icanhazip.com
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>curl<span class="w"> </span>-s<span class="w"> </span>http://httpbin.org/ip
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>curl<span class="w"> </span>-s<span class="w"> </span>https://ifconfig.me/ip
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="c1"># All should return Tor exit node IP</span>
+</code></pre></div></p>
+<p><strong>6.3 DNS Leak Testing</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="c1"># Verify DNS requests go through Tor</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>nslookup<span class="w"> </span>google.com
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>dig<span class="w"> </span>google.com
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="c1"># Check for DNS leaks</span>
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>curl<span class="w"> </span>-s<span class="w"> </span>https://www.dnsleaktest.com/results.json
+</code></pre></div></p>
+<hr />
+<h2 id="container-integration">🐋 <strong>Container Integration</strong><a class="headerlink" href="#container-integration" title="Permanent link">&para;</a></h2>
+<h3 id="future-container-architecture"><strong>🎯 Future Container Architecture</strong><a class="headerlink" href="#future-container-architecture" title="Permanent link">&para;</a></h3>
+<p><strong>Container Deployment Plan:</strong>
+- <strong>Medusa-Tor</strong> - Multi-circuit Tor proxy (existing)
+- <strong>I2P Router</strong> - i2pd containerized router
+- <strong>Yggdrassil Node</strong> - Mesh networking container
+- <strong>Network Orchestrator</strong> - Traffic routing logic</p>
+<h3 id="container-runtime-preparation"><strong>📦 Container Runtime Preparation</strong><a class="headerlink" href="#container-runtime-preparation" title="Permanent link">&para;</a></h3>
+<p><strong>Podman Unprivileged Setup (Inside Gateway VM):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c1"># Inside Whonix Gateway VM</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>podman
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="c1"># Configure rootless containers</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;user:100000:65536&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/subuid
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;user:100000:65536&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/subgid
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a><span class="c1"># Initialize user namespace</span>
+<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a>podman<span class="w"> </span>system<span class="w"> </span>migrate
+</code></pre></div></p>
+<h3 id="container-network-integration"><strong>🌐 Container Network Integration</strong><a class="headerlink" href="#container-network-integration" title="Permanent link">&para;</a></h3>
+<p><strong>Network Architecture for Containers:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="c1"># Container network configuration</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>podman<span class="w"> </span>network<span class="w"> </span>create<span class="w"> </span>nexus-container-net<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="w">  </span>--subnet<span class="w"> </span><span class="m">10</span>.152.153.0/24<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="w">  </span>--gateway<span class="w"> </span><span class="m">10</span>.152.153.1
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="c1"># Container to host communication</span>
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="c1"># Containers: 10.152.153.0/24</span>
+<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a><span class="c1"># Gateway Host: 10.152.152.10</span>
+<a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a><span class="c1"># Client Host: 10.152.152.11</span>
+</code></pre></div></p>
+<hr />
+<h2 id="testing-validation">🔍 <strong>Testing &amp; Validation</strong><a class="headerlink" href="#testing-validation" title="Permanent link">&para;</a></h2>
+<h3 id="connectivity-test-suite"><strong>🧪 Connectivity Test Suite</strong><a class="headerlink" href="#connectivity-test-suite" title="Permanent link">&para;</a></h3>
+<p><strong>Test Categories:</strong>
+1. <strong>Basic Network Connectivity</strong>
+2. <strong>Tor Anonymity Verification</strong><br />
+3. <strong>DNS Leak Prevention</strong>
+4. <strong>Performance Benchmarking</strong>
+5. <strong>Security Isolation Testing</strong></p>
+<h3 id="test-execution-example"><strong>📊 Test Execution Example</strong><a class="headerlink" href="#test-execution-example" title="Permanent link">&para;</a></h3>
+<p><strong>Anonymity Test:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="c1"># Expected: Tor exit node IP</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>curl<span class="w"> </span>-s<span class="w"> </span>http://httpbin.org/ip<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span><span class="s1">&#39;.origin&#39;</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="c1"># Expected: Different IP from previous</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>curl<span class="w"> </span>-s<span class="w"> </span>http://icanhazip.com
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="c1"># Expected: &quot;Congratulations. This browser is configured to use Tor.&quot;</span>
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>curl<span class="w"> </span>-s<span class="w"> </span>https://check.torproject.org/<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-o<span class="w"> </span><span class="s2">&quot;Congratulations.*&quot;</span>
+</code></pre></div></p>
+<p><strong>DNS Leak Test:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="c1"># All DNS queries should resolve through Tor</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>dig<span class="w"> </span>+short<span class="w"> </span>google.com<span class="w"> </span>@10.152.152.10
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>nslookup<span class="w"> </span>facebook.com<span class="w"> </span><span class="m">10</span>.152.152.10
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a><span class="c1"># Expected: No direct DNS queries to ISP resolvers</span>
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>sudo<span class="w"> </span>tcpdump<span class="w"> </span>-i<span class="w"> </span>eth0<span class="w"> </span>port<span class="w"> </span><span class="m">53</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a>curl<span class="w"> </span>-s<span class="w"> </span>http://google.com<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
+<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>sudo<span class="w"> </span>pkill<span class="w"> </span>tcpdump
+</code></pre></div></p>
+<p><strong>Performance Test:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="c1"># Latency measurement</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>ping<span class="w"> </span>-c<span class="w"> </span><span class="m">10</span><span class="w"> </span>google.com
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="c1"># Throughput test</span>
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>curl<span class="w"> </span>-o<span class="w"> </span>/dev/null<span class="w"> </span>-s<span class="w"> </span>-w<span class="w"> </span><span class="s2">&quot;Downloaded: %{size_download} bytes\nTime: %{time_total}s\nSpeed: %{speed_download} bytes/s\n&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a><span class="w">  </span>http://httpbin.org/bytes/1048576
+</code></pre></div></p>
+<hr />
+<h2 id="troubleshooting">🛠️ <strong>Troubleshooting</strong><a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="common-issues-solutions"><strong>🚨 Common Issues &amp; Solutions</strong><a class="headerlink" href="#common-issues-solutions" title="Permanent link">&para;</a></h3>
+<p><strong>Issue 1: Bridge Creation Fails</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="c1"># Symptoms: nexus-br0 bridge not created</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="c1"># Solution: Check permissions and dependencies</span>
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>bridge-utils
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>sudo<span class="w"> </span>modprobe<span class="w"> </span>bridge
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>sudo<span class="w"> </span>/home/user/gateway-vm/scripts/create-nexus-network.sh
+</code></pre></div></p>
+<p><strong>Issue 2: VM Won't Start</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="c1"># Symptoms: VM fails to start or network issues</span>
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="c1"># Check VM configuration</span>
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>virsh<span class="w"> </span>dumpxml<span class="w"> </span>whonix-gateway<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-A10<span class="w"> </span>interface
+<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>
+<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a><span class="c1"># Verify bridge exists</span>
+<a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a>brctl<span class="w"> </span>show<span class="w"> </span>nexus-br0
+<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a>
+<a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a><span class="c1"># Check libvirt network</span>
+<a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a>virsh<span class="w"> </span>net-start<span class="w"> </span>nexus-internal
+</code></pre></div></p>
+<p><strong>Issue 3: No Internet Through Gateway</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="c1"># Inside VM: Check Tor service</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>tor@default
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>sudo<span class="w"> </span>journalctl<span class="w"> </span>-u<span class="w"> </span>tor@default
+<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>
+<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a><span class="c1"># Verify transparent proxy rules</span>
+<a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a>sudo<span class="w"> </span>iptables<span class="w"> </span>-t<span class="w"> </span>nat<span class="w"> </span>-L<span class="w"> </span>-n<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>REDIRECT
+<a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a>
+<a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a><span class="c1"># Check gateway routing</span>
+<a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a>ip<span class="w"> </span>route<span class="w"> </span>show
+</code></pre></div></p>
+<p><strong>Issue 4: DNS Resolution Fails</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="c1"># Check DNS configuration</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>cat<span class="w"> </span>/etc/resolv.conf
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>
+<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="c1"># Test DNS through gateway</span>
+<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a>dig<span class="w"> </span>@10.152.152.10<span class="w"> </span>google.com
+<a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a>
+<a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a><span class="c1"># Inside VM: Verify Tor DNS port</span>
+<a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a>sudo<span class="w"> </span>ss<span class="w"> </span>-tuln<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="m">5300</span>
+</code></pre></div></p>
+<h3 id="diagnostic-commands"><strong>🔧 Diagnostic Commands</strong><a class="headerlink" href="#diagnostic-commands" title="Permanent link">&para;</a></h3>
+<p><strong>Network Diagnostics:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="c1"># Bridge status</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>sudo<span class="w"> </span>brctl<span class="w"> </span>show
+<a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>ip<span class="w"> </span>addr<span class="w"> </span>show<span class="w"> </span>nexus-br0
+<a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a>
+<a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a><span class="c1"># Routing table</span>
+<a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a>ip<span class="w"> </span>route<span class="w"> </span>show<span class="w"> </span>table<span class="w"> </span>all
+<a id="__codelineno-36-7" name="__codelineno-36-7" href="#__codelineno-36-7"></a>
+<a id="__codelineno-36-8" name="__codelineno-36-8" href="#__codelineno-36-8"></a><span class="c1"># Network connectivity</span>
+<a id="__codelineno-36-9" name="__codelineno-36-9" href="#__codelineno-36-9"></a>ping<span class="w"> </span>-c<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">10</span>.152.152.10
+<a id="__codelineno-36-10" name="__codelineno-36-10" href="#__codelineno-36-10"></a>traceroute<span class="w"> </span><span class="m">10</span>.152.152.10
+</code></pre></div></p>
+<p><strong>VM Diagnostics:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="c1"># VM status</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>virsh<span class="w"> </span>list<span class="w"> </span>--all
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>virsh<span class="w"> </span>dominfo<span class="w"> </span>whonix-gateway
+<a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a>
+<a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="c1"># VM console access</span>
+<a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a>virsh<span class="w"> </span>console<span class="w"> </span>whonix-gateway
+<a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a>
+<a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a><span class="c1"># VM logs</span>
+<a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a>virsh<span class="w"> </span>qemu-monitor-command<span class="w"> </span>whonix-gateway<span class="w"> </span>--hmp<span class="w"> </span><span class="s1">&#39;info network&#39;</span>
+</code></pre></div></p>
+<p><strong>Tor Diagnostics (Inside VM):</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="c1"># Tor service status</span>
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>tor@default
+<a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a>sudo<span class="w"> </span>ss<span class="w"> </span>-tuln<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;(9040|5300|9051)&quot;</span>
+<a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a>
+<a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a><span class="c1"># Tor logs</span>
+<a id="__codelineno-38-6" name="__codelineno-38-6" href="#__codelineno-38-6"></a>sudo<span class="w"> </span>journalctl<span class="w"> </span>-u<span class="w"> </span>tor@default<span class="w"> </span>-f
+<a id="__codelineno-38-7" name="__codelineno-38-7" href="#__codelineno-38-7"></a>sudo<span class="w"> </span>tail<span class="w"> </span>-f<span class="w"> </span>/var/log/tor/log
+</code></pre></div></p>
+<hr />
+<h2 id="security-considerations">🔒 <strong>Security Considerations</strong><a class="headerlink" href="#security-considerations" title="Permanent link">&para;</a></h2>
+<h3 id="security-best-practices"><strong>🛡️ Security Best Practices</strong><a class="headerlink" href="#security-best-practices" title="Permanent link">&para;</a></h3>
+<p><strong>Network Isolation:</strong>
+- ✅ Complete VM boundary prevents host compromise
+- ✅ Bridge network isolates gateway traffic
+- ✅ No direct internet access from client
+- ✅ All traffic forced through Tor transparent proxy</p>
+<p><strong>VM Security:</strong>
+- ✅ Whonix hardened base system
+- ✅ Regular security updates via apt
+- ✅ Minimal attack surface (CLI-only, no GUI)
+- ✅ AppArmor profiles active by default</p>
+<p><strong>Traffic Analysis Protection:</strong>
+- ✅ VM-level isolation prevents traffic correlation
+- ✅ Tor transparent proxy hides traffic patterns
+- ✅ DNS queries routed through Tor
+- ✅ No clearnet connections from client</p>
+<h3 id="operational-security"><strong>🔐 Operational Security</strong><a class="headerlink" href="#operational-security" title="Permanent link">&para;</a></h3>
+<p><strong>VM Management:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="c1"># Regular VM snapshots</span>
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>virsh<span class="w"> </span>snapshot-create-as<span class="w"> </span>whonix-gateway<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="w">  </span><span class="s2">&quot;snapshot-</span><span class="k">$(</span>date<span class="w"> </span>+%Y%m%d-%H%M%S<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a><span class="w">  </span><span class="s2">&quot;Pre-update snapshot&quot;</span>
+<a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a>
+<a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a><span class="c1"># Security updates inside VM</span>
+<a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+<a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a>
+<a id="__codelineno-39-9" name="__codelineno-39-9" href="#__codelineno-39-9"></a><span class="c1"># Monitor Tor circuit changes</span>
+<a id="__codelineno-39-10" name="__codelineno-39-10" href="#__codelineno-39-10"></a>sudo<span class="w"> </span>journalctl<span class="w"> </span>-u<span class="w"> </span>tor@default<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;circuit&quot;</span>
+</code></pre></div></p>
+<p><strong>Network Monitoring:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="c1"># Monitor bridge traffic</span>
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>sudo<span class="w"> </span>tcpdump<span class="w"> </span>-i<span class="w"> </span>nexus-br0<span class="w"> </span>-n
+<a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>
+<a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a><span class="c1"># Check for DNS leaks</span>
+<a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a>sudo<span class="w"> </span>tcpdump<span class="w"> </span>-i<span class="w"> </span>eth0<span class="w"> </span>port<span class="w"> </span><span class="m">53</span><span class="w"> </span><span class="p">&amp;</span>
+<a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a>curl<span class="w"> </span>-s<span class="w"> </span>http://google.com<span class="w"> </span>&gt;<span class="w"> </span>/dev/null
+<a id="__codelineno-40-7" name="__codelineno-40-7" href="#__codelineno-40-7"></a>sudo<span class="w"> </span>pkill<span class="w"> </span>tcpdump
+</code></pre></div></p>
+<h3 id="security-warnings"><strong>🚨 Security Warnings</strong><a class="headerlink" href="#security-warnings" title="Permanent link">&para;</a></h3>
+<p><strong>Critical Security Notes:</strong>
+- ⚠️ <strong>Never connect client directly to internet</strong> - Always use gateway
+- ⚠️ <strong>Regularly update VM</strong> - Security patches critical for anonymity
+- ⚠️ <strong>Monitor Tor circuits</strong> - Ensure circuit rotation working
+- ⚠️ <strong>Test for leaks</strong> - Regular DNS and traffic leak testing
+- ⚠️ <strong>VM snapshots</strong> - Regular backups before major changes</p>
+<hr />
+<h2 id="future-multi-network-integration">🚀 <strong>Future Multi-Network Integration</strong><a class="headerlink" href="#future-multi-network-integration" title="Permanent link">&para;</a></h2>
+<h3 id="i2p-integration-plan"><strong>🌐 I2P Integration Plan</strong><a class="headerlink" href="#i2p-integration-plan" title="Permanent link">&para;</a></h3>
+<p><strong>I2P Router Container:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="c1"># Future implementation</span>
+<a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>podman<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>nexus-i2p<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="w">  </span>--network<span class="w"> </span>nexus-container-net<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a><span class="w">  </span>--ip<span class="w"> </span><span class="m">10</span>.152.153.10<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a><span class="w">  </span>-p<span class="w"> </span><span class="m">7657</span>:7657<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a><span class="w">  </span>-p<span class="w"> </span><span class="m">4444</span>:4444<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a><span class="w">  </span>i2p/i2p
+</code></pre></div></p>
+<p><strong>I2P Traffic Routing:</strong>
+- HTTP Proxy: 10.152.153.10:4444
+- SOCKS Proxy: 10.152.153.10:4445
+- Router Console: 10.152.153.10:7657
+- Eepsite Hosting: Automatic .i2p domain registration</p>
+<h3 id="yggdrassil-integration-plan"><strong>🕸️ Yggdrassil Integration Plan</strong><a class="headerlink" href="#yggdrassil-integration-plan" title="Permanent link">&para;</a></h3>
+<p><strong>Yggdrassil Mesh Node:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="c1"># Future implementation</span>
+<a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>podman<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>nexus-yggdrassil<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="w">  </span>--network<span class="w"> </span>nexus-container-net<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a><span class="w">  </span>--ip<span class="w"> </span><span class="m">10</span>.152.153.20<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a><span class="w">  </span>--privileged<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a><span class="w">  </span>yggdrasil/yggdrasil
+</code></pre></div></p>
+<p><strong>Mesh Network Features:</strong>
+- IPv6 Overlay Network
+- Decentralized Routing
+- Peer Discovery
+- End-to-End Encryption</p>
+<h3 id="network-orchestration-engine"><strong>🔀 Network Orchestration Engine</strong><a class="headerlink" href="#network-orchestration-engine" title="Permanent link">&para;</a></h3>
+<p><strong>Traffic Routing Logic:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="c1"># Future multi-network routing</span>
+<a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="m">1</span>.<span class="w"> </span>Primary:<span class="w"> </span>Tor<span class="w"> </span><span class="o">(</span>existing<span class="w"> </span>medusa<span class="w"> </span>multi-circuit<span class="o">)</span>
+<a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a><span class="m">2</span>.<span class="w"> </span>Failover:<span class="w"> </span>I2P<span class="w"> </span>router<span class="w"> </span>with<span class="w"> </span>.i2p<span class="w"> </span>domains
+<a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a><span class="m">3</span>.<span class="w"> </span>Mesh:<span class="w"> </span>Yggdrassil<span class="w"> </span><span class="k">for</span><span class="w"> </span>peer-to-peer<span class="w"> </span>communication
+<a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a><span class="m">4</span>.<span class="w"> </span>Orchestration:<span class="w"> </span>Smart<span class="w"> </span>routing<span class="w"> </span>based<span class="w"> </span>on<span class="w"> </span>destination/performance
+</code></pre></div></p>
+<p><strong>Hidden Service Trinity:</strong>
+- <code>service.onion</code> (Tor)
+- <code>service.i2p</code> (I2P)
+- <code>service.ygg</code> (Yggdrassil)</p>
+<hr />
+<h2 id="performance-specifications">📊 <strong>Performance Specifications</strong><a class="headerlink" href="#performance-specifications" title="Permanent link">&para;</a></h2>
+<h3 id="resource-requirements"><strong>🔧 Resource Requirements</strong><a class="headerlink" href="#resource-requirements" title="Permanent link">&para;</a></h3>
+<p><strong>Host System (Alpine NeXuS):</strong>
+- CPU: 2+ cores recommended
+- RAM: 4GB minimum, 8GB recommended
+- Storage: 10GB available for VM
+- Network: Ethernet interface for bridge</p>
+<p><strong>Gateway VM:</strong>
+- CPU: 2 cores allocated
+- RAM: 2GB allocated
+- Storage: 20GB disk space
+- Network: Dual interfaces (internal + bridge)</p>
+<h3 id="performance-metrics"><strong>📈 Performance Metrics</strong><a class="headerlink" href="#performance-metrics" title="Permanent link">&para;</a></h3>
+<p><strong>Typical Performance:</strong>
+- <strong>Latency:</strong> +200-500ms (Tor overhead)
+- <strong>Throughput:</strong> 5-50 Mbps (depending on Tor circuits)
+- <strong>DNS Resolution:</strong> 50-200ms (through Tor)
+- <strong>Connection Establishment:</strong> 1-3 seconds (circuit building)</p>
+<p><strong>Optimization Tips:</strong>
+- Regular Tor circuit rotation
+- Multiple Tor instances (medusa multi-head)
+- SSD storage for VM for better I/O
+- Adequate RAM prevents swap usage</p>
+<hr />
+<h2 id="support-maintenance">📞 <strong>Support &amp; Maintenance</strong><a class="headerlink" href="#support-maintenance" title="Permanent link">&para;</a></h2>
+<h3 id="regular-maintenance-tasks"><strong>🔄 Regular Maintenance Tasks</strong><a class="headerlink" href="#regular-maintenance-tasks" title="Permanent link">&para;</a></h3>
+<p><strong>Weekly Tasks:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="c1"># VM security updates (inside VM)</span>
+<a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+<a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a>
+<a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a><span class="c1"># Check Tor bootstrap status</span>
+<a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a>sudo<span class="w"> </span>journalctl<span class="w"> </span>-u<span class="w"> </span>tor@default<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-20
+<a id="__codelineno-44-6" name="__codelineno-44-6" href="#__codelineno-44-6"></a>
+<a id="__codelineno-44-7" name="__codelineno-44-7" href="#__codelineno-44-7"></a><span class="c1"># Verify network connectivity</span>
+<a id="__codelineno-44-8" name="__codelineno-44-8" href="#__codelineno-44-8"></a>/home/user/gateway-vm/scripts/test-nexus-connectivity.sh
+</code></pre></div></p>
+<p><strong>Monthly Tasks:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="c1"># VM snapshot for backup</span>
+<a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>virsh<span class="w"> </span>snapshot-create-as<span class="w"> </span>whonix-gateway<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a><span class="w">  </span><span class="s2">&quot;monthly-backup-</span><span class="k">$(</span>date<span class="w"> </span>+%Y%m%d<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a><span class="w">  </span><span class="s2">&quot;Monthly maintenance snapshot&quot;</span>
+<a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a>
+<a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a><span class="c1"># Clean old snapshots (keep 3 most recent)</span>
+<a id="__codelineno-45-7" name="__codelineno-45-7" href="#__codelineno-45-7"></a>virsh<span class="w"> </span>snapshot-list<span class="w"> </span>whonix-gateway
+<a id="__codelineno-45-8" name="__codelineno-45-8" href="#__codelineno-45-8"></a><span class="c1"># virsh snapshot-delete whonix-gateway &lt;old-snapshot-name&gt;</span>
+<a id="__codelineno-45-9" name="__codelineno-45-9" href="#__codelineno-45-9"></a>
+<a id="__codelineno-45-10" name="__codelineno-45-10" href="#__codelineno-45-10"></a><span class="c1"># Performance analysis</span>
+<a id="__codelineno-45-11" name="__codelineno-45-11" href="#__codelineno-45-11"></a><span class="c1"># Review connectivity logs for patterns</span>
+<a id="__codelineno-45-12" name="__codelineno-45-12" href="#__codelineno-45-12"></a>tail<span class="w"> </span>-100<span class="w"> </span>/home/user/gateway-vm/logs/connectivity.log
+</code></pre></div></p>
+<h3 id="health-monitoring"><strong>📋 Health Monitoring</strong><a class="headerlink" href="#health-monitoring" title="Permanent link">&para;</a></h3>
+<p><strong>System Health Checks:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="c1"># Bridge health</span>
+<a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>ping<span class="w"> </span>-c<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">10</span>.152.152.10
+<a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>brctl<span class="w"> </span>show<span class="w"> </span>nexus-br0
+<a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a>
+<a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a><span class="c1"># VM resource usage</span>
+<a id="__codelineno-46-6" name="__codelineno-46-6" href="#__codelineno-46-6"></a>virsh<span class="w"> </span>domstats<span class="w"> </span>whonix-gateway
+<a id="__codelineno-46-7" name="__codelineno-46-7" href="#__codelineno-46-7"></a>
+<a id="__codelineno-46-8" name="__codelineno-46-8" href="#__codelineno-46-8"></a><span class="c1"># Tor circuit health (inside VM)</span>
+<a id="__codelineno-46-9" name="__codelineno-46-9" href="#__codelineno-46-9"></a>sudo<span class="w"> </span>journalctl<span class="w"> </span>-u<span class="w"> </span>tor@default<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;(circuit|bootstrap)&quot;</span>
+</code></pre></div></p>
+<hr />
+<h2 id="conclusion">🎯 <strong>Conclusion</strong><a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>The NeXuS Gateway Multi-Network Architecture provides a robust foundation for censorship-resistant, anonymous networking through a professionally managed VM-based system. </p>
+<p><strong>Key Achievements:</strong>
+- ✅ <strong>Complete Infrastructure</strong> - Organized directory structure with comprehensive automation
+- ✅ <strong>Network Isolation</strong> - VM boundary with transparent proxy routing
+- ✅ <strong>Democratic Security</strong> - Easy setup with enterprise-grade anonymity
+- ✅ <strong>Extensible Design</strong> - Ready for I2P and Yggdrassil integration
+- ✅ <strong>Production Ready</strong> - Complete testing and validation framework</p>
+<p><strong>Next Phase:</strong> Container orchestration with Podman unprivileged containers for I2P router and Yggdrassil mesh node integration.</p>
+<hr />
+<p><em>🌀 Generated under NeXuS supervision with multi-network anonymity architecture</em><br />
+<em>Co-Created-By: HackenStacks <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#97;&#99;&#107;&#101;&#110;&#115;&#116;&#97;&#99;&#107;&#115;&#64;&#110;&#101;&#120;&#117;&#115;&#46;&#108;&#111;&#99;&#97;&#108;">&#104;&#97;&#99;&#107;&#101;&#110;&#115;&#116;&#97;&#99;&#107;&#115;&#64;&#110;&#101;&#120;&#117;&#115;&#46;&#108;&#111;&#99;&#97;&#108;</a></em><br />
+<em>Co-Authored-By: Claude <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#110;&#111;&#114;&#101;&#112;&#108;&#121;&#64;&#97;&#110;&#116;&#104;&#114;&#111;&#112;&#105;&#99;&#46;&#99;&#111;&#109;">&#110;&#111;&#114;&#101;&#112;&#108;&#121;&#64;&#97;&#110;&#116;&#104;&#114;&#111;&#112;&#105;&#99;&#46;&#99;&#111;&#109;</a></em><br />
+<em>OAAE Framework: Observe → Assess → Adapt → Evolve</em>  </p>
+<p><strong>Manual Status: COMPREHENSIVE DEPLOYMENT GUIDE COMPLETE ✅</strong><br />
+<strong>NeXuS Compliance: FULL DOCUMENTATION WITH SAFETY PROTOCOLS 🌀</strong><br />
+<strong>Architecture Level: ENTERPRISE-GRADE MULTI-NETWORK ANONYMITY 🛡️</strong></p>
+<hr />
+<p><em>Happy NeXuS Gateway deployment! 🌐🔥🚀</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/hackenstacks/nexus" target="_blank" rel="noopener" title="NeXuS on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.instant", "search.highlight", "search.share", "content.code.copy", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
