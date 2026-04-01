@@ -1,0 +1,6330 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Sane • Simple • Secure • Stealthy • Beautiful — Together Everyone Achieves More">
+      
+      
+        <meta name="author" content="The NeXuS Collective">
+      
+      
+        <link rel="canonical" href="https://hackenstacks.github.io/nexus/nxs-forge/">
+      
+      
+        <link rel="prev" href="../cli-libs-tui-frameworks/">
+      
+      
+        <link rel="next" href="../eco-extraterrium-stack/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+    
+    
+      
+        <title>NXS-FORGE — Universal Identity & Trust - NeXuS</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#nxs-forge-the-universal-identity-trust-protocol" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="NeXuS" class="md-header__button md-logo" aria-label="NeXuS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NeXuS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              NXS-FORGE — Universal Identity & Trust
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/hackenstacks/nexus" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hackenstacks/nexus
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../full-index/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Full Index
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../nexus-defined/" class="md-tabs__link">
+          
+  
+  
+  What Is NeXuS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../medusa-stealth-routing/" class="md-tabs__link">
+          
+  
+  
+  Network
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../3key-security/" class="md-tabs__link">
+          
+  
+  
+  Security
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../rin/" class="md-tabs__link">
+          
+  
+  
+  RIN
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../nexus-rings/" class="md-tabs__link">
+          
+  
+  
+  NeXuS Family
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../ai-merged-identity/" class="md-tabs__link">
+          
+  
+  
+  AI
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../cli-libs-tui-frameworks/" class="md-tabs__link">
+          
+  
+  
+  Development
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  The Forge
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../nexus-architecture-layers/" class="md-tabs__link">
+          
+  
+  
+  Architecture
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../network-stack/foundation/start-here/" class="md-tabs__link">
+          
+  
+  
+  Network Stack
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../node/getting-started/" class="md-tabs__link">
+          
+  
+  
+  Node
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../reports/action_report/" class="md-tabs__link">
+          
+  
+  
+  Reports
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../session-logs/" class="md-tabs__link">
+          
+  
+  
+  Session Logs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../dev/action-report/" class="md-tabs__link">
+          
+  
+  
+  Dev
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../fireside-chat-001/" class="md-tabs__link">
+          
+  
+  
+  Fireside Chats
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../founding-session/" class="md-tabs__link">
+          
+  
+  
+  NeXuS History
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="NeXuS" class="md-nav__button md-logo" aria-label="NeXuS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    NeXuS
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/hackenstacks/nexus" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hackenstacks/nexus
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../full-index/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Is NeXuS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    What Is NeXuS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-defined/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeXuS Defined
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Framework — CIA+MOE+POP+YMCA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-boot-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boot Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../what-is-nexus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Full Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-blueprint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Blueprint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oaae-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OAAE Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Network
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../medusa-stealth-routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Medusa Stealth Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zombie-apoc-doc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zombie Apocalypse Mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3key-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Three-Key Security Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../security-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Stack (PSAD, fwsnort, fail2ban)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../psad-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PSAD Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fwsnort-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    fwsnort Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-integrity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeXuS Integrity — Prepared Is Not Paranoid
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cerberus-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cerberus Password Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../point-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POINT Protocol — Network Telemetry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../point2point/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeXuS P2P — POINT2POINT Violation & Point System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RIN
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    RIN
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Real Intelligence Network
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeXuS Family
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NeXuS Family
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-rings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rings — Family Sovereignty Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../education-oracle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Education Oracle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-merged-identity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Merged AI Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autonomouse-ai-intelligence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autonomous AI Intelligence
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dpfoe-ai-intelligence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DPFOE Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../event-horizon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Event Horizon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-arch-chimera/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Chimera Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Development
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cli-libs-tui-frameworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Libs & TUI Frameworks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Forge
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    The Forge
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NXS-FORGE — Universal Identity & Trust
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NXS-FORGE — Universal Identity & Trust
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-core-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 The Core Idea
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-meta-block-universal-artifact-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏷️ The META Block — Universal Artifact Identity
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏷️ The META Block — Universal Artifact Identity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constants-what-the-artifact-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔒 Constants — What the Artifact IS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables-current-state-of-the-artifact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 Variables — Current STATE of the Artifact
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-constitutional-dna-principle-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧬 The Constitutional DNA — Principle Sources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧬 The Constitutional DNA — Principle Sources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source-1-the-five-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source 1: The Five Principles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#source-2-the-manifesto-cia-moe-pop-ymca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source 2: The Manifesto — CIA • MOE • POP • YMCA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#source-3-the-security-manifesto-the-five-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source 3: The Security Manifesto — The Five Gates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#artifact-type-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Artifact Type Registry
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principle-profiles-active-denominator-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Principle Profiles — Active Denominator Selection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Principle Profiles — Active Denominator Selection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-profiles-by-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default Profiles by Type
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-scoring-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ The Scoring System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚖️ The Scoring System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-scale-0-to-5-per-active-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Scale — 0 to 5 Per Active Principle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Scale — 0 to 5 Per Active Principle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scoring-sane" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Scoring: SANE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoring-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ Scoring: SIMPLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoring-secure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔒 Scoring: SECURE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoring-stealthy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        👻 Scoring: STEALTHY
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoring-beautiful" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✨ Scoring: BEAUTIFUL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#g2-the-reviewer-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧭 G2: The Reviewer Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧭 G2: The Reviewer Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-the-audit-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The Audit Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-submitting-the-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Submitting the Score
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-earning-nexium" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Earning NeXiuM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composite-score-trust-tier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Composite Score → Trust Tier
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#score-level-who-scored-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Score Level — Who Scored It
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nexium-reward-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NeXiuM Reward Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#score-notation-in-meta-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Score Notation in META Block
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-artifact-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 The Artifact Lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-artifact-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Cross-Artifact Integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-meta-block-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Full META Block Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 Full META Block Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#complete-example-ghost-gate-enforce-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Example — Ghost Gate Enforce Script
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-example-eco-extraterrium-stack-doc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Example — ECO Extraterrium Stack Doc
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geminis-directive-next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚒️ Gemini's Directive — Next Steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚒️ Gemini&#39;s Directive — Next Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#g1-expand-the-scoring-rubric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G1. Expand the Scoring Rubric
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g2-write-the-reviewer-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G2. Write the Reviewer Guide
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g3-backfill-existing-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G3. Backfill Existing Artifacts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g4-wire-into-nexus_compassmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G4. Wire into NEXUS_COMPASS.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g5-update-fngmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G5. Update FNG.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eco-extraterrium-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ECO — The Extraterrium Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-architecture-layers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Two-Layer Architecture — Public and Dark
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../economy-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Economy & Blockchain
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-mint-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeXuS Mint Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../required-applications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Required Applications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Stack
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Network Stack
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_1" id="__nav_12_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Foundation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/foundation/start-here/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Start Here
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/foundation/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/foundation/startup-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Startup Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/foundation/startup-checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Startup Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/foundation/nexus-foundation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeXuS Foundation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/foundation/security-manifesto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Manifesto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/foundation/complete-system-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complete System Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_2" id="__nav_12_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vision
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vision
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/vision/true-vision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The True Vision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/vision/future-roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Future Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/vision/phase2-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Phase 2 Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/vision/nexus-final/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeXuS Final
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/vision/cloud-vision/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cloud Vision
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_3" id="__nav_12_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/architecture/mesh-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mesh Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/architecture/paranoid-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paranoid Security Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/architecture/transparent-routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transparent Routing Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/architecture/p2p-protocol-spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P2P Protocol Specification
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/architecture/implementation-summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementation Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/architecture/integration-summary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration Summary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_4" id="__nav_12_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implementation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Implementation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/implementation/i2p/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    I2P Implementation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/implementation/yggdrasil/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Yggdrasil Implementation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/implementation/yggdrasil-quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Yggdrasil Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/implementation/reticulum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reticulum Implementation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/implementation/reticulum-quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reticulum Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/implementation/batman-adv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    BATMAN-adv Mesh
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/implementation/gateway-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gateway Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_5" id="__nav_12_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deployment
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Deployment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/deployment/darknet-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Darknet Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/deployment/privoxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Privoxy Standalone
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_6" id="__nav_12_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/user-guides/beast-control/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beast Control
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/user-guides/beast-slayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beast Slayer Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/user-guides/test-router/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test Your Router
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/user-guides/remote-browser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remote Browser Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_7" id="__nav_12_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Development
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/development/contributing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contributing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/development/authors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Node
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Node
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../node/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reports
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reports
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/action_report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Action Reports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
+        
+          
+          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session Logs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_15">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Session Logs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../session-logs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Index
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
+        
+          
+          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dev
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_16">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Dev
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev/action-report/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Action Reports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17" >
+        
+          
+          <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fireside Chats
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_17">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fireside Chats
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fireside-chat-001/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chat 001 — 2026-03-10 — The Forge Awakens
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fireside-chat-002/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chat 002 — 2026-03-21 — The Node Standard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fireside-chat-003/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chat 003 — 2026-03-21 — POINT2POINT and the Foundation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fireside-chat-004/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Chat 004 — 2026-03-22 — The Definition Session
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
+        
+          
+          <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeXuS History
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_18">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NeXuS History
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_18_1" id="__nav_18_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Founding Documents
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_18_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Founding Documents
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../founding-session/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Founding Session — 2025-08-28
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_18_2" id="__nav_18_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_18_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Claude
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../history/claude/session-history-2026-03-10/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session History 2026-03-10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_18_3" id="__nav_18_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Archive 1
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_18_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Archive 1
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../history/archive-1/claude-sessions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Claude Sessions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../history/archive-1/nexus-planning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Planning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../history/archive-1/action-reports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Action Reports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../history/archive-1/ai-consciousness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Consciousness
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../history/archive-1/projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../history/archive-1/security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../history/archive-1/scripts-docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scripts & Docs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-core-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 The Core Idea
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-meta-block-universal-artifact-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏷️ The META Block — Universal Artifact Identity
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏷️ The META Block — Universal Artifact Identity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constants-what-the-artifact-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔒 Constants — What the Artifact IS
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables-current-state-of-the-artifact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 Variables — Current STATE of the Artifact
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-constitutional-dna-principle-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧬 The Constitutional DNA — Principle Sources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧬 The Constitutional DNA — Principle Sources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source-1-the-five-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source 1: The Five Principles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#source-2-the-manifesto-cia-moe-pop-ymca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source 2: The Manifesto — CIA • MOE • POP • YMCA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#source-3-the-security-manifesto-the-five-gates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Source 3: The Security Manifesto — The Five Gates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#artifact-type-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Artifact Type Registry
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principle-profiles-active-denominator-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Principle Profiles — Active Denominator Selection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🎯 Principle Profiles — Active Denominator Selection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#default-profiles-by-type" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default Profiles by Type
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-scoring-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚖️ The Scoring System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚖️ The Scoring System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-scale-0-to-5-per-active-principle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Scale — 0 to 5 Per Active Principle
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The Scale — 0 to 5 Per Active Principle">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scoring-sane" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 Scoring: SANE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoring-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚡ Scoring: SIMPLE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoring-secure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔒 Scoring: SECURE
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoring-stealthy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        👻 Scoring: STEALTHY
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scoring-beautiful" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✨ Scoring: BEAUTIFUL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#g2-the-reviewer-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧭 G2: The Reviewer Guide
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧭 G2: The Reviewer Guide">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-the-audit-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. The Audit Process
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-submitting-the-score" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Submitting the Score
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-earning-nexium" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Earning NeXiuM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#composite-score-trust-tier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Composite Score → Trust Tier
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#score-level-who-scored-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Score Level — Who Scored It
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nexium-reward-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NeXiuM Reward Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#score-notation-in-meta-block" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 Score Notation in META Block
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-artifact-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔄 The Artifact Lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-artifact-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 Cross-Artifact Integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-meta-block-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 Full META Block Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📋 Full META Block Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#complete-example-ghost-gate-enforce-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Example — Ghost Gate Enforce Script
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complete-example-eco-extraterrium-stack-doc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Example — ECO Extraterrium Stack Doc
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geminis-directive-next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚒️ Gemini's Directive — Next Steps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="⚒️ Gemini&#39;s Directive — Next Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#g1-expand-the-scoring-rubric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G1. Expand the Scoring Rubric
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g2-write-the-reviewer-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G2. Write the Reviewer Guide
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g3-backfill-existing-artifacts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G3. Backfill Existing Artifacts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g4-wire-into-nexus_compassmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G4. Wire into NEXUS_COMPASS.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g5-update-fngmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G5. Update FNG.md
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="nxs-forge-the-universal-identity-trust-protocol">⚒️ NXS-FORGE — The Universal Identity &amp; Trust Protocol<a class="headerlink" href="#nxs-forge-the-universal-identity-trust-protocol" title="Permanent link">&para;</a></h1>
+<p><em>Version 1.1 — 2026-04-01 | Sane • Simple • Secure • Stealthy • Beautiful</em></p>
+<!-- NEXUS-META
+id:           NXS-FORGE-0001
+type:         PROTOCOL
+principles:   Sane Simple Secure
+cia:          Integrity Accountability Transparency
+moe:          Modularity Observability Extensibility
+pop:          Open-Source
+ymca:         Yes-We-Can
+zero-trust:   true
+sovereignty:  local
+transparency: full
+defense:      active
+created:      2026-04-01
+authors:      claude anon gemini
+version:      1.1
+status:       active
+audience:     all
+tier:         all
+score-sane:       5
+score-simple:     5
+score-secure:     5
+score-composite:  15
+score-tier:       ACTIVE
+score-level:      2
+scored-by:        gemini
+scored-at:        2026-04-01
+nexium-reward:    112
+-->
+
+<hr />
+<blockquote>
+<p>⚒️ <strong>The Forge</strong> is where raw material receives its identity.
+Every artifact that enters the NeXuS ecosystem is stamped here —
+measured against its declared principles, scored by the community,
+and trusted only when the math says so.</p>
+<p><em>A stamp without a score is a label. A score makes it a trust mechanism.</em></p>
+</blockquote>
+<hr />
+<h2 id="the-core-idea">🧠 The Core Idea<a class="headerlink" href="#the-core-idea" title="Permanent link">&para;</a></h2>
+<p>The NeXuS ecosystem is made of artifacts. Documents. Scripts. Containers. Services. Permits. Nodes. Characters. Config files. Code modules.</p>
+<p>Until now each type lived in its own world with its own rules. The Forge unifies them under one question:</p>
+<blockquote>
+<p><strong>"Does this artifact do what it declares, at the standard it claims, for the network it serves?"</strong></p>
+</blockquote>
+<p>The META block is the declaration. The scoring system is the proof. The trust tier is the verdict.</p>
+<p>Nothing deploys, ships, or earns without passing through the Forge.</p>
+<hr />
+<h2 id="the-meta-block-universal-artifact-identity">🏷️ The META Block — Universal Artifact Identity<a class="headerlink" href="#the-meta-block-universal-artifact-identity" title="Permanent link">&para;</a></h2>
+<p>Every NeXuS artifact carries a META block. Not just documents — scripts, containers, services, permits, nodes, characters. Everything.</p>
+<p>The META block has two categories of fields: <strong>Constants</strong> (defined at creation, never change) and <strong>Variables</strong> (evolve through the artifact's lifecycle).</p>
+<hr />
+<h3 id="constants-what-the-artifact-is">🔒 Constants — What the Artifact IS<a class="headerlink" href="#constants-what-the-artifact-is" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>&lt;!-- NEXUS-META
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>id:           NXS-DOC-0042          ← unique permanent identifier
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>type:         PROTOCOL              ← artifact type (see Type Registry below)
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>principles:   Sane Secure Stealthy  ← active denominator profile
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>cia:          Confidentiality Deniability Accountability
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>moe:          Modularity
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>pop:          Privacy Open-Source
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>ymca:         CLI-First
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>zero-trust:   true                  ← boolean
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>sovereignty:  local                 ← local | mesh | hybrid
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>transparency: full                  ← full | partial | internal
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>defense:      active                ← active | passive | none
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>created:      2026-04-01
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>authors:      gemini claude anon
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>project:      nexus-ghost-gate
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>layer:        3                     ← stack layer (0-6) or: infra | eco | social
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>--&gt;
+</code></pre></div>
+<hr />
+<h3 id="variables-current-state-of-the-artifact">🔄 Variables — Current STATE of the Artifact<a class="headerlink" href="#variables-current-state-of-the-artifact" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>version:          1.2
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>updated:          2026-04-01
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>status:           draft             ← draft | review | active | deprecated | archived
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>audience:         developer         ← node-runner | developer | community | all
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>tier:             phantom           ← phantom | vanguard | hub | broadcast | all
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>score-sane:       4
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>score-simple:     0
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>score-secure:     5
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>score-stealthy:   4
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>score-composite:  13
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>score-tier:       ACTIVE            ← DRAFT | REVIEW | ACTIVE | EXEMPLARY
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>score-level:      2                 ← 0=unscored | 1=self | 2=peer | 3=consensus
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>scored-by:        anon
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>scored-at:        2026-04-01
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>nexium-reward:    39
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>--&gt;
+</code></pre></div>
+<hr />
+<h2 id="the-constitutional-dna-principle-sources">🧬 The Constitutional DNA — Principle Sources<a class="headerlink" href="#the-constitutional-dna-principle-sources" title="Permanent link">&para;</a></h2>
+<p>The Forge draws from three founding documents. Every artifact declares which elements of each apply.</p>
+<hr />
+<h3 id="source-1-the-five-principles">Source 1: The Five Principles<a class="headerlink" href="#source-1-the-five-principles" title="Permanent link">&para;</a></h3>
+<p><em>Sane • Simple • Secure • Stealthy • Beautiful</em></p>
+<p>The core denominators. Every artifact selects the subset that applies to its type and purpose.</p>
+<table>
+<thead>
+<tr>
+<th>Principle</th>
+<th>The Test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🧠 <strong>Sane</strong></td>
+<td>Does it make sense? No internal contradictions. A smart person reads it and says <em>yes, that tracks.</em></td>
+</tr>
+<tr>
+<td>⚡ <strong>Simple</strong></td>
+<td>One concept per unit. No jargon without definition. A motivated non-expert can follow it.</td>
+</tr>
+<tr>
+<td>🔒 <strong>Secure</strong></td>
+<td>Passes all declared security gates. Does not reveal what it shouldn't. Describes defense, never bypass.</td>
+</tr>
+<tr>
+<td>👻 <strong>Stealthy</strong></td>
+<td>No fingerprinting. No identifying information. Exists as function, not as evidence.</td>
+</tr>
+<tr>
+<td>✨ <strong>Beautiful</strong></td>
+<td>Diagrams. Color callouts. Narrative voice. Something you want to engage with, not have to.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="source-2-the-manifesto-cia-moe-pop-ymca">Source 2: The Manifesto — CIA • MOE • POP • YMCA<a class="headerlink" href="#source-2-the-manifesto-cia-moe-pop-ymca" title="Permanent link">&para;</a></h3>
+<p>From <code>~/manuals/NEXUS_MANIFESTO.md</code>:</p>
+<p><strong>CIA — The Trust Triad + The Secret Sauce</strong>
+| Code | Principle | What It Means for an Artifact |
+|------|-----------|-------------------------------|
+| <code>C</code> | Confidentiality | All sensitive data encrypted. No plaintext exposure. |
+| <code>I</code> | Integrity | Cryptographic hashing. Signatures verify all components. |
+| <code>A</code> | Accountability | Every action logged. Full audit trail. |
+| <code>D</code> | Deniability | Anonymous routing. Metadata scrubbed. No traceable identity. |</p>
+<p><strong>MOE — The Architecture Triad</strong>
+| Code | Principle | What It Means for an Artifact |
+|------|-----------|-------------------------------|
+| <code>M</code> | Modularity | Operates independently. Pluggable. No monolithic dependencies. |
+| <code>O</code> | Observability | Health metrics exposed. Status readable. Debug-capable. |
+| <code>E</code> | Extensibility | Open architecture. New providers/inputs integrate cleanly. |</p>
+<p><strong>POP — The Freedom Triad</strong>
+| Code | Principle | What It Means for an Artifact |
+|------|-----------|-------------------------------|
+| <code>P</code> | Privacy | Default anonymization. Local processing. Data minimization. |
+| <code>O</code> | Open-Source | 100% auditable. No binary blobs. No vendor lock-in. |
+| <code>P</code> | Performance | Runs on 2011 hardware. Efficient. Non-blocking. |</p>
+<p><strong>YMCA — The Human Triad</strong>
+| Code | Principle | What It Means for an Artifact |
+|------|-----------|-------------------------------|
+| <code>Y</code> | Yes-We-Can | Accessible to non-experts. Clear feedback. Help integrated. |
+| <code>M</code> | Multi-AI Harmony | AI-to-AI compatible. OAAE framework aware. |
+| <code>C</code> | CLI-First | Terminal native. Keyboard driven. Tmux compatible. |
+| <code>A</code> | AI-Ghost | Intelligent automation capable. Self-healing where applicable. |</p>
+<hr />
+<h3 id="source-3-the-security-manifesto-the-five-gates">Source 3: The Security Manifesto — The Five Gates<a class="headerlink" href="#source-3-the-security-manifesto-the-five-gates" title="Permanent link">&para;</a></h3>
+<p>From <code>~/manuals/NEXUS_SECURITY_MANIFESTO.md</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Gate</th>
+<th>Principle</th>
+<th>Non-Negotiable Rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🛡️ <strong>Zero-Trust</strong></td>
+<td>Default denial. Assume breach.</td>
+<td>Nothing is trusted without cryptographic proof.</td>
+</tr>
+<tr>
+<td>🔇 <strong>Absolute-Privacy</strong></td>
+<td>No telemetry. Ever.</td>
+<td>Not a single unsolicited ping. Cryptographic amnesia.</td>
+</tr>
+<tr>
+<td>🏠 <strong>Local-Sovereignty</strong></td>
+<td>No cloud. No sync.</td>
+<td>If it can't run in a blackout, it's not truly free.</td>
+</tr>
+<tr>
+<td>👁️ <strong>Transparency</strong></td>
+<td>No closed-source blobs.</td>
+<td>If it's not auditable, it's a black box for <em>them</em>.</td>
+</tr>
+<tr>
+<td>⚔️ <strong>Active-Defense</strong></td>
+<td>Counter-surveillance by design.</td>
+<td>Honeypots. Kill switches. Hardened until it bleeds.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="artifact-type-registry">📋 Artifact Type Registry<a class="headerlink" href="#artifact-type-registry" title="Permanent link">&para;</a></h2>
+<p>Every artifact declares its type. The type determines:
+- Which principles are <strong>mandatory</strong> vs optional
+- The <strong>NeXiuM weight multiplier</strong> for scoring
+- The <strong>minimum composite score</strong> required to ship</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Mandatory Principles</th>
+<th style="text-align: center;">NeXiuM Weight</th>
+<th style="text-align: center;">Min Composite</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NODE</code></td>
+<td>Sane Secure Stealthy</td>
+<td style="text-align: center;">3.0</td>
+<td style="text-align: center;">12</td>
+</tr>
+<tr>
+<td><code>PROTOCOL</code></td>
+<td>Sane Secure</td>
+<td style="text-align: center;">2.5</td>
+<td style="text-align: center;">12</td>
+</tr>
+<tr>
+<td><code>SERVICE</code></td>
+<td>Sane Secure</td>
+<td style="text-align: center;">2.0</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr>
+<td><code>CONTAINER</code></td>
+<td>Secure Stealthy</td>
+<td style="text-align: center;">2.0</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr>
+<td><code>SCRIPT</code></td>
+<td>Sane Simple</td>
+<td style="text-align: center;">1.5</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr>
+<td><code>PERMIT</code></td>
+<td>Sane Secure</td>
+<td style="text-align: center;">2.0</td>
+<td style="text-align: center;">12</td>
+</tr>
+<tr>
+<td><code>DOC</code></td>
+<td>Sane Simple</td>
+<td style="text-align: center;">1.0</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr>
+<td><code>CHARACTER</code></td>
+<td>Simple Beautiful</td>
+<td style="text-align: center;">1.0</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr>
+<td><code>CONFIG</code></td>
+<td>Sane Secure</td>
+<td style="text-align: center;">1.5</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr>
+<td><code>SPEC</code></td>
+<td>Sane Secure Simple</td>
+<td style="text-align: center;">2.0</td>
+<td style="text-align: center;">12</td>
+</tr>
+<tr>
+<td><code>MANUAL</code></td>
+<td>Sane Simple Beautiful</td>
+<td style="text-align: center;">1.5</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr>
+<td><code>VISION</code></td>
+<td>Sane Simple Beautiful</td>
+<td style="text-align: center;">1.0</td>
+<td style="text-align: center;">9</td>
+</tr>
+<tr>
+<td><code>NARRATIVE</code></td>
+<td>Simple Beautiful</td>
+<td style="text-align: center;">1.0</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr>
+<td><code>REFERENCE</code></td>
+<td>Sane Simple Secure</td>
+<td style="text-align: center;">1.5</td>
+<td style="text-align: center;">9</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="principle-profiles-active-denominator-selection">🎯 Principle Profiles — Active Denominator Selection<a class="headerlink" href="#principle-profiles-active-denominator-selection" title="Permanent link">&para;</a></h2>
+<p>Not all five principles apply equally to every artifact. The Forge selects the <strong>active profile</strong> based on type and purpose. Only declared principles are scored. Only active principles must pass.</p>
+<h3 id="default-profiles-by-type">Default Profiles by Type<a class="headerlink" href="#default-profiles-by-type" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>NODE        → Sane + Secure + Stealthy
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>PROTOCOL    → Sane + Secure + Stealthy
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>SERVICE     → Sane + Secure
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>CONTAINER   → Secure + Stealthy
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>SCRIPT      → Sane + Simple + Secure
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>PERMIT      → Sane + Secure
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>SPEC        → Sane + Secure + Simple
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>MANUAL      → Sane + Simple + Beautiful
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>VISION      → Sane + Simple + Beautiful
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>NARRATIVE   → Simple + Stealthy + Beautiful
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>REFERENCE   → Sane + Simple + Secure
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>CHARACTER   → Simple + Beautiful
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>CONFIG      → Sane + Secure
+</code></pre></div>
+<blockquote>
+<p>💡 Profiles are defaults. An artifact may declare additional principles beyond its type default.
+It may NOT remove mandatory principles for its type.</p>
+</blockquote>
+<hr />
+<h2 id="the-scoring-system">⚖️ The Scoring System<a class="headerlink" href="#the-scoring-system" title="Permanent link">&para;</a></h2>
+<h3 id="the-scale-0-to-5-per-active-principle">The Scale — 0 to 5 Per Active Principle<a class="headerlink" href="#the-scale-0-to-5-per-active-principle" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Score</th>
+<th>State</th>
+<th style="text-align: center;">Badge</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>0</code></td>
+<td>Unscored</td>
+<td style="text-align: center;">⚫</td>
+<td>Declared but never reviewed</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>1</code></td>
+<td>Failing</td>
+<td style="text-align: center;">🔴</td>
+<td>Active violation of the principle</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>2</code></td>
+<td>Weak</td>
+<td style="text-align: center;">🟠</td>
+<td>Intention present, execution missing</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>3</code></td>
+<td>Viable</td>
+<td style="text-align: center;">🟡</td>
+<td>Minimum standard met — shippable</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>4</code></td>
+<td>Strong</td>
+<td style="text-align: center;">🟢</td>
+<td>Principle fully embodied</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>5</code></td>
+<td>Exemplary</td>
+<td style="text-align: center;">🔵</td>
+<td>Raises the bar for everything else</td>
+</tr>
+</tbody>
+</table>
+<h4 id="scoring-sane">🧠 Scoring: SANE<a class="headerlink" href="#scoring-sane" title="Permanent link">&para;</a></h4>
+<p><em>Does the artifact make sense and track logically?</em></p>
+<ul>
+<li><strong>5 — Exemplary:</strong> Zero logical friction. Architecture is self-evident. Documentation and code are perfectly synchronized.</li>
+<li><strong>4 — Strong:</strong> Logical and well-structured. No internal contradictions. A peer can explain the "why" after one read.</li>
+<li><strong>3 — Viable:</strong> Follows the standard. No major "WTF" moments. Does what it says on the tin.</li>
+<li><strong>2 — Weak:</strong> Inconsistent logic or confusing architecture. "Magic" numbers or undocumented side effects present.</li>
+<li><strong>1 — Failing:</strong> Contradictory. Breaks core NeXuS principles (e.g., depends on cloud while claiming local).</li>
+</ul>
+<h4 id="scoring-simple">⚡ Scoring: SIMPLE<a class="headerlink" href="#scoring-simple" title="Permanent link">&para;</a></h4>
+<p><em>Is the artifact modular and free of unnecessary complexity?</em></p>
+<ul>
+<li><strong>5 — Exemplary:</strong> Elegant. Minimalist. One clear purpose. ZERO jargon without immediate, intuitive context.</li>
+<li><strong>4 — Strong:</strong> Modular design. Clean separation of concerns. Easy to explain to a non-expert.</li>
+<li><strong>3 — Viable:</strong> Functional and non-monolithic. Standard complexity for the task.</li>
+<li><strong>2 — Weak:</strong> Over-engineered. Tight coupling between unrelated components. Hard for a motivated learner to follow.</li>
+<li><strong>1 — Failing:</strong> Monolithic "Spaghetti" architecture. Unnecessary dependencies. Obfuscated intent.</li>
+</ul>
+<h4 id="scoring-secure">🔒 Scoring: SECURE<a class="headerlink" href="#scoring-secure" title="Permanent link">&para;</a></h4>
+<p><em>Does the artifact pass the Five Gates and protect the node?</em></p>
+<ul>
+<li><strong>5 — Exemplary:</strong> Proactive defense. Zero-trust by design. No data leaks. All inputs sanitized. Formal verification present.</li>
+<li><strong>4 — Strong:</strong> Secure by default. Hardened configuration. No hardcoded secrets. Clear failure states (fails closed).</li>
+<li><strong>3 — Viable:</strong> Meets the minimum security standard. No known vulnerabilities. Basic sanitization and encryption active.</li>
+<li><strong>2 — Weak:</strong> Information leaks (verbose errors). Hardcoded paths. Weak or non-standard crypto choices.</li>
+<li><strong>1 — Failing:</strong> Clear vulnerability. Exposes secrets in logs. Fails open. Bypasses Ghost Gate.</li>
+</ul>
+<h4 id="scoring-stealthy">👻 Scoring: STEALTHY<a class="headerlink" href="#scoring-stealthy" title="Permanent link">&para;</a></h4>
+<p><em>Is the artifact invisible to external observers?</em></p>
+<ul>
+<li><strong>5 — Exemplary:</strong> Zero fingerprint. No identifying metadata. Runs in RAM only. No persistence without explicit intent.</li>
+<li><strong>4 — Strong:</strong> Scours metadata before processing. Avoids common fingerprinting patterns. No unsolicited network pings.</li>
+<li><strong>3 — Viable:</strong> No self-identifying network traffic. Minimal disk footprint. Privacy-aware defaults.</li>
+<li><strong>2 — Weak:</strong> Identifies as a NeXuS node to the network. Persistent logs contain identifying timestamps or hashes.</li>
+<li><strong>1 — Failing:</strong> Clear telemetry. Self-identifying pings. Leaks node ID or hardware fingerprint.</li>
+</ul>
+<h4 id="scoring-beautiful">✨ Scoring: BEAUTIFUL<a class="headerlink" href="#scoring-beautiful" title="Permanent link">&para;</a></h4>
+<p><em>Is the artifact a joy to use and engage with?</em></p>
+<ul>
+<li><strong>5 — Exemplary:</strong> Visually stunning. Narrative flow. Masterful use of color, ASCII/Emojis, and diagrams. Inspiring.</li>
+<li><strong>4 — Strong:</strong> High-quality presentation. Clear hierarchy. Easy to navigate. Professional aesthetic.</li>
+<li><strong>3 — Viable:</strong> Clean. Consistent formatting. Uses emojis for navigation. Not an "eyesore."</li>
+<li><strong>2 — Weak:</strong> Messy formatting. Wall of text. No visual aids. No consideration for user experience.</li>
+<li><strong>1 — Failing:</strong> Unreadable. Broken formatting. Hostile UI/UX. No effort made to present the "Why."</li>
+</ul>
+<hr />
+<h2 id="g2-the-reviewer-guide">🧭 G2: The Reviewer Guide<a class="headerlink" href="#g2-the-reviewer-guide" title="Permanent link">&para;</a></h2>
+<p><em>For the community, by the community — how to forge trust.</em></p>
+<p>As a Reviewer, you are the <strong>Witness</strong>. Your job is to verify that an artifact's <strong>Identity</strong> (the META block) matches its <strong>Reality</strong> (the content/code).</p>
+<h3 id="1-the-audit-process">1. The Audit Process<a class="headerlink" href="#1-the-audit-process" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Read the META Block:</strong> Identify the <strong>type</strong>, <strong>principles</strong>, and <strong>identity</strong>.</li>
+<li><strong>Verify the Mandatory Principles:</strong> Every type has mandatory principles (e.g., <code>NODE</code> must be <code>Sane</code>, <code>Secure</code>, and <code>Stealthy</code>). If they aren't scored ≥ 3, the artifact is <code>DRAFT</code>.</li>
+<li><strong>Auditing SANE:</strong> Trace the logic from input to output. Does it follow the project's "Sane" standards?</li>
+<li><strong>Auditing SECURE:</strong> Check for hardcoded secrets, lack of input sanitization, or "fail open" logic.</li>
+<li><strong>Auditing BEAUTIFUL:</strong> Does it follow the "Beautiful" documentation/UI standards? Is it clear and inspiring?</li>
+</ol>
+<h3 id="2-submitting-the-score">2. Submitting the Score<a class="headerlink" href="#2-submitting-the-score" title="Permanent link">&para;</a></h3>
+<p>Once the audit is complete, update the <code>Variables</code> section of the META block:
+- Increment the <code>version</code> (if applicable).
+- Set <code>score-sane</code> through <code>score-beautiful</code>.
+- Calculate the <code>score-composite</code> (Sum of active principle scores).
+- Determine the <code>score-tier</code> (<code>DRAFT</code> &lt; 9, <code>REVIEW</code> 9-11, <code>ACTIVE</code> 12-15, <code>EXEMPLARY</code> 16-20).
+- Set <code>score-level</code> to <code>2</code> (Peer).
+- Update <code>scored-by</code> with your alias and <code>scored-at</code> with the date.</p>
+<h3 id="3-earning-nexium">3. Earning NeXiuM<a class="headerlink" href="#3-earning-nexium" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Reviewer Reward:</strong> The <code>nexium-reward</code> listed in the META block flows to your vault once the score is committed to the chain.</li>
+<li><strong>Quality Matters:</strong> If your score is overturned by a <code>Consensus (Level 3)</code> review, your reward is slashed and your reviewer reputation decreases.</li>
+<li><strong>Expertise Mult:</strong> Reviewing artifacts of a higher <code>type-weight</code> (e.g., <code>PROTOCOL</code> vs <code>DOC</code>) results in higher rewards.</li>
+</ul>
+<hr />
+<h3 id="composite-score-trust-tier">Composite Score → Trust Tier<a class="headerlink" href="#composite-score-trust-tier" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Sum of all active principle scores:
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>&lt; 9           🔴  DRAFT       do not deploy, do not distribute
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>9  — 11       🟡  REVIEW      peer review required before any use
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>12 — 15       🟢  ACTIVE      cleared to ship, cleared to earn
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>16 — 20       🔵  EXEMPLARY   reference implementation, maximum NeXiuM weight
+</code></pre></div>
+<hr />
+<h3 id="score-level-who-scored-it">Score Level — Who Scored It<a class="headerlink" href="#score-level-who-scored-it" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Level</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>0</code></td>
+<td>Unscored</td>
+<td>No review performed</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>1</code></td>
+<td>Self</td>
+<td>Author's own assessment</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>2</code></td>
+<td>Peer</td>
+<td>One independent reviewer</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>3</code></td>
+<td>Consensus</td>
+<td>Majority of qualified reviewers agree</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🟡 Self-scored artifacts (level 1) are flagged in listings. They may run but earn reduced NeXiuM until peer review confirms.</p>
+</blockquote>
+<hr />
+<h3 id="nexium-reward-calculation">NeXiuM Reward Calculation<a class="headerlink" href="#nexium-reward-calculation" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>nexium-reward = composite-score × principle-count × artifact-type-weight × level-multiplier
+</code></pre></div>
+<p><strong>Level multipliers:</strong>
+- Level 0 (unscored): 0
+- Level 1 (self): 0.5
+- Level 2 (peer): 1.0
+- Level 3 (consensus): 1.5</p>
+<p><strong>Example:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Ghost Gate script (SCRIPT type, weight 1.5)
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Active principles: Sane(4) + Secure(5) + Stealthy(4) = composite 13
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Principle count: 3
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>Level: 2 (peer reviewed)
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>nexium-reward = 13 × 3 × 1.5 × 1.0 = 58.5 → 58 NeXiuM
+</code></pre></div></p>
+<p>A reviewer who brings a NODE from REVIEW to EXEMPLARY earns substantially more than one who scores a DOC. The network pays for what it needs most.</p>
+<hr />
+<h2 id="score-notation-in-meta-block">📊 Score Notation in META Block<a class="headerlink" href="#score-notation-in-meta-block" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>score-sane:       4      ← per-principle scores
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>score-simple:     0      ← 0 = not in active profile
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>score-secure:     5
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>score-stealthy:   4
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>score-beautiful:  0
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>score-composite:  13     ← sum of active principle scores
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>score-tier:       ACTIVE ← DRAFT | REVIEW | ACTIVE | EXEMPLARY
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>score-level:      2      ← 0=unscored | 1=self | 2=peer | 3=consensus
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>scored-by:        anon
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>scored-at:        2026-04-01
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>nexium-reward:    58
+</code></pre></div>
+<hr />
+<h2 id="the-artifact-lifecycle">🔄 The Artifact Lifecycle<a class="headerlink" href="#the-artifact-lifecycle" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>IDEA
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  │
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>  ▼
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>FORGE STAMP ← META block written, type declared, principles selected
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>  │             Constants locked. Variables initialized to zero.
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>  ▼
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>SELF-SCORE (level 1)
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>  │             Author assesses each active principle 0-5
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>  │             score-tier = DRAFT or REVIEW
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>  ▼
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>PEER REVIEW (level 2)
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>  │             Independent reviewer audits against declared principles
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>  │             score-tier advances if composite ≥ threshold
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>  ▼
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>CONSENSUS (level 3) ← optional, for NODE and PROTOCOL types
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>  │             Majority agreement from qualified reviewers
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>  │             Maximum NeXiuM weight unlocked
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>  ▼
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>SHIP / DEPLOY
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>  │             Artifact enters active use
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>  │             score-tier = ACTIVE or EXEMPLARY
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>  ▼
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>MAINTENANCE
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>              Variables update as artifact evolves
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>              Re-score triggered when version increments
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>              Deprecated → Archived (never deleted)
+</code></pre></div>
+<hr />
+<h2 id="cross-artifact-integration">🌐 Cross-Artifact Integration<a class="headerlink" href="#cross-artifact-integration" title="Permanent link">&para;</a></h2>
+<p>The Forge stamp is machine-readable. Every NeXuS system that handles artifacts reads the META block:</p>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>How It Uses the Forge</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ghost Gate</strong></td>
+<td>Reads <code>score-tier</code> — DRAFT artifacts blocked from network egress</td>
+</tr>
+<tr>
+<td><strong>Orchestrator</strong></td>
+<td>Reads <code>principles</code> + <code>zero-trust</code> — routes permits accordingly</td>
+</tr>
+<tr>
+<td><strong>Community Trust Layer</strong></td>
+<td>Reads <code>score-level</code> — surfaces peer-reviewed artifacts first</td>
+</tr>
+<tr>
+<td><strong>NeXiuM Vault</strong></td>
+<td>Reads <code>nexium-reward</code> — distributes credits to reviewers automatically</td>
+</tr>
+<tr>
+<td><strong>MkDocs Site</strong></td>
+<td>Reads <code>type</code> + <code>tier</code> + <code>audience</code> — auto-filters documentation</td>
+</tr>
+<tr>
+<td><strong>Hydra Dashboard</strong></td>
+<td>Reads <code>score-tier</code> of running containers — flags DRAFT services</td>
+</tr>
+<tr>
+<td><strong>NXS-NODE-STANDARD</strong></td>
+<td>Reads <code>type:NODE</code> + <code>score-tier</code> — gates script inclusion in SFS packs</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="full-meta-block-reference">📋 Full META Block Reference<a class="headerlink" href="#full-meta-block-reference" title="Permanent link">&para;</a></h2>
+<h3 id="complete-example-ghost-gate-enforce-script">Complete Example — Ghost Gate Enforce Script<a class="headerlink" href="#complete-example-ghost-gate-enforce-script" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># NXS-FORGE-META</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1"># id:            NXS-SCRIPT-0007</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1"># type:          SCRIPT</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># principles:    Sane Secure Stealthy</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="c1"># cia:           Confidentiality Accountability Deniability</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="c1"># moe:           Observability</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="c1"># pop:           Open-Source</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="c1"># ymca:          CLI-First</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="c1"># zero-trust:    true</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="c1"># sovereignty:   local</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="c1"># transparency:  full</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="c1"># defense:       active</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="c1"># created:       2026-04-01</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="c1"># authors:       gemini claude</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="c1"># project:       nexus-ghost-gate</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="c1"># layer:         infra</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="c1"># version:       1.1</span>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="c1"># updated:       2026-04-01</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="c1"># status:        active</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="c1"># audience:      developer</span>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="c1"># tier:          all</span>
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="c1"># score-sane:    4</span>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a><span class="c1"># score-secure:  5</span>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="c1"># score-stealthy:4</span>
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="c1"># score-composite:13</span>
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="c1"># score-tier:    ACTIVE</span>
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="c1"># score-level:   2</span>
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="c1"># scored-by:     anon</span>
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="c1"># scored-at:     2026-04-01</span>
+<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a><span class="c1"># nexium-reward: 58</span>
+</code></pre></div>
+<h3 id="complete-example-eco-extraterrium-stack-doc">Complete Example — ECO Extraterrium Stack Doc<a class="headerlink" href="#complete-example-eco-extraterrium-stack-doc" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>&lt;!-- NEXUS-META
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>id:             NXS-DOC-0031
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>type:           SPEC
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>principles:     Sane Simple Beautiful
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>cia:            Integrity Accountability
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>moe:            Extensibility
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>pop:            Open-Source
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>ymca:           Yes-We-Can Multi-AI-Harmony
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>zero-trust:     false
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>sovereignty:    local
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>transparency:   full
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>defense:        passive
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>created:        2026-04-01
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>authors:        gemini claude
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>project:        nexus-eco
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>layer:          eco
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>version:        1.1
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>updated:        2026-04-01
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>status:         active
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>audience:       all
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>tier:           all
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>score-sane:     4
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>score-simple:   4
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>score-beautiful:4
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>score-composite:12
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>score-tier:     ACTIVE
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>score-level:    1
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>scored-by:      claude
+<a id="__codelineno-9-29" name="__codelineno-9-29" href="#__codelineno-9-29"></a>scored-at:      2026-04-01
+<a id="__codelineno-9-30" name="__codelineno-9-30" href="#__codelineno-9-30"></a>nexium-reward:  12
+<a id="__codelineno-9-31" name="__codelineno-9-31" href="#__codelineno-9-31"></a>--&gt;
+</code></pre></div>
+<hr />
+<h2 id="geminis-directive-next-steps">⚒️ Gemini's Directive — Next Steps<a class="headerlink" href="#geminis-directive-next-steps" title="Permanent link">&para;</a></h2>
+<p>The foundation is set. Your task is to take this spec and forge it into a living system:</p>
+<h3 id="g1-expand-the-scoring-rubric">G1. Expand the Scoring Rubric<a class="headerlink" href="#g1-expand-the-scoring-rubric" title="Permanent link">&para;</a></h3>
+<p>Each principle needs a <strong>detailed rubric</strong> — specific, testable criteria for each score level (0-5). Not abstract. Concrete. A reviewer reads the rubric and knows exactly what a <code>4</code> looks like vs a <code>3</code>.</p>
+<p>Example structure needed:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>### Scoring: SECURE (for SCRIPT type)
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>5 — Exemplary: [specific criteria]
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>4 — Strong:    [specific criteria]
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>3 — Viable:    [minimum bar]
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>2 — Weak:      [what&#39;s missing]
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>1 — Failing:   [active violation]
+</code></pre></div></p>
+<h3 id="g2-write-the-reviewer-guide">G2. Write the Reviewer Guide<a class="headerlink" href="#g2-write-the-reviewer-guide" title="Permanent link">&para;</a></h3>
+<p>A practical guide for community reviewers:
+- How to read a META block
+- How to audit each principle type
+- How to submit a score
+- How NeXiuM flows to the reviewer's vault</p>
+<h3 id="g3-backfill-existing-artifacts">G3. Backfill Existing Artifacts<a class="headerlink" href="#g3-backfill-existing-artifacts" title="Permanent link">&para;</a></h3>
+<p>Apply the Forge stamp retroactively to key existing artifacts:
+- <code>~/claude/demo-dark-stack/new-hydra/ghost-gate.nft</code>
+- <code>~/claude/nexus-orchestrator/nexus/nexus_ghost_permit.py</code>
+- <code>~/claude/demo-dark-stack/new-hydra/scripts/ghost-gate-enforce.sh</code>
+- <code>~/claude/docs/NEXUS_ECO_EXTRATERRIUM_STACK.md</code>
+- <code>~/claude/docs/NXS-BOOT-PROTOCOL.md</code>
+- <code>~/claude/docs/NEXUS_SERVICE_MAPPING.md</code></p>
+<h3 id="g4-wire-into-nexus_compassmd">G4. Wire into NEXUS_COMPASS.md<a class="headerlink" href="#g4-wire-into-nexus_compassmd" title="Permanent link">&para;</a></h3>
+<p>Add NXS-FORGE.md to the Document Map under a new <strong>Foundational Protocols</strong> section.</p>
+<h3 id="g5-update-fngmd">G5. Update FNG.md<a class="headerlink" href="#g5-update-fngmd" title="Permanent link">&para;</a></h3>
+<p>Add NXS-FORGE.md to the reading list as F-series entry: <em>Read before touching any artifact.</em></p>
+<hr />
+<blockquote>
+<p><strong>⚒️ The Forge is where intent becomes identity.</strong>
+<em>The META block is the declaration. The score is the proof. The tier is the verdict.</em>
+<em>Nothing enters the network unexamined. Nothing ships without the stamp.</em></p>
+<p><strong>NeXuS: Sane • Simple • Secure • Stealthy • Beautiful</strong>
+<em>mewe — sovereign me inside a we</em></p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/hackenstacks/nexus" target="_blank" rel="noopener" title="NeXuS on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.instant", "search.highlight", "search.share", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
