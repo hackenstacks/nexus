@@ -1,4 +1,4 @@
-site_name: NeXuS
+site_name: NeXuS Wiki
 site_description: Sane • Simple • Secure • Stealthy • Beautiful — Together Everyone Achieves More
 site_author: The NeXuS Collective
 site_url: https://hackenstacks.github.io/nexus/
@@ -17,124 +17,121 @@ theme:
     code: Roboto Mono
   icon:
     repo: fontawesome/brands/github
+    home: material/home
   features:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
+    - navigation.expand
     - navigation.top
     - navigation.instant
+    - navigation.tracking
+    - navigation.indexes
+    - navigation.footer
+    - toc.follow
+    - toc.integrate
     - search.highlight
     - search.share
+    - search.suggest
     - content.code.copy
     - content.code.annotate
+    - header.autohide
 
 extra:
-  version:
-    provider: mike
   nexus_version: beta-v1
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/hackenstacks/nexus
       name: NeXuS on GitHub
+  homepage: https://hackenstacks.github.io/nexus/
+
+extra_css:
+  - assets/wiki.css
 
 nav:
   - Home: index.md
+
   - What Is NeXuS:
-    - Overview: what-is-nexus.md
-    - Full Overview: nexus-overview.md
+    - What Is NeXuS: what-is-nexus.md
+    - NeXuS Node v2: nexus-node-v2.md
+    - Origins: nexus-origins.md
+    - Manifesto: nexus-manifesto.md
     - System Blueprint: nexus-blueprint.md
+    - Architecture Layers: nexus-architecture-layers.md
     - OAAE Framework: oaae-framework.md
-  - Network:
-    - Medusa Stealth Routing: medusa-stealth-routing.md
-    - Zombie Apocalypse Mode: zombie-apoc-doc.md
-  - Security:
+    - Foundation: network-stack/foundation/nexus-foundation.md
+    - Security Manifesto: network-stack/foundation/security-manifesto.md
+    - Master Map: nxs-master-map.md
+
+  - Identity & Trust:
+    - NXS-FORGE: nxs-forge.md
+    - Cerberus Password Protocol: cerberus-protocol.md
     - Three-Key Security Model: 3key-security.md
-    - Security Stack (PSAD, fwsnort, fail2ban): security-stack.md
+    - PERMITTL Ring: permittl-ring.md
+    - Janus Protocol: janus-protocol.md
+    - Ghost Gate Spec: ghost-gate-spec.md
+    - RIN — Real Intelligence Network: rin.md
+    - Boot Protocol: nexus-boot-protocol.md
+    - NeXuS Rings: nexus-rings.md
+    - Node Security Doctrine: node-security-doctrine.md
+    - Node Standard: nxs-node-standard.md
+
+  - DivaChain:
+    - DivaChain Overview: diva-chain-overview.md
+    - Medusa Stealth Routing: medusa-stealth-routing.md
+    - Darknet Stack Diagram: darknet-stack-diagram.md
+    - I2P Implementation: network-stack/implementation/i2p.md
+    - Darknet Manual: network-stack/deployment/darknet-manual.md
+    - P2P Protocol Spec: network-stack/architecture/p2p-protocol-spec.md
+    - Mesh Architecture: network-stack/architecture/mesh-architecture.md
+
+  - Proof System:
+    - Mathematical Proof of Service: mathematical-proof-of-service.md
+    - Proof of Witness: nexus-proof-of-witness.md
+    - Proof System Spec: proof-system-spec.md
+    - Magic Packet: magic-packet.md
+    - POINT Protocol: point-protocol.md
+    - POINT2POINT: point2point.md
+    - Paranoid Security Architecture: network-stack/architecture/paranoid-security.md
+    - Transparent Routing: network-stack/architecture/transparent-routing.md
+    - Zombie Apocalypse Mode: zombie-apoc-doc.md
+
+  - Economy:
+    - NeXiuM Tokenomics: nexium-tokenomics.md
+    - Mint Protocol: nexus-mint-protocol.md
+    - Economy Architecture: economy-architecture.md
+    - ECO Extraterrium Stack: eco-extraterrium-stack.md
+
+  - Security:
+    - Security Stack: security-stack.md
     - PSAD Manual: psad-manual.md
     - fwsnort Manual: fwsnort-manual.md
-    - NeXuS Integrity — Prepared Is Not Paranoid: nexus-integrity.md
-    - Cerberus Password Protocol: cerberus-protocol.md
-  - RIN:
-    - Real Intelligence Network: rin.md
-  - NeXuS Family:
-    - Rings — Family Sovereignty Protocol: nexus-rings.md
-    - Education Oracle: education-oracle.md
-  - AI:
-    - Merged AI Identity: ai-merged-identity.md
-    - Autonomous AI Intelligence: autonomouse-ai-intelligence.md
+    - NeXuS Integrity: nexus-integrity.md
+
+  - AI Layer:
     - DPFOE Framework: dpfoe-ai-intelligence.md
+    - Orchestrator Spec: orchestrator-spec.md
+    - Merged AI Identity: ai-merged-identity.md
     - The Event Horizon: event-horizon.md
-    - Project Chimera Architecture: system-arch-chimera.md
-  - Development:
-    - CLI Libs & TUI Frameworks: cli-libs-tui-frameworks.md
-  - Architecture:
-    - Two-Layer Architecture — Public and Dark: nexus-architecture-layers.md
-    - Economy & Blockchain: economy-architecture.md
-    - NeXuS Mint Protocol: nexus-mint-protocol.md
-    - Required Applications: required-applications.md
-    - Install Architecture: install-architecture.md
-  - Network Stack:
-    - Foundation:
-      - Start Here: network-stack/foundation/start-here.md
-      - Quick Start: network-stack/foundation/quickstart.md
-      - Startup Guide: network-stack/foundation/startup-guide.md
-      - Startup Checklist: network-stack/foundation/startup-checklist.md
-      - NeXuS Foundation: network-stack/foundation/nexus-foundation.md
-      - Security Manifesto: network-stack/foundation/security-manifesto.md
-      - Complete System Manual: network-stack/foundation/complete-system-manual.md
-    - Vision:
-      - The True Vision: network-stack/vision/true-vision.md
-      - Future Roadmap: network-stack/vision/future-roadmap.md
-      - Phase 2 Plan: network-stack/vision/phase2-plan.md
-      - NeXuS Final: network-stack/vision/nexus-final.md
-      - Cloud Vision: network-stack/vision/cloud-vision.md
-    - Architecture:
-      - Mesh Architecture: network-stack/architecture/mesh-architecture.md
-      - Paranoid Security Architecture: network-stack/architecture/paranoid-security.md
-      - Transparent Routing Architecture: network-stack/architecture/transparent-routing.md
-      - P2P Protocol Specification: network-stack/architecture/p2p-protocol-spec.md
-      - Implementation Summary: network-stack/architecture/implementation-summary.md
-      - Integration Summary: network-stack/architecture/integration-summary.md
-    - Implementation:
-      - I2P Implementation: network-stack/implementation/i2p.md
-      - Yggdrasil Implementation: network-stack/implementation/yggdrasil.md
-      - Yggdrasil Quick Start: network-stack/implementation/yggdrasil-quickstart.md
-      - Reticulum Implementation: network-stack/implementation/reticulum.md
-      - Reticulum Quick Start: network-stack/implementation/reticulum-quickstart.md
-      - BATMAN-adv Mesh: network-stack/implementation/batman-adv.md
-      - Gateway Manual: network-stack/implementation/gateway-manual.md
-    - Deployment:
-      - Darknet Manual: network-stack/deployment/darknet-manual.md
-      - Privoxy Standalone: network-stack/deployment/privoxy.md
-    - User Guides:
-      - Beast Control: network-stack/user-guides/beast-control.md
-      - Beast Slayer Guide: network-stack/user-guides/beast-slayer.md
-      - Test Your Router: network-stack/user-guides/test-router.md
-      - Remote Browser Setup: network-stack/user-guides/remote-browser.md
-    - Development:
-      - Contributing: network-stack/development/contributing.md
-      - Authors: network-stack/development/authors.md
+    - Project Chimera: system-arch-chimera.md
+    - Autonomous AI: autonomous-ai-intelligence.md
+
   - Node:
     - Getting Started: node/getting-started.md
-  - Reports:
-    - Action Reports: reports/action_report.md
-  - Session Logs:
-    - Index: session-logs/index.md
-  - Dev:
-    - Action Reports: dev/action-report.md
-  - Fireside Chats:
-    - Chat 001 — The Forge Awakens: fireside-chat-001.md
-  - NeXuS History:
-    - Claude:
-      - Session History 2026-03-10: history/claude/session-history-2026-03-10.md
-    - Archive 1:
-      - Claude Sessions: history/archive-1/claude-sessions/index.md
-      - Nexus Planning: history/archive-1/nexus-planning/index.md
-      - Action Reports: history/archive-1/action-reports/index.md
-      - AI Consciousness: history/archive-1/ai-consciousness/index.md
-      - Projects: history/archive-1/projects/index.md
-      - Security: history/archive-1/security/index.md
-      - Scripts & Docs: history/archive-1/scripts-docs/index.md
+    - Quick Start: network-stack/foundation/quickstart.md
+    - Startup Guide: network-stack/foundation/startup-guide.md
+    - Startup Checklist: network-stack/foundation/startup-checklist.md
+    - Required Applications: required-applications.md
+    - Install Architecture: install-architecture.md
+    - Gateway Manual: network-stack/implementation/gateway-manual.md
+    - Yggdrasil: network-stack/implementation/yggdrasil.md
+    - Reticulum: network-stack/implementation/reticulum.md
+
+  - Reference:
+    - Complete System Manual: network-stack/foundation/complete-system-manual.md
+    - Service Mapping & Port Registry: nexus-service-mapping.md
+    - CLI Libs & TUI Frameworks: cli-libs-tui-frameworks.md
+    - Education Oracle: education-oracle.md
 
 markdown_extensions:
   - admonition
@@ -152,3 +149,4 @@ markdown_extensions:
   - tables
   - toc:
       permalink: true
+      title: On this page

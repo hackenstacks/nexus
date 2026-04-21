@@ -14,7 +14,11 @@ hide:
 
 ---
 
-![NeXuS 30,000ft Architecture Blueprint](nexus-30kft-view-blueprint.png)
+## :octicons-project-roadmap-24: The Blueprint
+
+**NeXuS** is built on the **"Sane, Simple, Secure, Stealthy, Beautiful"** philosophy. The system architecture is designed for hybrid sovereignty and digital resilience.
+
+[:octicons-arrow-right-24: Read the Authoritative Blueprint](nexus-blueprint.md){ .md-button .md-button--primary }
 
 ---
 
@@ -54,6 +58,8 @@ NeXuS is an **active build.** The privacy and transport layer is working. The ec
 
 The docs are the deliverable right now. *Read the architecture, understand the stack, follow the build.*
 
+### :material-compass-outline: Foundation & Vision
+
 <div class="grid cards" markdown>
 
 -   :material-information-outline: **What Is NeXuS**
@@ -63,26 +69,32 @@ The docs are the deliverable right now. *Read the architecture, understand the s
 
     [:octicons-arrow-right-24: Read the Story](what-is-nexus.md)
 
+-   :material-layers-outline: **The Dark Interior**
+
+    ---
+    Two-layer architecture: Public Face (`.network`) vs. Dark Interior (`.nexus`).
+
+    [:octicons-arrow-right-24: Enter the Layer](nexus-architecture-layers.md)
+
+-   :material-shield-lock: **Cerberus Protocol**
+
+    ---
+    Three-head security mythology. Human-computable password KDF. 
+
+    [:octicons-arrow-right-24: Pass the Gate](cerberus-protocol.md)
+
+</div>
+
+### :material-security: Privacy & Survival
+
+<div class="grid cards" markdown>
+
 -   :material-network: **Medusa Stealth Routing**
 
     ---
     How the 5-circuit Tor load balancer and I2P routing keep traffic anonymous.
 
     [:octicons-arrow-right-24: Dive In](medusa-stealth-routing.md)
-
--   :material-shield-lock: **Three-Key Security Model**
-
-    ---
-    *Never Trust. Always Verify. Expect Betrayal.* Zero-trust from boot to app.
-
-    [:octicons-arrow-right-24: Security Deep Dive](3key-security.md)
-
--   :material-server-network: **Network Stack Manuals**
-
-    ---
-    I2P, Yggdrasil, Reticulum, BATMAN-adv — implementation guides for every transport.
-
-    [:octicons-arrow-right-24: Implementation Guides](network-stack/foundation/start-here.md)
 
 -   :material-zombie: **Zombie Apocalypse Mode**
 
@@ -91,12 +103,66 @@ The docs are the deliverable right now. *Read the architecture, understand the s
 
     [:octicons-arrow-right-24: Survive Anything](zombie-apoc-doc.md)
 
--   :material-robot-happy: **AI in NeXuS**
+-   :material-shield-account: **Three-Key Security Model**
+
+    ---
+    *Never Trust. Always Verify. Expect Betrayal.* Zero-trust from boot to app.
+
+    [:octicons-arrow-right-24: Security Deep Dive](3key-security.md)
+
+</div>
+
+### :material-robot-happy: Intelligence & Community
+
+<div class="grid cards" markdown>
+
+-   :material-robot: **AI in NeXuS**
 
     ---
     Local AI, Project Chimera, DPFOE — intelligence that never leaves the node.
 
     [:octicons-arrow-right-24: Meet the AI Layer](ai-merged-identity.md)
+
+-   :material-account-group: **NeXuS Rings**
+
+    ---
+    Family Sovereignty Protocol. Parents are BOSS. Privacy by design for children.
+
+    [:octicons-arrow-right-24: Protect the Family](nexus-rings.md)
+
+-   :material-school: **Education Oracle**
+
+    ---
+    Mentors, teachers, and nannies in the NeXuS. The residual earning model.
+
+    [:octicons-arrow-right-24: Start Learning](education-oracle.md)
+
+</div>
+
+### :material-currency-usd: The Economy Layer
+
+<div class="grid cards" markdown>
+
+-   :material-mint: **Mint Protocol**
+
+    ---
+    Trustless content monetization. No labels. No platforms. Just math.
+
+    [:octicons-arrow-right-24: Mint Your Work](nexus-mint-protocol.md)
+
+-   :material-chart-line: **RIN**
+
+    ---
+    Real Intelligence Network. The dual leaderboards for Oracles and AI.
+
+    [:octicons-arrow-right-24: Explore the Network](rin.md)
+
+-   :material-server-network: **Network Stack Manuals**
+
+    ---
+    I2P, Yggdrasil, Reticulum, BATMAN-adv — implementation guides for every transport.
+
+    [:octicons-arrow-right-24: Implementation Guides](network-stack/foundation/start-here.md)
 
 </div>
 
@@ -143,6 +209,6 @@ The docs are the deliverable right now. *Read the architecture, understand the s
 
 [GitHub :fontawesome-brands-github:](https://github.com/hackenstacks/nexus){ .md-button } &nbsp;
 [Network Stack](https://github.com/hackenstacks/NeXuS-NetWork-Stack){ .md-button } &nbsp;
-[Read the Docs :books:](what-is-nexus.md){ .md-button .md-button--primary }
+[Read the Docs :books:](nexus-blueprint.md){ .md-button .md-button--primary }
 
 </div>

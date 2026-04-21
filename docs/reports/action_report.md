@@ -72,7 +72,7 @@ cd ~/Documents/nexus-docs && mkdocs gh-deploy
   - survival-com-system.png → zombie-apoc-doc.md
 - All docs given proper H1 headers where missing
 - Duplicate systems-overview-nexus.md removed (identical to system-arch-chimera.md, confirmed by user)
-- User-contributed docs integrated: 3key-security, ai-merged-identity, autonomouse-ai-intelligence, cli-libs-tui-frameworks, medusa-stealth-routing, oaae-framework, zombie-apoc-doc, nexus-overview, dpfoe-ai-intelligence, event-horizon, system-arch-chimera
+- User-contributed docs integrated: 3key-security, ai-merged-identity, autonomous-ai-intelligence, cli-libs-tui-frameworks, medusa-stealth-routing, oaae-framework, zombie-apoc-doc, nexus-overview, dpfoe-ai-intelligence, event-horizon, system-arch-chimera
 - Git initialized on nexus-docs repo
 
 **Files:** `mkdocs.yml`, `docs/` (all pages + 4 images)
