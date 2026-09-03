@@ -1,0 +1,33 @@
+/* NeXuS Wiki — sticky TOC + home button */
+
+/* Keep TOC visible while scrolling */
+.md-sidebar--secondary {
+  position: sticky;
+  top: 3rem;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+}
+
+/* Home button in nav */
+.md-nav__title .md-nav__button {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: bold;
+  color: var(--md-primary-fg-color);
+}
+
+/* Back to top button — always visible */
+.md-top {
+  background-color: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  border-radius: 2rem;
+  padding: 0.4rem 1rem;
+  font-size: 0.75rem;
+}
+
+/* Home link in every page footer */
+.md-footer-nav__link--prev[title="Home"],
+.md-footer-nav__link--next[title="Home"] {
+  font-weight: bold;
+}

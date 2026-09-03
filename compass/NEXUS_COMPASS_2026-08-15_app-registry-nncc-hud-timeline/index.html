@@ -1,0 +1,5579 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Sane • Simple • Secure • Stealthy • Beautiful — Together Everyone Achieves More">
+      
+      
+        <meta name="author" content="The NeXuS Collective">
+      
+      
+        <link rel="canonical" href="https://hackenstacks.github.io/nexus/compass/NEXUS_COMPASS_2026-08-15_app-registry-nncc-hud-timeline/">
+      
+      
+        <link rel="prev" href="../NEXUS_COMPASS_2026-08-07_systems-architecture-deep-dive/">
+      
+      
+        <link rel="next" href="../NEXUS_COMPASS_2026-08-15_map-wiki-ca-tld-migration/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>NEXUS COMPASS 2026 08 15 app registry nncc hud timeline - NeXuS Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/wiki.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#nexus-compass-2026-08-15" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://hackenstacks.github.io/nexus/" title="NeXuS Wiki" class="md-header__button md-logo" aria-label="NeXuS Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NeXuS Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              NEXUS COMPASS 2026 08 15 app registry nncc hud timeline
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/hackenstacks/nexus" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hackenstacks/nexus
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../what-is-nexus/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  What Is NeXuS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../nxs-forge/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Identity & Trust
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../diva-chain-overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  DivaChain
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../mathematical-proof-of-service/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Proof System
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../nexium-tokenomics/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Economy
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../security-stack/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Security
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dpfoe-ai-intelligence/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  AI Layer
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../node/getting-started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Node
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../scripts/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Scripts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../network-stack/foundation/complete-system-manual/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../timeline/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Timeline
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../reports/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reports
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../NEXUS_COMPASS_2026-07-23_gateway-sovereignty-chargen/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Session Compass
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://hackenstacks.github.io/nexus/" title="NeXuS Wiki" class="md-nav__button md-logo" aria-label="NeXuS Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    NeXuS Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/hackenstacks/nexus" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hackenstacks/nexus
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Is NeXuS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    What Is NeXuS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../what-is-nexus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Is NeXuS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nexus-node-v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeXuS Node v2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nexus-origins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Origins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nexus-manifesto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manifesto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nexus-blueprint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Blueprint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nexus-architecture-layers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Layers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oaae-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OAAE Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network-stack/foundation/nexus-foundation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network-stack/foundation/security-manifesto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Manifesto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nxs-master-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identity & Trust
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Identity & Trust
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nxs-forge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NXS-FORGE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cerberus-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cerberus Password Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3key-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Three-Key Security Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../permittl-ring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERMITTL Ring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../janus-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Janus Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ghost-gate-spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ghost Gate Spec
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RIN — Real Intelligence Network
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nexus-boot-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boot Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nexus-rings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeXuS Rings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../node-security-doctrine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Node Security Doctrine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nxs-node-standard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Node Standard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DivaChain
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DivaChain
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../diva-chain-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DivaChain Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../medusa-stealth-routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Medusa Stealth Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../darknet-stack-diagram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Darknet Stack Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network-stack/implementation/i2p/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    I2P Implementation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network-stack/deployment/darknet-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Darknet Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network-stack/architecture/p2p-protocol-spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P2P Protocol Spec
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network-stack/architecture/mesh-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mesh Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proof System
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Proof System
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mathematical-proof-of-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mathematical Proof of Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nexus-proof-of-witness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proof of Witness
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proof-system-spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proof System Spec
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../magic-packet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Magic Packet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../point-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POINT Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../point2point/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POINT2POINT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network-stack/architecture/paranoid-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paranoid Security Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network-stack/architecture/transparent-routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transparent Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zombie-apoc-doc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zombie Apocalypse Mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Economy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Economy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nexium-tokenomics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeXiuM Tokenomics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nexus-mint-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mint Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../economy-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Economy Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../eco-extraterrium-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ECO Extraterrium Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../psad-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PSAD Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fwsnort-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    fwsnort Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nexus-integrity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeXuS Integrity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Layer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Layer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dpfoe-ai-intelligence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DPFOE Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../orchestrator-spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Orchestrator Spec
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-merged-identity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Merged AI Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event-horizon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Event Horizon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../system-arch-chimera/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Chimera
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../autonomous-ai-intelligence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autonomous AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Node
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Node
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../node/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network-stack/foundation/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network-stack/foundation/startup-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Startup Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network-stack/foundation/startup-checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Startup Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../required-applications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Required Applications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network-stack/implementation/gateway-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gateway Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network-stack/implementation/yggdrasil/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Yggdrasil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network-stack/implementation/reticulum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reticulum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../scripts/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scripts
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Scripts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NCM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NCM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripts/ncm/nexus-ncm-certs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    nexus-ncm-certs.sh
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network-stack/foundation/complete-system-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complete System Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nexus-service-mapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Mapping & Port Registry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli-libs-tui-frameworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Libs & TUI Frameworks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../education-oracle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Education Oracle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../timeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Timeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../reports/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reports
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_13" id="__nav_13_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reports
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/adv-ai-nexus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adv Ai Nexus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/adv-cli-char-gen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adv Cli Char Gen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/adv-go-char-gen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adv Go Char Gen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/advanced-ai-character-generator-terminal-access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Ai Character Generator Terminal Access
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/ai-nexus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ai Nexus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/beta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/char-gen-cli-go/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Char Gen Cli Go
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/dynamic-bonding-curve/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynamic Bonding Curve
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/gleipnir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gleipnir
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/mergekit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mergekit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/nexus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/nexus-adv-cli-char-gen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Adv Cli Char Gen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/nexus-ai-bridge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Ai Bridge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/nexus-ai-foundry-v-9---1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Ai Foundry V 9   1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/nexus-arsenal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Arsenal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/nexus-char-creator-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Char Creator Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/nexus-hydra/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Hydra
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/nexus-lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/nexus-medusa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Medusa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/nexus-network-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Network Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/nexus-phantom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Phantom
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/nexus-png2-editor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Png2 Editor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/nexus-protech-studio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Protech Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/nexus-scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Scripts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/nexus-vm-forge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Vm Forge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/nexus-web-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Web Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/protech-studio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protech Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/proving/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proving
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/starknet-privacy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Starknet Privacy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reports/veedo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Veedo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session Compass
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Session Compass
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NEXUS_COMPASS_2026-07-23_gateway-sovereignty-chargen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NEXUS COMPASS 2026 07 23 gateway sovereignty chargen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NEXUS_COMPASS_2026-07-24_ai-home-web-and-python-chargens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NEXUS COMPASS 2026 07 24 ai home web and python chargens
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NEXUS_COMPASS_2026-07-28_universal-api-proxy-web-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NEXUS COMPASS 2026 07 28 universal api proxy web server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NEXUS_COMPASS_2026-07-29_proxy-manager-forge-wiring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NEXUS COMPASS 2026 07 29 proxy manager forge wiring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NEXUS_COMPASS_2026-08-07_amy-origins-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NEXUS COMPASS 2026 08 07 amy origins architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NEXUS_COMPASS_2026-08-07_image-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NEXUS COMPASS 2026 08 07 image deep dive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NEXUS_COMPASS_2026-08-07_systems-architecture-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NEXUS COMPASS 2026 08 07 systems architecture deep dive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NEXUS COMPASS 2026 08 15 app registry nncc hud timeline
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NEXUS COMPASS 2026 08 15 app registry nncc hud timeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#app-registry-nncc-security-hud-timeline-additions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App Registry · NNCC · Security HUD · Timeline Additions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix-1-nexus-dashboard-wtfutil-not-launching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔧 FIX 1 — NeXuS Dashboard (wtfutil) Not Launching
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🔧 FIX 1 — NeXuS Dashboard (wtfutil) Not Launching">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-broke" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What broke
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-it-broke" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why it broke
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-we-changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we changed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix-2-ossec-not-wired-into-security-hud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛡️ FIX 2 — OSSEC Not Wired Into Security HUD
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛡️ FIX 2 — OSSEC Not Wired Into Security HUD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-was-missing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What was missing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-ossec-is-tricky" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why OSSEC is tricky
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-we-added" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we added
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-fully-activate-ossec-in-the-hud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to fully activate OSSEC in the HUD
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-3-nexus-living-timeline-gets-new-entries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📜 UPDATE 3 — NeXuS Living Timeline Gets New Entries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📜 UPDATE 3 — NeXuS Living Timeline Gets New Entries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-the-timeline-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the Timeline is
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-we-added-today" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we added today
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rule-confirmed-this-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rule confirmed this session
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discovery-4-mapping-all-nexus-frontendbackend-apps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗺️ DISCOVERY 4 — Mapping All NeXuS Frontend/Backend Apps
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🗺️ DISCOVERY 4 — Mapping All NeXuS Frontend/Backend Apps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-we-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What we found
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-full-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The full list
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-5-the-app-registry-the-big-fix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏗️ BUILD 5 — The App Registry (The Big Fix)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🏗️ BUILD 5 — The App Registry (The Big Fix)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem-we-were-solving" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem we were solving
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-solution-a-registry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The solution: a registry
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-routing-logic-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the routing logic does
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#files-changed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Files changed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-bug-we-hit-and-fixed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The bug we hit (and fixed)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-6-nncc-wired-into-nexus-web-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🌐 BUILD 6 — NNCC Wired Into NeXuS Web Server
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌐 BUILD 6 — NNCC Wired Into NeXuS Web Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-nncc-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What NNCC is
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#changes-to-the-frontend-appjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changes to the frontend (app.js)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-nexus-nnccsh-management-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The nexus-nncc.sh management script
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bugs-we-hit-and-fixed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bugs we hit and fixed
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-still-needs-doing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📋 WHAT STILL NEEDS DOING
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-lessons-from-today" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔑 KEY LESSONS FROM TODAY
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#files-changed-this-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📁 FILES CHANGED THIS SESSION
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cat-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🐾 CAT REPORT
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NEXUS_COMPASS_2026-08-15_map-wiki-ca-tld-migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NEXUS COMPASS 2026 08 15 map wiki ca tld migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../NEXUS_COMPASS_2026-08-17_sovereign-blockchain-keyring-stealth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NEXUS COMPASS 2026 08 17 sovereign blockchain keyring stealth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="nexus-compass-2026-08-15">NeXuS Compass — 2026-08-15<a class="headerlink" href="#nexus-compass-2026-08-15" title="Permanent link">&para;</a></h1>
+<h2 id="app-registry-nncc-security-hud-timeline-additions">App Registry · NNCC · Security HUD · Timeline Additions<a class="headerlink" href="#app-registry-nncc-security-hud-timeline-additions" title="Permanent link">&para;</a></h2>
+<p><strong>Session type:</strong> Infrastructure + Integration<br />
+<strong>Status:</strong> ✅ TESTED — all changes live and verified<br />
+<strong>Written by:</strong> Claude (Sonnet 4.6) + Anon</p>
+<hr />
+<blockquote>
+<p>Think of this compass like an instruction manual.
+Every change is explained: what it is, why we did it, and how it works.
+If you read this, you should be able to understand everything that happened today —
+even if you weren't there.</p>
+</blockquote>
+<hr />
+<h2 id="fix-1-nexus-dashboard-wtfutil-not-launching">🔧 FIX 1 — NeXuS Dashboard (wtfutil) Not Launching<a class="headerlink" href="#fix-1-nexus-dashboard-wtfutil-not-launching" title="Permanent link">&para;</a></h2>
+<h3 id="what-broke">What broke<a class="headerlink" href="#what-broke" title="Permanent link">&para;</a></h3>
+<p>The NeXuS Dashboard uses a program called <code>wtfutil</code> to show a live info panel.
+When you ran the launch script, it said:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Command /home/user/.config/wtf/config.yml is not supported
+</code></pre></div></p>
+<h3 id="why-it-broke">Why it broke<a class="headerlink" href="#why-it-broke" title="Permanent link">&para;</a></h3>
+<p>The launch script was starting wtfutil like this:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>wtfutil<span class="w"> </span>-c<span class="w"> </span>~/.config/wtf/config.yml
+</code></pre></div>
+The <code>-c</code> flag with a space after it is the OLD way. The version of wtfutil installed
+on this machine is a "dev" build that only accepts the flag written like this:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>wtfutil<span class="w"> </span>--config<span class="o">=</span><span class="s2">&quot;/home/user/.config/wtf/config.yml&quot;</span>
+</code></pre></div>
+When it saw <code>-c</code> with a space, it thought the file path was a command name. It was confused.</p>
+<h3 id="what-we-changed">What we changed<a class="headerlink" href="#what-we-changed" title="Permanent link">&para;</a></h3>
+<p><strong>File:</strong> <code>~/scripts/nexus-dashboard.sh</code></p>
+<p>Old line:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">exec</span><span class="w"> </span>/usr/bin/wtfutil<span class="w"> </span>-c<span class="w"> </span>~/.config/wtf/config.yml
+</code></pre></div></p>
+<p>New line:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">exec</span><span class="w"> </span>/usr/bin/wtfutil<span class="w"> </span>--config<span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="s2">/.config/wtf/config.yml&quot;</span>
+</code></pre></div></p>
+<p>Two things changed: the flag name (long form <code>--config=</code> instead of <code>-c</code>), and the
+path uses <code>$HOME</code> instead of <code>~</code> (more reliable in scripts).</p>
+<hr />
+<h2 id="fix-2-ossec-not-wired-into-security-hud">🛡️ FIX 2 — OSSEC Not Wired Into Security HUD<a class="headerlink" href="#fix-2-ossec-not-wired-into-security-hud" title="Permanent link">&para;</a></h2>
+<h3 id="what-was-missing">What was missing<a class="headerlink" href="#what-was-missing" title="Permanent link">&para;</a></h3>
+<p>The Security HUD (<code>~/scripts/nexus-security-hud.sh</code>) watches for intruders and
+shows alerts. It was supposed to read from OSSEC (our host intrusion detector),
+but the OSSEC block was completely missing from the code. The HUD watched for
+PSAD, Suricata, and Fail2ban — but silently ignored OSSEC entirely.</p>
+<h3 id="why-ossec-is-tricky">Why OSSEC is tricky<a class="headerlink" href="#why-ossec-is-tricky" title="Permanent link">&para;</a></h3>
+<p>OSSEC saves its alert log at <code>/var/ossec/logs/alerts/alerts.log</code> but only <code>root</code>
+can read it. Regular users can't open that file. </p>
+<p>The solution: the user account is in the <code>wheel</code> group, and <code>/var/log/messages</code>
+is readable by <code>wheel</code>. OSSEC writes there too. Even better, we can add the user
+to the <code>ossecr</code> group (OSSEC's read-only group) to read the alerts file directly.</p>
+<h3 id="what-we-added">What we added<a class="headerlink" href="#what-we-added" title="Permanent link">&para;</a></h3>
+<p><strong>File:</strong> <code>~/scripts/nexus-security-hud.sh</code></p>
+<p>We added a new block inside the <code>check_alerts()</code> function. It:
+1. Tries to read the last 30 lines of the OSSEC alerts log
+2. Pulls out: the source IP (<code>srcip:</code>), the alert level (a number 1-15), and the rule description
+3. If level is 10 or above → RED threat. Below 10 → ORANGE.
+4. Alerts without a source IP (like file integrity checks) just appear in the feed without raising the threat level
+5. If the log file can't be read at all, it shows a one-time warning in the feed so you know OSSEC isn't connected</p>
+<h3 id="how-to-fully-activate-ossec-in-the-hud">How to fully activate OSSEC in the HUD<a class="headerlink" href="#how-to-fully-activate-ossec-in-the-hud" title="Permanent link">&para;</a></h3>
+<p>Run this (needs a TTY):
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>doas<span class="w"> </span>addgroup<span class="w"> </span>user<span class="w"> </span>ossecr
+</code></pre></div>
+Then log out and back in. After that, the HUD reads OSSEC alerts automatically.</p>
+<hr />
+<h2 id="update-3-nexus-living-timeline-gets-new-entries">📜 UPDATE 3 — NeXuS Living Timeline Gets New Entries<a class="headerlink" href="#update-3-nexus-living-timeline-gets-new-entries" title="Permanent link">&para;</a></h2>
+<h3 id="what-the-timeline-is">What the Timeline is<a class="headerlink" href="#what-the-timeline-is" title="Permanent link">&para;</a></h3>
+<p>The Living Timeline (<code>~/NeXuS/timeline/NEXUS_TIMELINE.md</code>) is NeXuS history.
+Every milestone, every diagram, every big decision goes in there. It renders
+as a beautiful webpage at <code>https://127.0.0.1:8443/timeline</code>.</p>
+<h3 id="what-we-added-today">What we added today<a class="headerlink" href="#what-we-added-today" title="Permanent link">&para;</a></h3>
+<p><strong>Entry 1: The Sovereign Synergy diagram (Aug 14)</strong>
+NotebookLM generated a diagram showing how NeXuS and DivaChain work together.
+The key idea: your computer (Private NeXuS) does all the work locally. When it's
+time to prove that work happened, it packages everything into a "Golden Ticket"
+(a ZK-proof — math that proves "I did valid work" without showing WHAT the work was).
+That ticket travels through I2P (anonymous internet) and lands on DivaChain,
+which checks the math. DivaChain never sees who you are. The timeline entry explains
+this as "The Highway Analogy" — the toll booth verifies the toll was paid without
+knowing who drove.</p>
+<p><strong>Entry 2: Architecture of Sovereignty + meWEwowow infinity heart (Aug 15)</strong>
+Two more NotebookLM diagrams appeared:
+- An infinity symbol shaped like a heart, with people working at a table beneath it.
+  This is meWEwowow — the doctrine — made visual.
+- A full breakdown of every NeXuS layer: Foundation → Inner → Perimeter → Upper → Atmosphere.
+  Every component named: PERMITTI Ring, Ghost Gate, The Explosion, The Wick, Narcplonk, etc.</p>
+<p>Both images were copied to <code>~/NeXuS/timeline/images/</code> and added to the timeline.</p>
+<h3 id="rule-confirmed-this-session">Rule confirmed this session<a class="headerlink" href="#rule-confirmed-this-session" title="Permanent link">&para;</a></h3>
+<p><strong>NO YELLOW in documents.</strong> This applies to all NeXuS docs going forward.</p>
+<hr />
+<h2 id="discovery-4-mapping-all-nexus-frontendbackend-apps">🗺️ DISCOVERY 4 — Mapping All NeXuS Frontend/Backend Apps<a class="headerlink" href="#discovery-4-mapping-all-nexus-frontendbackend-apps" title="Permanent link">&para;</a></h2>
+<h3 id="what-we-found">What we found<a class="headerlink" href="#what-we-found" title="Permanent link">&para;</a></h3>
+<p>Using NXS-Search and grep, we discovered there are <strong>13-14 different apps</strong> in the
+NeXuS stack, each with their own web interface and/or API server. They were all
+running on different ports with no central coordination. Some used their own
+<code>python3 -m http.server</code> to serve their UI — a simple but limited approach.</p>
+<h3 id="the-full-list">The full list<a class="headerlink" href="#the-full-list" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>App</th>
+<th>Port</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NeXuS Web Server</td>
+<td>8443</td>
+<td>The main HTTPS hub — serves everything</td>
+</tr>
+<tr>
+<td>NNCC API</td>
+<td>8801</td>
+<td>Controls darknet networks (Tor, I2P, etc.)</td>
+</tr>
+<tr>
+<td>NNCC Web UI</td>
+<td>8880</td>
+<td>Dashboard for the darknet controls</td>
+</tr>
+<tr>
+<td>NXS Search</td>
+<td>5000</td>
+<td>Search 530K+ files on the system</td>
+</tr>
+<tr>
+<td>Beautiful Wiki (nb)</td>
+<td>6789</td>
+<td>Note-taking and wiki</td>
+</tr>
+<tr>
+<td>PNG² / CharCard</td>
+<td>7420</td>
+<td>Edit AI character cards</td>
+</tr>
+<tr>
+<td>Conduit Matrix</td>
+<td>6167</td>
+<td>Sovereign chat server</td>
+</tr>
+<tr>
+<td>aichat bus</td>
+<td>3030</td>
+<td>AI model connection hub</td>
+</tr>
+<tr>
+<td>txt Blogger</td>
+<td>8091</td>
+<td>Darknet text blog</td>
+</tr>
+<tr>
+<td>AI Foundry</td>
+<td>7432</td>
+<td>AI workspace API</td>
+</tr>
+<tr>
+<td>MkDocs</td>
+<td>8000</td>
+<td>Documentation site</td>
+</tr>
+<tr>
+<td>Gopher server</td>
+<td>8080</td>
+<td>Darknet alt protocol</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="build-5-the-app-registry-the-big-fix">🏗️ BUILD 5 — The App Registry (The Big Fix)<a class="headerlink" href="#build-5-the-app-registry-the-big-fix" title="Permanent link">&para;</a></h2>
+<h3 id="the-problem-we-were-solving">The problem we were solving<a class="headerlink" href="#the-problem-we-were-solving" title="Permanent link">&para;</a></h3>
+<p>Every time we wanted to add a new app to the NeXuS web server, someone had to
+write new Python code. If you wanted <code>/nncc/</code> to work, you'd add an <code>if path == '/nncc/':</code>
+block. If you wanted <code>/search/</code> to work, another block. This is called "hardcoding" —
+it's like having to rebuild your house every time you want a new door.</p>
+<h3 id="the-solution-a-registry">The solution: a registry<a class="headerlink" href="#the-solution-a-registry" title="Permanent link">&para;</a></h3>
+<p>Instead of writing code for each app, we made the web server read a list of apps
+from environment variables. Think of it like a phone book — you just add a name and
+number to the book, and calls get routed automatically.</p>
+<p><strong>How it works:</strong>
+In <code>~/NeXuS/secrets/nexus.env</code>, you add three lines per app:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nv">NEXUS_APP_NNCC_prefix</span><span class="o">=</span>/nncc<span class="w">          </span><span class="c1"># what URL it lives at</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nv">NEXUS_APP_NNCC_static</span><span class="o">=</span>/path/to/files<span class="w"> </span><span class="c1"># where its web files are (optional)</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nv">NEXUS_APP_NNCC_backend</span><span class="o">=</span>http://127.0.0.1:8801<span class="w">  </span><span class="c1"># where its API is (optional)</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nv">NEXUS_APP_NNCC_api_prefix</span><span class="o">=</span>/api<span class="w">       </span><span class="c1"># only proxy paths that start with this (optional)</span>
+</code></pre></div></p>
+<p>When the web server starts, it reads all the <code>NEXUS_APP_*</code> lines and builds a routing
+table automatically. To add a new app: add three lines, restart the server. No code changes. Ever.</p>
+<h3 id="what-the-routing-logic-does">What the routing logic does<a class="headerlink" href="#what-the-routing-logic-does" title="Permanent link">&para;</a></h3>
+<p>When a request comes in for <code>/nncc/api/networks</code>:
+1. Server checks: does any registered app have a prefix that matches <code>/nncc</code>? Yes — NNCC.
+2. What's left after removing <code>/nncc</code>? → <code>/api/networks</code>
+3. Does <code>/api/networks</code> start with the api_prefix <code>/api</code>? Yes → proxy to backend.
+4. Makes a request to <code>http://127.0.0.1:8801/api/networks</code> and returns the result.</p>
+<p>When a request comes in for <code>/nncc/css/nexus.css</code>:
+1. Matches NNCC.
+2. What's left? → <code>/css/nexus.css</code>
+3. Does it start with <code>/api</code>? No → serve static file.
+4. Opens <code>~/nexus-network/web/css/nexus.css</code> and sends it to the browser.</p>
+<h3 id="files-changed">Files changed<a class="headerlink" href="#files-changed" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><code>~/Projects/nexus-web-server/nexus_web_server.py</code></strong> — added <code>_build_app_registry()</code>, <code>_match_registry()</code>, <code>_dispatch_registry()</code>, <code>_registry_proxy()</code>, <code>_registry_static()</code>. Also added <code>do_PATCH()</code>, <code>do_DELETE()</code>, <code>do_PUT()</code> handlers.</li>
+<li><strong><code>~/NeXuS/secrets/nexus.env</code></strong> — added registry block with 9 apps.</li>
+<li><strong><code>~/NeXuS/docs/NEXUS_APP_REGISTRY.md</code></strong> — new doc explaining the system.</li>
+</ul>
+<h3 id="the-bug-we-hit-and-fixed">The bug we hit (and fixed)<a class="headerlink" href="#the-bug-we-hit-and-fixed" title="Permanent link">&para;</a></h3>
+<p>The registry was reading <code>os.environ</code> (the system environment variables), but
+<code>nexus.env</code> isn't in the system environment — the web server reads it itself
+using its own <code>_env_dict()</code> function. So at startup, when the registry was built,
+the nexus.env vars hadn't been read yet.</p>
+<p><strong>Fix:</strong> Changed <code>_build_app_registry()</code> to use <code>_env_dict()</code> which reads nexus.env
+directly, merged with any system env vars:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">env</span> <span class="o">=</span> <span class="p">{</span><span class="o">**</span><span class="n">_env_dict</span><span class="p">(),</span> <span class="o">**</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">}</span>  <span class="c1"># nexus.env first, process env wins</span>
+</code></pre></div></p>
+<hr />
+<h2 id="build-6-nncc-wired-into-nexus-web-server">🌐 BUILD 6 — NNCC Wired Into NeXuS Web Server<a class="headerlink" href="#build-6-nncc-wired-into-nexus-web-server" title="Permanent link">&para;</a></h2>
+<h3 id="what-nncc-is">What NNCC is<a class="headerlink" href="#what-nncc-is" title="Permanent link">&para;</a></h3>
+<p>The NeXuS Network Command Center (NNCC) is a dashboard for controlling darknet
+services: Tor, I2P, Yggdrasil, Reticulum, IPFS, Snowflake. It has:
+- A <strong>frontend</strong> (web UI at <code>~/nexus-network/web/</code>) — the pretty dashboard you see
+- A <strong>backend</strong> (FastAPI server at <code>:8801</code>) — the brains that actually talks to the services</p>
+<p>Before today, the UI was served by a bare <code>python3 -m http.server</code> on port 8880.
+After today, everything goes through the NeXuS web server.</p>
+<h3 id="changes-to-the-frontend-appjs">Changes to the frontend (app.js)<a class="headerlink" href="#changes-to-the-frontend-appjs" title="Permanent link">&para;</a></h3>
+<p>The JavaScript used to hardcode <code>http://127.0.0.1:8801</code> everywhere — the address
+of the backend API. This is like telling everyone "our office is at 123 Main St"
+but then moving the office and having to tell everyone the new address.</p>
+<p>We changed it to be smart about where it is:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">_NNCC_PREFIX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">pathname</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s1">&#39;/nncc&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;/nncc&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">API_BASE</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">origin</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">_NNCC_PREFIX</span><span class="p">;</span>
+</code></pre></div></p>
+<p>Translation: "If this page is being served from <code>/nncc/</code>, add <code>/nncc</code> to all API calls.
+If it's being served directly (like the old way), don't add anything."</p>
+<p>This means the NNCC works whether served from the NeXuS web server OR from the old
+standalone server — one codebase, two deployment options.</p>
+<h3 id="the-nexus-nnccsh-management-script">The <code>nexus-nncc.sh</code> management script<a class="headerlink" href="#the-nexus-nnccsh-management-script" title="Permanent link">&para;</a></h3>
+<p>We wrote a new script (<code>~/scripts/nexus-nncc.sh</code>) to manage the NNCC backend,
+following the same pattern as <code>nexus-api-proxy.sh</code>. Commands:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>nexus-nncc.sh<span class="w"> </span>start<span class="w">    </span><span class="c1"># start the API in a tmux session</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>nexus-nncc.sh<span class="w"> </span>stop<span class="w">     </span><span class="c1"># stop it</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>nexus-nncc.sh<span class="w"> </span>restart<span class="w">  </span><span class="c1"># stop then start</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>nexus-nncc.sh<span class="w"> </span>logs<span class="w">     </span><span class="c1"># attach to the tmux session to see live output</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>nexus-nncc.sh<span class="w"> </span>status<span class="w">   </span><span class="c1"># show what&#39;s running and whether the API responds</span>
+</code></pre></div></p>
+<p>The script also:
+- Checks that the venv exists before trying to start
+- Waits up to 15 seconds for the API to respond before declaring failure
+- Self-backs up on every launch (NeXuS standard)
+- Uses env vars for paths (no hardcoding)</p>
+<h3 id="bugs-we-hit-and-fixed">Bugs we hit and fixed<a class="headerlink" href="#bugs-we-hit-and-fixed" title="Permanent link">&para;</a></h3>
+<p><strong>Bug 1: Wrong path in <code>start-nncc.sh</code></strong>
+The old startup script had a hardcoded path:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nv">COMMAND_CENTER</span><span class="o">=</span><span class="s2">&quot;/home/user/claude/configs/nexus-stack/command-center&quot;</span>
+</code></pre></div>
+But the actual backend lives at <code>~/Projects/nexus-network-stack/command-center/</code>.
+Fixed to use an env var with a sensible default:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nv">COMMAND_CENTER</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">NEXUS_NNCC_DIR</span><span class="k">:-</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span><span class="p">/Projects/nexus-network-stack/command-center</span><span class="si">}</span><span class="s2">&quot;</span>
+</code></pre></div></p>
+<p><strong>Bug 2: <code>exec</code> with a pipe breaks logging</strong>
+The nexus-nncc.sh script used <code>exec uvicorn ... | tee logfile</code>.
+The <code>exec</code> command replaces the shell process — so the pipe to <code>tee</code> gets orphaned.
+The log file stays empty. Fixed by removing <code>exec</code>:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># broken:</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">exec</span><span class="w"> </span><span class="s1">&#39;$UVICORN&#39;</span><span class="w"> </span>main:app<span class="w"> </span>...<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span><span class="s1">&#39;$LOG_FILE&#39;</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="c1"># fixed:</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="s1">&#39;$UVICORN&#39;</span><span class="w"> </span>main:app<span class="w"> </span>...<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tee<span class="w"> </span><span class="s1">&#39;$LOG_FILE&#39;</span><span class="p">;</span><span class="w"> </span><span class="nb">read</span>
+</code></pre></div></p>
+<p><strong>Bug 3: Hardcoded data path in config.py</strong>
+The NNCC backend's config had:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">data_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;/home/user/claude/configs/nexus-stack&quot;</span><span class="p">)</span>
+</code></pre></div>
+But <code>/home/user/claude/configs/nexus-stack</code> already exists as a <strong>file</strong> — not a
+directory. When the backend tried to create it as a directory, it failed.
+Fixed to use the NeXuS standard location:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">data_dir</span><span class="p">:</span> <span class="n">Path</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;NeXuS&quot;</span> <span class="o">/</span> <span class="s2">&quot;data&quot;</span> <span class="o">/</span> <span class="s2">&quot;nncc&quot;</span>
+</code></pre></div>
+Also created <code>~/NeXuS/data/nncc/</code> so it exists before the server starts.</p>
+<p><strong>Bug 4: Python 3.14 vs pydantic-core</strong>
+The requirements.txt pinned <code>pydantic==2.5.3</code> which requires <code>pydantic-core==2.14.6</code>.
+But the system runs Python 3.14, and pydantic-core 2.14.6 was written before Python 3.14
+existed. A Python 3.14 API change (<code>ForwardRef._evaluate()</code> needs a <code>recursive_guard</code>
+argument now) causes the Rust build to fail with a Python error.</p>
+<p>Fixed by unpinning pydantic and requiring a minimum version:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>pydantic&gt;=2.8.0   # was: pydantic==2.5.3
+</code></pre></div>
+Pydantic 2.8+ supports Python 3.14 and has pre-built binary wheels (no compilation needed).</p>
+<hr />
+<h2 id="what-still-needs-doing">📋 WHAT STILL NEEDS DOING<a class="headerlink" href="#what-still-needs-doing" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>doas addgroup user ossecr</code></td>
+<td>Activates OSSEC in the Security HUD</td>
+</tr>
+<tr>
+<td><code>api-proxy restart</code> after any nexus.env change</td>
+<td>Registry rebuilds at startup</td>
+</tr>
+<tr>
+<td>Add <code>nncc</code> alias to fish config</td>
+<td><code>alias nncc='~/scripts/nexus-nncc.sh'</code></td>
+</tr>
+<tr>
+<td>Fossil commit — nexus-web-server</td>
+<td>Registry changes not yet committed</td>
+</tr>
+<tr>
+<td>Fossil commit — nexus-nncc.sh</td>
+<td>New script not yet in Fossil</td>
+</tr>
+<tr>
+<td>ArticFrost VM (Antigravity SDK)</td>
+<td>Pending from prior session</td>
+</tr>
+<tr>
+<td>iPXE darkstack boot</td>
+<td>90% built, pending from prior session</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="key-lessons-from-today">🔑 KEY LESSONS FROM TODAY<a class="headerlink" href="#key-lessons-from-today" title="Permanent link">&para;</a></h2>
+<p><strong>1. Registry over hardcoding.</strong> When you find yourself writing the same pattern
+more than twice (if path == '/this', if path == '/that'), stop and make it data-driven.
+The App Registry is the NeXuS solution: one pattern, all apps, config in nexus.env.</p>
+<p><strong>2. Check where env vars come from.</strong> Python's <code>os.environ</code> only has what the
+shell passes in. If your program loads secrets from a file, make sure the code that
+READS those secrets uses the same file-reading function, not <code>os.environ</code> directly.</p>
+<p><strong>3. <code>exec</code> with a pipe is a trap.</strong> <code>exec</code> replaces the current process. If you
+pipe <code>exec ... | something</code>, the pipe's right side never connects properly. Use the
+command without <code>exec</code> when you need piping.</p>
+<p><strong>4. Python version matters for Rust packages.</strong> Packages like <code>pydantic-core</code> compile
+Rust code against the Python C API. When Python 3.14 changed an internal API, old
+versions of pydantic-core broke. The fix: don't pin to exact versions of Rust-based
+packages — use <code>&gt;=</code> and let pip find a version with pre-built wheels for your Python.</p>
+<hr />
+<h2 id="files-changed-this-session">📁 FILES CHANGED THIS SESSION<a class="headerlink" href="#files-changed-this-session" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>~/scripts/nexus-dashboard.sh                          — wtfutil flag fix
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>~/scripts/nexus-security-hud.sh                       — OSSEC block added
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>~/scripts/nexus-nncc.sh                               — NEW management script
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>~/nexus-network/start-nncc.sh                         — paths fixed, http.server removed
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>~/nexus-network/web/js/app.js                         — API_BASE made dynamic
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>~/nexus-network/web/index.html                        — docs iframe src fixed
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>~/Projects/nexus-web-server/nexus_web_server.py       — App Registry added
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>~/Projects/nexus-network-stack/command-center/config.py — data_dir hardcoding removed
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>~/Projects/nexus-network-stack/command-center/requirements.txt — pydantic unpinned
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>~/NeXuS/secrets/nexus.env                             — 9 apps registered
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>~/NeXuS/docs/NEXUS_APP_REGISTRY.md                    — NEW registry doc
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>~/NeXuS/timeline/NEXUS_TIMELINE.md                    — 3 new entries added
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a>~/NeXuS/timeline/images/diagrams/2026-08-14_nexus-divachain-sovereign-synergy.png  — NEW
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>~/NeXuS/timeline/images/diagrams/2026-08-15_nexus-architecture-of-sovereignty.png  — NEW
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>~/NeXuS/timeline/images/art/2026-08-15_meWEwowow-infinity-collective.png           — NEW
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>~/NeXuS/data/nncc/                                    — NEW directory created
+</code></pre></div>
+<hr />
+<h2 id="cat-report">🐾 CAT REPORT<a class="headerlink" href="#cat-report" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Cat</th>
+<th>Activity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Luna</td>
+<td>Mom. Had a scrape on nose bridge. Treatment: saline only — NO Neosporin on cat faces</td>
+</tr>
+<tr>
+<td>Wookie (Tury)</td>
+<td>Keyboard napper. Responsible for <code>jjjjjjjjjjj</code></td>
+</tr>
+<tr>
+<td>Mid</td>
+<td>The mastermind. Orchestrated keyboard ops</td>
+</tr>
+<tr>
+<td>BigMaN</td>
+<td>Unhinged sidekick. Backslash avalanche confirmed</td>
+</tr>
+<tr>
+<td>Peewee</td>
+<td>Field operative. Possibly responsible for Luna's nose</td>
+</tr>
+</tbody>
+</table>
+<p><em>The NeXuS cat collective contributed more characters to this session than most sessions have code.</em></p>
+<hr />
+<p><em>Sane · Simple · Secure · Stealthy · Beautiful · Sustainable</em><br />
+<em>The table outlasts every king. meWEwowow 💥</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../NEXUS_COMPASS_2026-08-07_systems-architecture-deep-dive/" class="md-footer__link md-footer__link--prev" aria-label="Previous: NEXUS COMPASS 2026 08 07 systems architecture deep dive">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                NEXUS COMPASS 2026 08 07 systems architecture deep dive
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../NEXUS_COMPASS_2026-08-15_map-wiki-ca-tld-migration/" class="md-footer__link md-footer__link--next" aria-label="Next: NEXUS COMPASS 2026 08 15 map wiki ca tld migration">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                NEXUS COMPASS 2026 08 15 map wiki ca tld migration
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/hackenstacks/nexus" target="_blank" rel="noopener" title="NeXuS on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.footer", "toc.follow", "toc.integrate", "search.highlight", "search.share", "search.suggest", "content.code.copy", "content.code.annotate", "header.autohide"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

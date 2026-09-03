@@ -18,18 +18,18 @@
         <link rel="prev" href="../point-protocol/">
       
       
-        <link rel="next" href="../rin/">
+        <link rel="next" href="../network-stack/architecture/paranoid-security/">
       
       
         
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>NeXuS P2P — POINT2POINT Violation & Point System - NeXuS</title>
+        <title>POINT2POINT - NeXuS Wiki</title>
       
     
     
@@ -55,6 +55,8 @@
       
     
     
+      <link rel="stylesheet" href="../assets/wiki.css">
+    
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -78,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#nexus-p2p-point2point" class="md-skip">
+        <a href="#point2point-violation-detection-node-scoring" class="md-skip">
           Skip to content
         </a>
       
@@ -87,10 +89,6 @@
       
     </div>
     
-      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
-        
-      </div>
-    
     
       
 
@@ -98,7 +96,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="NeXuS" class="md-header__button md-logo" aria-label="NeXuS" data-md-component="logo">
+    <a href="https://hackenstacks.github.io/nexus/" title="NeXuS Wiki" class="md-header__button md-logo" aria-label="NeXuS Wiki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,13 +110,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            NeXuS
+            NeXuS Wiki
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              NeXuS P2P — POINT2POINT Violation & Point System
+              POINT2POINT
             
           </span>
         </div>
@@ -159,6 +157,8 @@
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
       
     </form>
     <div class="md-search__output">
@@ -220,155 +220,16 @@
   
   
   
-    <li class="md-tabs__item">
-      <a href="../full-index/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Full Index
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
     
     
       <li class="md-tabs__item">
-        <a href="../nexus-defined/" class="md-tabs__link">
+        <a href="../what-is-nexus/" class="md-tabs__link">
           
   
+  
+    
   
   What Is NeXuS
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../medusa-stealth-routing/" class="md-tabs__link">
-          
-  
-  
-  Network
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-  
-  
-    
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../3key-security/" class="md-tabs__link">
-          
-  
-  
-  Security
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../rin/" class="md-tabs__link">
-          
-  
-  
-  RIN
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../nexus-rings/" class="md-tabs__link">
-          
-  
-  
-  NeXuS Family
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../ai-merged-identity/" class="md-tabs__link">
-          
-  
-  
-  AI
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../cli-libs-tui-frameworks/" class="md-tabs__link">
-          
-  
-  
-  Development
 
         </a>
       </li>
@@ -388,7 +249,9 @@
           
   
   
-  The Forge
+    
+  
+  Identity & Trust
 
         </a>
       </li>
@@ -404,11 +267,37 @@
     
     
       <li class="md-tabs__item">
-        <a href="../nexus-architecture-layers/" class="md-tabs__link">
+        <a href="../diva-chain-overview/" class="md-tabs__link">
           
   
   
-  Architecture
+    
+  
+  DivaChain
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../mathematical-proof-of-service/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Proof System
 
         </a>
       </li>
@@ -423,7 +312,22 @@
   
     
     
+      <li class="md-tabs__item">
+        <a href="../nexium-tokenomics/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Economy
+
+        </a>
+      </li>
+    
+  
+
       
+        
   
   
   
@@ -431,17 +335,38 @@
     
     
       <li class="md-tabs__item">
-        <a href="../network-stack/foundation/start-here/" class="md-tabs__link">
+        <a href="../security-stack/" class="md-tabs__link">
           
   
   
-  Network Stack
+    
+  
+  Security
 
         </a>
       </li>
     
   
 
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../dpfoe-ai-intelligence/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  AI Layer
+
+        </a>
+      </li>
     
   
 
@@ -457,6 +382,8 @@
         <a href="../node/getting-started/" class="md-tabs__link">
           
   
+  
+    
   
   Node
 
@@ -474,9 +401,74 @@
     
     
       <li class="md-tabs__item">
-        <a href="../reports/action_report/" class="md-tabs__link">
+        <a href="../scripts/" class="md-tabs__link">
           
   
+  
+    
+  
+  Scripts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../network-stack/foundation/complete-system-manual/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../timeline/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Timeline
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../reports/" class="md-tabs__link">
+          
+  
+  
+    
   
   Reports
 
@@ -494,84 +486,16 @@
     
     
       <li class="md-tabs__item">
-        <a href="../session-logs/" class="md-tabs__link">
+        <a href="../compass/NEXUS_COMPASS_2026-07-23_gateway-sovereignty-chargen/" class="md-tabs__link">
           
   
   
-  Session Logs
+    
+  
+  Session Compass
 
         </a>
       </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../dev/action-report/" class="md-tabs__link">
-          
-  
-  
-  Dev
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../fireside-chat-001/" class="md-tabs__link">
-          
-  
-  
-  Fireside Chats
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../founding-session/" class="md-tabs__link">
-          
-  
-  
-  NeXuS History
-
-        </a>
-      </li>
-    
-  
-
     
   
 
@@ -602,15 +526,17 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="NeXuS" class="md-nav__button md-logo" aria-label="NeXuS" data-md-component="logo">
+    <a href="https://hackenstacks.github.io/nexus/" title="NeXuS Wiki" class="md-nav__button md-logo" aria-label="NeXuS Wiki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    NeXuS
+    NeXuS Wiki
   </label>
   
     <div class="md-nav__source">
@@ -660,34 +586,29 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../full-index/" class="md-nav__link">
+    
+    
+      
         
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Full Index
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-    
       
+        
       
-  
-  
-  
-  
-    
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -701,10 +622,12 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   
@@ -722,8 +645,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -740,90 +663,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../nexus-defined/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    NeXuS Defined
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../nexus-framework/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    The Framework — CIA+MOE+POP+YMCA
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../nexus-boot-protocol/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Boot Protocol
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../what-is-nexus/" class="md-nav__link">
         
   
@@ -831,7 +670,7 @@
   <span class="md-ellipsis">
     
   
-    Overview
+    What Is NeXuS
   
 
     
@@ -852,14 +691,70 @@
   
   
     <li class="md-nav__item">
-      <a href="../nexus-overview/" class="md-nav__link">
+      <a href="../nexus-node-v2/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Full Overview
+    NeXuS Node v2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-origins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Origins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-manifesto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manifesto
   
 
     
@@ -908,6 +803,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../nexus-architecture-layers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Layers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../oaae-framework/" class="md-nav__link">
         
   
@@ -916,6 +839,90 @@
     
   
     OAAE Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/foundation/nexus-foundation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/foundation/security-manifesto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Manifesto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nxs-master-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Map
   
 
     
@@ -944,6 +951,30 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -956,7 +987,394 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identity & Trust
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Identity & Trust
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nxs-forge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NXS-FORGE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cerberus-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cerberus Password Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3key-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Three-Key Security Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../permittl-ring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERMITTL Ring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../janus-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Janus Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ghost-gate-spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ghost Gate Spec
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RIN — Real Intelligence Network
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-boot-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boot Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-rings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeXuS Rings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../node-security-doctrine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Node Security Doctrine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nxs-node-standard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Node Standard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -966,7 +1384,7 @@
   <span class="md-ellipsis">
     
   
-    Network
+    DivaChain
   
 
     
@@ -982,11 +1400,39 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Network
+    DivaChain
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diva-chain-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DivaChain Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1003,6 +1449,575 @@
     
   
     Medusa Stealth Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../darknet-stack-diagram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Darknet Stack Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/implementation/i2p/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    I2P Implementation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/deployment/darknet-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Darknet Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/architecture/p2p-protocol-spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P2P Protocol Spec
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/architecture/mesh-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mesh Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proof System
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Proof System
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mathematical-proof-of-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mathematical Proof of Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-proof-of-witness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proof of Witness
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proof-system-spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proof System Spec
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../magic-packet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Magic Packet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../point-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POINT Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POINT2POINT
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POINT2POINT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🏗️ Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#violation-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ⚙️ Violation Detection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#node-scoring-penalty-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📓 Node Scoring &amp; Penalty System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📓 Node Scoring &amp; Penalty System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scoring-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scoring Metrics:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#penalty-enforcement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Penalty Enforcement:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#significance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🎯 Significance
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/architecture/paranoid-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paranoid Security Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/architecture/transparent-routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transparent Routing
   
 
     
@@ -1055,38 +2070,45 @@
       
   
   
-    
   
   
-  
-    
-    
     
     
       
         
+      
         
+      
+        
+      
+        
+      
+    
+    
+    
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    Security
+    Economy
   
 
     
@@ -1097,12 +2119,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_5">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Security
+    Economy
   
 
           </label>
@@ -1115,14 +2137,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../3key-security/" class="md-nav__link">
+      <a href="../nexium-tokenomics/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Three-Key Security Model
+    NeXiuM Tokenomics
   
 
     
@@ -1143,6 +2165,161 @@
   
   
     <li class="md-nav__item">
+      <a href="../nexus-mint-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mint Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../economy-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Economy Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eco-extraterrium-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ECO Extraterrium Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../security-stack/" class="md-nav__link">
         
   
@@ -1150,7 +2327,7 @@
   <span class="md-ellipsis">
     
   
-    Security Stack (PSAD, fwsnort, fail2ban)
+    Security Stack
   
 
     
@@ -1234,441 +2411,7 @@
   <span class="md-ellipsis">
     
   
-    NeXuS Integrity — Prepared Is Not Paranoid
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../cerberus-protocol/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Cerberus Password Protocol
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../point-protocol/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    POINT Protocol — Network Telemetry
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    NeXuS P2P — POINT2POINT Violation & Point System
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    NeXuS P2P — POINT2POINT Violation & Point System
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#definition" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Definition
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-p2p" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why P2P
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-total-violation-baseline" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Total Violation Baseline
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-five-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Five POINTs
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scoring-a-component" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Scoring a Component
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Scoring a Component">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#outbound-point-scoring" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Outbound POINT Scoring
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#inbound-point-scoring" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Inbound POINT Scoring
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#component-total" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Component Total
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multipliers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Multipliers
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-weather-widget" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example — Weather Widget
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#system-score" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        System Score
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#threat-capability-tiers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Threat Capability Tiers
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Threat Capability Tiers">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#reading-the-table" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reading the Table
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mitigation-credits" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Mitigation Credits
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Mitigation Credits">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-tor-routed-manual-update-check" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example — Tor-Routed Manual Update Check
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-audit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Audit
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#point2point-and-the-nexus-desktop" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        POINT2POINT and the NeXuS Desktop
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
-        
-          
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    RIN
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    RIN
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../rin/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Real Intelligence Network
+    NeXuS Integrity
   
 
     
@@ -1697,6 +2440,20 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -1708,123 +2465,10 @@
     <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    NeXuS Family
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    NeXuS Family
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../nexus-rings/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Rings — Family Sovereignty Protocol
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../education-oracle/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Education Oracle
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
         
           
           <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
@@ -1834,7 +2478,7 @@
   <span class="md-ellipsis">
     
   
-    AI
+    AI Layer
   
 
     
@@ -1850,67 +2494,11 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    AI
+    AI Layer
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ai-merged-identity/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Merged AI Identity
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../autonomouse-ai-intelligence/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Autonomous AI Intelligence
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -1927,6 +2515,62 @@
     
   
     DPFOE Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../orchestrator-spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Orchestrator Spec
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-merged-identity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Merged AI Identity
   
 
     
@@ -1982,7 +2626,35 @@
   <span class="md-ellipsis">
     
   
-    Project Chimera Architecture
+    Project Chimera
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autonomous-ai-intelligence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autonomous AI
   
 
     
@@ -2011,6 +2683,26 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -2023,7 +2715,9 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
         
           
           <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
@@ -2033,7 +2727,7 @@
   <span class="md-ellipsis">
     
   
-    Development
+    Node
   
 
     
@@ -2049,7 +2743,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Development
+    Node
   
 
           </label>
@@ -2062,467 +2756,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../cli-libs-tui-frameworks/" class="md-nav__link">
+      <a href="../node/getting-started/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    CLI Libs & TUI Frameworks
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
-        
-          
-          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    The Forge
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_10">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    The Forge
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../nxs-forge/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    NXS-FORGE — Universal Identity & Trust
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../eco-extraterrium-stack/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    ECO — The Extraterrium Stack
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
-        
-          
-          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Architecture
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_11">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Architecture
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../nexus-architecture-layers/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Two-Layer Architecture — Public and Dark
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../economy-architecture/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Economy & Blockchain
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../nexus-mint-protocol/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    NeXuS Mint Protocol
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../required-applications/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Required Applications
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../install-architecture/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Install Architecture
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
-        
-          
-          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Network Stack
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_12">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Network Stack
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_12_1" id="__nav_12_1_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Foundation
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_12_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Foundation
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../network-stack/foundation/start-here/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Start Here
+    Getting Started
   
 
     
@@ -2627,14 +2868,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../network-stack/foundation/nexus-foundation/" class="md-nav__link">
+      <a href="../required-applications/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    NeXuS Foundation
+    Required Applications
   
 
     
@@ -2655,698 +2896,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../network-stack/foundation/security-manifesto/" class="md-nav__link">
+      <a href="../install-architecture/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Security Manifesto
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../network-stack/foundation/complete-system-manual/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Complete System Manual
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_12_2" id="__nav_12_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Vision
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_12_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Vision
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../network-stack/vision/true-vision/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    The True Vision
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../network-stack/vision/future-roadmap/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Future Roadmap
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../network-stack/vision/phase2-plan/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Phase 2 Plan
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../network-stack/vision/nexus-final/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    NeXuS Final
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../network-stack/vision/cloud-vision/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Cloud Vision
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_12_3" id="__nav_12_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Architecture
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_12_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Architecture
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../network-stack/architecture/mesh-architecture/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Mesh Architecture
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../network-stack/architecture/paranoid-security/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Paranoid Security Architecture
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../network-stack/architecture/transparent-routing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Transparent Routing Architecture
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../network-stack/architecture/p2p-protocol-spec/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    P2P Protocol Specification
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../network-stack/architecture/implementation-summary/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Implementation Summary
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../network-stack/architecture/integration-summary/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Integration Summary
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_12_4" id="__nav_12_4_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Implementation
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_12_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Implementation
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../network-stack/implementation/i2p/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    I2P Implementation
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../network-stack/implementation/yggdrasil/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Yggdrasil Implementation
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../network-stack/implementation/yggdrasil-quickstart/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Yggdrasil Quick Start
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../network-stack/implementation/reticulum/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Reticulum Implementation
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../network-stack/implementation/reticulum-quickstart/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Reticulum Quick Start
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../network-stack/implementation/batman-adv/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    BATMAN-adv Mesh
+    Install Architecture
   
 
     
@@ -3388,9 +2945,29 @@
 
               
             
-          </ul>
-        </nav>
-      
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network-stack/implementation/yggdrasil/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Yggdrasil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -3402,7 +2979,50 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../network-stack/implementation/reticulum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
     
+  
+    Reticulum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
     
     
     
@@ -3416,17 +3036,86 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_5" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_12_5" id="__nav_12_5_label" tabindex="0">
+          <div class="md-nav__link md-nav__container">
+            <a href="../scripts/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scripts
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Scripts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    Deployment
+    NCM
   
 
     
@@ -3437,12 +3126,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_12_5">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Deployment
+    NCM
   
 
           </label>
@@ -3455,42 +3144,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../network-stack/deployment/darknet-manual/" class="md-nav__link">
+      <a href="../scripts/ncm/nexus-ncm-certs/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Darknet Manual
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../network-stack/deployment/privoxy/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Privoxy Standalone
+    nexus-ncm-certs.sh
   
 
     
@@ -3512,13 +3173,30 @@
 
               
             
-              
-                
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
   
   
   
   
     
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -3532,17 +3210,19 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_6" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
         
           
-          <label class="md-nav__link" for="__nav_12_6" id="__nav_12_6_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    User Guides
+    Reference
   
 
     
@@ -3553,12 +3233,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_12_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
             <span class="md-nav__icon md-icon"></span>
             
   
-    User Guides
+    Reference
   
 
           </label>
@@ -3571,14 +3251,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../network-stack/user-guides/beast-control/" class="md-nav__link">
+      <a href="../network-stack/foundation/complete-system-manual/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Beast Control
+    Complete System Manual
   
 
     
@@ -3599,14 +3279,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../network-stack/user-guides/beast-slayer/" class="md-nav__link">
+      <a href="../nexus-service-mapping/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Beast Slayer Guide
+    Service Mapping & Port Registry
   
 
     
@@ -3627,14 +3307,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../network-stack/user-guides/test-router/" class="md-nav__link">
+      <a href="../cli-libs-tui-frameworks/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Test Your Router
+    CLI Libs & TUI Frameworks
   
 
     
@@ -3655,14 +3335,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../network-stack/user-guides/remote-browser/" class="md-nav__link">
+      <a href="../education-oracle/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Remote Browser Setup
+    Education Oracle
   
 
     
@@ -3682,15 +3362,107 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../timeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Timeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
   
   
   
   
     
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
     
     
     
@@ -3704,17 +3476,20 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_7" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_13" >
         
           
-          <label class="md-nav__link" for="__nav_12_7" id="__nav_12_7_label" tabindex="0">
-            
+          <div class="md-nav__link md-nav__container">
+            <a href="../reports/" class="md-nav__link ">
+              
   
   
   <span class="md-ellipsis">
     
   
-    Development
+    Reports
   
 
     
@@ -3722,142 +3497,27 @@
   
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_12_7">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Development
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+            </a>
             
               
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../network-stack/development/contributing/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Contributing
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
+              <label class="md-nav__link " for="__nav_13" id="__nav_13_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../network-stack/development/authors/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Authors
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
-        
-          
-          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Node
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_13">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Node
+    Reports
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -3866,14 +3526,826 @@
   
   
     <li class="md-nav__item">
-      <a href="../node/getting-started/" class="md-nav__link">
+      <a href="../reports/adv-ai-nexus/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Getting Started
+    Adv Ai Nexus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/adv-cli-char-gen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adv Cli Char Gen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/adv-go-char-gen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adv Go Char Gen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/advanced-ai-character-generator-terminal-access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Ai Character Generator Terminal Access
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/ai-nexus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ai Nexus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/beta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/char-gen-cli-go/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Char Gen Cli Go
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/dynamic-bonding-curve/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynamic Bonding Curve
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/gleipnir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gleipnir
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/mergekit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mergekit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/nexus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/nexus-adv-cli-char-gen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Adv Cli Char Gen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/nexus-ai-bridge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Ai Bridge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/nexus-ai-foundry-v-9---1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Ai Foundry V 9   1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/nexus-arsenal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Arsenal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/nexus-char-creator-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Char Creator Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/nexus-hydra/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Hydra
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/nexus-lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/nexus-medusa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Medusa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/nexus-network-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Network Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/nexus-phantom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Phantom
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/nexus-png2-editor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Png2 Editor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/nexus-protech-studio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Protech Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/nexus-scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Scripts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/nexus-vm-forge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Vm Forge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/nexus-web-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Web Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/protech-studio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protech Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/proving/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proving
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/starknet-privacy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Starknet Privacy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reports/veedo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Veedo
   
 
     
@@ -3902,6 +4374,28 @@
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
     
     
       
@@ -3914,7 +4408,9 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_14" >
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_14" >
         
           
           <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
@@ -3924,7 +4420,7 @@
   <span class="md-ellipsis">
     
   
-    Reports
+    Session Compass
   
 
     
@@ -3940,7 +4436,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Reports
+    Session Compass
   
 
           </label>
@@ -3953,275 +4449,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../reports/action_report/" class="md-nav__link">
+      <a href="../compass/NEXUS_COMPASS_2026-07-23_gateway-sovereignty-chargen/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Action Reports
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_15" >
-        
-          
-          <label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Session Logs
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_15_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_15">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Session Logs
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../session-logs/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Index
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_16" >
-        
-          
-          <label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Dev
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_16_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_16">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Dev
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dev/action-report/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Action Reports
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_17" >
-        
-          
-          <label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Fireside Chats
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_17_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_17">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Fireside Chats
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../fireside-chat-001/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chat 001 — 2026-03-10 — The Forge Awakens
+    NEXUS COMPASS 2026 07 23 gateway sovereignty chargen
   
 
     
@@ -4242,14 +4477,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../fireside-chat-002/" class="md-nav__link">
+      <a href="../compass/NEXUS_COMPASS_2026-07-24_ai-home-web-and-python-chargens/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Chat 002 — 2026-03-21 — The Node Standard
+    NEXUS COMPASS 2026 07 24 ai home web and python chargens
   
 
     
@@ -4270,14 +4505,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../fireside-chat-003/" class="md-nav__link">
+      <a href="../compass/NEXUS_COMPASS_2026-07-28_universal-api-proxy-web-server/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Chat 003 — 2026-03-21 — POINT2POINT and the Foundation
+    NEXUS COMPASS 2026 07 28 universal api proxy web server
   
 
     
@@ -4298,329 +4533,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../fireside-chat-004/" class="md-nav__link">
+      <a href="../compass/NEXUS_COMPASS_2026-07-29_proxy-manager-forge-wiring/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Chat 004 — 2026-03-22 — The Definition Session
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
-        
-          
-          <label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    NeXuS History
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_18">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    NeXuS History
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_1" >
-        
-          
-          <label class="md-nav__link" for="__nav_18_1" id="__nav_18_1_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Founding Documents
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_18_1">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Founding Documents
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../founding-session/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    The Founding Session — 2025-08-28
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_18_2" id="__nav_18_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Claude
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_18_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Claude
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../history/claude/session-history-2026-03-10/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Session History 2026-03-10
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_18_3" id="__nav_18_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Archive 1
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_18_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Archive 1
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../history/archive-1/claude-sessions/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Claude Sessions
+    NEXUS COMPASS 2026 07 29 proxy manager forge wiring
   
 
     
@@ -4641,14 +4561,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../history/archive-1/nexus-planning/" class="md-nav__link">
+      <a href="../compass/NEXUS_COMPASS_2026-08-07_amy-origins-architecture/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Nexus Planning
+    NEXUS COMPASS 2026 08 07 amy origins architecture
   
 
     
@@ -4669,14 +4589,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../history/archive-1/action-reports/" class="md-nav__link">
+      <a href="../compass/NEXUS_COMPASS_2026-08-07_image-deep-dive/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Action Reports
+    NEXUS COMPASS 2026 08 07 image deep dive
   
 
     
@@ -4697,14 +4617,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../history/archive-1/ai-consciousness/" class="md-nav__link">
+      <a href="../compass/NEXUS_COMPASS_2026-08-07_systems-architecture-deep-dive/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    AI Consciousness
+    NEXUS COMPASS 2026 08 07 systems architecture deep dive
   
 
     
@@ -4725,14 +4645,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../history/archive-1/projects/" class="md-nav__link">
+      <a href="../compass/NEXUS_COMPASS_2026-08-15_app-registry-nncc-hud-timeline/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Projects
+    NEXUS COMPASS 2026 08 15 app registry nncc hud timeline
   
 
     
@@ -4753,14 +4673,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../history/archive-1/security/" class="md-nav__link">
+      <a href="../compass/NEXUS_COMPASS_2026-08-15_map-wiki-ca-tld-migration/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Security
+    NEXUS COMPASS 2026 08 15 map wiki ca tld migration
   
 
     
@@ -4781,14 +4701,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../history/archive-1/scripts-docs/" class="md-nav__link">
+      <a href="../compass/NEXUS_COMPASS_2026-08-17_sovereign-blockchain-keyring-stealth/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Scripts & Docs
+    NEXUS COMPASS 2026 08 17 sovereign blockchain keyring stealth
   
 
     
@@ -4797,14 +4717,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -4824,248 +4736,6 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#definition" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Definition
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-p2p" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why P2P
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-total-violation-baseline" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Total Violation Baseline
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-five-points" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Five POINTs
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scoring-a-component" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Scoring a Component
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Scoring a Component">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#outbound-point-scoring" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Outbound POINT Scoring
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#inbound-point-scoring" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Inbound POINT Scoring
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#component-total" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Component Total
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multipliers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Multipliers
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-weather-widget" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example — Weather Widget
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#system-score" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        System Score
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#threat-capability-tiers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Threat Capability Tiers
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Threat Capability Tiers">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#reading-the-table" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reading the Table
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mitigation-credits" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Mitigation Credits
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Mitigation Credits">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-tor-routed-manual-update-check" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example — Tor-Routed Manual Update Check
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-audit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Audit
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#point2point-and-the-nexus-desktop" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        POINT2POINT and the NeXuS Desktop
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           
             <div class="md-content" data-md-component="content">
@@ -5079,402 +4749,60 @@
   
 
 
-<h1 id="nexus-p2p-point2point">NeXuS P2P — POINT2POINT<a class="headerlink" href="#nexus-p2p-point2point" title="Permanent link">&para;</a></h1>
-<h2 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h2>
-<p><strong>POINT</strong> — Points Of Identifying Network Telemetry</p>
-<p><strong>POINT2POINT</strong> — The NeXuS violation definition and point system for identifying, naming, scoring, and classifying every network telemetry exposure event across both ends of a transaction.</p>
-<p>POINT identifies what is leaking.
-POINT2POINT tells you how bad it is and who can use it against you.</p>
+<h1 id="point2point-violation-detection-node-scoring">POINT2POINT — Violation Detection &amp; Node Scoring<a class="headerlink" href="#point2point-violation-detection-node-scoring" title="Permanent link">&para;</a></h1>
+<p><em>Version 1.0 — 2026-04-20 | Sane • Simple • Secure • Stealthy • Beautiful</em></p>
 <hr />
-<p>Every network transaction has two ends. Every end is an exposure event.</p>
+<h2 id="overview">🏗️ Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>The <strong>POINT2POINT</strong> (P2P Scoring) protocol is the <strong>Violation Detection</strong> and <strong>Penalty Enforcement</strong> system for the NeXuS Network. It works alongside the <strong>POINT Protocol</strong> (Telemetry) to ensure that only honest and reliable nodes receive rewards.</p>
 <blockquote>
-<p><em>If it talks out, it talks about you.</em>
-<em>If it talks back, it confirms you.</em></p>
+<p>⛓️ <strong>The chain is only as strong as its weakest link.</strong> POINT2POINT is the mechanism that automatically identifies and removes weak links before they break the trust.</p>
 </blockquote>
 <hr />
-<h2 id="why-p2p">Why P2P<a class="headerlink" href="#why-p2p" title="Permanent link">&para;</a></h2>
-<p>A single outbound request is not just a request. It is:</p>
-<ul>
-<li>A declaration that you exist</li>
-<li>A disclosure of where you are</li>
-<li>A record of when you are active</li>
-<li>A fingerprint of what you are running</li>
-<li>A confirmation that you received the response</li>
-</ul>
-<p>Between those two POINTs — the request and the response — is a <strong>complete surveillance transaction</strong>. Origin, destination, timing, content, confirmation of receipt. All logged. All linkable. All permanent.</p>
-<p>That transaction is what POINT2POINT measures.</p>
-<hr />
-<h2 id="the-total-violation-baseline">The Total Violation Baseline<a class="headerlink" href="#the-total-violation-baseline" title="Permanent link">&para;</a></h2>
-<p>To anchor the math we start at the ceiling — <strong>total violation</strong>.</p>
-<p><strong>Example: Logging into Google under your real name</strong></p>
-<ul>
-<li>Real name entered</li>
-<li>Real IP address exposed</li>
-<li>Known device, known browser</li>
-<li>Browser fingerprint unique to you</li>
-<li>Geolocation confirmed by IP</li>
-<li>Session timing recorded</li>
-<li>Behavioral profile updated</li>
-<li>Third-party loggers on every asset</li>
-<li>No privacy stack, no routing, no mitigation</li>
-</ul>
-<p>Every layer of identity confirmed simultaneously, both directions.</p>
-<p><strong>This is 100 POINT. The total violation score.</strong></p>
-<p>Everything else is measured against it.</p>
-<hr />
-<h2 id="the-five-points">The Five POINTs<a class="headerlink" href="#the-five-points" title="Permanent link">&para;</a></h2>
-<p>Each POINT is a named, self-describing category of identifying telemetry.
-The name IS the definition. The definition IS the audit checklist.</p>
-<table>
-<thead>
-<tr>
-<th>POINT</th>
-<th>Full Name</th>
-<th>What It Reveals</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>P</strong></td>
-<td>Physical Location</td>
-<td>IP geolocation, GPS, timezone, city-level or better positioning derived from your connection</td>
-</tr>
-<tr>
-<td><strong>O</strong></td>
-<td>Operational Pattern</td>
-<td>Session timing, uptime cadence, usage schedule, behavioral rhythm — the fingerprint of <em>when</em> you exist online</td>
-</tr>
-<tr>
-<td><strong>I</strong></td>
-<td>Identity Anchor</td>
-<td>User-Agent, device ID, persistent cookies, real name, account handle — anything that creates a trackable, consistent identity across sessions</td>
-</tr>
-<tr>
-<td><strong>N</strong></td>
-<td>Network Path</td>
-<td>Exit node, VPN provider, routing topology, ISP — the infrastructure between you and the destination</td>
-</tr>
-<tr>
-<td><strong>T</strong></td>
-<td>Technical Profile</td>
-<td>OS, desktop environment, software versions, hardware specs — the fingerprint of <em>what</em> you are running</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="scoring-a-component">Scoring a Component<a class="headerlink" href="#scoring-a-component" title="Permanent link">&para;</a></h2>
-<p>Every software component, widget, service or daemon that makes network requests is scored against all five POINTs — <strong>twice</strong>.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Outbound POINT  =  what you reveal by making the request
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Inbound POINT   =  what is confirmed about you by the response
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Component Score =  Outbound POINT + Inbound POINT
-</code></pre></div>
-<h3 id="outbound-point-scoring">Outbound POINT Scoring<a class="headerlink" href="#outbound-point-scoring" title="Permanent link">&para;</a></h3>
-<p>Score 0-5 outbound — one point per category triggered:</p>
-<table>
-<thead>
-<tr>
-<th>Triggered</th>
-<th>Score</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>P — Physical location revealed by request</td>
-<td>+1</td>
-</tr>
-<tr>
-<td>O — Operational pattern exposed by timing/cadence</td>
-<td>+1</td>
-</tr>
-<tr>
-<td>I — Identity anchor transmitted in request</td>
-<td>+1</td>
-</tr>
-<tr>
-<td>N — Network path disclosed or unrouted</td>
-<td>+1</td>
-</tr>
-<tr>
-<td>T — Technical profile leaked via headers/metadata</td>
-<td>+1</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Max outbound: 5</strong></p>
-<h3 id="inbound-point-scoring">Inbound POINT Scoring<a class="headerlink" href="#inbound-point-scoring" title="Permanent link">&para;</a></h3>
-<p>Score 0-5 inbound — one point per category confirmed by response:</p>
-<table>
-<thead>
-<tr>
-<th>Confirmed</th>
-<th>Score</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>P — Physical location confirmed by tailored response</td>
-<td>+1</td>
-</tr>
-<tr>
-<td>O — Operational pattern logged by server cadence record</td>
-<td>+1</td>
-</tr>
-<tr>
-<td>I — Identity anchor reinforced by session/account response</td>
-<td>+1</td>
-</tr>
-<tr>
-<td>N — Network path confirmed reachable and recorded</td>
-<td>+1</td>
-</tr>
-<tr>
-<td>T — Technical profile confirmed by version-specific response</td>
-<td>+1</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Max inbound: 5</strong></p>
-<h3 id="component-total">Component Total<a class="headerlink" href="#component-total" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Component POINT2POINT Score = Outbound (0-5) + Inbound (0-5)
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Maximum per component = 10
-</code></pre></div>
-<h3 id="multipliers">Multipliers<a class="headerlink" href="#multipliers" title="Permanent link">&para;</a></h3>
-<p>Not all violations are equal weight. Apply the appropriate multiplier:</p>
-<table>
-<thead>
-<tr>
-<th>Class</th>
-<th>Multiplier</th>
-<th>Condition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>User-Initiated</strong></td>
-<td>x1</td>
-<td>You triggered it manually</td>
-</tr>
-<tr>
-<td><strong>Automatic</strong></td>
-<td>x2</td>
-<td>Runs on a schedule without your action</td>
-</tr>
-<tr>
-<td><strong>Persistent</strong></td>
-<td>x3</td>
-<td>Creates or reinforces a long-term trackable identity</td>
-</tr>
-</tbody>
-</table>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Final Component Score = POINT2POINT Score x Multiplier
-</code></pre></div>
-<h3 id="example-weather-widget">Example — Weather Widget<a class="headerlink" href="#example-weather-widget" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Check</th>
-<th>Outbound</th>
-<th>Inbound</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>P — Physical location</td>
-<td>+1 (IP geolocation request)</td>
-<td>+1 (local weather confirms location)</td>
-</tr>
-<tr>
-<td>O — Operational pattern</td>
-<td>+1 (polls every 30 min)</td>
-<td>+1 (server logs your cadence)</td>
-</tr>
-<tr>
-<td>I — Identity anchor</td>
-<td>+1 (User-Agent identifies desktop)</td>
-<td>+1 (consistent requester profiled)</td>
-</tr>
-<tr>
-<td>N — Network path</td>
-<td>+1 (clearnet, unrouted)</td>
-<td>+1 (exit IP confirmed reachable)</td>
-</tr>
-<tr>
-<td>T — Technical profile</td>
-<td>+1 (widget version in headers)</td>
-<td>+1 (version-matched response)</td>
-</tr>
-<tr>
-<td><strong>Subtotal</strong></td>
-<td><strong>5</strong></td>
-<td><strong>5</strong></td>
-</tr>
-</tbody>
-</table>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>POINT2POINT Score = 5 + 5 = 10
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Multiplier = x2 (Automatic — polls on schedule)
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Final Score = 20
-</code></pre></div>
-<p>A weather widget scores <strong>20 POINT2POINT</strong>. It was removed from the NeXuS desktop.</p>
-<hr />
-<h2 id="system-score">System Score<a class="headerlink" href="#system-score" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>System Score = Sum of all Final Component Scores
-</code></pre></div>
-<p>Audit every component that makes network requests. Sum their scores.
-That is your system's current POINT2POINT exposure level.</p>
-<p><strong>Target for NeXuS systems: 0</strong></p>
-<hr />
-<h2 id="threat-capability-tiers">Threat Capability Tiers<a class="headerlink" href="#threat-capability-tiers" title="Permanent link">&para;</a></h2>
-<p>Threat models are defined by <strong>capability</strong> — not by agency name or jurisdiction.
-The ceiling is the maximum system score at which you remain protected against that capability.</p>
-<table>
-<thead>
-<tr>
-<th>Tier</th>
-<th>Capability</th>
-<th>Max Tolerated Score</th>
-<th>What They Can Do</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>APEX</strong></td>
-<td>Full signals intelligence</td>
-<td><strong>0</strong></td>
-<td>Passive collection, ISP access, legal compulsion, zero-day exploits, metadata analysis at scale, traffic correlation across the entire internet</td>
-</tr>
-<tr>
-<td><strong>PURSUIT</strong></td>
-<td>Active targeted deanonymization</td>
-<td><strong>2</strong></td>
-<td>Correlation attacks, exit node monitoring, targeted surveillance, account linking across platforms</td>
-</tr>
-<tr>
-<td><strong>HARVEST</strong></td>
-<td>Passive bulk collection</td>
-<td><strong>10</strong></td>
-<td>Behavioral profiling, ad network data aggregation, data broker records, browser fingerprinting</td>
-</tr>
-<tr>
-<td><strong>OBSERVE</strong></td>
-<td>Network-level visibility</td>
-<td><strong>20</strong></td>
-<td>ISP traffic analysis, same-network interception, DNS monitoring, unencrypted traffic inspection</td>
-</tr>
-<tr>
-<td><strong>SCAN</strong></td>
-<td>Opportunistic automated attacks</td>
-<td><strong>40</strong></td>
-<td>Port scanning, known vulnerability exploitation, non-targeted mass collection</td>
-</tr>
-<tr>
-<td><strong>OPEN</strong></td>
-<td>No adversary</td>
-<td><strong>100</strong></td>
-<td>Public internet, no privacy expectation, total violation baseline</td>
-</tr>
-</tbody>
-</table>
-<h3 id="reading-the-table">Reading the Table<a class="headerlink" href="#reading-the-table" title="Permanent link">&para;</a></h3>
-<p>If your threat model is <strong>APEX</strong> your system must score <strong>0</strong>.
-Every component must be routed, every request must be user-initiated, every POINT must be mitigated.
-One weather widget running and you are already over your ceiling.
-You are exposed against that capability before anyone even tries.</p>
-<p>If your threat model is <strong>HARVEST</strong> you can tolerate up to <strong>10</strong>.
-A user-initiated, Tor-routed software check scoring 3 is acceptable.
-An automatic unrouted update notifier scoring 12 is not.</p>
-<hr />
-<h2 id="mitigation-credits">Mitigation Credits<a class="headerlink" href="#mitigation-credits" title="Permanent link">&para;</a></h2>
-<p>Mitigations reduce a component's score. Apply credits before multipliers.</p>
-<table>
-<thead>
-<tr>
-<th>Mitigation</th>
-<th>Credit</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Routed through Tor</td>
-<td>-2</td>
-</tr>
-<tr>
-<td>Routed through I2P</td>
-<td>-2</td>
-</tr>
-<tr>
-<td>Routed through Medusa</td>
-<td>-1</td>
-</tr>
-<tr>
-<td>User-initiated only (no schedule)</td>
-<td>-1</td>
-</tr>
-<tr>
-<td>No third-party server (self-hosted)</td>
-<td>-2</td>
-</tr>
-<tr>
-<td>Encrypted transport (TLS minimum)</td>
-<td>-1</td>
-</tr>
-</tbody>
-</table>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Mitigated Score = (POINT2POINT Score - Credits) x Multiplier
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Minimum score after credits = 0
-</code></pre></div>
-<h3 id="example-tor-routed-manual-update-check">Example — Tor-Routed Manual Update Check<a class="headerlink" href="#example-tor-routed-manual-update-check" title="Permanent link">&para;</a></h3>
-<p>Raw score: P+N outbound (2) + O+N inbound (2) = 4
-Credits: Tor (-2) + User-initiated (-1) = -3
-Mitigated score: 4 - 3 = 1
-Multiplier: x1 (user-initiated)
-<strong>Final: 1 POINT2POINT</strong> — acceptable up to PURSUIT tier.</p>
-<hr />
-<h2 id="the-audit">The Audit<a class="headerlink" href="#the-audit" title="Permanent link">&para;</a></h2>
-<p>To score your system:</p>
+<h2 id="violation-detection">⚙️ Violation Detection<a class="headerlink" href="#violation-detection" title="Permanent link">&para;</a></h2>
+<p>P2P Scoring identifies several categories of node misbehavior:</p>
 <ol>
-<li>List every component that makes network requests</li>
-<li>Score each component outbound (0-5) and inbound (0-5)</li>
-<li>Apply mitigation credits</li>
-<li>Apply the multiplier</li>
-<li>Sum all final scores</li>
-<li>Compare against your threat model ceiling</li>
-</ol>
-<p>If your total exceeds your ceiling — you have components that expose you to that adversary.
-Remove them, route them, or accept the risk with full awareness.</p>
-<hr />
-<h2 id="point2point-and-the-nexus-desktop">POINT2POINT and the NeXuS Desktop<a class="headerlink" href="#point2point-and-the-nexus-desktop" title="Permanent link">&para;</a></h2>
-<p>The NeXuS desktop targets <strong>score 0</strong> at all times.</p>
-<ul>
-<li>No weather widgets — scores 20, removed</li>
-<li>No update notifiers — automatic, unrouted, scores high</li>
-<li>No crash reporters — persistent identity anchor, scores high</li>
-<li>Clock reads local system time — no network request, scores 0</li>
-<li>Time sync via chrony over Tor — mitigated to acceptable</li>
-<li>All browsing through Medusa — N mitigated on every request</li>
+<li><strong>Lazy Signing (Proof of Transit Violation):</strong><ul>
+<li><strong>Indicator:</strong> Node signs a service event in the Styx chain without actually processing the work.</li>
+<li><strong>Detection:</strong> The <strong>Magic Packet</strong> (witness engine) challenge fails because the node lacks the local context/data required to decrypt it.</li>
 </ul>
-<p>The desktop itself generates zero unsolicited outbound traffic.
-Every connection is intentional, routed, and auditable.</p>
+</li>
+<li><strong>Telemetry Spoofing (Proof of Presence Violation):</strong><ul>
+<li><strong>Indicator:</strong> Node reports <code>HEARTBEAT</code> or <code>SYNC_STATE</code> while offline or out of sync.</li>
+<li><strong>Detection:</strong> Discrepancies between the node's report and the <strong>DIVA Main Chain</strong>'s consensus view of its state.</li>
+</ul>
+</li>
+<li><strong>Data Mutilation (Integrity Violation):</strong><ul>
+<li><strong>Indicator:</strong> Node alters the data it's responsible for storing or routing.</li>
+<li><strong>Detection:</strong> Final signatures in the <strong>Gleipnir Chain</strong> fail verification against the original source hash.</li>
+</ul>
+</li>
+</ol>
 <hr />
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>POINT  =  Points Of Identifying Network Telemetry
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>P      =  Physical Location
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>O      =  Operational Pattern
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>I      =  Identity Anchor
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>N      =  Network Path
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>T      =  Technical Profile
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>POINT2POINT  =  Outbound exposure + Inbound confirmation
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>Score 0      =  APEX tier protection
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>Score 100    =  Total violation
-</code></pre></div>
-<blockquote>
-<p>Every scheduled outbound call is a heartbeat.
-Heartbeats can be heard.
-NeXuS does not broadcast a heartbeat.</p>
-</blockquote>
+<h2 id="node-scoring-penalty-system">📓 Node Scoring &amp; Penalty System<a class="headerlink" href="#node-scoring-penalty-system" title="Permanent link">&para;</a></h2>
+<p>Every node has a <strong>dynamic score</strong> based on its witnessed service history. This score directly impacts its eligibility for rewards.</p>
+<h3 id="scoring-metrics">Scoring Metrics:<a class="headerlink" href="#scoring-metrics" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong><code>RELIABILITY</code> (0–100):</strong> Uptime consistency (Vestal streak).</li>
+<li><strong><code>ACCURACY</code> (0–100):</strong> Performance on random Magic Packet audits.</li>
+<li><strong><code>TRUST_RANK</code> (Tiers):</strong> Long-term historical performance and lack of violations.</li>
+</ul>
+<h3 id="penalty-enforcement">Penalty Enforcement:<a class="headerlink" href="#penalty-enforcement" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Vault Slashing:</strong> Immediate and permanent removal of a percentage of <strong>NeXiuM</strong> credits from the node's <strong>PERMITTL Vault</strong>.</li>
+<li><strong>Service Pool Removal:</strong> Immediate removal from the available routing and storage pools.</li>
+<li><strong>Node Flagging:</strong> Cryptographic marking on the DIVA chain that prevents the node from participating in future high-tier (3-key) sessions.</li>
+</ul>
 <hr />
-<p><em>NeXuS — Sane • Simple • Secure • Stealthy • Beautiful</em></p>
+<h2 id="significance">🎯 Significance<a class="headerlink" href="#significance" title="Permanent link">&para;</a></h2>
+<p>POINT2POINT transforms the NeXuS network into a <strong>Self-Healing Immune System</strong>. It does not rely on a central moderator or "admin" to manage the network. instead, it uses the math of the Styx, Gleipnir, and Magic Packet protocols to automatically ensure that honesty is the most profitable path and that violation is its own punishment.</p>
+<ul>
+<li><strong>Trustless Truth:</strong> The network enforces rules via cryptographic certainty.</li>
+<li><strong>Incentive Alignment:</strong> Good behavior leads to rewards; bad behavior leads to immediate and permanent loss.</li>
+<li><strong>Autonomous Governance:</strong> The math handles the verdict; the code handles the execution.</li>
+</ul>
+<hr />
+<p><em>Extracted from 2026-03-22-213251-back-to-the-begining.txt · NeXuS Core Documentation</em>
+<em>meWEwowow — Sane • Simple • Secure • Stealthy • Beautiful</em></p>
 
 
 
@@ -5504,6 +4832,46 @@ NeXuS does not broadcast a heartbeat.</p>
       </main>
       
         <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../point-protocol/" class="md-footer__link md-footer__link--prev" aria-label="Previous: POINT Protocol">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                POINT Protocol
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../network-stack/architecture/paranoid-security/" class="md-footer__link md-footer__link--next" aria-label="Next: Paranoid Security Architecture">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Paranoid Security Architecture
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -5543,7 +4911,7 @@ NeXuS does not broadcast a heartbeat.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.instant", "search.highlight", "search.share", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.footer", "toc.follow", "toc.integrate", "search.highlight", "search.share", "search.suggest", "content.code.copy", "content.code.annotate", "header.autohide"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>

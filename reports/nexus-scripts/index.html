@@ -1,0 +1,5600 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Sane • Simple • Secure • Stealthy • Beautiful — Together Everyone Achieves More">
+      
+      
+        <meta name="author" content="The NeXuS Collective">
+      
+      
+        <link rel="canonical" href="https://hackenstacks.github.io/nexus/reports/nexus-scripts/">
+      
+      
+        <link rel="prev" href="../nexus-protech-studio/">
+      
+      
+        <link rel="next" href="../nexus-vm-forge/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Nexus Scripts - NeXuS Wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/wiki.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="cyan">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#scripts-action-report" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="https://hackenstacks.github.io/nexus/" title="NeXuS Wiki" class="md-header__button md-logo" aria-label="NeXuS Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NeXuS Wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Nexus Scripts
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/hackenstacks/nexus" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hackenstacks/nexus
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../what-is-nexus/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  What Is NeXuS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../nxs-forge/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Identity & Trust
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../diva-chain-overview/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  DivaChain
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../mathematical-proof-of-service/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Proof System
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../nexium-tokenomics/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Economy
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../security-stack/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Security
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dpfoe-ai-intelligence/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  AI Layer
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../node/getting-started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Node
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../scripts/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Scripts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../network-stack/foundation/complete-system-manual/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../timeline/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Timeline
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reports
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../compass/NEXUS_COMPASS_2026-07-23_gateway-sovereignty-chargen/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Session Compass
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://hackenstacks.github.io/nexus/" title="NeXuS Wiki" class="md-nav__button md-logo" aria-label="NeXuS Wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    NeXuS Wiki
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/hackenstacks/nexus" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    hackenstacks/nexus
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Is NeXuS
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    What Is NeXuS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../what-is-nexus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Is NeXuS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nexus-node-v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeXuS Node v2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nexus-origins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Origins
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nexus-manifesto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manifesto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nexus-blueprint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Blueprint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nexus-architecture-layers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture Layers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../oaae-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OAAE Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network-stack/foundation/nexus-foundation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Foundation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network-stack/foundation/security-manifesto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Manifesto
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nxs-master-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Master Map
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identity & Trust
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Identity & Trust
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nxs-forge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NXS-FORGE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cerberus-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cerberus Password Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3key-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Three-Key Security Model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../permittl-ring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PERMITTL Ring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../janus-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Janus Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ghost-gate-spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ghost Gate Spec
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RIN — Real Intelligence Network
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nexus-boot-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Boot Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nexus-rings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeXuS Rings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../node-security-doctrine/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Node Security Doctrine
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nxs-node-standard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Node Standard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DivaChain
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    DivaChain
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../diva-chain-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DivaChain Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../medusa-stealth-routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Medusa Stealth Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../darknet-stack-diagram/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Darknet Stack Diagram
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network-stack/implementation/i2p/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    I2P Implementation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network-stack/deployment/darknet-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Darknet Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network-stack/architecture/p2p-protocol-spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    P2P Protocol Spec
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network-stack/architecture/mesh-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mesh Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proof System
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Proof System
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mathematical-proof-of-service/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mathematical Proof of Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nexus-proof-of-witness/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proof of Witness
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../proof-system-spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proof System Spec
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../magic-packet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Magic Packet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../point-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POINT Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../point2point/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    POINT2POINT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network-stack/architecture/paranoid-security/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paranoid Security Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network-stack/architecture/transparent-routing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transparent Routing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zombie-apoc-doc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zombie Apocalypse Mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Economy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Economy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nexium-tokenomics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeXiuM Tokenomics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nexus-mint-protocol/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mint Protocol
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../economy-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Economy Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../eco-extraterrium-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ECO Extraterrium Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Security
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../psad-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PSAD Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../fwsnort-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    fwsnort Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nexus-integrity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NeXuS Integrity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Layer
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Layer
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dpfoe-ai-intelligence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DPFOE Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../orchestrator-spec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Orchestrator Spec
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ai-merged-identity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Merged AI Identity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../event-horizon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Event Horizon
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../system-arch-chimera/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Chimera
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../autonomous-ai-intelligence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autonomous AI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Node
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Node
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../node/getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network-stack/foundation/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network-stack/foundation/startup-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Startup Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network-stack/foundation/startup-checklist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Startup Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../required-applications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Required Applications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../install-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network-stack/implementation/gateway-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gateway Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network-stack/implementation/yggdrasil/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Yggdrasil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network-stack/implementation/reticulum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reticulum
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../scripts/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scripts
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_10" id="__nav_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Scripts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NCM
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    NCM
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripts/ncm/nexus-ncm-certs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    nexus-ncm-certs.sh
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network-stack/foundation/complete-system-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complete System Manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../nexus-service-mapping/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Mapping & Port Registry
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli-libs-tui-frameworks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Libs & TUI Frameworks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../education-oracle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Education Oracle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../timeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Timeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reports
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_13" id="__nav_13_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reports
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adv-ai-nexus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adv Ai Nexus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adv-cli-char-gen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adv Cli Char Gen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adv-go-char-gen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Adv Go Char Gen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../advanced-ai-character-generator-terminal-access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced Ai Character Generator Terminal Access
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-nexus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ai Nexus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../beta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../char-gen-cli-go/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Char Gen Cli Go
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dynamic-bonding-curve/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynamic Bonding Curve
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gleipnir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gleipnir
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mergekit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mergekit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-adv-cli-char-gen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Adv Cli Char Gen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-ai-bridge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Ai Bridge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-ai-foundry-v-9---1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Ai Foundry V 9   1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-arsenal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Arsenal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-char-creator-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Char Creator Framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-hydra/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Hydra
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-lab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-medusa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Medusa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-network-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Network Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-phantom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Phantom
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-png2-editor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Png2 Editor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-protech-studio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Protech Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Scripts
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Scripts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#created-nexus-network-resetsh-2026-02-19-2140" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Created nexus-network-reset.sh (2026-02-19 21:40)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#created-nexus-medusash-complete-proxy-launcher-2026-02-19-2141" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Created nexus-medusa.sh - Complete proxy launcher (2026-02-19 21:41)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#created-nexus-reportsh-project-report-system-2026-02-19-2141" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Created nexus-report.sh - Project report system (2026-02-19 21:41)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fixed-greetd-login-manager-added-nexus-terminal-sessions-2026-02-21" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed greetd login manager + added NeXuS terminal sessions (2026-02-21)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#created-nexus-wifish-2026-02-21-2357" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Created nexus-wifi.sh (2026-02-21 23:57)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wiki-fixed-river-greetd-integration-2026-02-23-0940" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wiki fixed + River greetd integration (2026-02-23 09:40)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#labwc-apps-menush-nexus-wallpaper-picksh-2026-02-27-1341" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        labwc-apps-menu.sh + nexus-wallpaper-pick.sh (2026-02-27 13:41)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fixed-nexus-medusash-podman-replace-flag-2026-03-07-1805" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fixed nexus-medusa.sh -- podman --replace flag (2026-03-07 18:05)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-vm-forge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Vm Forge
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nexus-web-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nexus Web Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../protech-studio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Protech Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proving/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proving
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../starknet-privacy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Starknet Privacy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../veedo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Veedo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_14" >
+        
+          
+          <label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Session Compass
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_14">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Session Compass
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compass/NEXUS_COMPASS_2026-07-23_gateway-sovereignty-chargen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NEXUS COMPASS 2026 07 23 gateway sovereignty chargen
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compass/NEXUS_COMPASS_2026-07-24_ai-home-web-and-python-chargens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NEXUS COMPASS 2026 07 24 ai home web and python chargens
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compass/NEXUS_COMPASS_2026-07-28_universal-api-proxy-web-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NEXUS COMPASS 2026 07 28 universal api proxy web server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compass/NEXUS_COMPASS_2026-07-29_proxy-manager-forge-wiring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NEXUS COMPASS 2026 07 29 proxy manager forge wiring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compass/NEXUS_COMPASS_2026-08-07_amy-origins-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NEXUS COMPASS 2026 08 07 amy origins architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compass/NEXUS_COMPASS_2026-08-07_image-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NEXUS COMPASS 2026 08 07 image deep dive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compass/NEXUS_COMPASS_2026-08-07_systems-architecture-deep-dive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NEXUS COMPASS 2026 08 07 systems architecture deep dive
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compass/NEXUS_COMPASS_2026-08-15_app-registry-nncc-hud-timeline/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NEXUS COMPASS 2026 08 15 app registry nncc hud timeline
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compass/NEXUS_COMPASS_2026-08-15_map-wiki-ca-tld-migration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NEXUS COMPASS 2026 08 15 map wiki ca tld migration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compass/NEXUS_COMPASS_2026-08-17_sovereign-blockchain-keyring-stealth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NEXUS COMPASS 2026 08 17 sovereign blockchain keyring stealth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="scripts-action-report">scripts - Action Report<a class="headerlink" href="#scripts-action-report" title="Permanent link">&para;</a></h1>
+<p><strong>Project:</strong> /home/user/scripts
+<strong>Created:</strong> 2026-02-19</p>
+<hr />
+<h2 id="created-nexus-network-resetsh-2026-02-19-2140">Created nexus-network-reset.sh (2026-02-19 21:40)<a class="headerlink" href="#created-nexus-network-resetsh-2026-02-19-2140" title="Permanent link">&para;</a></h2>
+<p><strong>What:</strong> One-command network reset script that kills all proxies and restores direct internet via 192.168.1.1.</p>
+<p><strong>Why:</strong> User was having difficulty recovering from proxy configurations that disrupted normal internet access. Multiple proxy scripts, dead VM routes (10.152.152.1 via eth0), and accumulated podman medusa-proxy containers were creating network confusion.</p>
+<p><strong>How:</strong> 7-phase script:
+1. Stop proxy services (Tor, Privoxy, tinyproxy, etc.)
+2. Stop proxy containers (podman)
+3. Flush iptables NAT/mangle tables
+4. Clean routing (remove dead 10.152.152.1 route, ensure default via 192.168.1.1)
+5. Reset DNS to 192.168.1.1
+6. Clear proxy env vars
+7. Connectivity tests (gateway, DNS, internet, full HTTPS chain)</p>
+<p><strong>Files:</strong> <code>/home/user/scripts/nexus-network-reset.sh</code>
+<strong>Dependencies:</strong> doas or sudo for iptables/route changes</p>
+<hr />
+<h2 id="created-nexus-medusash-complete-proxy-launcher-2026-02-19-2141">Created nexus-medusa.sh - Complete proxy launcher (2026-02-19 21:41)<a class="headerlink" href="#created-nexus-medusash-complete-proxy-launcher-2026-02-19-2141" title="Permanent link">&para;</a></h2>
+<p><strong>What:</strong> Full-featured Tor proxy launcher and manager with 20+ commands.</p>
+<p><strong>Why:</strong> User was running medusa-proxy via raw podman aliases, leading to 13+ orphaned containers, port conflicts, and no management tooling.</p>
+<p><strong>Features (1736 lines):</strong>
+- 3 quick-pick profiles (World/US/No-Eyes) on non-conflicting ports
+- Custom mode with configurable heads, circuits, countries, ports
+- Paranoid mode (iptables + env vars route ALL traffic through proxy)
+- Kill switch (blocks all traffic if proxy container goes down)
+- Live monitor with keybinds (rotate circuits, test IPs, stats)
+- New circuit button (SIGHUP like Tor Browser)
+- Bridge seeding (paste, file import)
+- FascistFirewall toggle for restrictive networks
+- Snowflake proxy (ON by default - help censored users)
+- Middle relay (opt-in Tor relay)
+- Proxychains-ng integration with multi-profile chaining
+- Network namespace boxes (kernel-level leak-proof isolation)
+- De-anonymization scan (services, IPv6, DNS, MAC, hostname, timezone, WebRTC)
+- PAC file generation (smart routing: local/Yggdrasil/i2p direct, rest through proxy)
+- Profile save/load system
+- --json output on all commands (Phase 2 GUI ready)
+- Container auto-destruction on stop (no more name collisions)</p>
+<p><strong>Port Architecture:</strong>
+| Profile | SOCKS | HTTP | Stats |
+|---------|-------|------|-------|
+| World | 1080-1082 | 8888-8890 | 2090-2092 |
+| US | 1180-1182 | 9888-9890 | 2190-2192 |
+| No-Eyes | 1280-1282 | 7888-7890 | 2290-2292 |</p>
+<p><strong>Files:</strong>
+- <code>/home/user/scripts/nexus-medusa.sh</code>
+- <code>/home/user/scripts/nexus-medusa.help.md</code> (5th-grade-friendly manual)
+- <code>.zshrc</code> updated with 7 aliases</p>
+<p><strong>Dependencies:</strong> podman, proxychains-ng (optional), snowflake-proxy (optional)</p>
+<hr />
+<h2 id="created-nexus-reportsh-project-report-system-2026-02-19-2141">Created nexus-report.sh - Project report system (2026-02-19 21:41)<a class="headerlink" href="#created-nexus-reportsh-project-report-system-2026-02-19-2141" title="Permanent link">&para;</a></h2>
+<p><strong>What:</strong> Automated reporting system with project-specific reports and central symlink hub.</p>
+<p><strong>Why:</strong> Docs, reports, and manuals were spread across 6+ locations with no standard structure. 45 projects, 63 git repos, 102 scripts, 61 manuals - all unlinked. Previous session's organization work was lost when credits ran out.</p>
+<p><strong>Protocol established:</strong>
+- Write detailed reports PER TASK (not end of session) while context is fresh
+- Every project gets <code>docs/action_report.md</code>
+- Central hub at <code>~/claude/reports/</code> with symlinks to each project report
+- Master report at <code>~/claude/action_report.md</code> gets one-line summaries with links</p>
+<p><strong>Commands:</strong>
+- <code>nexus-report.sh &lt;path&gt; &lt;title&gt; &lt;body&gt;</code> - Append task report to project
+- <code>nexus-report.sh --init &lt;path&gt;</code> - Initialize docs/ for a project
+- <code>nexus-report.sh --list</code> - Show all project reports with entry counts
+- <code>nexus-report.sh --scan</code> - Find and symlink existing project reports</p>
+<p><strong>Files:</strong> <code>/home/user/scripts/nexus-report.sh</code></p>
+<hr />
+<h2 id="fixed-greetd-login-manager-added-nexus-terminal-sessions-2026-02-21">Fixed greetd login manager + added NeXuS terminal sessions (2026-02-21)<a class="headerlink" href="#fixed-greetd-login-manager-added-nexus-terminal-sessions-2026-02-21" title="Permanent link">&para;</a></h2>
+<p><strong>What:</strong> Diagnosed greetd crash, fixed config, removed tor autostart, added two new beautiful terminal sessions to the NeXuS login screen.</p>
+<p><strong>Why:</strong> greetd was crashing on boot because <code>/etc/inittab</code> had a getty respawning on tty1 (conflicting with greetd owning VT1), and the session-wrapper path used <code>~</code> which doesn't expand for the system <code>greeter</code> user (no home dir). User also wanted tor removed from startup and a way to get back the beautiful terminal experience previously seen via slim.</p>
+<p><strong>Root Causes Fixed:</strong></p>
+<ol>
+<li><strong>greetd crash</strong> — <code>/etc/inittab</code> <code>tty1::respawn:getty</code> fought greetd for VT1. Fix: <code>apply.sh</code> now comments out the tty1 getty line.</li>
+<li><strong><code>~</code> in config.toml</strong> — <code>--session-wrapper '~/.local/bin/sway-session-wrapper'</code> resolved to wrong path for <code>greeter</code> system user. Fix: changed to absolute <code>/home/user/.local/bin/sway-session-wrapper</code>.</li>
+<li><strong>slim conflict</strong> — slim was still running alongside greetd. Fix: <code>apply.sh</code> now stops and disables slim too.</li>
+<li><strong>tor autostart</strong> — removed from default runlevel via <code>apply.sh</code>.</li>
+</ol>
+<p><strong>Keyboard mystery solved:</strong> When slim (X11 DM) launched the CLI session (<code>Exec=/bin/zsh -l</code>), it ran zsh inside X11 with no terminal window — keyboard events went to X's focused client (nothing). The beautiful terminal seen was <code>xfce4-terminal</code> from the xinitrc fallback list, not foot (foot is Wayland-only and cannot run under X11).</p>
+<p><strong>New sessions added to <code>/usr/share/wayland-sessions/</code>:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Session</th>
+<th>Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NeXuS Terminal</td>
+<td><code>cage -- foot</code></td>
+<td>Wayland kiosk compositor + foot (Tokyo Night, JetBrains Mono Nerd)</td>
+</tr>
+<tr>
+<td>NeXuS Console</td>
+<td><code>kmscon --font-name "JetBrains Mono" ... -l -- /bin/zsh -l</code></td>
+<td>GPU-rendered terminal, no compositor at all</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Files changed:</strong>
+- <code>/home/user/greetd-setup/etc/greetd/config.toml</code> — fixed <code>~</code> → absolute path
+- <code>/home/user/greetd-setup/apply.sh</code> — added: comment tty1 getty, disable slim, remove tor, install both new sessions
+- <code>/home/user/greetd-setup/sessions/nexus-terminal.desktop</code> — new (cage+foot)
+- <code>/home/user/greetd-setup/sessions/nexus-console.desktop</code> — new (kmscon+zsh)</p>
+<p><strong>Run:</strong> <code>doas sh ~/greetd-setup/apply.sh</code> then reboot.</p>
+<p><strong>Session menu after reboot:</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>NeXuS Console   ← kmscon, GPU fonts, no compositor
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>NeXuS Terminal  ← cage + foot, full Wayland
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>sway            ← full DE
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>CLI             ← raw zsh fallback
+</code></pre></div></p>
+<hr />
+<h2 id="created-nexus-wifish-2026-02-21-2357">Created nexus-wifi.sh (2026-02-21 23:57)<a class="headerlink" href="#created-nexus-wifish-2026-02-21-2357" title="Permanent link">&para;</a></h2>
+<p>What: WiFi network switcher script using nmcli + fzf. Why: Quick CLI-first way to scan and switch WiFi networks. How: Wraps nmcli for NetworkManager; fzf for interactive selection; handles saved profiles, new networks (password prompt), and rescan. Files: ~/scripts/nexus-wifi.sh</p>
+<hr />
+<h2 id="wiki-fixed-river-greetd-integration-2026-02-23-0940">Wiki fixed + River greetd integration (2026-02-23 09:40)<a class="headerlink" href="#wiki-fixed-river-greetd-integration-2026-02-23-0940" title="Permanent link">&para;</a></h2>
+<p><strong>What:</strong> Fixed broken wiki auto-import daemon, verified 422 docs live in nb, restarted daemon with correct code. Added River compositor to greetd login manager with fixed init script.</p>
+<p><strong>Why:</strong> Wiki was storing file paths instead of content (nb add bug). River init had broken/missing config - picom/pulseaudio not installed, recursive river call, no keybindings, wrong keyboard layout command.</p>
+<p><strong>How:</strong>
+- Wiki: Killed old daemon (PID 713) running broken nb add code. Restarted wiki_auto_import.sh with nb import fix from last session. Bulk import already completed - 422 docs across 4 notebooks (manuals:173, nexus-docs:130, ai-projects:107, home:12). socat server confirmed running at localhost:6789.
+- River: Backed up ~/.config/river/init. Rewrote init with: correct riverctl keyboard-layout us, removed picom (X11 only/not installed), removed pulseaudio (not installed/system uses PipeWire), removed recursive river call at end, added full riverctl map keybindings (Super+Return/D/Q/F/Space/H/L/J/K/Shift+E/Ctrl+L), added workspace switching 1-9, added rivertile layout engine, Tokyo Night border colors, wallpaper fallback to existing cache.
+- greetd: Created ~/greetd-setup/sessions/river.desktop staged for install. Needs: doas cp ~/greetd-setup/sessions/river.desktop /usr/share/wayland-sessions/river.desktop</p>
+<p><strong>Files:</strong>
+- ~/.config/river/init - rewritten (backup: init.bak.20260223_*)
+- ~/greetd-setup/sessions/river.desktop - NEW
+- Wiki daemon restarted with fixed code</p>
+<p><strong>Pending:</strong>
+- Run: doas cp ~/greetd-setup/sessions/river.desktop /usr/share/wayland-sessions/river.desktop
+- nexus-nb-publish.sh - content scrubber + git pre-push hook for safe GitHub sync (designed, not yet built)
+- wiki_sync.sh still uses broken nb add (low priority - auto-import daemon handles it now)</p>
+<hr />
+<h2 id="labwc-apps-menush-nexus-wallpaper-picksh-2026-02-27-1341">labwc-apps-menu.sh + nexus-wallpaper-pick.sh (2026-02-27 13:41)<a class="headerlink" href="#labwc-apps-menush-nexus-wallpaper-picksh-2026-02-27-1341" title="Permanent link">&para;</a></h2>
+<p><strong>What:</strong> Two new scripts for the labwc right-click menu.</p>
+<p><strong>labwc-apps-menu.sh</strong>
+- Reads all .desktop files from /usr/share/applications and ~/.local/share/applications
+- Skips NoDisplay=true entries
+- Wraps Terminal=true apps in foot -e
+- Groups by category (AudioVideo→Sound &amp; Video, Network→Internet, etc.)
+- Sorts alphabetically within each category
+- Outputs labwc-compatible XML for use as a pipe menu (execute= attribute)
+- Usage: called automatically by labwc when Applications submenu is opened</p>
+<p><strong>nexus-wallpaper-pick.sh</strong>
+- Searches ~/Pictures, /usr/share/lxqt/wallpapers, /usr/share/wallpapers, /usr/share/pixmaps for image files
+- Presents list via fuzzel --dmenu
+- Passes chosen file to nexus-theme.sh (sets wallpaper + regenerates all themes)
+- Silently exits if user cancels</p>
+<p><strong>Files:</strong>
+- ~/scripts/labwc-apps-menu.sh (new, chmod +x)
+- ~/scripts/nexus-wallpaper-pick.sh (new, chmod +x)</p>
+<p><strong>Dependencies:</strong> fuzzel (dmenu mode), nexus-theme.sh, swaybg</p>
+<hr />
+<h2 id="fixed-nexus-medusash-podman-replace-flag-2026-03-07-1805">Fixed nexus-medusa.sh -- podman --replace flag (2026-03-07 18:05)<a class="headerlink" href="#fixed-nexus-medusash-podman-replace-flag-2026-03-07-1805" title="Permanent link">&para;</a></h2>
+<p><strong>What:</strong> Added <code>--replace</code> flag to both <code>podman run</code> calls in nexus-medusa.sh to prevent "name already in use" container conflicts.</p>
+<p><strong>Why:</strong> When Medusa tried to launch a container with a name that already existed (stopped, crashed, or orphaned), Podman would error with "that name is already used". The script had manual cleanup code (podman stop + podman rm -f) above the run call but race conditions or partial failures could still leave the name occupied.</p>
+<p><strong>How:</strong> Added <code>--replace</code> to both <code>podman run</code> invocations:</p>
+<p>Line 190 — main container launch:
+```bash</p>
+<h1 id="before">Before:<a class="headerlink" href="#before" title="Permanent link">&para;</a></h1>
+<p>cid=$(podman run -d --rm --name "$name" \</p>
+<h1 id="after">After:<a class="headerlink" href="#after" title="Permanent link">&para;</a></h1>
+<p>cid=$(podman run -d --rm --replace --name "$name" \
+```</p>
+<p>Line 789 — relay container launch:
+```bash</p>
+<h1 id="before_1">Before:<a class="headerlink" href="#before_1" title="Permanent link">&para;</a></h1>
+<p>podman run -d --rm --name "$relay_name" \</p>
+<h1 id="after_1">After:<a class="headerlink" href="#after_1" title="Permanent link">&para;</a></h1>
+<p>podman run -d --rm --replace --name "$relay_name" \
+```</p>
+<p><code>--replace</code> atomically stops and removes any existing container with the same name before creating the new one. The existing manual cleanup code above line 190 was left intact — no features removed.</p>
+<p><strong>Files:</strong>
+- <code>/home/user/scripts/nexus-medusa.sh</code> — patched
+- <code>/home/user/scripts/nexus-medusa.sh.bak.*</code> — timestamped backup</p>
+<hr />
+<h2 id="fixed-nexus-medusash-added-replace-to-podman-run-calls-2026-03-07-2203">Fixed nexus-medusa.sh: added --replace to podman run calls (2026-03-07 22:03)<a class="headerlink" href="#fixed-nexus-medusash-added-replace-to-podman-run-calls-2026-03-07-2203" title="Permanent link">&para;</a></h2>
+<p><strong>What:</strong> Added --replace flag to both podman run calls in nexus-medusa.sh to fix 'container name already in use' error on restart.</p>
+<p><strong>Why:</strong> When Medusa restarts or re-spawns a container with a name that already exists (e.g. after a crash or manual stop), podman errors with 'name already in use'. --replace atomically removes the old container and starts fresh.</p>
+<p><strong>How:</strong> Two lines changed — no features removed, no logic altered:
+- Line ~190: podman run -d --rm --replace --name "$name" ...
+- Line ~789: podman run -d --rm --replace --name "$relay_name" ...</p>
+<p><strong>Files:</strong>
+- /home/user/scripts/nexus-medusa.sh (2 lines modified)</p>
+<p><strong>Dependencies:</strong> podman, nexus/medusa-proxy image</p>
+<hr />
+<h2 id="fix-nexus-wifish-invalid-field-hardcoded-wlan0-fzf-ioctl-2026-03-09-1907">Fix nexus-wifi.sh — invalid field + hardcoded wlan0 + fzf ioctl (2026-03-09 19:07)<a class="headerlink" href="#fix-nexus-wifish-invalid-field-hardcoded-wlan0-fzf-ioctl-2026-03-09-1907" title="Permanent link">&para;</a></h2>
+<p>What: Fixed three bugs in nexus-wifi.sh causing 'invalid field 802-11-wireless.ssid', 'Connection activation failed', and 'inappropriate ioctl for device' errors.</p>
+<p>Why: Script was broken — SSID lookup used an invalid nmcli list field, disconnect hardcoded wlan0, and fzf reload bind caused ioctl error on Alpine.</p>
+<p>How:
+1. invalid field fix: switched from list-mode field to per-profile query — nmcli connection show <name> called per profile to read 802-11-wireless.ssid
+2. wlan0 fix: detect active WiFi device dynamically via nmcli device status
+3. ioctl fix: removed sleep from fzf ctrl-r reload bind (BusyBox ioctl issue in that context)</p>
+<p>Files: nexus-wifi.sh (backed up to nexus-wifi.sh.bak.TIMESTAMP)</p>
+<hr />
+<h2 id="fixed-nexus-wifish-3-bugs-resolved-2026-03-09-1937">Fixed nexus-wifi.sh — 3 bugs resolved (2026-03-09 19:37)<a class="headerlink" href="#fixed-nexus-wifish-3-bugs-resolved-2026-03-09-1937" title="Permanent link">&para;</a></h2>
+<p><strong>What:</strong> Fixed nexus-wifi.sh WiFi switcher script — was throwing 'invalid field' and 'invalid parameter' errors making it non-functional.</p>
+<p><strong>Why:</strong> Script had 3 distinct bugs that prevented connecting to saved networks and disconnecting from WiFi.</p>
+<p><strong>How:</strong></p>
+<p>Bug 1 — nmcli invalid field error:
+- Problem: <code>nmcli -t -f NAME,802-11-wireless.ssid connection show</code> throws 'Error: invalid field 802-11-wireless.ssid' because 802-11-wireless.ssid is not a valid list-mode field, only a per-profile field
+- Fix: Changed connect_to() to loop through saved profiles individually, querying each with <code>nmcli connection show &lt;profile&gt;</code> to read 802-11-wireless.ssid per-profile, then match against the target SSID</p>
+<p>Bug 2 — hardcoded wlan0 device name:
+- Problem: --disconnect flag had <code>local wifi_dev</code> declared inside a case block (invalid in bash) and hardcoded 'wlan0' which fails on systems with different interface names (wlp2s0, wlan1, etc.)
+- Fix: Detect device dynamically: <code>nmcli -t -f DEVICE,TYPE device status | grep ':wifi:' | cut -d: -f1 | head -1</code></p>
+<p>Bug 3 — fzf reload bind ioctl error:
+- Problem: <code>--bind ctrl-r:reload(...)</code> had a <code>sleep 2</code> inside the reload command. fzf executes reload commands in a subshell with no TTY, so sleep throws 'Inappropriate ioctl for device'
+- Fix: Removed sleep from the fzf reload bind entirely (rescan itself takes a moment anyway)</p>
+<p><strong>Files:</strong> <code>/home/user/scripts/nexus-wifi.sh</code></p>
+<p><strong>Dependencies:</strong> nmcli, fzf</p>
+<hr />
+<h2 id="fix-ufwpsad-logging-chain-klogd-missing-2026-03-09-2155">Fix UFW+PSAD logging chain (klogd missing) (2026-03-09 21:55)<a class="headerlink" href="#fix-ufwpsad-logging-chain-klogd-missing-2026-03-09-2155" title="Permanent link">&para;</a></h2>
+<p><strong>What:</strong> Fixed broken logging chain preventing PSAD from ever detecting port scans.</p>
+<p><strong>Why:</strong> PSAD was running for months but had never detected a single packet. Three separate failures in the chain made it completely blind.</p>
+<p><strong>Root Causes Found (in order of investigation):</strong>
+1. klogd not running — iptables LOG entries go to kernel ring buffer only. Without klogd reading /proc/kmsg and forwarding to syslogd, firewall events never reach /var/log/messages. klogd was installed but stopped, not in any runlevel.
+2. before.rules LOG rules had no --log-prefix — even if klogd ran, PSAD couldn't identify firewall entries vs other kernel messages. Rules were: -A INPUT -j LOG (all traffic, no prefix, wrong chain).
+3. psad.conf SYSLOG_DAEMON set to 'metalog' — but metalog is not running. Busybox syslogd (/sbin/syslogd) is the actual daemon.
+4. metalog.conf had a syntax error in the fail2ban section (missing closing quote on logdir line) — not actively harmful since metalog is not running, but fixed for correctness.</p>
+<p><strong>How:</strong>
+- Diagnosed by: checking lsmod (ip_tables 0 refs, xt_LOG 22 refs = rules loaded but logs going nowhere), checking ps (no klogd), checking /var/log/messages (no kern.* entries at all), checking rc-status (syslog = busybox syslogd).
+- Fix script created: ~/scripts/nexus-fix-psad-logging.sh (run with: doas sh ~/scripts/nexus-fix-psad-logging.sh)</p>
+<p><strong>Files:</strong>
+- ~/scripts/nexus-fix-psad-logging.sh — fix script (backups, all 4 fixes, service restarts)
+- /etc/ufw/before.rules — LOG rules get [UFW BLOCK] prefix + moved to ufw-before-input chain
+- /etc/psad/psad.conf — SYSLOG_DAEMON changed to syslogd, IPT_PREFIX=[UFW BLOCK] added
+- /etc/metalog.conf — fail2ban logdir syntax error fixed
+- /etc/conf.d/klogd — klogd added to boot runlevel</p>
+<p><strong>To apply:</strong> doas sh ~/scripts/nexus-fix-psad-logging.sh
+<strong>To verify:</strong> grep 'UFW BLOCK' /var/log/messages &amp;&amp; psad --Status</p>
+<hr />
+<h2 id="fix-fwsnort-iptables-nft-port-negation-incompatibility-2026-03-09-2220">Fix fwsnort iptables-nft port negation incompatibility (2026-03-09 22:20)<a class="headerlink" href="#fix-fwsnort-iptables-nft-port-negation-incompatibility-2026-03-09-2220" title="Permanent link">&para;</a></h2>
+<p><strong>What:</strong> Fixed fwsnort failing to load 29,680 rules due to 8 lines with invalid iptables-nft port negation syntax.</p>
+<p><strong>Why:</strong> iptables-restore v1.8.11 (nf_tables) rejects rules where ! appears inside a multiport comma-separated list (e.g. --dports 25,!445,!1500). This caused the entire fwsnort ruleset to fail at line 19885, leaving zero snort-based detection active.</p>
+<p><strong>Root cause:</strong> fwsnort incorrectly translates some Snort port negation rules into multiport lists with ! inside the values. This is a fwsnort translation bug - the syntax was tolerated by legacy iptables but rejected by nftables backend.</p>
+<p><strong>How:</strong> Identified 8 bad command lines out of 29,680 total (grep 'dports.*,![0-9]'). Strip those lines with sed before applying rules. The 8 removed rules represent untranslatable signatures - removing them is safer than corrupting the match logic.</p>
+<p><strong>Files created:</strong>
+- ~/scripts/nexus-fix-fwsnort-nftables.sh — strips 8 bad lines, re-applies rules via fwsnort_iptcmds.sh (individual iptables calls, not restore), signals PSAD
+- ~/scripts/nexus-update-fwsnort.sh — full replacement for /usr/bin/update-fwsnort, includes fix step</p>
+<p><strong>To apply now:</strong> doas sh ~/scripts/nexus-fix-fwsnort-nftables.sh
+<strong>To make permanent:</strong> doas cp ~/scripts/nexus-update-fwsnort.sh /usr/bin/update-fwsnort
+<strong>To verify:</strong> doas iptables -L | grep FWSNORT (should show fwsnort chains)</p>
+<hr />
+<h2 id="created-psad-and-fwsnort-manuals-2026-03-09-2235">Created PSAD and fwsnort manuals (2026-03-09 22:35)<a class="headerlink" href="#created-psad-and-fwsnort-manuals-2026-03-09-2235" title="Permanent link">&para;</a></h2>
+<p><strong>What:</strong> Wrote comprehensive manuals for PSAD and fwsnort covering this system's specific configuration, all scripts, FAQs, and troubleshooting.</p>
+<p><strong>Files created:</strong>
+- ~/scripts/docs/PSAD_MANUAL.md — full PSAD manual with config reference, daily ops, troubleshooting, FAQ, links to nexus-fix-psad-logging.sh
+- ~/scripts/docs/FWSNORT_MANUAL.md — full fwsnort manual with nft compat issue documented, update workflow, troubleshooting, FAQ, links to nexus-fix-fwsnort-nftables.sh and nexus-update-fwsnort.sh</p>
+<p><strong>Covers:</strong> detection chains, danger levels, all commands, script descriptions, key files, how PSAD+fwsnort work together</p>
+<hr />
+<h2 id="fix-fail2ban-logpath-watching-empty-file-2026-03-09-2304">Fix fail2ban logpath — watching empty file (2026-03-09 23:04)<a class="headerlink" href="#fix-fail2ban-logpath-watching-empty-file-2026-03-09-2304" title="Permanent link">&para;</a></h2>
+<p><strong>What:</strong> Fixed fail2ban watching /var/log/sshd_log (empty since Jan 2025) instead of /var/log/messages where SSH actually logs.</p>
+<p><strong>Why:</strong> fail2ban was running but could never ban anyone. The correct logpath was already commented in the config — someone knew the fix but left it inactive.</p>
+<p><strong>Root cause:</strong> Alpine with busybox syslogd routes auth.* facility to /var/log/messages. fail2ban's paths-common.conf defaults sshd_log to /var/log/auth.log which does not exist. The jail.d override was pointing to /var/log/sshd_log which is also empty.</p>
+<p><strong>Also confirmed:</strong> PermitRootLogin no already set in /etc/ssh/sshd_config — root SSH login already disabled.</p>
+<p><strong>How:</strong> Fix logpath in jail.d/alpine-ssh.conf + create paths-overrides.local for Alpine-correct global default. Also tightened maxretry from 10 to 5.</p>
+<p><strong>Files:</strong>
+- ~/scripts/nexus-fix-fail2ban.sh — fix script
+- /etc/fail2ban/jail.d/alpine-ssh.conf — logpath fixed
+- /etc/fail2ban/paths-overrides.local — Alpine syslog path override</p>
+<p><strong>To apply:</strong> doas sh ~/scripts/nexus-fix-fail2ban.sh
+<strong>To verify:</strong> doas fail2ban-client status sshd</p>
+<hr />
+<h2 id="nexus-notes-tmux-menus-popup-notes-system-2026-03-10-0002">NeXuS Notes — tmux-menus popup notes system (2026-03-10 00:02)<a class="headerlink" href="#nexus-notes-tmux-menus-popup-notes-system-2026-03-10-0002" title="Permanent link">&para;</a></h2>
+<p><strong>What:</strong> Built a full CLI notes system integrated into the tmux-menus popup (F12 |).</p>
+<p><strong>Why:</strong> User wanted a quick-access notes option accessible from within their existing tmux popup workflow without leaving the terminal.</p>
+<p><strong>How:</strong></p>
+<ol>
+<li>Created nexus-notes.sh — main notes manager</li>
+<li>browse_notes(): fzf file picker with live glow-rendered markdown preview (right:55% pane)</li>
+<li>new_note(): prompts for title via plain read, slugifies to filename, creates dated .md template, opens at line 6 in micro (cursor lands below the --- separator ready to write)</li>
+<li>quick_note(): one-liner append to quick-notes.md with timestamp</li>
+<li>main_menu(): simple [b/n/q/x] menu for direct launch</li>
+<li>Editor priority: micro → nano → vim</li>
+<li>
+<p>Storage: ~/notes/nexus/*.md</p>
+</li>
+<li>
+<p>Created wrapper scripts (required because tmux-menus E-type entries use run-shell which cannot embed complex tmux commands inline):</p>
+</li>
+<li>nexus-notes-browse.sh: tmux display-popup -E -h 85% -w 80%</li>
+<li>nexus-notes-new.sh: tmux display-popup -E -h 85% -w 80%</li>
+<li>
+<p>nexus-notes-quick.sh: tmux display-popup -E -h 20% -w 60%</p>
+</li>
+<li>
+<p>Created tmux-menus item: ~/.tmux/plugins/tmux-menus/items/nexus_notes.sh</p>
+</li>
+<li>Menu entries: Browse notes, New note, Quick one-liner, Open notes folder</li>
+<li>
+<p>Each E-type entry calls the appropriate wrapper script</p>
+</li>
+<li>
+<p>Added to main.sh: inserted NeXuS Notes entry after Extras in the main menu</p>
+</li>
+<li>Key: Z, label: NeXuS Notes → (nav_next arrow)</li>
+</ol>
+<p><strong>Troubleshooting encountered and resolved:</strong>
+- display-popup inside display-popup fails silently (tmux limitation) — solved by using wrapper scripts called via run-shell
+- tmux-menus E-type with inline display-popup command caused 'not enough arguments' error — solved by wrapper scripts
+- micro cursor opens at line 1 (title) requiring manual scroll — solved with micro +6 to open at writing position
+- Tried tmux command-prompt for title input — caused popup to close — reverted to plain read</p>
+<p><strong>Files:</strong>
+- ~/scripts/nexus-notes.sh — main notes script
+- ~/scripts/nexus-notes-browse.sh — browse wrapper
+- ~/scripts/nexus-notes-new.sh — new note wrapper<br />
+- ~/scripts/nexus-notes-quick.sh — quick note wrapper
+- ~/.tmux/plugins/tmux-menus/items/nexus_notes.sh — menu definition
+- ~/.tmux/plugins/tmux-menus/items/main.sh — added NeXuS Notes entry</p>
+<p><strong>Backup:</strong> ~/backups/tmux-menus-backup-<timestamp>/</p>
+<p><strong>Usage:</strong> F12 | → NeXuS Notes → select action. Notes stored as dated .md files in ~/notes/nexus/</p>
+<hr />
+<h2 id="session-summary-2026-03-0910-security-stack-audit-notes-system-2026-03-10-0003">SESSION SUMMARY 2026-03-09/10 — Security stack audit + notes system (2026-03-10 00:03)<a class="headerlink" href="#session-summary-2026-03-0910-security-stack-audit-notes-system-2026-03-10-0003" title="Permanent link">&para;</a></h2>
+<p><strong>Session overview:</strong> Complete security stack audit. Diagnosed and fixed broken security tools (PSAD, fwsnort, fail2ban all non-functional despite appearing to run). Built CLI notes system in tmux popup.</p>
+<hr />
+<h2 id="diagnostic-findings">DIAGNOSTIC FINDINGS<a class="headerlink" href="#diagnostic-findings" title="Permanent link">&para;</a></h2>
+<p>All three security tools were running but completely non-functional:</p>
+<h3 id="psad-not-detecting-anything">PSAD — not detecting anything<a class="headerlink" href="#psad-not-detecting-anything" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Root cause 1: klogd not running. Kernel iptables LOG entries go to /proc/kmsg (kernel ring buffer). Without klogd reading /proc/kmsg and forwarding to syslogd, entries never reach /var/log/messages. klogd binary present at /sbin/klogd but status=stopped, not in any runlevel.</li>
+<li>Root cause 2: UFW before.rules had -A INPUT -j LOG and -A FORWARD -j LOG with NO --log-prefix. PSAD needs a prefix to identify firewall entries vs other kernel messages.</li>
+<li>Root cause 3: psad.conf had SYSLOG_DAEMON=metalog but metalog is NOT the running syslog daemon. Busybox syslogd (/sbin/syslogd -t -n) is the actual daemon.</li>
+<li>Root cause 4: metalog.conf had broken fail2ban section syntax (logdir = "/var/log/ missing closing quote and path) — not harmful since metalog not running but fixed for correctness.</li>
+<li>Confirmed via: lsmod showing xt_LOG with 22 refs (rules active) but ip_tables with 0 refs; ps showing no klogd; /var/log/messages having zero kern.* entries; /var/log/ufw.log empty since Jan 2025.</li>
+</ul>
+<h3 id="fwsnort-rules-never-loaded">fwsnort — rules never loaded<a class="headerlink" href="#fwsnort-rules-never-loaded" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Root cause: fwsnort generates some rules with ! inside multiport port lists (e.g. --dports 25,!445,!1500). This is invalid syntax for iptables v1.8.11 (nf_tables backend). iptables-restore rejects the ENTIRE 29,672-rule ruleset at line 19885.</li>
+<li>Scale: only 8 bad lines out of 29,672. All other rules valid.</li>
+<li>Rules were last generated/attempted July 24 2025 — 7+ months stale.</li>
+<li>Daily cron at /etc/periodic/daily/fwsnort exists but no root crontab entry for run-parts — daily updates never ran.</li>
+<li>Confirmed via: grep 'dports.*,![0-9]' fwsnort_iptcmds.sh returning 8 hits.</li>
+</ul>
+<h3 id="fail2ban-watching-empty-file">fail2ban — watching empty file<a class="headerlink" href="#fail2ban-watching-empty-file" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Root cause: logpath in jail.d/alpine-ssh.conf pointed to /var/log/sshd_log (0 bytes, never written, created Jan 2025).</li>
+<li>The correct path (/var/log/messages) was already commented out in the config file — someone knew the fix but left it inactive.</li>
+<li>paths-common.conf defaults sshd_log to /var/log/auth.log which doesn't exist on Alpine with busybox syslogd.</li>
+<li>auth.* facility routes to /var/log/messages on this system (confirmed with logger -p auth.info test).</li>
+<li>fail2ban was running, jails started, pyinotify watching — just watching the wrong empty file.</li>
+<li>Also confirmed: PermitRootLogin no already set in /etc/ssh/sshd_config.</li>
+</ul>
+<hr />
+<h2 id="fixes-applied">FIXES APPLIED<a class="headerlink" href="#fixes-applied" title="Permanent link">&para;</a></h2>
+<h3 id="fix-1-ufw-klogd-psad-logging-chain">Fix 1: UFW + klogd + PSAD logging chain<a class="headerlink" href="#fix-1-ufw-klogd-psad-logging-chain" title="Permanent link">&para;</a></h3>
+<p>Script: ~/scripts/nexus-fix-psad-logging.sh (doas required)
+Changes:
+- /etc/ufw/before.rules: replaced '-A INPUT -j LOG' with '-A ufw-before-input -j LOG --log-prefix "[UFW BLOCK]" --log-level 4', same for FORWARD
+- /etc/psad/psad.conf: SYSLOG_DAEMON changed metalog → syslogd; IPT_PREFIX [UFW BLOCK] added after IPT_SYSLOG_FILE line
+- /etc/metalog.conf: fixed fail2ban section logdir missing closing quote (line 162)
+- /etc/conf.d/klogd: klogd added to boot runlevel via rc-update add klogd boot
+- Services restarted: klogd (started), ufw (reloaded), psad (restarted)
+Verified: scan from 192.168.1.127 immediately appeared in /var/log/messages with [UFW BLOCK] entries. PSAD created /var/log/psad/192.168.1.127/ directory.</p>
+<h3 id="fix-2-fwsnort-iptables-nft-compatibility">Fix 2: fwsnort iptables-nft compatibility<a class="headerlink" href="#fix-2-fwsnort-iptables-nft-compatibility" title="Permanent link">&para;</a></h3>
+<p>Script: ~/scripts/nexus-fix-fwsnort-nftables.sh (doas required)
+Changes:
+- sed -i '/dports.<em>,![0-9]/d; /sports.</em>,![0-9]/d' /var/lib/fwsnort/fwsnort_iptcmds.sh
+- Removes 8 bad lines, applies remaining ~29,664 rules via IPTABLES=iptables sh fwsnort_iptcmds.sh
+- Signals PSAD with psad -H after load
+Note: Takes 5-10 minutes to apply (29,000+ individual iptables calls on this hardware).</p>
+<p>Script: ~/scripts/nexus-update-fwsnort.sh — replacement for /usr/bin/update-fwsnort
+- Step 1: fwsnort --update-rules (fetch upstream ET rules)
+- Step 2: fwsnort (regenerate iptables commands)
+- Step 3: run nexus-fix-fwsnort-nftables.sh (strip 8 bad lines + apply)
+- Step 4: psad --sig-update &amp;&amp; psad -H
+Install: doas cp ~/scripts/nexus-update-fwsnort.sh /usr/bin/update-fwsnort</p>
+<h3 id="fix-3-fail2ban-log-path">Fix 3: fail2ban log path<a class="headerlink" href="#fix-3-fail2ban-log-path" title="Permanent link">&para;</a></h3>
+<p>Script: ~/scripts/nexus-fix-fail2ban.sh (doas required)
+Changes:
+- /etc/fail2ban/jail.d/alpine-ssh.conf: logpath changed from /var/log/sshd_log to /var/log/messages for both [sshd] and [sshd-ddos] jails; maxretry tightened from 10 to 5
+- /etc/fail2ban/paths-overrides.local: created with sshd_log=/var/log/messages and syslog_authpriv=/var/log/messages to fix Alpine-wide default
+- fail2ban restarted
+Verified by user: fail2ban-client status working, jails active.</p>
+<hr />
+<h2 id="documentation-created">DOCUMENTATION CREATED<a class="headerlink" href="#documentation-created" title="Permanent link">&para;</a></h2>
+<ul>
+<li>~/scripts/docs/PSAD_MANUAL.md — complete PSAD manual: detection chain diagram, danger levels table, all daily commands, config reference, auto-block tuning, whitelist setup, troubleshooting, FAQ (10 questions), key files reference</li>
+<li>~/scripts/docs/FWSNORT_MANUAL.md — complete fwsnort manual: how fwsnort+PSAD work together, nft compat issue documented with exact error and fix, update workflow, all commands, signature categories, troubleshooting, FAQ (8 questions), key files reference</li>
+</ul>
+<hr />
+<h2 id="notes-system-created">NOTES SYSTEM CREATED<a class="headerlink" href="#notes-system-created" title="Permanent link">&para;</a></h2>
+<p>See separate report entry for full detail.
+Summary: F12 | → NeXuS Notes → Browse/New/Quick. micro editor, glow preview, ~/notes/nexus/ storage.</p>
+<hr />
+<h2 id="backups-created-this-session">BACKUPS CREATED THIS SESSION<a class="headerlink" href="#backups-created-this-session" title="Permanent link">&para;</a></h2>
+<ul>
+<li>~/backups/psad-logging-fix-<ts>/ — before.rules, psad.conf, metalog.conf, klogd.conf</li>
+<li>~/backups/fwsnort-nft-fix-<ts>/ — fwsnort_iptcmds.sh, fwsnort.save</li>
+<li>~/backups/fail2ban-fix-<ts>/ — alpine-ssh.conf</li>
+<li>~/backups/tmux-menus-backup-<ts>/ — full tmux-menus plugin</li>
+<li>~/backups/fzf-speed-patch-<ts>/ — fzf-speed binary</li>
+</ul>
+<hr />
+<h2 id="still-todo-queued-for-next-work">STILL TODO (queued for next work)<a class="headerlink" href="#still-todo-queued-for-next-work" title="Permanent link">&para;</a></h2>
+<ul>
+<li>AppArmor: add 'lsm=landlock,yama,apparmor' to /boot/extlinux.conf APPEND line; build profiles in complain mode for tor, privoxy, psad, nginx before enforcing</li>
+<li>Lynis: fix broken install path, integrate into workflow, schedule regular audits</li>
+<li>Port knocking: knockd setup for SSH</li>
+<li>Security management TUI: unified interface for PSAD + fwsnort + fail2ban + AppArmor</li>
+</ul>
+<hr />
+<h2 id="planned-cagefoot-nexus-terminal-rebuild-2026-03-10-1052">Planned cage+foot nexus-terminal rebuild (2026-03-10 10:52)<a class="headerlink" href="#planned-cagefoot-nexus-terminal-rebuild-2026-03-10-1052" title="Permanent link">&para;</a></h2>
+<p><strong>What:</strong> Designed improved cage+foot CLI-first session with tmux escape hatch.
+<strong>Why:</strong> Previous nexus-terminal.desktop (cage -- foot) had no escape key — user got locked in. Also validated this is a real architecture not a throwaway: CLI-first system with on-demand GUI browser launch from within foot/cage.
+<strong>How:</strong> foot vs blackbox benchmark — foot wins (10-15MB vs 50-80MB, ~50ms vs ~300ms startup, Wayland-native C vs GTK4+libadwaita). Fix: run tmux inside foot so Ctrl+b d detaches and exit kills cage cleanly.
+<strong>Proposed change:</strong> nexus-terminal.desktop Exec= cage -- foot -e tmux
+<strong>Files:</strong> nexus-terminal.desktop — pending edit after labwc fix confirmed.
+<strong>Dependencies:</strong> cage, foot, tmux (all already installed)</p>
+<hr />
+<h2 id="nexus-time-stack-chrony-nts-dead-man-switch-2026-03-18-0214">NeXuS Time Stack — chrony NTS + Dead Man Switch (2026-03-18 02:14)<a class="headerlink" href="#nexus-time-stack-chrony-nts-dead-man-switch-2026-03-18-0214" title="Permanent link">&para;</a></h2>
+<p><strong>What:</strong> Created full NeXuS time management stack: chrony NTS config, interactive setup script, and dead man switch system.</p>
+<p><strong>Why:</strong> BusyBox ntpd has no NTS support — time sync was unauthenticated/unencrypted. DMS needed a paranoid privacy-respecting time stack with a configurable dead man switch for security use cases.</p>
+<p><strong>How:</strong>
+- chrony.conf: NTS over TLS to Cloudflare (time.cloudflare.com), Netnod (nts.netnod.se), NIST, PTB Germany. authselectmode require — refuses plain NTP. bindcmdaddress 127.0.0.1 for local-only command access.
+- nexus-time.sh: --sync, --status, --checkin, --dms-start <hrs>, --dms-stop, --dms-status, --event, --events. DMS uses background watcher loop checking /tmp/nexus-dms.state every 60s. Fires configurable action script on deadline exceeded.
+- nexus-dms-fire.sh: Default DMS action — wall alert + log. User customises with wipe/notify/lockdown actions.
+- nexus-time-setup.sh: 17-option interactive menu. Sections: Time/Chrony (install, deploy, restart, test, sync, status), Startup/Services (view runlevels, add/remove from boot, stop), Dead Man Switch (arm, checkin, disarm, edit fire action). Live status indicators in menu header. Scriptable via args.
+- Fixed 'Cannot talk to daemon': original config had cmdport 0 with no bindcmdaddress — both command paths blocked. Fix: removed cmdport 0, added bindcmdaddress 127.0.0.1.</p>
+<p><strong>Files:</strong>
+- ~/scripts/chrony.conf — NTS config (deploy to /etc/chrony/chrony.conf)
+- ~/scripts/nexus-time.sh — time + DMS management script
+- ~/scripts/nexus-dms-fire.sh — DMS fire action (customise this)
+- ~/scripts/nexus-time-setup.sh — interactive setup/management menu</p>
+<p><strong>Dependencies:</strong> chrony (apk add chrony), at (apk add at for --event)</p>
+<hr />
+<h2 id="media-window-publishing-desk-2026-03-25-0056">MEDIA window + Publishing Desk (2026-03-25 00:56)<a class="headerlink" href="#media-window-publishing-desk-2026-03-25-0056" title="Permanent link">&para;</a></h2>
+<p>What: Built the complete NeXuS MEDIA/SOCIAL tmux window stack and NeXuS Publishing Desk.</p>
+<p>Why: User needed a dedicated MEDIA window with feed panes, crypto ticker, IRC, newsboat, and a publishing workflow for the NeXuS wiki/net.</p>
+<p>How:
+- nexus-media.sh: tmux MEDIA window launcher — 4-pane layout: weechat (top-left), newsboat (bottom-left), nexus-media-feeds.sh (top-right), nexus-media-ticker.sh (bottom strip)
+- nexus-media-write.sh: NeXuS Publishing Desk — write markdown drafts, publish to local MkDocs wiki, GitHub Pages (mkdocs gh-deploy), or IPFS. Frontmatter auto-generated, draft:true removed on publish, IPFS CID log at ~/.nexus/ipfs_published.log
+- ~/.config/newsboat/urls: Configured with NeXuS GitHub, EFF, Tor Project, Schneier, HN Security, I2P News, LWN, Phoronix — all tagged for newsboat filtering
+- nexus-home-status.sh: Added TICKER section reading ~/.nexus/ticker.cache (written by nexus-media-ticker.sh); added [a] AI, [M] MEDIA key bindings
+- nexus-home-popup.sh: Added AI HUB, MEDIA, and PUBLISH entries to quick launch popup</p>
+<p>Files:
+- ~/scripts/nexus-media.sh (NEW)
+- ~/scripts/nexus-media-write.sh (NEW)
+- ~/.config/newsboat/urls (NEW)
+- ~/scripts/nexus-home-status.sh (updated: ticker + key bindings)
+- ~/scripts/nexus-home-popup.sh (updated: AI/MEDIA/PUBLISH entries)</p>
+<hr />
+<h2 id="darknet-publish-forge-retroshare-friend-certs-2026-03-25-0104">Darknet publish + Forge + RetroShare friend certs (2026-03-25 01:04)<a class="headerlink" href="#darknet-publish-forge-retroshare-friend-certs-2026-03-25-0104" title="Permanent link">&para;</a></h2>
+<p>What: Built nexus-darknet-publish.sh, nexus-forge.sh, nexus-retroshare.sh, and updated services.yaml with RetroShare replacing ZeroNet.</p>
+<p>Why: User wants to publish content to Tor/I2P hidden services, sell digital goods via a darknet marketplace, and run RetroShare with a friend-cert bootstrap site so anyone can join the NeXuS mesh.</p>
+<p>How:
+- nexus-darknet-publish.sh: Manages Tor hidden services + I2P eepsites. Appends HiddenServiceDir to torrc, adds i2pd tunnel config, spins python3 http.server on 127.0.0.1 per site. Sites DB at ~/.nexus/darknet-sites.cfg. Auto-generates starter index.html. [n] new site, [m] manage existing.
+- nexus-forge.sh: Digital goods marketplace. Listings stored as JSONL at ~/.nexus/forge/listings.jsonl. Products packaged to ~/.nexus/forge/products/<ID>/. Generates HTML store pages at ~/.nexus/forge/store/. Categories: document/code/character/art/data/tool/audio. Price in XMR + Nexium. [n] new, [e] edit, [p] publish to store, [k] package+GPG encrypt.
+- nexus-retroshare.sh: RetroShare hub window with log pane. Manages retroshare-service/nogui daemon. [e] export your cert as NeXuS friend cert site (HTML at ~/.nexus/forge/store/nexus-friend-cert/index.html). [a] add friend cert. [d] open darknet publish to host the cert site.
+- nexus-retroshare-svc.sh: Shell contract for darknet TUI (start/stop/status/address).
+- services.yaml: Added retroshare service entry (depends on tor+i2p).
+- nexus-home-popup.sh: Added Forge, RetroShare, Darknet Pub, Publish entries.</p>
+<p>Files:
+- ~/scripts/nexus-darknet-publish.sh (NEW)
+- ~/scripts/nexus-forge.sh (NEW)
+- ~/scripts/nexus-retroshare.sh (NEW)
+- ~/claude/nexus-darknet-go/scripts/nexus-retroshare-svc.sh (NEW)
+- ~/claude/nexus-darknet-go/services.yaml (updated: retroshare added)
+- ~/scripts/nexus-home-popup.sh (updated)</p>
+<hr />
+<h2 id="retroshare-full-stack-gui-launcher-text-companion-2026-03-25-0209">RetroShare full stack — GUI launcher + text companion (2026-03-25 02:09)<a class="headerlink" href="#retroshare-full-stack-gui-launcher-text-companion-2026-03-25-0209" title="Permanent link">&para;</a></h2>
+<p>What: Full RetroShare window system — GUI launcher, management hub, and text chat/forum companion.</p>
+<p>Why: RetroShare is Flatpak GUI. Needed: proper GUI launch on GUI sessions, text companion for contacts/chat/forums/channels in terminal, friend cert site builder.</p>
+<p>How:
+- nexus-retroshare.sh: window launcher — detects GUI vs CLI session. GUI: 3-pane layout (hub + text chat companion + log strip). CLI: hub + log. Switches to existing window if open.
+- nexus-retroshare-hub.sh: management pane — launch Flatpak GUI, stop service, export cert (builds friend cert site), add friend cert, JSON API enable guide, darknet publish launcher. Shows profiles, stored certs, API status.
+- nexus-retroshare-chat.sh: text companion — connects to RetroShare JSON API (port 9090). Views: contacts (online/offline dots), direct chat (send/receive), forums (browse + posts), channels. Tab cycles views, fzf for peer/forum selection. Waits gracefully when API offline with enable instructions.</p>
+<p>Files:
+- ~/scripts/nexus-retroshare.sh (rewritten: GUI-aware launcher)
+- ~/scripts/nexus-retroshare-hub.sh (NEW: management hub)
+- ~/scripts/nexus-retroshare-chat.sh (NEW: text chat/forum companion)</p>
+<p>To activate text companion: RetroShare GUI → Plugins → Plugin Manager → JSON API → port 9090 → restart</p>
+<hr />
+<h2 id="web-window-av-window-2026-03-25-0309">WEB window + AV window (2026-03-25 03:09)<a class="headerlink" href="#web-window-av-window-2026-03-25-0309" title="Permanent link">&para;</a></h2>
+<p>What: Two new tmux windows — WEB (text/GUI browser + Gemini + Gopher) and AV (audio/video).</p>
+<p>Why: Dedicated windows for web browsing across protocols and media playback with download.</p>
+<p>How:
+- nexus-web.sh: WEB window launcher — hub strip (top) + w3m pane (bottom-left) + amfora/Gemini (right-top) + sacc/Gopher (right-bottom)
+- nexus-web-hub.sh: hub — [/] search (DDG Lite, routes to any browser), [u] open URL, [k] clip URL to ~/.nexus/web-clips.log, [K] view clips, [b/B] bookmarks. GUI browser launchers: Mullvad, Tor Browser, Zen, Brave, Ungoogled, Falkon, Qutebrowser. Tor proxy auto-detected.
+- nexus-media-av.sh: AV window launcher — hub (left) + ncmpcpp/MPD (right-top) + mpv log (right-bottom)
+- nexus-av-hub.sh: [p] play file/URL via mpv (GUI=video window, CLI=audio only), [s] stream URL, [f] fzf browse media files, [Q] queue manager (m3u), [d] yt-dlp download (audio/video/playlist), [m] MPD start + quick controls, [a] alsamixer, [S] Strawberry GUI, [V] VLC. Tor proxy for yt-dlp. mpv IPC socket at /tmp/nexus-mpv-ipc.sock.
+- nexus-home-popup.sh: added [W] WEB, [A] AUDIO/VIDEO, [e] RETROSHARE</p>
+<p>Files: ~/scripts/nexus-web.sh, nexus-web-hub.sh, nexus-media-av.sh, nexus-av-hub.sh (all NEW); nexus-home-popup.sh (updated)</p>
+<hr />
+<h2 id="nexus-hydrash-new-hydra-launcher-with-profiles-2026-04-02-0841">nexus-hydra.sh — new hydra launcher with profiles (2026-04-02 08:41)<a class="headerlink" href="#nexus-hydrash-new-hydra-launcher-with-profiles-2026-04-02-0841" title="Permanent link">&para;</a></h2>
+<p>What: Global launcher for NeXuS Hydra new-hydra stack at ~/claude/demo-dark-stack/new-hydra/. Why: Old nexus-startup.sh in ~/git/nexus-hydra/ had no profile system — needed Ghost/Shadow/Recon/Stealth/Open network profiles added. How: Script auto-detects hardware tier (phantom/vanguard/hub/broadcast via RAM), maps NeXuS network profiles to compose tier args. Shadow=default daily driver, Ghost=all networks max Ghost Gate, Recon=Tor+I2P+Ygg+RetroShare, Stealth=phantom tier only, Open=phantom+stop Tor heads. Ghost Gate nft applied at start. Files: ~/scripts/nexus-hydra.sh. Dependencies: podman-compose, ~/claude/demo-dark-stack/new-hydra/</p>
+<hr />
+<h2 id="nexus-tmux-watchsh-tmux-intrusion-monitor-2026-07-07-1310">nexus-tmux-watch.sh — tmux intrusion monitor (2026-07-07 13:10)<a class="headerlink" href="#nexus-tmux-watchsh-tmux-intrusion-monitor-2026-07-07-1310" title="Permanent link">&para;</a></h2>
+<p><strong>Status:</strong> ✅ TESTED — running live</p>
+<p><strong>What:</strong> Background daemon watching the tmux socket for injection attacks and unknown connections.</p>
+<p><strong>Why:</strong> Node is under surveillance attention; needed active detection for tmux send-keys injection, rogue socket attachers, and permission tampering.</p>
+<p><strong>How:</strong>
+- Polls <code>lsof</code> on the tmux socket every 3s; baselines known PIDs on start
+- Alerts on any new PID touching the socket that wasn't in baseline
+- Watches <code>ps</code> for any <code>tmux send-keys</code> process (keystroke injection)
+- Monitors socket permission changes via <code>stat</code>
+- Parallel <code>inotifywait</code> on socket dir logs all access/open/write events
+- 10s alert cooldown prevents spam
+- Alerts via <code>notify-send</code> (desktop popup) + <code>tmux display-message</code> (status flash) + log</p>
+<p><strong>Files:</strong>
+- <code>~/scripts/nexus-tmux-watch.sh</code> (new)
+- <code>~/.config/tmux/tmux.conf</code> (autostart appended)
+- <code>~/logs/nexus-tmux-watch.log</code> (runtime log)
+- <code>~/logs/nexus-inotify.log</code> (raw socket access events)</p>
+<p><strong>Testing:</strong> Started live — PID 944 running, baseline captured (tmux server PID 6216), inotifywait active on socket dir.</p>
+<hr />
+<h2 id="nexus-lockdownsh-v2-nexus-tmux-watch-v2-pwnd-response-pipeline-2026-07-07-1537">nexus-lockdown.sh v2 + nexus-tmux-watch v2 — PWND response pipeline (2026-07-07 15:37)<a class="headerlink" href="#nexus-lockdownsh-v2-nexus-tmux-watch-v2-pwnd-response-pipeline-2026-07-07-1537" title="Permanent link">&para;</a></h2>
+<p><strong>Status:</strong> 🔵 DESIGNED — built and recovery tested, live attack test pending</p>
+<p><strong>What:</strong> Full incident response pipeline: detect → lock → snapshot → encrypt+sign → Ghost Gate permit → distribute to security stack → recover</p>
+<p><strong>Why:</strong> Live tmux send-keys injection test (by other Claude) proved session is vulnerable. Watcher v1 was blind. v2 catches injections via lsof PID monitoring. Lockdown issues GPG-signed Nostr kind 24000 permit to Ghost Gate.</p>
+<p><strong>How:</strong>
+- nexus-tmux-watch.sh v2: 1s lsof loop, inotifywait on socket, no hook (hook v1 locked everyone out)
+- nexus-lockdown.sh v2: lock → snapshot (ss/ps/lsof/last/dmesg) → SHA256 → GPG encrypt+sign → Ghost Gate permit (kind 24000 clearsigned JSON) → logger to PSAD/fail2ban/fwsnort/OpenSnitch → OSSEC stub → recovery mode
+- nexus-lockdown.sh --recover: issues all-clear permit, shows last report</p>
+<p><strong>Files:</strong>
+- ~/scripts/nexus-tmux-watch.sh (v2 rewrite)
+- ~/scripts/nexus-lockdown.sh (v2 — Ghost Gate + recovery)
+- ~/scripts/nexus-intrusion.filter.conf (fail2ban filter — needs doas cp to /etc/fail2ban/filter.d/)
+- ~/logs/ghost-gate/permits/ (signed permit queue)
+- ~/logs/intrusion/ (encrypted reports)</p>
+<p><strong>Pending:</strong>
+- Wire Nostr account into lockdown for real kind 24000 broadcast (Anon has account)
+- Install cs-firewall-bouncer + crowdsec-file-plugin + crowdsec-http-plugin (apk done)
+- Configure CrowdSec sovereign mode (share_custom/share_tainted → false)
+- watchbind TUI for intrusion console
+- doas cp nexus-intrusion.filter.conf → /etc/fail2ban/filter.d/</p>
+<hr />
+<h2 id="created-nexus-haltsh-the-stop-code-2026-07-16-0311">Created nexus-halt.sh — the stop code (2026-07-16 03:11)<a class="headerlink" href="#created-nexus-haltsh-the-stop-code-2026-07-16-0311" title="Permanent link">&para;</a></h2>
+<p>Status: ✅ TESTED
+What: Emergency-stop command that halts NeXuS tmux frames/sessions (the 'stop code') — graceful by default, --hard/--panic on demand.
+Why: Before onboarding crew/frames that spawn tmux sessions, we needed a single kill switch. Fulfils the Emergency Stop Law.
+How: Whitelist-only reaper — acts on session names matching frame-<em> or nexus</em> via 'tmux ls'. Graceful path sends C-c to each pane then kill-session; --hard adds pkill -x <bin> with a core-process guard (never kills sh/fish/bash/login/tmux/init). Default spares the currently-attached session; --panic includes it. Previews + y/N confirm before killing in default mode.
+Files: ~/scripts/nexus-halt.sh, ~/scripts/nexus-halt.help.md
+Testing: Live-fire tested with throwaway sessions (frame-testcli, nexus-scratch, my-real-work). Verified: whitelist held (my-real-work survived --panic), short-name single halt works, --list is read-only, no-session paths are safe. sh -n clean.
+Dependencies: tmux. Integrates with nexus-frame.sh (frame-<bin> naming) and shows in the help pane via nexus-halt.help.md.</p>
+<hr />
+<h2 id="built-nexus-tv-station-nexusistential-terminal-cinema-2026-07-16-0818">Built nexus-tv station — NeXuSistential terminal cinema (2026-07-16 08:18)<a class="headerlink" href="#built-nexus-tv-station-nexusistential-terminal-cinema-2026-07-16-0818" title="Permanent link">&para;</a></h2>
+<p>Status: 🔵 DESIGNED (builds + wires clean; real A/V playback untested — needs a live foot session)
+What: A transparent, keybound terminal-video cockpit. ncplayer (notcurses) draws the video, mpv carries the audio over an IPC socket, watchbind is the live control strip. Two players, each doing what it's best at.
+Why: notcurses has the best terminal-video blitters (pixel/sixel) but NO audio; mpv has audio + weaker sixel. Split the job across both = 'NeXuSistential'. User wanted it transparent, fluid, config-selectable, and re-syncable.
+How: nexus-tv.sh (engine) resolves YouTube via yt-dlp into codec-specific video + audio streams (presets: cinema/crisp/lofi/retro/audio; granular --vcodec/--acodec/-q/-b), runs ncplayer fg + mpv --no-video bg with --input-ipc-server. nexus-tv-station.sh builds a tmux frame (frame-tv): video pane + watchbind strip. nexus-tv-ctl.sh drives both players from watchbind keys (mpv via socat/IPC, ncplayer via tmux send-keys). SYNC: notcurses can't seek, so [ / ] NUDGE — briefly hold the player that's ahead so the other catches up. nexus-tv-status.sh paints title+progress+vol each -i 1 (fluid). Transparency inherited from foot alpha/blur.
+Files: ~/scripts/nexus-tv.sh, nexus-tv-station.sh, nexus-tv-ctl.sh, nexus-tv-status.sh
+Testing: sh -n clean on all 4; presets list OK; status strip degrades gracefully with no socket; TV_TEST frame build verified 2 panes (video engine + watchbind). NOT yet tested: real sixel playback, yt-dlp stream split, IPC pause/seek/vol/nudge against a live mpv — all need an interactive foot session with a wallpaper/display.
+Dependencies: ncplayer(notcurses+ffmpeg), mpv, yt-dlp, watchbind 0.2.1, socat, jq, tmux, foot. Integrates with nexus-halt.sh (frame-tv teardown).</p>
+<hr />
+<h2 id="made-tui-first-class-nexus-wbsh-themed-watchbind-wrapper-2026-07-16-0830">Made TUI first-class — nexus-wb.sh (themed watchbind wrapper) (2026-07-16 08:30)<a class="headerlink" href="#made-tui-first-class-nexus-wbsh-themed-watchbind-wrapper-2026-07-16-0830" title="Permanent link">&para;</a></h2>
+<p>Status: 🔵 DESIGNED (assembly + wrapper logic verified; interactive launch needs a live tty)
+What: nexus-wb.sh turns ANY command into an interactive, keybound, dank-themed NeXuS TUI in one call — the first-class primitive for watchbind. Complements the existing wtfutil dashboard (nexus-dashboard.sh) as the two-primitive TUI layer.
+Why: 'make TUI first class.' watchbind proved itself in the TV cockpit but every use hand-rolled colors + keys. A NeXuS wrapper = consistent theme, standard keys, zero boilerplate. wtfutil half already exists (nexus-dashboard.sh) so NOT duplicated — avoided the ~/scripts/scripts triple-copy trap too.
+How: Wraps watchbind 0.2.1 with Catppuccin-Mocha named colors (header blue-bold, cursor black-on-blue, body white, selected magenta). Standard keys q/esc=quit, r=reload; user keys merged via --keys. --title prepends a styled header line using an argv-safe 'sh -c printf...; exec "$@"' wrapper (no eval, arg boundaries preserved). --print shows assembly without launching. Watched command after --.
+Files: ~/scripts/nexus-wb.sh, ~/scripts/nexus-wb.help.md
+Testing: sh -n clean; --print shows correct merged keybinds + header-lines; title-wrapper sh -c verified (prints header then execs command); no-command guard OK. NOT tested: live interactive render/colors (needs real foot tty).
+Dependencies: watchbind 0.2.1. Theme source: ~/.config/foot/foot.ini. Pairs with nexus-dashboard.sh (wtfutil).</p>
+<hr />
+<h2 id="wired-foot-server-mode-into-wayland-session-keybinds-2026-07-19-1618">Wired foot server mode into Wayland session + keybinds (2026-07-19 16:18)<a class="headerlink" href="#wired-foot-server-mode-into-wayland-session-keybinds-2026-07-19-1618" title="Permanent link">&para;</a></h2>
+<p>Status: ✅ TESTED (static: bash -n + grep verify; not yet run in a live Wayland session)</p>
+<p>What: Added foot --server to the Wayland session launcher and switched every terminal keybind across labwc/sway/wayfire from 'foot' to 'footclient', so all terminals share one server process (instant startup, one-foot RAM).</p>
+<p>Why: On the E6520 (Sandy Bridge) spawning a fresh foot per window wastes RAM + startup time. foot-openrc revealed foot's server/daemon mode; footclient windows live inside a single foot --server.</p>
+<p>How:
+- nexus-wayland-launcher.sh: new FOOT_SERVER toggle (line 34); start_foot_server() spawns 'foot --server' after the compositor socket is up, waits up to 5s for the server socket; called in main() before test_audio; cleanup() kills it on exit; show_info() advertises footclient + shows PID. Direct-spawn (not the etc/user/init.d/foot OpenRC user unit) because this launcher hand-manages its daemons with &amp; and tears them down in cleanup.
+- labwc rc.xml: 8 commands foot-&gt;footclient (incl. grave/tdrop dropdown, audio C-A-s, cheatsheet W-slash).
+- sway config: two foot binds -&gt; footclient AND set $term footclient (was alacritty).
+- wayfire.ini: command_terminal/audio/cheatsheet -&gt; footclient.</p>
+<p>Files:
+- ~/scripts/nexus-wayland-launcher.sh (backup .bak-20260719_160616)
+- ~/.config/labwc/rc.xml, ~/.config/sway/config, ~/.config/wayfire.ini (all backup .bak-20260719_161302)</p>
+<p>Testing NOT done: live session run. Watch two things — the tdrop dropdown (grave key) under labwc (tdrop tracking a footclient window can be finicky), and confirm footclient connects (pgrep -a foot). Revert points: all .bak files above.</p>
+<p>Dependencies: foot, footclient (installed), foot-openrc present but unused (we direct-spawn).</p>
+<hr />
+<h2 id="fixed-nexus-cheatsheet-pager-scroll-accurate-keybinds-2026-07-19-1707">Fixed nexus-cheatsheet: pager scroll + accurate keybinds (2026-07-19 17:07)<a class="headerlink" href="#fixed-nexus-cheatsheet-pager-scroll-accurate-keybinds-2026-07-19-1707" title="Permanent link">&para;</a></h2>
+<p>Status: ✅ TESTED (runs clean, full box renders; verified on non-tty smoke test)</p>
+<p>What: Reworked nexus-cheatsheet.py to page through less, and corrected the documented keybinds.</p>
+<p>Why: Two bugs — (1) arrow keys/PgUp instantly closed the overlay because the raw single-byte reader closed on 0x1b (ESC) and every arrow/PgUp sequence starts with ESC; (2) the ~46-line box was taller than the screen (large font-size) with no scroll, so the top was cut off. Also the overlay mis-documented its own key (said CAT+Space opens the sheet; actually CAT+/ does, CAT+Space is a terminal).</p>
+<p>How:
+- Replaced the os.system(clear)+lolcat+raw-tty key loop with: lolcat -f | less -R -F -X. less scrolls (arrows/PgUp/PgDn/g/G) and quits on q. Fallbacks: no lolcat -&gt; plain text; no less -&gt; plain dump.
+- Corrected NEXUS section: 'CAT + /  This cheat sheet' + new 'CAT + Space  Terminal (footclient)'; 'CAT + Return' now Terminal (footclient); added a FOOT SERVER note block (footclient / pgrep -a foot sanity). Footer now 'Scroll: up/down PgUp/PgDn g/G q to quit'.</p>
+<p>Files: ~/scripts/nexus-cheatsheet.py (backups .bak-20260719_162309, _163541, _164725). Wrapper ~/scripts/nexus-cheatsheet.sh unchanged.</p>
+<p>Testing: interactive less scroll confirmed by design; box alignment re-verified 54-wide (title/arrow rows are pre-existing wide-glyph, not mine).</p>
+<p>Dependencies: less (702), lolcat (1.4), python3.</p>
+<hr />
+<h2 id="created-nexus-pysh-naturaltransparent-python-envs-uv-2026-07-19-1707">Created nexus-py.sh — natural/transparent Python envs (uv) (2026-07-19 17:07)<a class="headerlink" href="#created-nexus-pysh-naturaltransparent-python-envs-uv-2026-07-19-1707" title="Permanent link">&para;</a></h2>
+<p>Status: ✅ TESTED (doctor/list/info/run all exercised against nexus-arsenal)</p>
+<p>What: New wrapper that standardizes Python env management on uv, so every project behaves identically and no one ever runs 'source activate' (which differs in fish).</p>
+<p>Why: Per-project venv+activate+pip ritual was repetitive and error-prone; venvs had drifted (project-local .venv plus centralized ~/.venv/{dank,caelestia,nexus-hydra}). uv was already installed (0.11.23) but unused as a standard.</p>
+<p>How: subcommands run/env/add/info/shell/list/doctor. venv always at <dir>/.venv; deps from requirements.txt (uv pip install) or pyproject.toml (uv sync); narrates every command (echoes the $ line before running). fish-aware shell subcommand. list maps every venv under $HOME.</p>
+<p>Files: ~/scripts/nexus-py.sh, ~/scripts/nexus-py.help.md (new). Suggested fish abbr: abbr -a py 'sh ~/scripts/nexus-py.sh'.</p>
+<p>Testing: full run path verified (env-ensure -&gt; uv sync 222ms -&gt; arg passthrough via --). Note: list flags ~/.venv container as '?' (cosmetic).</p>
+<p>Dependencies: uv (engine; doas apk add uv), python3 3.14.5.</p>
+<hr />
+<h2 id="curated-nexus_netscanner_sinkpkgs-54-pkgs-for-apk-sink-2026-07-19-1707">Curated nexus_netscanner_sink.pkgs (54 pkgs) for apk-sink (2026-07-19 17:07)<a class="headerlink" href="#curated-nexus_netscanner_sinkpkgs-54-pkgs-for-apk-sink-2026-07-19-1707" title="Permanent link">&para;</a></h2>
+<p>Status: 🔵 DESIGNED — manifest built + dry-run clean; live install pending</p>
+<p>What: Self-identifying package manifest of network recon/monitor/mesh/capture tools for nexus-apk-sink.sh.</p>
+<p>Why: User wanted to push a big 'netscanner kitchen sink' list through the conflict-aware installer.</p>
+<p>How: Wrote ~/scripts/nexus_netscanner_sink.pkgs (54 pkgs, commented by category). Non-root dry run: 0 dropped (all resolve), 21 already installed, 33 would install, conflicts NOT pre-screened (needs root apk --simulate).</p>
+<p>Files: ~/scripts/nexus_netscanner_sink.pkgs (new).</p>
+<p>Testing/NEXT: run 'doas sh ~/scripts/nexus-apk-sink.sh -n -f ~/scripts/nexus_netscanner_sink.pkgs' (root dry run = real conflict pre-screen), then without -n to install. OPEN ISSUE: user reported live installs failing; root cause likely a broken apk world (every --simulate fails -&gt; all bucketed conflict). Awaiting 'doas apk add --simulate netscanner' output to confirm.</p>
+<p>Dependencies: nexus-apk-sink.sh, apk, root.</p>
+<hr />
+<h2 id="hardened-nexus-apk-sink-tolerate-a-dirty-apk-world-2026-07-20-0438">Hardened nexus-apk-sink — tolerate a dirty apk world (2026-07-20 04:38)<a class="headerlink" href="#hardened-nexus-apk-sink-tolerate-a-dirty-apk-world-2026-07-20-0438" title="Permanent link">&para;</a></h2>
+<p>Status: ✅ TESTED (live run installed 33 netscanner pkgs: 0 conflict, 0 dropped)</p>
+<p>What: Made the conflict-aware installer robust on machines that already have apk integrity errors.
+Why: With standing file-collision errors, apk exits non-zero on EVERY op; the sink read that as per-package conflict/failure → user saw 'all installs failing'.
+How: (1) baseline pre-existing error-lines via 'apk add --simulate busybox'; (2) flag a pkg as conflict only if it emits MORE error lines than baseline (not on raw exit code); (3) judge install success by 'apk info -e' STATE, not exit code (a dirty world makes apk lie).
+Files: ~/scripts/nexus-apk-sink.sh (backup .bak-20260719_183534).
+Testing: non-root dry run + live root run walked all 33; conflict/dropped both none.
+Dependencies: apk; root for --simulate.</p>
+<hr />
+<h2 id="apk-world-hygiene-removed-apk-snap-fixed-incus-flavor-collision-2026-07-20-0438">apk world hygiene — removed apk-snap, fixed incus flavor collision (2026-07-20 04:38)<a class="headerlink" href="#apk-world-hygiene-removed-apk-snap-fixed-incus-flavor-collision-2026-07-20-0438" title="Permanent link">&para;</a></h2>
+<p>Status: ✅ TESTED (apk fix -s: 4 errors → 3 benign; btrfs spam gone)</p>
+<p>What: Cleaned partial-upgrade + flavor drift with NO --force and NO destructive cascade.
+Why: 4 standing apk errors + btrfs snapshot-hook spam on every apk transaction.
+How:
+- Removed apk-snap (btrfs commit hook) — root is ext4-on-LVM so it failed every run; cascaded out snapper + btrfs-progs-libs (dead weight on ext4); btrfs-progs TOOLS kept.
+- incus: removed mismatched incus-feature-openrc (init for a feature daemon not installed); incus-openrc now owns /etc/init.d/incusd, matching the installed LTS incus daemon.
+- Left 3 benign file-collisions baselined by the hardened sink: 3proxy-doc/libproxy-doc, outils-doc/uutils-coreutils-doc, and freeradius-client/ppp-radius (removal cascades to 58 nagios pkgs — deliberately NOT done).
+- Method throughout: simulate-before-delete ('apk del -s'), never --force. The 58-pkg simulate is why.
+Files: system apk db only.
+Testing: apk fix -s ends at 3 benign errors; no btrfs hook output.
+Dependencies: apk; root.</p>
+<hr />
+<h2 id="gen6-sandy-bridge-hd-3000-graphics-tuning-2026-07-20-0438">Gen6 (Sandy Bridge / HD 3000) graphics tuning (2026-07-20 04:38)<a class="headerlink" href="#gen6-sandy-bridge-hd-3000-graphics-tuning-2026-07-20-0438" title="Permanent link">&para;</a></h2>
+<p>Status: ✅ TESTED (configs applied+verified; VA-API driver installed; RAM read)</p>
+<p>What: Enabled hardware video decode + GL threading + hardware cursors on the HD 3000.
+Why: video was CPU-decoded (mpv hwdec=no → garbled/choppy); launcher forced software cursors; no VA-API driver installed.
+How:
+- mpv.conf: hwdec=no → hwdec=vaapi (backup .bak-20260720_031532).
+- conf.d/nexus-graphics.fish (NEW): LIBVA_DRIVER_NAME=i965 + MESA_GLTHREAD=true.
+- nexus-wayland-launcher.sh: WLR_NO_HARDWARE_CURSORS now NVIDIA-only → Intel gets HW cursors (backup .bak-20260720_031532).
+- User installed libva-intel-driver + libva-utils (Gen6 needs legacy i965, NOT intel-media-driver / Gen8+).
+- Confirmed: Gen6 has NO Vulkan (ANV needs Gen7+); OpenGL 3.3 via crocus, Mesa 26.1.1.
+- RAM: 4GB ChannelA + 8GB ChannelB @1333 MT/s = dual-channel FLEX (8GB interleaved + 4GB single); 1333 is the SNB max.
+Files: ~/.config/mpv/mpv.conf, ~/.config/fish/conf.d/nexus-graphics.fish, ~/scripts/nexus-wayland-launcher.sh.
+Testing: configs load/verify; live playback gain pending a Wayland session. Optional kernel flags (i915.enable_fbc=1 fastboot=1) NOT applied (needs /boot edit + reboot).
+Dependencies: libva-intel-driver, libva-utils, mesa/crocus.</p>
+<hr />
+<h2 id="created-nexus-node-guardssh-nexus-dmi-mempy-universal-node-tools-2026-07-20-0438">Created nexus-node-guards.sh + nexus-dmi-mem.py (universal node tools) (2026-07-20 04:38)<a class="headerlink" href="#created-nexus-node-guardssh-nexus-dmi-mempy-universal-node-tools-2026-07-20-0438" title="Permanent link">&para;</a></h2>
+<p>Status: ✅ TESTED (guards report matches real state; dmi parser output correct)</p>
+<p>What: Two universal NeXuS-node tools distilling this session's install invariants.
+Why: keep NeXuS installs universal — probe hardware/state, never assume; and replace a tool that hangs the box.
+How:
+- nexus-node-guards.sh (+.help.md): guards = snapshots (apk-snap only on btrfs), gpu (install only the mesa-vulkan/VA-API driver the GPU can use; Gen6 = no Vulkan), flavors (warn on two-impls-per-slot). Modes report/apply; encodes 6 invariants (probe-dont-assume, tolerate dirty world, never --force, simulate-before-delete, one-flavor-per-slot, usable-HW-only). Fixed a pipe-subshell scoping bug in the flavors guard.
+- nexus-dmi-mem.py: reads SMBIOS Type-17 from /sys/firmware/dmi/tables/DMI ONLY — safe replacement for 'dmidecode -t 17', which hangs the E6520 in uninterruptible D-state via /dev/mem (timeout can't kill it). Reports per-slot Locator/Bank/Size/Speed + symmetric/flex/single channel verdict.
+Files: ~/scripts/nexus-node-guards.sh (+.help.md), ~/scripts/nexus-dmi-mem.py (NEW).
+Testing: guards report matched real box (ext4/no-apk-snap, Gen6/no-Vulkan, 3 flavor collisions, incus clean); dmi parser produced correct 4+8GB flex report under doas.
+Dependencies: apk, lspci, findmnt (guards); python3 + root (dmi reader).</p>
+<hr />
+<h2 id="gen6-video-verified-end-to-end-post-reboot-live-test-2026-07-20-0514">Gen6 video — VERIFIED end-to-end (post-reboot live test) (2026-07-20 05:14)<a class="headerlink" href="#gen6-video-verified-end-to-end-post-reboot-live-test-2026-07-20-0514" title="Permanent link">&para;</a></h2>
+<p>Status: ✅ TESTED (live playback confirmed on first reboot after the changes)</p>
+<p>What: Confirmed the Gen6 video stack works in a real Wayland session — closes the 'pending playback' note on the earlier gen6-graphics entry.</p>
+<p>Verified:
+- vainfo: i965 driver 2.4.1 loaded; H.264 (baseline/main/high) + MPEG-2 hardware decode profiles present (H.264 encode too).
+- fish env survived reboot: LIBVA_DRIVER_NAME=i965, MESA_GLTHREAD=true active.
+- mpv <h264 940x1280>.mp4 with hwdec=vaapi + vo=gpu: played CLEAN, no garbage, LOW CPU (= VAAPI offload real).
+- The magenta terminal corruption in ~/screenshots/20260720_003652.png was PRE-FIX (00:36, before 03:15 changes) → resolved.</p>
+<p>Notes:
+- mpv build has NO dmabuf-wl (runtime 'not found'); correct outputs are gpu / gpu-next / drm(TTY). mpv.conf comment fixed accordingly.
+- vainfo prints a benign 'wl_drm_interface Symbol not found' (Wayland probe falls back to DRM) — does not affect mpv.
+- Optional/unapplied: i915.enable_fbc=1 fastboot=1 (needs /boot edit + reboot). RAM needs nothing (dual-channel flex @1333 = SNB max).</p>
+<p>Files: ~/.config/mpv/mpv.conf (comment fix).</p>
+<hr />
+<h2 id="fixed-chromium-garbage-on-gen6-disable-gpu-rasterization-2026-07-20-0747">Fixed Chromium garbage on Gen6 (disable GPU rasterization) (2026-07-20 07:47)<a class="headerlink" href="#fixed-chromium-garbage-on-gen6-disable-gpu-rasterization-2026-07-20-0747" title="Permanent link">&para;</a></h2>
+<p>Status: ✅ TESTED (user confirmed: clean, no more garbage)</p>
+<p>What: Chromium rendered corrupted/garbage on the HD 3000 while Firefox was fine.
+Why: chrome://gpu showed Chromium using ANGLE→OpenGL ES 3.0 on crocus with 'Rasterization: Hardware accelerated' — HW raster through ANGLE/GLES on Sandy Bridge paints garbage. Firefox uses a different (WebRender/software) path.
+How: Set CHROMIUM_USER_FLAGS='--disable-gpu-rasterization' in ~/.config/fish/conf.d/nexus-graphics.fish (the Alpine chromium wrapper appends CHROMIUM_USER_FLAGS — no root). Moves rasterization to CPU while KEEPING hardware compositing + hardware video decode (VAAPI). Least-aggressive fix (not --disable-gpu).
+Files: ~/.config/fish/conf.d/nexus-graphics.fish.
+Testing: user confirmed clean render after relaunch. Note: launcher(fuzzel)-spawned chromium needs next Wayland session to inherit the env; terminal-launched picks it up immediately.
+Dependencies: chromium (Alpine wrapper reads /etc/chromium/*.conf + CHROMIUM_USER_FLAGS).</p>
+<hr />
+<h2 id="created-nexus-quickshellsh-tmux-menus-dankshell-entry-prefix-2026-07-28-1354">Created nexus-quickshell.sh + tmux-menus DankShell entry (prefix-) (2026-07-28 13:54)<a class="headerlink" href="#created-nexus-quickshellsh-tmux-menus-dankshell-entry-prefix-2026-07-28-1354" title="Permanent link">&para;</a></h2>
+<p>Status: ✅ TESTED (syntax/wiring) · 🔵 runtime start not yet exercised (Dank already running bare)</p>
+<p>What: Manage DankShell (quickshell via <code>dms run</code>) inside a persistent tmux session 'dank', with a prefix-\ menu entry + labwc autostart hook. One wrapper = single source of truth.</p>
+<p>Why: Anon wanted quickshell/Dank run under tmux for attachable logs + clean lifecycle on a systemd-less Alpine box; and a prefix-\ tmux-menus entry to drive it.</p>
+<p>How:
+- ~/scripts/nexus-quickshell.sh {start|stop|restart|logs|status}. start: <code>tmux new-session -d -s dank 'exec dms run'</code> (env-guarded on WAYLAND_DISPLAY; exec =&gt; clean signals; stderr in scrollback = live log). stop: <code>dms kill</code> + kill session. logs: switch-client -t dank (in tmux) else attach. status: popup (in tmux) showing session/process/WAYLAND state.
+- tmux-menus (LIVE copy = ~/.tmux/plugins/tmux-menus, loaded by ~/.tmux/plugins/tpm per ~/.config/tmux/tmux.conf): new items/nexus_quickshell.sh submenu mirroring nexus_notes.sh; registered in items/main.sh as <code>0.0 M Q "DankShell (dms) ..." nexus_quickshell.sh</code>.
+- labwc autostart: swapped the nexus-desktop case from <code>quickshell -p /usr/local/share/quickshell/dms &amp;</code> to <code>"$HOME/scripts/nexus-quickshell.sh" start &amp;</code>.</p>
+<p>Files: ~/scripts/nexus-quickshell.sh (NEW); ~/.tmux/plugins/tmux-menus/items/nexus_quickshell.sh (NEW); ~/.tmux/plugins/tmux-menus/items/main.sh (EDIT, bak-quickshell-<em>); ~/.config/labwc/autostart (EDIT, bak-quickshell-</em>).</p>
+<p>Caveats/next: Current desktop reports XDG_CURRENT_DESKTOP=labwc:wlroots (NOT nexus-desktop), and Dank is already running as bare <code>qs -p ...</code> (PID observed) outside tmux — so the edited nexus-desktop autostart case may not be Anon's actual launch path. Duplication trap: 3 tmux-menus copies exist; edited only the LIVE ~/.tmux/plugins one. To migrate the running instance under tmux now: <code>nexus-quickshell.sh stop</code> then <code>start</code>. TPM update (prefix+U) could overwrite the custom menu items (same risk as existing nexus_notes.sh).</p>
+<hr />
+<h2 id="wired-latest-canon-into-tui-desktop-hubs-2026-07-30-1945">Wired latest canon into TUI desktop hubs (2026-07-30 19:45)<a class="headerlink" href="#wired-latest-canon-into-tui-desktop-hubs-2026-07-30-1945" title="Permanent link">&para;</a></h2>
+<p>Status: ✅ TESTED (syntax-validated, fossil committed)</p>
+<p>What: Updated three core TUI desktop hub scripts to include all recent NeXuS canonical components.</p>
+<p>Why: The popup, web-hub, and home-status were referencing old/missing paths and were missing the entire AI proxy stack, new darknet scripts, and recently-built apps.</p>
+<p>How:
+- nexus-home-popup.sh: Added 8 new LINKS entries (AI HOME, PROXY, DASHBOARD, CHAR CARD, OPEN CHARS, AI PARTY, VM FORGE, NXS SEARCH); added DARKNET PANEL and NET DOCTOR; updated DARKNET path from ~/claude/nexus-darknet-go to ~/Projects/nexus-network-stack/network/configs/darknet-stack; fixed case-insensitive key matching bug (tolower→exact ==k) that caused uppercase keys to always fallthrough to lowercase match
+- nexus-web-hub.sh: Added _proxy_dot() + _open_proxy() helpers; added NEXUS PROXY section to draw (H/P/O/C/S keys); fixed [H] from old nexus-serve.sh binary to open https://localhost:8443/; added P=manager, O=OpenCharacters, C=charcard, S=NXS-search
+- nexus-home-status.sh: Added 3 inline service checks at top of SERVICES loop: NeXuS Proxy (:8443), NXS Search (:5000), Darknet Panel (:8878)</p>
+<p>Files: ~/scripts/nexus-home-popup.sh, ~/scripts/nexus-web-hub.sh, ~/scripts/nexus-home-status.sh (all backed up as .bak-20260730)</p>
+<p>Fossil: d9a6f106 in nexus-scripts.fossil</p>
+<p>Key canonical paths now wired:
+- Proxy: ~/scripts/nexus-api-proxy.sh
+- Party: ~/claude/nexus-party/nexus-party.sh
+- VM Forge: ~/git/nexus-vm-forge/nexus-vm-forge.sh
+- Darknet: ~/Projects/nexus-network-stack/network/configs/darknet-stack/nexus-darknet
+- Search: http://localhost:5000 (~/NeXuS/nxs-search)</p>
+<hr />
+<h2 id="tui-desktop-nxs-search-tmux-prefix-fixes-2026-08-02-1954">TUI desktop + NXS Search + tmux prefix fixes (2026-08-02 19:54)<a class="headerlink" href="#tui-desktop-nxs-search-tmux-prefix-fixes-2026-08-02-1954" title="Permanent link">&para;</a></h2>
+<p><strong>Status:</strong> ✅ TESTED</p>
+<p><strong>What:</strong> Multiple desktop and infrastructure fixes across this session.</p>
+<p><strong>NXS Search fix:</strong>
+- Filtered .cache/.npm/.cargo/node_modules/.git paths from filename search results
+- Was: 100 results all from ~/.cache/damin — now: clean real paths
+- Created Fossil: ~/museum/nexus-nxs-search.fossil
+- Existing index (529K files) reused — no re-scan needed</p>
+<p><strong>tmux prefix change:</strong>
+- C-z → C-a (frees Ctrl-Z for Claude Code suspend and Unix SIGTSTP)
+- Old C-a (launch_app.sh) moved to C-M-l (Ctrl+Alt+L)
+- Updated cheatsheet + popup page 3 to show new prefix</p>
+<p><strong>TUI desktop updates (nexus-apps-hub.sh):</strong>
+- New APPS window hub with all web frontends + live status dots
+- Wired: Command Center :8800, Darknet Panel :8878, App Arsenal :8080
+- Fixed nexus-web-hub.sh darknet_dash: was trying to build a Go binary → now starts FastAPI Command Center
+- Popup page 1: added h|APPS HUB, Y|AI FOUNDRY; page 2: L|APP ARSENAL
+- All changes committed to nexus-scripts.fossil</p>
+<p><strong>Files:</strong> ~/.config/tmux/tmux.conf, ~/scripts/nexus-apps-hub.sh (new), ~/scripts/nexus-apps.sh (new), ~/scripts/nexus-home-popup.sh, ~/scripts/nexus-ai-hub.sh, ~/scripts/nexus-web-hub.sh, ~/scripts/tmux-cheatsheet.sh, ~/NeXuS/nxs-search/backend/app.py, ~/NeXuS/nxs-search/nexus-search-reindex.sh</p>
+<hr />
+<h2 id="nexus-stack-startsh-aliases-nexus-api-proxy-cert-update-2026-08-17-1628">nexus-stack-start.sh + aliases + nexus-api-proxy cert update (2026-08-17 16:28)<a class="headerlink" href="#nexus-stack-startsh-aliases-nexus-api-proxy-cert-update-2026-08-17-1628" title="Permanent link">&para;</a></h2>
+<p>Status: ✅ TESTED. What: (1) nexus-stack-start.sh — full NeXuS web stack manager with start/stop/status/restart and --full flag for DivaChain. (2) nexus-api-proxy.sh updated to use NeXuS CA cert + env var paths + certigo cert verification on start. (3) Fish aliases added: api-proxy (existing), nncc, diva, nexus-stack. Why: needed a single command to bring up the full NeXuS stack in correct order. How: nexus-stack-start.sh starts in order: step-ca → web-server → nncc → wiki → (diva with --full). Idempotent (checks if already running). Status shows all 7 services with live/stopped and cert info via certigo. Cyberpunk-themed ANSI output (cyan/magenta/orange, no yellow). Files: ~/scripts/nexus-stack-start.sh (NEW), ~/scripts/nexus-api-proxy.sh (updated), ~/.config/fish/config.fish (4 aliases).</p>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../nexus-protech-studio/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Nexus Protech Studio">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Nexus Protech Studio
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../nexus-vm-forge/" class="md-footer__link md-footer__link--next" aria-label="Next: Nexus Vm Forge">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Nexus Vm Forge
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/hackenstacks/nexus" target="_blank" rel="noopener" title="NeXuS on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.footer", "toc.follow", "toc.integrate", "search.highlight", "search.share", "search.suggest", "content.code.copy", "content.code.annotate", "header.autohide"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
